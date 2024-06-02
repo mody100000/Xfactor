@@ -1,0 +1,75 @@
+.ourTrainersSection {
+  background-color: black;
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.title {
+  color: white;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.trainersContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  text-align: center;
+  width: 300px; /* Increased width */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* More noticeable shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+.card:hover {
+  transform: translateY(-10px); /* Lift the card slightly on hover */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+.trainerImage {
+  width: 100%;
+  height: 200px; /* Fixed height to ensure uniformity */
+  object-fit: cover; /* Ensure image covers the area without distortion */
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.trainerName {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.trainerCategory {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.socialMedia {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.socialIcon {
+  font-size: 1.5rem;
+  color: #666;
+  transition: color 0.3s;
+}
+
+.socialIcon:hover {
+  color: #7564e5;
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: 100%;
+    max-width: 300px;
+  }
+}

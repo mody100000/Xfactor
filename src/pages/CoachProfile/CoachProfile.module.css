@@ -1,0 +1,94 @@
+.container {
+    margin: 5rem auto;
+    padding: 20px;
+    max-width: 800px;
+    background-color: #f8f9fa;
+  }
+  
+  .profileContainer {
+    display: flex;
+    gap: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .coachImage {
+    width: 200px;
+    height: auto;
+    border-radius: 5px;
+  }
+  
+  .details {
+    flex: 1;
+  }
+  
+  .coachName {
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+  
+  .coachCategory {
+    color: #6c757d;
+    font-size: 1.2rem;
+  }
+  
+  .rating {
+    margin-top: 10px;
+  }
+  
+  .stars {
+    color: #ffc107;
+  }
+  
+  .reviews {
+    color: #6c757d;
+    margin-left: 10px;
+  }
+  
+  .summary {
+    margin-top: 20px;
+    font-size: 1rem;
+  }
+  
+  .location {
+    margin-top: 20px;
+    color: #6c757d;
+  }
+  
+  .salary {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-top: 20px;
+  }
+  
+  .bookButton,
+  .messageButton {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 1rem;
+  }
+  
+  .bookButton {
+    background-color: #28a745;
+    color: #fff;
+    margin-right: 10px;
+  }
+  
+  .bookButton:hover {
+    background-color: #218838;
+  }
+  
+  .messageButton {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .messageButton:hover {
+    background-color: #0056b3;
+  }
+  

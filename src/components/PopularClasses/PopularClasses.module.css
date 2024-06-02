@@ -1,0 +1,76 @@
+.popularClassesContainer {
+  padding: 2rem;
+  margin-bottom: -7rem;
+}
+
+.cardsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.card {
+  width: 300px;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.37);
+}
+
+.imageContainer {
+  position: relative;
+  box-shadow: 0 0 18px 0 rgba(0, 0, 0, 0.37);
+}
+
+.card-img-top {
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.imageOverlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.imageTitle {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.card-body {
+  padding: 1rem;
+}
+
+.cardFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.plusIcon {
+  cursor: pointer;
+  color: #7564e5;
+}
+
+.plusIcon:hover {
+  color: #5c4fb1;
+}
+img {
+  height: 15rem;
+  object-fit: cover;
+}
+.cardFooter button {
+  background-color: #7564e5;
+  color: white;
+}
+.cardFooter button:hover {
+  background-color: #5c4fb1;
+  color: white;
+}
+@media (max-width: 768px) {
+  .popularClassesContainer {
+    margin-bottom: 0;
+  }
+}

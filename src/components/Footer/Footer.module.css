@@ -1,0 +1,73 @@
+.footer {
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  justify-content: space-around;
+  padding: 2rem 0;
+}
+
+.footerSection {
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.logo {
+  object-fit: contain;
+  width: 200px; /* Adjust width to fit within the navbar */
+  height: auto; /* Maintain aspect ratio */
+}
+
+
+.sectionTitle {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  color: rgb(207, 207, 207);
+}
+
+.list li {
+  margin-bottom: 0.5rem;
+}
+
+.contactInfo {
+  list-style: none;
+  padding: 0;
+  color: rgb(207, 207, 207);
+}
+
+.contactInfo li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.contactInfo li svg {
+  margin-right: 0.5rem;
+  color: rgb(161, 161, 161);
+}
+
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footerSection {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .contactInfo li {
+    justify-content: center;
+  }
+}
+.line {
+  display: block;
+  height: 2px;
+  background-color: gray;
+  width: 100%;
+}

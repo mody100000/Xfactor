@@ -1,0 +1,211 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 20px;
+}
+.recommendedText{
+  font-style:italic ;
+font-size: 1rem;
+color: gray;
+text-align: center;
+}
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  
+}
+
+.filters {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  background-color: #e9ecef;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+
+.filters label {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  color: #495057;
+}
+
+.filterSelect {
+  margin-top: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ced4da;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.coachesContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 28px;
+  padding: 20px;
+}
+
+.coachCard {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.coachImage {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.coachName {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.coachCategory {
+  color: #6c757d;
+}
+
+.rating {
+  margin-top: 10px;
+}
+
+.stars {
+  color: #ffc107;
+}
+
+.reviews {
+  color: #6c757d;
+  margin-left: 10px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #ffc107;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.summary {
+  margin-top: 10px;
+}
+
+.distance {
+  color: #6c757d;
+  margin-top: 10px;
+}
+
+.salary {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.viewProfileButton {
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.viewProfileButton:hover {
+  background-color: #0056b3;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.coachCard.recommended {
+  background-color: #e6ffe6;
+}
+
+.silverBadge {
+  background-color: #c0c0c0;
+}
+
+.bronzeBadge {
+  background-color: #cd7f32;
+}
+
+.defaultBadge {
+  background-color: #888;
+}
+
+.paginationButton {
+  padding: 5px 10px;
+  margin: 0 5px;
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.paginationButton.active {
+  background-color: #007bff;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .coachesContainer {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+
+  .coachCard {
+    padding: 10px;
+  }
+
+  .coachName {
+    font-size: 1rem;
+  }
+
+  .badge {
+    font-size: 0.8rem;
+    padding: 3px 8px;
+  }
+
+  .summary {
+    font-size: 0.9rem;
+  }
+
+  .distance,
+  .salary {
+    font-size: 0.8rem;
+  }
+
+  .viewProfileButton {
+    font-size: 0.8rem;
+  }
+}
+
+.noResults {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #6c757d;
+  margin-top: 20px;
+}

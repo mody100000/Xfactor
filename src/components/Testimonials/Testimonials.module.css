@@ -1,0 +1,210 @@
+.testimonialsSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 0;
+  margin-bottom: 6rem;
+}
+
+.leftSide {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 45%;
+  margin: 2rem;
+  flex-shrink: 0;
+}
+
+.card {
+  background-color: black;
+  color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
+  margin: 0 2rem;
+  flex: 1;
+}
+
+.clientImageContainer {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.clientImage {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: absolute;
+  top: -85px;
+  left: calc(50% - 50px);
+  border: 5px solid black;
+  object-fit: contain;
+}
+
+.stars {
+  margin-bottom: 1.5rem;
+}
+
+.star {
+  color: gold;
+  margin-right: 0.2rem;
+}
+
+.comment {
+  margin-bottom: 2rem;
+}
+
+.viewAll {
+  background-color: #7564e5;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  position: absolute;
+  bottom: -20px;
+  left: calc(50% - 50px);
+  cursor: pointer;
+}
+
+.arrow {
+  font-size: 2rem;
+  color: #7564e5;
+  cursor: pointer;
+}
+
+.rightSide {
+  text-align: left;
+  width: 40%;
+  margin: 0 3rem;
+  padding: 1rem;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.bestRating {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  color: rgb(97, 97, 97);
+}
+
+.ratingSummary {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+}
+
+.plusIcon {
+  font-size: 1.5rem;
+  margin-right: 2rem;
+  cursor: pointer;
+}
+
+.coloredStar {
+  color: gold;
+  margin-right: 1rem;
+}
+
+.rating {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+.reviews {
+  color: rgb(97, 97, 97);
+}
+
+@media (max-width: 1200px) {
+  .rightSide {
+    margin-left: 2rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .testimonialsSection {
+    flex-direction: column;
+  }
+
+  .leftSide {
+    margin-bottom: 2rem;
+    width: 100%;
+    max-width: 600px;
+  }
+
+  .rightSide {
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .bestRating {
+    font-size: 1rem;
+  }
+
+  .ratingSummary {
+    font-size: 1.2rem;
+  }
+
+  .arrow {
+    font-size: 1.5rem;
+  }
+
+  .clientImage {
+    width: 80px;
+    height: 80px;
+  }
+
+  .card {
+    padding: 1.5rem;
+  }
+
+  .viewAll {
+    bottom: -10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .bestRating {
+    font-size: 0.9rem;
+  }
+
+  .ratingSummary {
+    font-size: 1rem;
+  }
+
+  .arrow {
+    display: none;
+  }
+
+  .clientImage {
+    top: -60px;
+    left: calc(55% - 50px);
+    width: 70px;
+    height: 70px;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+
+  .viewAll {
+    bottom: -5px;
+    left: calc(50% - 35px);
+  }
+}

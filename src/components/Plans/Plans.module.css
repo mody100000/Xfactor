@@ -1,0 +1,147 @@
+.ourPricing {
+  background-color: #000;
+  padding: 4rem;
+}
+
+.sectionTitle {
+  margin-top: 7%;
+  text-align: center;
+}
+
+.sectionTitleWhite {
+  color: #fff;
+}
+
+.sectionTitleWhite h1 {
+  font-size: 44px;
+  font-weight: 700;
+  margin-top: 0;
+  text-transform: capitalize;
+  margin-bottom: 15px;
+}
+
+.sectionTitleWhite p {
+  padding: 0 10px;
+  width: 70%;
+  margin: auto;
+  letter-spacing: 1px;
+}
+
+.planColumn {
+  margin-top: 30px;
+}
+
+.pricingTable {
+  background: #1c1c1c;
+  color: #fff;
+  padding: 50px 15px;
+  box-shadow: 0px 19px 43px 0px rgba(17, 17, 17, 0.05);
+  text-align: center;
+  transition: transform 0.5s ease-in-out;
+  border-radius: 10px;
+}
+
+.pricingTable:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.199);
+}
+
+.pricingTableHeader {
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.priceMonth {
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 5px;
+}
+
+.priceValue {
+  font-size: 3rem;
+  line-height: 1;
+  position: relative;
+  color: #e4f1ff;
+  margin: 40px 0;
+}
+
+.priceValue .valueBg {
+  display: inline-block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: #1386fc;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.pricingContent {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+.pricingContent li {
+  line-height: 40px;
+}
+
+.checkIcon {
+  margin-right: 10px;
+}
+
+.btnPriceBg {
+  background: #7564e5;
+  border: 2px solid #7564e5;
+  border-radius: 50px;
+  color: #fff;
+  display: inline-block;
+  font-size: 16px;
+  padding: 12px 40px;
+  text-transform: capitalize;
+  transition: all 0.3s ease 0s;
+}
+
+.pricingTable:hover {
+  color: #fff;
+}
+.btnPriceBg:hover {
+  background: #494d81;
+}
+
+.closedCard {
+  pointer-events: none;
+  position: relative;
+}
+
+.closedCard::after {
+  content: "Unavailable";
+  position: absolute;
+  top: 55px;
+  left: -23px;
+  width: 140px;
+  background-color: red;
+  color: white;
+  transform: rotate(-45deg) skew(10deg);
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 100px 0;
+}
+
+.closedCard > div::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #000000ba;
+}
+@media (max-width: 768px) {
+}

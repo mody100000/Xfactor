@@ -1,0 +1,89 @@
+.fitnessGallerySection {
+  text-align: center;
+  padding: 3rem 0;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.description {
+  font-size: 1.2rem;
+  color: #747474;
+  margin-bottom: 2rem;
+}
+.fitnessGallery {
+  background-color: black;
+  height: 30rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+}
+
+.galleryContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.galleryImageContainer {
+  transition: transform 0.5s ease;
+  cursor: pointer;
+}
+
+.galleryImage {
+  width: 20rem;
+  height: 15rem;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  opacity: 0.6;
+}
+
+.active .galleryImage {
+  transform: scale(1.2);
+  opacity: 1;
+}
+
+.slideLabels {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  gap: 0.5rem;
+}
+
+.slideLabel {
+  width: 15px;
+  height: 15px;
+  background-color: #747474;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.activeLabel {
+  background-color: #fff;
+}
+
+@media (max-width: 1024px) {
+  .galleryImage {
+    width: 170px;
+  }
+
+  .active .galleryImage {
+    transform: scale(1.2);
+  }
+}
+
+@media (max-width: 768px) {
+  .galleryImage {
+    width: 70px;
+  }
+
+  .active .galleryImage {
+    transform: scale(1.2);
+  }
+}

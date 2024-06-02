@@ -1,0 +1,124 @@
+.bmiCalculatorSection {
+  margin: 4rem 0;
+}
+
+.title {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.description {
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 30px;
+  color: rgb(97, 97, 97);
+}
+
+.calculatorContainer {
+  display: flex;
+  justify-content: center;
+  background-color: #f8f8f8;
+  padding: 3rem 2rem;
+  gap: 4rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.leftContainer {
+  flex: 1;
+  padding: 20px;
+}
+
+.inputGroup {
+  margin-bottom: 15px;
+}
+
+.inputField {
+  width: calc(80% - 30px);
+  padding: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border: 1px solid rgb(179, 179, 179);
+  border-radius: 9px;
+}
+select {
+  width: 90% !important;
+}
+input,
+select:focus {
+  border: 1px solid rgb(179, 179, 179);
+  outline: none;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.unit {
+  display: inline-block;
+  background-color: #7564e5;
+  padding: 10px 20px;
+  color: white;
+  border-radius: 20px;
+  font-weight: 700;
+}
+
+.calculateButton {
+  width: 90%;
+  padding: 10px;
+  background-color: #7564e5;
+  border: none;
+  color: white;
+  font-size: 16px;
+  border-radius: 15px;
+  cursor: pointer;
+  align-self: center;
+}
+
+.calculateButton:hover {
+  background-color: #695ac5;
+}
+
+.rightContainer {
+  flex: 1;
+  background-color: #000;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.bmiTitle {
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.bmiValue {
+  font-size: 48px;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .calculatorContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .leftContainer,
+  .rightContainer {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}

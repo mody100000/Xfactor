@@ -1,0 +1,143 @@
+.container {
+    padding: 2rem;
+    background-color: #f5f5f5;
+  }
+  
+  .title {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    color: #333;
+  }
+ 
+  .coachesContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .coachCard {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .coachImage {
+    width: 100px;
+    height: 100px;
+    border-radius: 60%;
+    margin-bottom: 1rem;
+  }
+  
+  .coachName {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  .coachCategory {
+    font-size: 1rem;
+    color: #777;
+    margin-bottom: 1rem;
+  }
+  
+  .rating {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+  
+  .stars {
+    color: gold;
+    margin-right: 0.5rem;
+  }
+  
+  .reviews {
+    font-size: 0.9rem;
+    color: #777;
+  }
+  
+  .badge {
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+  
+  .goldBadge {
+    background-color: gold;
+    color: black;
+  }
+  
+  .silverBadge {
+    background-color: silver;
+    color: black;
+  }
+  
+  .bronzeBadge {
+    background-color: #cd7f32; /* bronze color */
+    color: white;
+  }
+  
+  .defaultBadge {
+    background-color: gray;
+    color: white;
+  }
+  .summary {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .distance {
+    font-size: 0.9rem;
+    color: rgb(153, 70, 70);
+    margin-bottom: 0.5rem;
+  }
+  
+  .salary {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 1.5rem;
+  }
+  
+  .viewProfileButton {
+    background-color: #007bff;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .viewProfileButton:hover {
+    background-color: #0056b3;
+  }
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .paginationButton {
+    margin: 0 5px;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    background-color: white;
+    cursor: pointer;
+  }
+  
+  .paginationButton:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .active {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+  }

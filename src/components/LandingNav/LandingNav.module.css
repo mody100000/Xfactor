@@ -1,0 +1,31 @@
+/* LandingNav.module.css */
+.item_links {
+  color: #e4d9ef;
+  margin: 0.3rem;
+  cursor: pointer;
+}
+
+.item_links:hover {
+  color: #ee7d60;
+}
+
+.logo {
+  object-fit: contain;
+  width: 200px; /* Adjust width to fit within the navbar */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.navbar {
+  background-color: #000000 !important;
+}
+
+.line {
+  display: block;
+  height: 1.5px;
+  background-color: gray;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
