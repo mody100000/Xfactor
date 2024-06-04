@@ -31,8 +31,11 @@
 
 .list li {
   margin-bottom: 0.5rem;
+  cursor: pointer;
 }
-
+.list li:hover{
+  color: rgb(233, 233, 233);
+}
 .contactInfo {
   list-style: none;
   padding: 0;
@@ -42,7 +45,11 @@
 .contactInfo li {
   display: flex;
   align-items: center;
+  cursor: pointer;
   margin-bottom: 0.5rem;
+}
+.contactInfo li:hover{
+  color: rgb(233, 233, 233);
 }
 
 .contactInfo li svg {
