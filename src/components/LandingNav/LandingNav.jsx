@@ -30,14 +30,18 @@ const LogoutNav = () => {
                 Apply to Coach <MdAssignmentInd size={20} />
               </Link>
             </Nav.Link>
-            <Nav.Link href="#coachup-nation" className={styles.item_links}>
+            <Nav.Link  className={styles.item_links}>
               CoachUp Nation <MdRealEstateAgent size={20} />
             </Nav.Link>
-            <Nav.Link href="#register" className={styles.item_links}>
+            <Nav.Link  className={styles.item_links}>
+            <Link to="/register" className={styles.item_links}>
               Register <RiUserAddFill size={20} />
+              </Link>
             </Nav.Link>
-            <Nav.Link href="#login" className={styles.item_links}>
+            <Nav.Link className={styles.item_links}>
+              <Link to="/login" className={styles.item_links}>
               Login <IoLogIn size={25} />
+              </Link>
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

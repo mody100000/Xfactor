@@ -15,6 +15,8 @@ import CoachesResultPage from './pages/CoachesResultPage/CoachesResultPage';
 import FilteredCoachesResultPage from './pages/FilteredCoachesResultPage/FilteredCoachesResultPage';
 import CoachProfilePage from './pages/CoachProfilePage/CoachProfilePage';
 import CoachProfile from './pages/CoachProfile/CoachProfile';
+import LoginPage from './pages/LoginPage/LoginPage';
+import RegisterPage from './pages/RegisterPage/RegisterPage';
 
 const routes = createBrowserRouter([
   {
@@ -31,6 +33,8 @@ const routes = createBrowserRouter([
       { path: '/filtered-coaches', element: <FilteredCoachesResultPage /> },
       { path: '/coach/:id', element: <CoachProfilePage /> },
       { path: '/coach/:id', element: <CoachProfile /> },
+      { path: '/login', element: <LoginPage /> },
+      { path: '/register', element: <RegisterPage /> },
     ],
   },
 ]);
