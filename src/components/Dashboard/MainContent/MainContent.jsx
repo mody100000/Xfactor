@@ -6,6 +6,13 @@ import Card from './../common/Card/Card';
 const MainContent = () => {
   return (
     <div className={styles.mainContent}>
+      <div className='d-flex flex-row justify-content-between'>
+      <h1 className='fw-bold mb-2'>Welcome Back!</h1>
+      <div>
+      <button className={styles.account}>Account</button>
+        <button className={styles.payment}>Payment</button>
+      </div>
+      </div>
       <div className={styles.statisticInfo}>
         <Chart />
       </div>

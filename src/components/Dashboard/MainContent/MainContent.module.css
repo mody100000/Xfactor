@@ -1,6 +1,6 @@
 .mainContent {
     flex: 1;
-    padding: 20px;
+    padding: 13px 20px;
     display: flex;
     flex-direction: column;
   }
@@ -23,3 +23,11 @@
     margin-top: 20px;
   }
   
+  .account, .payment {
+    border: 1px solid gray;
+    background-color: white;
+    padding: 5px 10px;
+    margin-left: 10px;
+    cursor: pointer;
+    border-radius: 25px;
+  }
