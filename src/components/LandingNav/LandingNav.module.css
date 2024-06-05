@@ -11,8 +11,8 @@
 
 .logo {
   object-fit: contain;
-  width: 200px; /* Adjust width to fit within the navbar */
-  height: auto; /* Maintain aspect ratio */
+  width: 200px;
+  height: auto; 
 }
 
 .navbar {
