@@ -48,7 +48,8 @@ const Register = () => {
       birth_date: Joi.date().required().label("birth_date"),
       phone_number: Joi.string()
         .required()
-        // .pattern(/^\+(?:[0-9]\s?){6,14}[0-9]$/)
+        .min(5)
+        .pattern(/^[0-9]+$/)
         .messages({
           "string.pattern.base": "Please enter a valid phone number.",
         })
@@ -140,7 +141,7 @@ const Register = () => {
               errors={errors["email"]}
               Icon={MdEmail}
             />
-            <InputWithIcon
+            {/* <InputWithIcon
               type="number"
               onChange={(e) => handleInputChange(e, "weight")}
               placeholder={"weight"}
@@ -153,7 +154,7 @@ const Register = () => {
               placeholder={"height"}
               errors={errors["height"]}
               Icon={CiLineHeight}
-            />
+            /> */}
             <InputWithIcon
               type="date"
               className="text-secondary"

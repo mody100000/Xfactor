@@ -1,0 +1,17 @@
+.dashboard {
+  display: flex;
+  min-height: 100vh;
+}
+
+.mainSection {
+  flex: 1;
+  margin-left: 250px; /* Adjust the margin to account for the sidebar width */
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 768px) {
+  .mainSection {
+    margin-left: 0; 
+  }
+}

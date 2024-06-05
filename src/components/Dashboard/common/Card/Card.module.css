@@ -1,0 +1,48 @@
+.card {
+    flex: 1;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .card h3 {
+    margin-bottom: 10px;
+  }
+  
+  .card button {
+    align-self: flex-start;
+  }
+  
+  .statistic {
+    text-align: center;
+  }
+  
+  .statistic p {
+    margin: 0;
+  }
+  
+  .specialization, .course {
+    position: relative;
+    padding-left: 40px;
+  }
+  
+  .specialization::before, .course::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background-color: #007bff;
+    border-radius: 50%;
+  }
+  
+  .course::before {
+    background-color: #28a745;
+  }
+  
