@@ -49,19 +49,26 @@
 
 .logout {
   margin-top: auto;
-  background-color: #ff4d4f;
+  background-color: rgb(191,30,46);
   color: white;
   border: none;
   padding: 10px;
   cursor: pointer;
   border-radius: 20px;
 }
-.logout:hover{
+/* .logout:hover,.logoutLink:hover{
   background-color: #ff4d50c9;
-}
+} */
 .logoutLink{
   text-decoration: none;
   color: white;
+  margin-top: auto;
+  background-color: rgb(191,30,46);
+  color: white;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 20px;
 }
 
 @media (min-width: 768px) {

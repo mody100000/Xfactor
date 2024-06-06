@@ -9,8 +9,6 @@ const TopBar = ({ toggleSidebar }) => {
         <div className={styles.userInfo}>
           <img src={user} alt="user image" className={styles.userImg} />
           <span>Shama Akhmedova</span>
-          {/* <button className={styles.account}>Account</button>
-          <button className={styles.payment}>Payment</button> */}
         </div>
       </div>
     );
