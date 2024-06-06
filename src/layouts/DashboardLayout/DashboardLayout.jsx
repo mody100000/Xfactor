@@ -1,11 +1,9 @@
-import React from 'react';
-import styles from './Dashboard.module.css';
-import Sidebar from './../../components/Dashboard/Sidebar/Sidebar';
-import TopBar from './../../components/Dashboard/Topbar/Topbar';
-import MainContent from './../../components/Dashboard/MainContent/MainContent';
 import { useState } from 'react';
-
-const Dashboard = () => {
+import { Outlet } from 'react-router-dom';
+import TopBar from '../../components/Dashboard/Topbar/Topbar';
+import styles from './DashboardLayout.module.css';
+import Sidebar from './../../components/Dashboard/Sidebar/Sidebar';
+const DashboardLayout = () => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   
     const toggleSidebar = () => {
@@ -17,10 +15,10 @@ const Dashboard = () => {
         <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
         <div className={styles.mainSection}>
           <TopBar toggleSidebar={toggleSidebar} />
-          <MainContent />
+          <Outlet />
         </div>
       </div>
     );
-  };
-  
-  export default Dashboard;
+    }
+ 
+export default DashboardLayout;

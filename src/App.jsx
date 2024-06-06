@@ -17,7 +17,8 @@ import CoachProfilePage from './pages/CoachProfilePage/CoachProfilePage';
 import CoachProfile from './pages/CoachProfile/CoachProfile';
 import LoginPage from './pages/LoginPage/LoginPage';
 import RegisterPage from './pages/RegisterPage/RegisterPage';
-import Dashboard from './pages/Dashboard/Dashboard';
+import Dashboard from './pages/DashboardProfile/Dashboard';
+import DashboardLayout from './layouts/DashboardLayout/DashboardLayout';
 
 const routes = createBrowserRouter([
   {
@@ -38,7 +39,9 @@ const routes = createBrowserRouter([
       { path: '/register', element: <RegisterPage /> },
     ],
   },
-  { path: '/dashboard', element: <Dashboard /> },
+  { path: '/dashboard', element: <DashboardLayout />,children:[
+    {index:true,path:"/dashboard",element:<Dashboard/>}
+  ] },
 ]);
 
 function App() {
