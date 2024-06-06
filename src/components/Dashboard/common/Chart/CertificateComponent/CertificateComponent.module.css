@@ -1,0 +1,42 @@
+.certificateContainer {
+  max-width: 600px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.headerIcon {
+  font-size: 1.5rem;
+}
+
+.icon {
+  font-size: 3.5rem;
+  color: #bf1e2e;
+  background-color: #f2d2d5;
+  border-radius: 50%;
+}
+
+.title {
+  font-size: 1.2rem;
+  margin-bottom: 0;
+  font-weight: bold;
+}
+
+.subtitle {
+  color: gray;
+  font-size: 0.9rem;
+}
+
+.line {
+  display: block;
+  height: 1.5px;
+  background-color: rgb(194, 194, 194);
+  width: 100%;
+  margin: 15px 0;
+}
+
+.continueButton {
+  padding: 5px 10px;
+  border-radius: 18px;
+}

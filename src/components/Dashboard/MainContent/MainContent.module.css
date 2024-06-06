@@ -1,25 +1,31 @@
 .mainContent {
-    flex: 1;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .statisticInfo {
-    flex: 1;
-    margin-bottom: 20px;
-  }
-  
-  .certificates, .statistics, .workPreferences {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
-    flex-wrap: wrap;
-  }
-  
-  .resume {
-    display: flex;
-    gap: 10px;
-    margin-top: 20px;
-  }
-  
+  flex: 1;
+  padding: 13px 20px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.statisticInfo {
+  flex: 1;
+  margin-bottom: 20px;
+}
+
+.certificates, .statistics, .workPreferences, .resume {
+  gap: 10px;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.account, .payment {
+  border: 1px solid gray;
+  background-color: white;
+  padding: 5px 10px;
+  margin-left: 10px;
+  cursor: pointer;
+  border-radius: 25px;
+}
+
+.account:hover, .payment:hover {
+  background-color: rgba(207, 207, 207, 0.829);
+}

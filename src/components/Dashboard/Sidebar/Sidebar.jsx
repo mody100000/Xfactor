@@ -32,11 +32,11 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
           <li className={styles.menuItem}> <IoIosHelpCircleOutline size={25} className="mx-2"/>  Help</li>
           <li className={styles.menuItem}> <CiSettings size={25} className="mx-2"/>  Settings</li>
         </ul>
-        <button className={styles.logout}>
           <Link to="/" className={styles.logoutLink}>
+        <button className={styles.logout}>
              <RiLogoutCircleLine size={22}  /> Log out
-          </Link>
         </button>
+          </Link>
       </div>
     );
   };
