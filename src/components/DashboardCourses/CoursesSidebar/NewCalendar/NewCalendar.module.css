@@ -1,7 +1,7 @@
 /* NewCalendar.module.css */
 
 :root {
-    --main-color: #1a8fff;
+    --main-color: #ff006a;
     --text-color: #777;
     --text-color-light: #ccc;
     --border-color: #eee;
@@ -73,7 +73,7 @@
 }
 
 .today {
-    border-left: 4px solid #ff1a79;
+    border-left: 4px solid #e63345;
 }
 
 .row {
@@ -111,7 +111,7 @@
 }
 
 .today .bg {
-    color: #ff1a79;
+    color: #ff0019;
     opacity: 0.1;
 }
 

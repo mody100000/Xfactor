@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './CoursesSidebar.module.css';
 import NewCalendar from './NewCalendar/NewCalendar';
-import { FaRegTimesCircle } from "react-icons/fa"; // Import the close icon
+import { FaRegTimesCircle } from "react-icons/fa";
 
 const CoursesSidebar = ({ isOpen, toggleSidebar }) => {
   const showDetailsHandle = (dayStr) => {
@@ -25,18 +25,18 @@ const CoursesSidebar = ({ isOpen, toggleSidebar }) => {
         </div>
       </div>
       <div className={styles.tasksContainer}>
-        <h5>Tasks of the week</h5>
+        <h4 className='fw-bold'>Tasks of the week</h4>
         <ul>
-          <li>
+          <li className='d-flex align-items-center'>
             <span className={styles.taskDate}>07 May</span> - Course Introduction <span className={styles.taskTime}>12:00 PM</span>
           </li>
-          <li>
+                    <li className='d-flex align-items-center'>
             <span className={styles.taskDate}>06 May</span> - Career Seminar <span className={styles.taskTime}>5:00 PM</span>
           </li>
-          <li>
+                    <li className='d-flex align-items-center'>
             <span className={styles.taskDate}>05 May</span> - Study Skills Workshop <span className={styles.taskTime}>1:00 PM</span>
           </li>
-          <li>
+                    <li className='d-flex align-items-center'>
             <span className={styles.taskDate}>04 May</span> - Industry Insights Panel <span className={styles.taskTime}>2:00 PM</span>
           </li>
         </ul>
