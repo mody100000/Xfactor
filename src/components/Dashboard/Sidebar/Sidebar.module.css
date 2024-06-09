@@ -16,7 +16,9 @@
 .open {
   transform: translateX(0);
 }
-
+a{
+  text-decoration: none;
+}
 .closeBtn {
   background: none;
   color: white;
@@ -42,8 +44,6 @@
 
 .menuItem {
   margin: 16px 0;
-  cursor: pointer;
-  /* display: flex; */
   align-items: center;
 }
 

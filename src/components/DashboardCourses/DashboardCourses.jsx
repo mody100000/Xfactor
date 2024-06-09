@@ -60,7 +60,7 @@ const courses = [
     image: image,
   },
   {
-    id: 1,
+    id: 2,
     title: 'Innovation through design',
     subtitle: 'Complete all courses from The University of Sydney',
     tags: ['Design Management', 'Innovation'],
@@ -68,7 +68,7 @@ const courses = [
      image: image,
   },
   {
-    id: 1,
+    id: 3,
     title: 'Innovation through design',
     subtitle: 'Complete all courses from The University of Sydney',
     tags: ['Design Management', 'Innovation'],
@@ -76,7 +76,7 @@ const courses = [
      image: image,
   },
   {
-    id: 1,
+    id: 4,
     title: 'Innovation through design',
     subtitle: 'Complete all courses from The University of Sydney',
     tags: ['Design Management', 'Innovation'],
