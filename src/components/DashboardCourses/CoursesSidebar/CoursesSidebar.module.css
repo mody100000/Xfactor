@@ -1,0 +1,93 @@
+
+:root {
+  --main-color: #1a8fff;
+  --text-color: #777;
+  --text-color-light: #ccc;
+  --border-color: #eee;
+  --bg-color: #f9f9f9;
+  --neutral-color: #fff;
+}
+
+.rightSidebar {
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
+
+.card {
+  border: none;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cardBody {
+  padding: 15px;
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.cardText {
+  font-size: 0.875rem;
+  color: #6c757d;
+}
+
+.calendarHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.arrowButton {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.calendarMonth {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.calendarContainer {
+  width: 100%;
+}
+
+.tasksContainer {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.tasksContainer h5 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+.tasksContainer ul {
+  list-style: none;
+  padding: 0;
+}
+
+.tasksContainer li {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.taskDate {
+  font-weight: bold;
+}
+
+.taskTime {
+  color: #6c757d;
+  font-size: 0.875rem;
+}

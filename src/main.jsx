@@ -1,6 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.js";
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import 'react-calendar/dist/Calendar.css';
 import "./utils/custom.css";
 import React from "react";
 import ReactDOM from "react-dom/client";
