@@ -11,8 +11,8 @@ const MainContent = () => {
       <div className='d-flex flex-row justify-content-between'>
         <h1 className='fw-bold mb-2'>Welcome Back!</h1>
         <div>
-          <button className={`${styles.account} btn`}>Account</button>
-          <button className={`${styles.payment} btn`}>Payment</button>
+          <button className={`${styles.account} btn btn-danger`}>Account</button>
+          <button className={`${styles.payment} btn btn btn-outline border border-1 border-danger text-danger`}>Payment</button>
         </div>
       </div>
       <div className={`${styles.statisticInfo} row`}>

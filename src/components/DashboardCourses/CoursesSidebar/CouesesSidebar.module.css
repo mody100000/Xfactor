@@ -1,0 +1,10 @@
+.rightSidebar {
+    padding: 20px;
+  }
+  
+  @media (max-width: 768px) {
+    .rightSidebar {
+      padding: 10px;
+    }
+  }
+  

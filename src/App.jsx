@@ -19,6 +19,7 @@ import LoginPage from './pages/LoginPage/LoginPage';
 import RegisterPage from './pages/RegisterPage/RegisterPage';
 import Dashboard from './pages/DashboardProfile/Dashboard';
 import DashboardLayout from './layouts/DashboardLayout/DashboardLayout';
+import DashboardCoursesPage from './pages/DashboardCoursesPage/DashboardCoursesPage';
 
 const routes = createBrowserRouter([
   {
@@ -39,8 +40,10 @@ const routes = createBrowserRouter([
       { path: '/register', element: <RegisterPage /> },
     ],
   },
-  { path: '/dashboard', element: <DashboardLayout />,children:[
-    {index:true,path:"/dashboard",element:<Dashboard/>}
+  { path: 'dashboard', element: <DashboardLayout />,
+    children:[
+      {index:true, path:"/dashboard", element: <Dashboard/>},
+      {path:"courses",element:<DashboardCoursesPage/>}
   ] },
 ]);
 

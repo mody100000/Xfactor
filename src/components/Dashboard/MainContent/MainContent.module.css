@@ -17,7 +17,23 @@
   justify-content: center;
 }
 
-.account, .payment {
+ .account, .payment {
+  border-radius: 25px;
+  margin: 0 0.2rem;
+  padding: 5px 10px;
+  border-radius: 25px;
+ }
+ /* .account:hover{
+   border: 1px solid #DC3545;
+   background-color: white;
+   color: #DC3545;
+ }
+ .payment:hover{
+  border: none;
+  color: white !important;
+  background-color:#DC3545 ;
+ } */
+/* .account, .payment {
   border: 1px solid gray;
   background-color: white;
   padding: 5px 10px;
@@ -28,4 +44,4 @@
 
 .account:hover, .payment:hover {
   background-color: rgba(207, 207, 207, 0.829);
-}
+} */
