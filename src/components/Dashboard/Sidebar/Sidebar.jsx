@@ -22,8 +22,11 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
            <img src={logo} className={styles.logo} alt="XFACTOR" />
         </h1>
         <ul className={styles.menu}>
-          <li className={styles.menuItem}> <IoPersonCircleOutline size={25} className="mx-2"/> Profile</li>
-          <li className={styles.menuItem}> <BsJournalBookmark size={20} className="mx-2"/>  Courses</li>
+          <li className={styles.menuItem}> <Link to="/dashboard" className='text-decoration-none text-light'> <IoPersonCircleOutline size={25} className="mx-2"/> Profile </Link></li>
+          <li className={styles.menuItem}><Link to="/dashboard/courses" className='text-decoration-none text-light'> 
+           <BsJournalBookmark size={20} className="mx-2"/>  Courses 
+           </Link>
+           </li>
           <li className={styles.menuItem}> <RiProgress3Line size={25} className="mx-2"/>  Progress</li>
           <li className={styles.menuItem}> <MdOutlineSpeakerNotes size={25} className="mx-2"/>  Notes</li>
           <li className={styles.menuItem}> <BiBriefcase size={25} className="mx-2"/>  Career</li>
