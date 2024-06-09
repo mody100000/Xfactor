@@ -1,17 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from './CoursesSidebar.module.css';
 import NewCalendar from './NewCalendar/NewCalendar';
+import { FaRegTimesCircle } from "react-icons/fa"; // Import the close icon
 
-const CoursesSidebar = () => {
-  const [currentDate, setCurrentDate] = useState(new Date());
-
+const CoursesSidebar = ({ isOpen, toggleSidebar }) => {
   const showDetailsHandle = (dayStr) => {
     console.log("Selected Date:", dayStr);
-    // Handle displaying details for the selected date
   };
 
   return (
-    <div className={styles.rightSidebar}>
+    <div className={`${styles.sidebarContent} ${isOpen ? styles.open : ''}`}>
+      <button className={styles.closeBtn} onClick={toggleSidebar}><FaRegTimesCircle /></button>
       <div className={`${styles.card} mb-3`}>
         <div className={styles.cardBody}>
           <h5 className={styles.cardTitle}>Let's set a weekly goal</h5>
