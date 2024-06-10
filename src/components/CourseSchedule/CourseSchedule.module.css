@@ -88,12 +88,42 @@
   .continueBtn {
     margin-left: auto;
   }
+  .progressCard {
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+  
+  .iconWrapper {
+    display: flex;
+    align-items: center;
+  }
+  
+  .progressNumbers {
+    font-weight: bold;
+    color: #6c757d;
+  }
+  
+  .progressTitle {
+    margin: 20px 0;
+    font-weight: bold;
+  }
+  
+  .progress-bar {
+    background-color: #dc3545;
+  }
   
   @media (max-width: 768px) {
     .courses {
       padding: 10px;
     }
-  
+    .progressCard {
+        margin-bottom: 20px;
+      }
     .courseCard {
       flex-direction: column;
       align-items: start;

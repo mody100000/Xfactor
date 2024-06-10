@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { CiBookmark } from "react-icons/ci";
 import { BsArrowDownRightCircle, BsArrowUpRightCircle } from "react-icons/bs";
+import { FaReact, FaCode, FaDatabase, FaMobileAlt } from "react-icons/fa";
 import styles from "./CourseSchedule.module.css";
 
 const CourseSchedule = () => {
@@ -41,8 +42,8 @@ const CourseSchedule = () => {
                 </div>
                 <div className={`d-flex justify-content-between align-items-end mt-auto ${styles.tagsAndLastSeen}`}>
                   <div className={styles.courseTags}>
-                    {course.tags.map(tag => (
-                      <button className={`btn btn-outline-danger me-2 ${styles.courseBtn}`} key={tag}>{tag}</button>
+                    {course.tags.map((tag, index) => (
+                      <button className={`btn btn-outline-danger me-2 ${styles.courseBtn}`} key={`${tag}-${index}`}>{tag}</button>
                     ))}
                   </div>
                   {/* <div className={styles.lastSeen}>Last seen: {course.lastSeen}</div> */}
@@ -57,6 +58,39 @@ const CourseSchedule = () => {
             </div>
           </div>
         ))}
+      </div>
+      <div className="mt-5">
+        <h2 className="fw-bold mb-4">Progress</h2>
+        <div className="row">
+          {progressCards.map(card => (
+            <div className="col-lg-6 mb-3" key={card.id}>
+              <div className={`card ${styles.progressCard}`}>
+                <div className="d-flex justify-content-between align-items-center">
+                  <div className={styles.iconWrapper}>
+                    {card.icon}
+                  </div>
+                  <span className={styles.progressNumbers}>{card.progressNumbers}</span>
+                </div>
+                <h3 className={styles.progressTitle}>{card.title}</h3>
+                <div className="progress my-3">
+                  <div 
+                    className="progress-bar" 
+                    role="progressbar" 
+                    style={{ width: `${card.progressPercentage}%` }} 
+                    aria-valuenow={card.progressPercentage} 
+                    aria-valuemin="0" 
+                    aria-valuemax="100"
+                  >
+                  </div>
+                </div>
+                <div className="d-flex justify-content-between">
+                  <span>{card.progressPercentage}% complete</span>
+                  <span>{card.date}</span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
@@ -92,6 +126,41 @@ const courses = [
     lastSeen: '2 Feb, 2024',
   },
   // More course objects here
+];
+
+const progressCards = [
+  {
+    id: 1,
+    icon: <FaReact size={30} color="#61dafb" />,
+    progressNumbers: "7/15",
+    title: "React Basics",
+    progressPercentage: 50,
+    date: "2 Feb, 2024",
+  },
+  {
+    id: 2,
+    icon: <FaCode size={30} color="#f0db4f" />,
+    progressNumbers: "10/20",
+    title: "JavaScript Advanced",
+    progressPercentage: 75,
+    date: "5 Mar, 2024",
+  },
+  {
+    id: 3,
+    icon: <FaDatabase size={30} color="#4DB33D" />,
+    progressNumbers: "5/10",
+    title: "Database Management",
+    progressPercentage: 50,
+    date: "12 Jan, 2024",
+  },
+  {
+    id: 4,
+    icon: <FaMobileAlt size={30} color="#007acc" />,
+    progressNumbers: "12/20",
+    title: "Mobile Development",
+    progressPercentage: 60,
+    date: "20 Apr, 2024",
+  },
 ];
 
 export default CourseSchedule;

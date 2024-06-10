@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './DashboardCourses.module.css';
 import image from "../../assets/Strength Coach.jpg"
 import { CiBookmark } from "react-icons/ci";
+import { Link } from 'react-router-dom';
 
 const Courses = () => {
   return (
@@ -33,7 +34,11 @@ const Courses = () => {
                     <div className={`d-flex justify-content-between align-items-end mt-auto ${styles.tagsAndLastSeen}`}>
                       <div className={styles.courseTags}>
                         {course.tags.map(tag => (
+                          <>
+                          <Link to="/dashboard/courseSchedule">
                           <button className={`btn btn-outline-danger me-2 ${styles.courseBtn}`} key={tag}>{tag}</button>
+                          </Link>
+                          </>
                         ))}
                       </div>
                       <div className={styles.lastSeen}>Last seen: {course.lastSeen}</div>
@@ -55,7 +60,7 @@ const courses = [
     id: 1,
     title: 'Innovation through design',
     subtitle: 'Complete all courses from The University of Sydney',
-    tags: ['Design Management', 'Innovation'],
+    tags: ['continue', 'Innovation'],
     lastSeen: '2 Feb, 2024',
     image: image,
   },
@@ -63,7 +68,7 @@ const courses = [
     id: 2,
     title: 'Innovation through design',
     subtitle: 'Complete all courses from The University of Sydney',
-    tags: ['Design Management', 'Innovation'],
+    tags: ['continue', 'Innovation'],
     lastSeen: '2 Feb, 2024',
      image: image,
   },
@@ -71,7 +76,7 @@ const courses = [
     id: 3,
     title: 'Innovation through design',
     subtitle: 'Complete all courses from The University of Sydney',
-    tags: ['Design Management', 'Innovation'],
+    tags: ['continue', 'Innovation'],
     lastSeen: '2 Feb, 2024',
      image: image,
   },
@@ -79,7 +84,7 @@ const courses = [
     id: 4,
     title: 'Innovation through design',
     subtitle: 'Complete all courses from The University of Sydney',
-    tags: ['Design Management', 'Innovation'],
+    tags: ['continue', 'Innovation'],
     lastSeen: '2 Feb, 2024',
      image: image,
   },
