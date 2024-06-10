@@ -20,6 +20,8 @@ import RegisterPage from './pages/RegisterPage/RegisterPage';
 import Dashboard from './pages/DashboardProfile/Dashboard';
 import DashboardLayout from './layouts/DashboardLayout/DashboardLayout';
 import DashboardCoursesPage from './pages/DashboardCoursesPage/DashboardCoursesPage';
+import CoachApplicationTimeline from './pages/CoachApplicationTimeline/CoachApplicationTimeline';
+import CourseSchedulePage from './pages/CourseSchedulePage/CourseSchedulePage';
 
 const routes = createBrowserRouter([
   {
@@ -32,6 +34,7 @@ const routes = createBrowserRouter([
       { path: "/questions1", element: <QuestionsPage1 /> },
       { path: "questions2", element: <QuestionsPage2 /> },
       { path: "questions3", element: <QuestionsPage3 /> },
+      { path: "ApplicationTimeline", element: <CoachApplicationTimeline /> },
       { path: "coaches", element: <CoachesResultPage /> },
       { path: '/filtered-coaches', element: <FilteredCoachesResultPage /> },
       { path: '/coach/:id', element: <CoachProfilePage /> },
@@ -43,7 +46,8 @@ const routes = createBrowserRouter([
   { path: 'dashboard', element: <DashboardLayout />,
     children:[
       {index:true, path:"/dashboard", element: <Dashboard/>},
-      {path:"courses",element:<DashboardCoursesPage/>}
+      {path:"courses",element:<DashboardCoursesPage/>},
+      {path:"courseSchedule",element:<CourseSchedulePage/>},
   ] },
 ]);
 
