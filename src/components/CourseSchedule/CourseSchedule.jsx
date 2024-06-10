@@ -1,7 +1,18 @@
+import { useState } from "react";
 import { CiBookmark } from "react-icons/ci";
+import { BsArrowDownRightCircle, BsArrowUpRightCircle } from "react-icons/bs";
 import styles from "./CourseSchedule.module.css";
 
 const CourseSchedule = () => {
+  const [expanded, setExpanded] = useState({});
+
+  const toggleExpand = (id) => {
+    setExpanded((prev) => ({
+      ...prev,
+      [id]: !prev[id]
+    }));
+  };
+
   return (
     <div className={styles.courses}>
       <div className="d-flex flex-row justify-content-between align-items-center flex-wrap mt-1 mb-4">
@@ -20,8 +31,13 @@ const CourseSchedule = () => {
             <div className={`${styles.courseCard} card`}>
               <div className={`${styles.cardBody}`}>
                 <div className={styles.titles}>
-                  <h2 className={styles.courseTitle}>{course.title}</h2>
-                  <p className={styles.courseSubtitle}>{course.subtitle}</p>
+                  <div>
+                    <h2 className={styles.courseTitle}>{course.title}</h2>
+                    {/* <p className={styles.courseSubtitle}>{course.subtitle}</p> */}
+                  </div>
+                  <button className={`btn ${styles.expandBtn}`} onClick={() => toggleExpand(course.id)}>
+                    {expanded[course.id] ? <BsArrowUpRightCircle color="#DC3545" size={25} /> : <BsArrowDownRightCircle color="#DC3545"  size={25} />}
+                  </button>
                 </div>
                 <div className={`d-flex justify-content-between align-items-end mt-auto ${styles.tagsAndLastSeen}`}>
                   <div className={styles.courseTags}>
@@ -29,8 +45,14 @@ const CourseSchedule = () => {
                       <button className={`btn btn-outline-danger me-2 ${styles.courseBtn}`} key={tag}>{tag}</button>
                     ))}
                   </div>
-                  <div className={styles.lastSeen}>Last seen: {course.lastSeen}</div>
+                  {/* <div className={styles.lastSeen}>Last seen: {course.lastSeen}</div> */}
                 </div>
+                {expanded[course.id] && (
+                  <div className={styles.expandedContent}>
+                    <p className="text-muted mt-1 pt-2">Additional course information goes here...</p>
+                    <button className={`btn btn-danger ${styles.topBtn}`}>Continue</button>
+                  </div>
+                )}
               </div>
             </div>
           </div>
@@ -45,7 +67,7 @@ const courses = [
     id: 1,
     title: 'Innovation through design',
     subtitle: 'Complete all courses from The University of Sydney',
-    tags: ['Design Management', 'Innovation'],
+    tags: ['Design Management', 'Innovation', 'Innovation'],
     lastSeen: '2 Feb, 2024',
   },
   {

@@ -33,7 +33,10 @@
   }
   
   .titles {
-    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
   }
   
   .courseTitle {
@@ -59,7 +62,10 @@
     align-items: center;
     width: 100%;
   }
-  
+  .expandBtn{
+    margin-left: 24rem;
+    align-self: flex-end;
+  }
   .lastSeen {
     color: gray;
     font-size: 0.875rem;
@@ -70,6 +76,17 @@
   .courseBtn {
     padding: 5px 10px;
     border-radius: 18px;
+  }
+  
+  .expandedContent {
+    margin-top: 2.4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .continueBtn {
+    margin-left: auto;
   }
   
   @media (max-width: 768px) {
@@ -93,6 +110,11 @@
       flex-direction: column;
     }
   
+    .titles {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
     .tagsAndLastSeen {
       display: flex;
       flex-direction: column;
@@ -110,5 +132,18 @@
       flex-direction: column;
       align-items: flex-start;
     }
+  
+    .expandedContent {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .continueBtn {
+      margin-top: 10px;
+    }
+    .expandBtn{
+        margin-left: auto;
+        align-self: flex-end;
+      }
   }
   
