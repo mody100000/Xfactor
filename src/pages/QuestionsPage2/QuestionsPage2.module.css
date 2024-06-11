@@ -1,59 +1,80 @@
 .container {
-    padding: 2rem;
-    background-color: #f8f9fa;
-  }
-  
-  .title {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-    text-align: center;
-  }
-  
-  .description {
-    font-size: 1.2rem;
-    color: #6c757d;
-    margin-bottom: 2rem;
-    text-align: center;
-  }
-  
-  .questionContainer {
-    background-color: #fff;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 2rem;
-  }
-  
-  .question {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-  }
-  
-  .dropdown {
-    width: 100%;
-    padding: 0.75rem;
-    border: 1px solid #ced4da;
-    border-radius: 4px;
-    margin-bottom: 1rem;
-  }
-  
-  .buttons {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .button {
-    padding: 0.75rem 2rem;
-    border: none;
-    border-radius: 4px;
-    background-color: #007bff;
-    color: #fff;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .button:hover {
-    background-color: #0056b3;
-  }
-  
+  background-color: rgba(14, 3, 4, 0.53);
+  color: white;
+  padding: 2rem 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(255, 255, 255, 0.37);
+  text-align: center;
+  margin: auto;
+  backdrop-filter: blur(10px);
+  max-height: 100vh; /* Set max-height to ensure content is contained */
+  overflow-y: auto;  /* Enable vertical scrolling */
+}
+
+.title {
+  font-size: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.description {
+  font-size: 1rem;
+  color: #ddd;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.timelineProgress {
+  background-color: #333;
+  margin-bottom: 20px;
+  width: 50%;
+  margin: 1rem auto 0;
+  box-shadow: 2px 1px 10px rgba(185, 138, 138, 0.884); /* Adjust the shadow values as needed */
+}
+
+.questionContainer {
+  margin-bottom: 2rem;
+}
+
+.question {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.dropdown {
+ max-width: 55%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: #333;
+  color: white;
+}
+.dropdown:focus{
+  border: 1px solid red;
+}
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.btn-primary {
+  background-color: #f01c1c;
+  border-color: #f01c1c;
+}
+
+.btn-primary:hover {
+  background-color: #d01717;
+  border-color: #d01717;
+}
+.nextBtn{
+  width: 12rem;
+}
+  .prevBtn{
+  background-color: rgba(255, 255, 255, 0);
+  width: 12rem;
+}

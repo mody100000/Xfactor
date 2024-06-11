@@ -1,22 +1,20 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container, Row, Col, ProgressBar, Button } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styles from './CoachApplicationTimeline.module.css';
-import ApplyToCoachForm from './../../components/ApplyToCoach/ApplyToCoachForm';
-import TrainingOptions from './../TrainingOptions/TrainingOptions';
 import QuestionsPage1 from './../QuestionsPage1/QuestionsPage1';
 import QuestionsPage2 from './../QuestionsPage2/QuestionsPage2';
 import QuestionsPage3 from './../QuestionsPage3/QuestionsPage3';
+import ImageBackground from '../../components/common/ImageBackground/ImageBackground';
 
 const CoachApplicationTimeline = () => {
   const [currentStep, setCurrentStep] = useState(0);
 
   const steps = [
-    { component: <ApplyToCoachForm onNext={() => handleNextStep()} /> },
-    { component: <TrainingOptions onNext={() => handleNextStep()} /> },
-    { component: <QuestionsPage1 onNext={() => handleNextStep()} /> },
-    { component: <QuestionsPage2 onNext={() => handleNextStep()} /> },
-    { component: <QuestionsPage3 onNext={() => handleNextStep()} /> }
+    { component: QuestionsPage1 },
+    { component: QuestionsPage2 },
+    { component: QuestionsPage3 }
   ];
 
   const handleNextStep = () => {
@@ -31,29 +29,43 @@ const CoachApplicationTimeline = () => {
     }
   };
 
+  const StepComponent = steps[currentStep].component;
+
   return (
-    <Container className="d-flex justify-content-center align-items-center min-vh-100">
-      <div className={styles.contentWrapper}>
-        <Row>
-          {/* <Col>
-            <ProgressBar now={(currentStep / (steps.length - 1)) * 100} className={styles.timelineProgress} />
-          </Col> */}
-        </Row>
-        <Row className="mt-4">
-          <Col>
-            <div className={styles.timelineContent}>
-              {steps[currentStep].component}
-            </div>
-          </Col>
-        </Row>
-        <Row className="mt-4">
-          <Col className="text-center">
-            <Button onClick={handlePrevStep} disabled={currentStep === 0} className="btn btn-secondary m-2">Previous</Button>
-            <Button onClick={handleNextStep} disabled={currentStep === steps.length - 1} className="btn btn-primary m-2">Next</Button>
-          </Col>
-        </Row>
-      </div>
-    </Container>
+    <>
+      <ImageBackground>
+        <Container className="d-flex justify-content-center align-items-center">
+          <div className={styles.contentWrapper}>
+            <Row>
+              <Col>
+                <TransitionGroup component={null}>
+                  <CSSTransition
+                    key={currentStep}
+                    timeout={300}
+                    classNames={{
+                      enter: styles.pageEnter,
+                      enterActive: styles.pageEnterActive,
+                      exit: styles.pageExit,
+                      exitActive: styles.pageExitActive,
+                    }}
+                    unmountOnExit
+                  >
+                    <div className={styles.timelineContent}>
+                      <StepComponent
+                        currentStep={currentStep}
+                        handleNextStep={handleNextStep}
+                        handlePrevStep={handlePrevStep}
+                        totalSteps={steps.length}
+                      />
+                    </div>
+                  </CSSTransition>
+                </TransitionGroup>
+              </Col>
+            </Row>
+          </div>
+        </Container>
+      </ImageBackground>
+    </>
   );
 };
 

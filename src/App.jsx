@@ -30,8 +30,6 @@ const routes = createBrowserRouter([
     element: <MainLayout />,
     children: [
       { index: true, path: "", element: <Landing /> },
-      { path: "/questions1", element: <QuestionsPage1 /> },
-      { path: "questions2", element: <QuestionsPage2 /> },
       { path: "questions3", element: <QuestionsPage3 /> },
       { path: "coaches", element: <CoachesResultPage /> },
       { path: '/filtered-coaches', element: <FilteredCoachesResultPage /> },
@@ -45,6 +43,7 @@ const routes = createBrowserRouter([
     { path: "applyToCoach", element: <ApplyToCoachPage /> },
     { path: "ApplicationTimeline", element: <CoachApplicationTimeline /> },
     { path: "training-options", element: <TrainingOptions /> },
+
   ]},
   { path: 'dashboard', element: <DashboardLayout />,
     children:[

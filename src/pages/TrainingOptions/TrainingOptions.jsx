@@ -12,7 +12,7 @@ const TrainingOptions = () => {
   const navigate = useNavigate();
 
   const handleCardClick = () => {
-    navigate('/questions1');
+    navigate('/ApplicationTimeline');
   };
   const handleCardClickForOnline = () => {
     navigate('/filtered-coaches');
