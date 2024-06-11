@@ -1,4 +1,56 @@
-.main-content {
+.dashboardCoursesPage {
+  display: flex;
+  flex-direction: column;
+}
+
+.mainContent {
+  padding: 20px;
+}
+
+.rightSidebar {
+  background-color: #f8f9fa;
+  z-index: 1000;
+  transition: transform 0.3s ease;
+}
+
+.toggleBtn {
+  border: none;
+  text-align: end;
+  margin-top: 1rem;
+  background-color: #F8F9FA;
+}
+
+@media (min-width: 768px) {
+  .dashboardCoursesPage {
+    flex-direction: row;
+  }
+
+  .mainContent {
     padding: 20px;
   }
-  
+
+  .rightSidebar {
+    transform: translateX(0);
+    position: static;
+  }
+
+  .toggleBtn {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .rightSidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 250px;
+    height: 100%;
+    transform: translateX(100%);
+    overflow-y: auto; /* Add this line */
+  }
+
+  .rightSidebar.open {
+    transform: translateX(0);
+  }
+}

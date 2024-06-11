@@ -1,17 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from './CoursesSidebar.module.css';
 import NewCalendar from './NewCalendar/NewCalendar';
+import { FaRegTimesCircle } from "react-icons/fa";
 
-const CoursesSidebar = () => {
-  const [currentDate, setCurrentDate] = useState(new Date());
-
+const CoursesSidebar = ({ isOpen, toggleSidebar }) => {
   const showDetailsHandle = (dayStr) => {
     console.log("Selected Date:", dayStr);
-    // Handle displaying details for the selected date
   };
 
   return (
-    <div className={styles.rightSidebar}>
+    <div className={`${styles.sidebarContent} ${isOpen ? styles.open : ''}`}>
+      <button className={styles.closeBtn} onClick={toggleSidebar}><FaRegTimesCircle /></button>
       <div className={`${styles.card} mb-3`}>
         <div className={styles.cardBody}>
           <h5 className={styles.cardTitle}>Let's set a weekly goal</h5>
@@ -26,18 +25,18 @@ const CoursesSidebar = () => {
         </div>
       </div>
       <div className={styles.tasksContainer}>
-        <h5>Tasks of the week</h5>
+        <h4 className='fw-bold'>Tasks of the week</h4>
         <ul>
-          <li>
+          <li className='d-flex align-items-center'>
             <span className={styles.taskDate}>07 May</span> - Course Introduction <span className={styles.taskTime}>12:00 PM</span>
           </li>
-          <li>
+                    <li className='d-flex align-items-center'>
             <span className={styles.taskDate}>06 May</span> - Career Seminar <span className={styles.taskTime}>5:00 PM</span>
           </li>
-          <li>
+                    <li className='d-flex align-items-center'>
             <span className={styles.taskDate}>05 May</span> - Study Skills Workshop <span className={styles.taskTime}>1:00 PM</span>
           </li>
-          <li>
+                    <li className='d-flex align-items-center'>
             <span className={styles.taskDate}>04 May</span> - Industry Insights Panel <span className={styles.taskTime}>2:00 PM</span>
           </li>
         </ul>

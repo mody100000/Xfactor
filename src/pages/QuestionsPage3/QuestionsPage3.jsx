@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './QuestionsPage3.module.css';
+import { ProgressBar, Button } from 'react-bootstrap';
 
 const positions = [
   'Not Sure', 'Punter', 'Kicker', 'Running Back', 'Tight End',
@@ -8,28 +9,25 @@ const positions = [
   'Defensive Line', 'Defensive Back'
 ];
 
-const QuestionsPage3 = () => {
+const QuestionsPage3 = ({ currentStep, handleNextStep, handlePrevStep, totalSteps }) => {
   const [selectedPosition, setSelectedPosition] = useState('');
   const navigate = useNavigate();
-
-  const handlePrevious = () => {
-    navigate(-1);
-  };
 
   const handleViewCoaches = () => {
     navigate('/coaches'); // assuming you have a page to display coaches
   };
-
+  const handlePrevious = () => {
+    handlePrevStep();
+  };
   const handleOptionClick = (position) => {
     setSelectedPosition(position);
   };
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>Search for All Fitness Training Options</h1>
-      <p className={styles.description}>
-        Provide some basic info and we'll recommend great coaches for you
-      </p>
+      <ProgressBar variant='danger' now={(currentStep / (totalSteps - 1)) * 100} className={styles.timelineProgress} />
+      <h1 className={styles.title}>Search For All Fitness Training Options</h1>
+      <p className={styles.description}>Provide some basic info and we'll recommend great coaches for you</p>
       <div className={styles.questionContainer}>
         <div className={styles.question}>What position?</div>
         <div className={styles.options}>
@@ -45,10 +43,8 @@ const QuestionsPage3 = () => {
         </div>
       </div>
       <div className={styles.buttons}>
-        <button className={styles.button} onClick={handlePrevious}>Previous</button>
-        <button className={styles.button} onClick={handleViewCoaches} disabled={!selectedPosition}>
-          View Coaches
-        </button>
+        <Button onClick={handlePrevious} disabled={currentStep === 0} className={`btn btn-outline-light m-2 ${styles.prevBtn}`}>Previous</Button>
+        <Button onClick={handleViewCoaches} disabled={!selectedPosition} className={`btn btn-danger m-2 ${styles.nextBtn}`}>View Coaches</Button>
       </div>
     </div>
   );

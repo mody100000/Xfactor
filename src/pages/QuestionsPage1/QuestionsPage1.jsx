@@ -1,19 +1,10 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import styles from './QuestionsPage1.module.css';
+import { ProgressBar, Button } from 'react-bootstrap';
 
-const QuestionsPage1 = () => {
+const QuestionsPage1 = ({ currentStep, handleNextStep, handlePrevStep, totalSteps }) => {
   const [sessionFor, setSessionFor] = useState('');
   const [sessionsNeeded, setSessionsNeeded] = useState('');
-  const navigate = useNavigate();
-
-  const handleNext = () => {
-    navigate('/questions2');
-  };
-
-  const handlePrevious = () => {
-    navigate(-1);
-  };
 
   const handleOptionClick = (value) => {
     setSessionFor(value);
@@ -21,41 +12,42 @@ const QuestionsPage1 = () => {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>Search for All Fitness Training Options</h1>
-      <p className={styles.description}>Provide some basic info and we'll recommend great coaches for you</p>
+      <ProgressBar now={(currentStep / (totalSteps - 1)) * 100} className={styles.timelineProgress} />
+      <h1 className={styles.title}>Search For All Fitness Training Options</h1>
+      <p className={styles.description}>Lorem ipsum dolor sit amet consectetur. Massa enim arcu quis libero donec ultrices</p>
       <div className={styles.questionContainer}>
-        <div className={styles.question}>Who are the sessions for?</div>
+        <div className={styles.question}>Who Are The Sessions For?</div>
         <div className={styles.options}>
           <div
             className={`${styles.option} ${sessionFor === 'Myself' ? styles.selected : ''}`}
             onClick={() => handleOptionClick('Myself')}
           >
-            Myself
+            My Self
           </div>
           <div
             className={`${styles.option} ${sessionFor === 'My child' ? styles.selected : ''}`}
             onClick={() => handleOptionClick('My child')}
           >
-            My child
+            My Child
           </div>
           <div
             className={`${styles.option} ${sessionFor === 'Someone else' ? styles.selected : ''}`}
             onClick={() => handleOptionClick('Someone else')}
           >
-            Someone else
+            Else
           </div>
         </div>
       </div>
       <div className={styles.questionContainer}>
         <div className={styles.question}>
-          How many sessions do you expect to need to meet your goals?
+          How Many Sessions do You Expect To Need To Meet Your Goals?
         </div>
         <select
           className={styles.dropdown}
           value={sessionsNeeded}
           onChange={(e) => setSessionsNeeded(e.target.value)}
         >
-          <option value="">Select...</option>
+          <option value=""  style={{ display: 'none' }}>Select...</option>
           <option value="1">1</option>
           <option value="2-4">2-4</option>
           <option value="5-10">5-10</option>
@@ -63,8 +55,8 @@ const QuestionsPage1 = () => {
         </select>
       </div>
       <div className={styles.buttons}>
-        <button className={styles.button} onClick={handlePrevious}>Previous</button>
-        <button className={styles.button} onClick={handleNext} disabled={!sessionFor || !sessionsNeeded}>Next</button>
+        <Button onClick={handlePrevStep} disabled={currentStep === 0} className={`btn btn-outline-light m-2  ${styles.nextBtn}`}>Previous</Button>
+        <Button onClick={handleNextStep} disabled={!sessionFor||!sessionsNeeded} className={`btn btn-danger m-2 ${styles.nextBtn}`}>Next</Button>
       </div>
     </div>
   );

@@ -1,0 +1,40 @@
+/* CoachApplicationTimeline.module.css */
+.contentWrapper {
+  width: 100%;
+  max-width: 900px;
+   /* Adjust based on your design */
+}
+.timelineProgress {
+  margin-bottom: 20px;
+}
+.timelineContent {
+  padding: 20px;
+}
+.pageEnter {
+  opacity: 0;
+  transform: translateX(100%);
+  z-index: 1;
+}
+
+.pageEnterActive {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
+}
+
+.pageExit {
+  opacity: 1;
+  transform: translateX(0);
+  z-index: 0;
+}
+
+.pageExitActive {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
+}
+@media (max-width: 768px) {
+.contentWrapper {
+  max-width: 400px;
+}
+}
