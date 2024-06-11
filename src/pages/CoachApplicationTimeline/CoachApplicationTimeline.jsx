@@ -32,25 +32,27 @@ const CoachApplicationTimeline = () => {
   };
 
   return (
-    <Container fluid className="p-0">
-      <Row>
-        <Col>
-          <ProgressBar now={(currentStep / (steps.length - 1)) * 100} className={styles.timelineProgress} />
-        </Col>
-      </Row>
-      <Row>
-        <Col>
-          <div className={styles.timelineContent}>
-            {steps[currentStep].component}
-          </div>
-        </Col>
-      </Row>
-      <Row>
-        <Col className="text-center">
-          <Button onClick={handlePrevStep} disabled={currentStep === 0} className="btn btn-secondary m-2">Previous</Button>
-          <Button onClick={handleNextStep} disabled={currentStep === steps.length - 1} className="btn btn-primary m-2">Next</Button>
-        </Col>
-      </Row>
+    <Container className="d-flex justify-content-center align-items-center min-vh-100">
+      <div className={styles.contentWrapper}>
+        <Row>
+          {/* <Col>
+            <ProgressBar now={(currentStep / (steps.length - 1)) * 100} className={styles.timelineProgress} />
+          </Col> */}
+        </Row>
+        <Row className="mt-4">
+          <Col>
+            <div className={styles.timelineContent}>
+              {steps[currentStep].component}
+            </div>
+          </Col>
+        </Row>
+        <Row className="mt-4">
+          <Col className="text-center">
+            <Button onClick={handlePrevStep} disabled={currentStep === 0} className="btn btn-secondary m-2">Previous</Button>
+            <Button onClick={handleNextStep} disabled={currentStep === steps.length - 1} className="btn btn-primary m-2">Next</Button>
+          </Col>
+        </Row>
+      </div>
     </Container>
   );
 };

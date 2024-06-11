@@ -1,14 +1,14 @@
 import ApplyToCoachForm from '../../components/ApplyToCoach/ApplyToCoachForm';
-import VideoBackground from '../../components/common/VideoBackground/VideoBackground';
+import ImageBackground from '../../components/common/ImageBackground/ImageBackground';
 import styles from './ApplyToCoachPage.module.css';
 
 const ApplyToCoachPage = () => {
   return (
-    <VideoBackground>
+    <ImageBackground>
       <div className={styles.container}>
         <ApplyToCoachForm />
       </div>
-    </VideoBackground>
+    </ImageBackground>
   );
 };
 

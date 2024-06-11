@@ -22,6 +22,7 @@ import DashboardLayout from './layouts/DashboardLayout/DashboardLayout';
 import DashboardCoursesPage from './pages/DashboardCoursesPage/DashboardCoursesPage';
 import CoachApplicationTimeline from './pages/CoachApplicationTimeline/CoachApplicationTimeline';
 import CourseSchedulePage from './pages/CourseSchedulePage/CourseSchedulePage';
+import CoachApplicationLayout from './layouts/CoachApplicationLayout/CoachApplicationLayout';
 
 const routes = createBrowserRouter([
   {
@@ -29,12 +30,9 @@ const routes = createBrowserRouter([
     element: <MainLayout />,
     children: [
       { index: true, path: "", element: <Landing /> },
-      { path: "applyToCoach", element: <ApplyToCoachPage /> },
-      { path: "training-options", element: <TrainingOptions /> },
       { path: "/questions1", element: <QuestionsPage1 /> },
       { path: "questions2", element: <QuestionsPage2 /> },
       { path: "questions3", element: <QuestionsPage3 /> },
-      { path: "ApplicationTimeline", element: <CoachApplicationTimeline /> },
       { path: "coaches", element: <CoachesResultPage /> },
       { path: '/filtered-coaches', element: <FilteredCoachesResultPage /> },
       { path: '/coach/:id', element: <CoachProfilePage /> },
@@ -43,6 +41,11 @@ const routes = createBrowserRouter([
       { path: '/register', element: <RegisterPage /> },
     ],
   },
+  {path:"",element:<CoachApplicationLayout/>, children:[
+    { path: "applyToCoach", element: <ApplyToCoachPage /> },
+    { path: "ApplicationTimeline", element: <CoachApplicationTimeline /> },
+    { path: "training-options", element: <TrainingOptions /> },
+  ]},
   { path: 'dashboard', element: <DashboardLayout />,
     children:[
       {index:true, path:"/dashboard", element: <Dashboard/>},
