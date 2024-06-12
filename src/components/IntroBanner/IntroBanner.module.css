@@ -6,6 +6,7 @@
   color: white;
   height: 100vh;
   clip-path: polygon(0 0, 100% 0, 100% 93%, 0 100%);
+
 }
 
 .textContainer {
@@ -38,18 +39,20 @@
   text-align: center;
   text-transform: uppercase;
   white-space: nowrap;
-  background-color: #ff3400;
+  background-color: #BF1E2E;
+  color: white;
   transition: transform 0.3s ease-in-out;
 }
 
 .getStartedBtn:hover {
   transform: scale(1.05);
   color: white;
-  background-color: #f84417e7;
+  background-color: #bf1e2ec8;
 }
 
 .playIcon {
-  margin-right: 0.7rem;
+  margin-right: 0.9rem;
+  color: #BF1E2E;
 }
 
 .playVedio {
@@ -73,13 +76,21 @@
 .featureNumber {
   font-size: 2rem;
   font-weight: 900;
-  color: rgba(255, 255, 255, 0.712);
+}
+/* color: rgba(255, 255, 255, 0.712); */
+.featureNumber+p {
+color: rgba(255, 255, 255, 0.712);
+
+  
 }
 
 .imageContainer img {
-  max-width: 100%;
-  height: auto;
+  object-fit: cover;
+  width: 100%;
   border-radius: 1rem;
+}
+.imageContainer img {
+  height: 100%;
 }
 
 /* Media query for smaller screens */
@@ -94,6 +105,7 @@
     clip-path: none;
     padding: 3rem; /* Adjust padding for smaller screens */
     clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%);
+
   }
 
   .textContainer {

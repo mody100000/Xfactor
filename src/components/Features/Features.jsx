@@ -3,7 +3,6 @@ import styles from "./Features.module.css";
 import workout from "../../assets/workout.webp";
 import { IoStatsChartOutline } from "react-icons/io5";
 import { IoMdHeart } from "react-icons/io";
-import FeatureCards from "../FeatureCards/FeatureCards";
 
 const Features = () => {
   return (
@@ -16,7 +15,7 @@ const Features = () => {
               <IoStatsChartOutline size={39} />
             </div>
             <div className="px-2 py-1">
-              <p className="m-0 text-white-50">Calories Burned</p>
+              <p className="m-0">Calories Burned</p>
               <p className="m-0 fs-5 fw-bolder">116 bpm</p>
             </div>
           </div>
@@ -25,7 +24,7 @@ const Features = () => {
               <IoMdHeart size={39} />
             </div>
             <div className="px-2 py-1">
-              <p className="m-0 text-white-50">Heart Rate</p>
+              <p className="m-0">Heart Rate</p>
               <p className="m-0 fs-5 fw-bolder">116 bpm</p>
             </div>
           </div>
@@ -38,7 +37,7 @@ const Features = () => {
             goals
           </p>
           <div className={styles.media}>
-            <button className={styles.getStartedBtn}>Learn More</button>
+            <button className={`tn btn-outline-danger porder porder-2 ${styles.getStartedBtn}`}>Learn More</button>
           </div>
         </div>
       </div>

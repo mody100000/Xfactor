@@ -2,7 +2,6 @@
 .contentWrapper {
   width: 100%;
   max-width: 900px;
-   /* Adjust based on your design */
 }
 .timelineProgress {
   margin-bottom: 20px;
@@ -18,7 +17,7 @@
 
 .pageEnterActive {
   opacity: 1;
-  transform: translateX(0);
+  transform: translateX(100%);
   transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
 }
 

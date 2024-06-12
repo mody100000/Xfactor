@@ -14,7 +14,7 @@
 
 .sectionTitleWhite h1 {
   font-size: 44px;
-  font-weight: 700;
+  font-weight: 900;
   margin-top: 0;
   text-transform: capitalize;
   margin-bottom: 15px;
@@ -30,11 +30,28 @@
 .planColumn {
   margin-top: 30px;
 }
-
+.icon {
+  width: 29px; /* Adjust size as needed */
+  height: 29px; /* Adjust size as needed */
+  object-fit: cover;
+}
+.iconContainer {
+  display: inline;
+  background-color: #9692933e;
+  margin-bottom: 13px;
+  margin-right: 10px;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 10px;
+}
 .pricingTable {
   background: #1c1c1c;
   color: #fff;
-  padding: 50px 15px;
+  padding: 50px 15px 2px 15px;
   box-shadow: 0px 19px 43px 0px rgba(17, 17, 17, 0.05);
   text-align: center;
   transition: transform 0.5s ease-in-out;
@@ -66,24 +83,19 @@
   font-size: 3rem;
   line-height: 1;
   position: relative;
-  color: #e4f1ff;
+  color: white;
   margin: 40px 0;
 }
-
-.priceValue .valueBg {
-  display: inline-block;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  color: #1386fc;
-  font-weight: 600;
-  font-size: 1.5rem;
+.month {
+  font-size: 1.1rem;
 }
 
 .pricingContent {
+  background-color: #9692932c;
   list-style: none;
-  padding: 0;
+  text-align: start;
+  border-radius: 10px;
+  padding: 20px 36px;
   margin: 0 0 20px 0;
 }
 
@@ -95,14 +107,19 @@
   margin-right: 10px;
 }
 
+.btnContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
 .btnPriceBg {
-  background: #7564e5;
-  border: 2px solid #7564e5;
-  border-radius: 50px;
+  background: #BF1E2E;
+  border-radius: 15px;
   color: #fff;
   display: inline-block;
   font-size: 16px;
-  padding: 12px 40px;
+  padding: 10px 30px;
   text-transform: capitalize;
   transition: all 0.3s ease 0s;
 }
@@ -110,8 +127,9 @@
 .pricingTable:hover {
   color: #fff;
 }
+
 .btnPriceBg:hover {
-  background: #494d81;
+  background: #931723;
 }
 
 .closedCard {
@@ -143,5 +161,7 @@
   right: 0;
   background-color: #000000ba;
 }
+
 @media (max-width: 768px) {
+  /* Add any responsive styles here */
 }

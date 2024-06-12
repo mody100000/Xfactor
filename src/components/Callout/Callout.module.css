@@ -1,55 +1,79 @@
 .calloutContainer {
   display: flex;
+  flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  padding: 2rem;
-  background-color: #dadada;
+  padding: 2.4rem 1rem;
+  background-color: rgba(14, 3, 4, 0.53);
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin: 2rem auto; /* Center the container */
-  max-width: 80%; /* Limit the width */
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+  margin: 2rem auto;
+  max-width: 80%;
   flex-wrap: wrap; /* Allow wrapping for smaller screens */
-  transform: translateY(9rem);
+  transform: translateY(8rem);
+  box-shadow: 0 4px 8px rgba(123, 122, 122, 0.9), 0 1px 2px rgba(255, 255, 255, 0.53);
+  backdrop-filter: blur(0.6rem);
 }
 
 .calloutItem {
   display: flex;
-  flex-direction: column;
   align-items: center;
   text-align: center;
-  margin: 1rem; /* Add margin for spacing */
-  flex: 1 1 200px; /* Allow items to grow and shrink */
+  margin: 1rem;
+  flex: 0 1 200px;
+  position: relative; /* Make it the positioning context for the pseudo-element */
+}
+.icon {
+  width: 50px; /* Adjust size as needed */
+  height: 50px; /* Adjust size as needed */
+  object-fit: contain;
+}
+.calloutItem:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: -1rem; /* Adjust spacing as needed */
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background-color: gray;
 }
 
 .icon {
   color: #7564e5;
   margin-bottom: 0.5rem;
+  margin-right: 0.5rem;
 }
 
 .number {
   font-size: 2rem;
   font-weight: bold;
-  color: #333;
-  margin-bottom: 0.5rem;
+  color: #e2e2e2;
+  /* margin-bottom: 0.5rem; */
 }
 
 .text {
   font-size: 1rem;
-  color: #555;
+  color: #bebebe;
 }
 
 /* Responsive styles */
 @media (max-width: 768px) {
   .calloutContainer {
-    flex-direction: column; /* Stack items vertically on smaller screens */
+    /* flex-direction: column;  */
+    align-items: center;
+    justify-content: center;
     max-width: 100%;
-    padding: 1rem;
+    padding: 2rem;
     transform: none;
   }
-
+  .calloutItem:not(:last-child)::after {
+    display: none;
+  }
   .calloutItem {
     width: 100%;
-    margin: 0.5rem 0; /* Adjust margin for vertical stacking */
+    margin: 1.5rem 0; /* Adjust margin for vertical stacking */
+    align-items: center;
+    justify-content: center;
   }
 
   .number {

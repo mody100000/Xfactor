@@ -1,34 +1,46 @@
 import React from "react";
 import styles from "./Plans.module.css";
-import { FaCheck } from "react-icons/fa";
+import { FaRegCheckCircle } from "react-icons/fa";
+import standered from "../../assets/standered.png";
+import gold from "../../assets/goldPlan.png";
+import premium from "../../assets/premium.png";
 
 const plans = [
   {
     title: "Standard",
-    fee: "50",
+    icon: <img src={standered} alt="Total Clients" className={styles.icon} />,
+    fee: "1500",
     features: [
       "6 days per week",
       "Personal Trainer",
+      "Access to all classes",
+      "Free Events",
       "Access to all classes",
       "Free Events",
     ],
   },
   {
     title: "Gold",
+    icon: <img src={gold} alt="Total Clients" className={styles.icon} />,
     fee: "70",
     features: [
       "7 days per week",
       "Personal Trainer",
       "Access to all classes",
       "Free Nutrition Plan",
+      "Access to all classes",
+      "Free Nutrition Plan",
     ],
   },
   {
     title: "Premium",
+    icon: <img src={premium} alt="Total Clients" className={styles.icon} />,
     fee: "90",
     features: [
       "Unlimited access",
       "Premium Trainer Support",
+      "Access to VIP classes",
+      "Custom Nutrition Plan",
       "Access to VIP classes",
       "Custom Nutrition Plan",
     ],
@@ -41,7 +53,7 @@ const Plans = () => {
       <div className="container">
         <div className="row">
           <div className={styles.sectionTitle}>
-            <h1 className={styles.sectionTitleWhite}>OUR PACKAGES</h1>
+            <h1 className={`fw-bolder ${styles.sectionTitleWhite}`}>OUR PACKAGES</h1>
             <p className={styles.sectionTitleWhite}>
               Choose the best plan that suits your needs and start your fitness
               journey with us.
@@ -55,24 +67,27 @@ const Plans = () => {
             >
               <div className={`${styles.pricingTable} ${styles.pricingTable2}`}>
                 <div className={styles.pricingTableHeader}>
-                  <h3 className={styles.title}>{plan.title}</h3>
-                  <h5 className={styles.priceMonth}>Per Month</h5>
+                  <div className="d-flex align-items-center justify-content-center ">
+                    <span className={styles.iconContainer}>{plan.icon}</span>
+                    <h3 className={styles.title}>{plan.title}</h3>
+                  </div>
                   <h1 className={styles.priceValue}>
-                    {plan.fee}{" "}
-                    <span className={styles.valueBg}>EGP {plan.fee}</span>
+                    ${plan.fee} <span className={styles.month}>/Month</span>
                   </h1>
                 </div>
                 <ul className={styles.pricingContent}>
                   {plan.features.map((feature, index) => (
                     <li key={index}>
                       <p>
-                        <FaCheck color="#2ED6A8" className={styles.checkIcon} />
+                        <FaRegCheckCircle size={25} className={styles.checkIcon} />
                         {feature}
                       </p>
                     </li>
                   ))}
+                  <div className={styles.btnContainer}>
+                    <p className={`btn btn-lg ${styles.btnPriceBg}`}>Choose Plan</p>
+                  </div>
                 </ul>
-                <p className={`btn btn-lg ${styles.btnPriceBg}`}>Choose Plan</p>
               </div>
             </div>
           ))}
