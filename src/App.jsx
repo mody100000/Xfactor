@@ -8,8 +8,6 @@ import MainLayout from "./layouts/MainLayout/MainLayout";
 import Landing from "./pages/Landing/Landing";
 import ApplyToCoachPage from "./pages/ApplyToCoachPage/ApplyToCoachPage";
 import TrainingOptions from "./pages/TrainingOptions/TrainingOptions";
-import QuestionsPage1 from './pages/QuestionsPage1/QuestionsPage1';
-import QuestionsPage2 from './pages/QuestionsPage2/QuestionsPage2';
 import QuestionsPage3 from './pages/QuestionsPage3/QuestionsPage3';
 import CoachesResultPage from './pages/CoachesResultPage/CoachesResultPage';
 import FilteredCoachesResultPage from './pages/FilteredCoachesResultPage/FilteredCoachesResultPage';
@@ -23,6 +21,7 @@ import DashboardCoursesPage from './pages/DashboardCoursesPage/DashboardCoursesP
 import CoachApplicationTimeline from './pages/CoachApplicationTimeline/CoachApplicationTimeline';
 import CourseSchedulePage from './pages/CourseSchedulePage/CourseSchedulePage';
 import CoachApplicationLayout from './layouts/CoachApplicationLayout/CoachApplicationLayout';
+import AboutUsPage from './pages/AboutUsPage/AboutUsPage';
 
 const routes = createBrowserRouter([
   {
@@ -32,6 +31,7 @@ const routes = createBrowserRouter([
       { index: true, path: "", element: <Landing /> },
       { path: "questions3", element: <QuestionsPage3 /> },
       { path: "coaches", element: <CoachesResultPage /> },
+      { path: "AboutUs", element: <AboutUsPage /> },
       { path: '/filtered-coaches', element: <FilteredCoachesResultPage /> },
       { path: '/coach/:id', element: <CoachProfilePage /> },
       { path: '/coach/:id', element: <CoachProfile /> },

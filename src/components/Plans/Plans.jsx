@@ -53,7 +53,7 @@ const Plans = () => {
       <div className="container">
         <div className="row">
           <div className={styles.sectionTitle}>
-            <h1 className={`fw-bolder ${styles.sectionTitleWhite}`}>OUR PACKAGES</h1>
+            <h1 className={`fw-bolder mb-3 ${styles.sectionTitleWhite}`}>OUR PACKAGES</h1>
             <p className={styles.sectionTitleWhite}>
               Choose the best plan that suits your needs and start your fitness
               journey with us.
@@ -63,7 +63,7 @@ const Plans = () => {
           {plans.map((plan, i) => (
             <div
               key={i}
-              className={`col-xs-12 col-sm-4 col-lg-4 ${styles.planColumn}`}
+              className={`col-12 col-sm-6 col-md-4 ${styles.planColumn}`}
             >
               <div className={`${styles.pricingTable} ${styles.pricingTable2}`}>
                 <div className={styles.pricingTableHeader}>

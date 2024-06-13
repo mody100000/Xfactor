@@ -1,0 +1,22 @@
+.intro{
+  position: relative;
+  background-image: url('../../assets/about2.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 400px; /* Adjust the height as needed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay for better readability */
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  color: rgb(255, 255, 255);
+  font-size: 3em; /* Adjust font size as needed */
+}

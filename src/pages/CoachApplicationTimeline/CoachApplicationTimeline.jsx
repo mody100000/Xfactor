@@ -34,6 +34,9 @@ const CoachApplicationTimeline = () => {
 
   const StepComponent = steps[currentStep].component;
 
+  const slideFromRight = direction == 1;
+  const exitAnimation = slideFromRight ? "-100%" : "100%"
+  const finalAnimate = 0
   return (
     <>
       <ImageBackground>
@@ -44,11 +47,11 @@ const CoachApplicationTimeline = () => {
                 <AnimatePresence initial={false} custom={direction}>
                   <motion.div
                     key={currentStep}
-                    initial={{ x: direction > 0 ? 1000 : -1000, opacity: 0 }}
-                    animate={{ x: 0, opacity: 1 }}
-                    exit={{ x: direction < 0 ? 1000 : -1000, opacity: 0 }}
+                    initial={{ x: exitAnimation, opacity: 0 }}
+                    animate={{ x: finalAnimate, opacity: 1 }}
+                    exit={{ x: exitAnimation, opacity: 0, position: "absolute" }}
                     transition={{
-                      x: { type: 'spring', stiffness: 300, damping: 30 },
+                      x: { type: 'spring', duration: 1, restDelta: 1 },
                       opacity: { duration: 0.5 }
                     }}
                     className={styles.timelineContent}
