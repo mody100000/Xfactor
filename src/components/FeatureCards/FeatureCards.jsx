@@ -9,26 +9,27 @@ const FeatureCards = () => {
     <div className={styles.container}>
       <h1 className={styles.title}>WHAT WE DO</h1>
       <div className={styles.imagesContainer}>
-        <div>
+        <div className={styles.imageContainer}>
           <div className={styles.imageWrapper}>
             <img src={image1} alt="Description 3" className={styles.image} />
           </div>
-          <h3 className="my-2 fw-bolder">4 Weeks Challenge</h3>
-          <p className="text-muted fs-5 fw-bold cursor-pointer">Learn More</p>
+          <h3 className="my-3 fw-bolder">4 Weeks Challenge</h3>
+          <button className="btn btn-outline-danger porder btn-lg">Learn More</button>
         </div>
-        <div>
+               <div className={styles.imageContainer}>
           <div className={styles.imageWrapper}>
             <img src={carate} alt="Description 3" className={styles.image} />
           </div>
-          <h3 className="my-2 fw-bolder">Personal Training</h3>
-          <p className="text-muted fs-5 fw-bold cursor-pointer">Learn More</p>
+          <h3 className="my-3 fw-bolder">Personal Training</h3>
+          <button className="btn btn-outline-danger porder btn-lg">Learn More</button>
+
         </div>
-        <div>
+               <div className={styles.imageContainer}>
           <div className={styles.imageWrapper}>
             <img src={fitness} alt="Description 3" className={styles.image} />
           </div>
-          <h3 className="my-2 fw-bolder">Group Classes</h3>
-          <p className="text-muted fs-5 fw-bold cursor-pointer">Learn More</p>
+          <h3 className="my-3 fw-bolder">Group Classes</h3>
+          <button className="btn btn-outline-danger porder btn-lg">Learn More</button>
         </div>
       </div>
     </div>

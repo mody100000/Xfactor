@@ -1,23 +1,69 @@
 .workoutCarouselContainer {
-  padding: 4rem 7rem 0 7rem;
+  padding: 1rem 3rem;
+  text-align: center;
+  margin: 4rem 0;
+}
+
+.title {
+  margin-bottom: 2rem;
+  font-weight: bold;
+  font-size: 2.5rem;
+}
+
+.videoWrapper {
+  position: relative;
+  transition: opacity 0.5s, filter 0.5s;
+}
+
+.videoWrapper.inactive {
+  opacity: 0.5;
+  filter: blur(2px);
 }
 
 .videoContainer {
   position: relative;
-  padding-bottom: 35.25%; /* 16:9 aspect ratio */
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
   height: 0;
   overflow: hidden;
+  height: 25rem;
   max-width: 100%;
   background-color: black;
-  border-radius: 80px;
-  object-fit: contain;
+  border-radius: 20px;
 }
 
-.videoContainer iframe {
+.videoFrame {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  border-radius: 80px;
+  border-radius: 20px;
+}
+
+.customArrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  color: rgb(201, 22, 22);
+  cursor: pointer;
+  background: none; /* Remove background */
+  border: none; /* Remove border */
+}
+
+.customArrow:hover {
+  color: rgb(201, 22, 22);
+  background: none; /* Remove hover background */
+}
+
+.playButton {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  color: white;
+  opacity: 0.8;
+  cursor: pointer;
 }

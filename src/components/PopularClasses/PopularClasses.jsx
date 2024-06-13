@@ -36,21 +36,19 @@ const PopularClasses = () => {
 
   return (
     <div className={styles.popularClassesContainer}>
-      <h2 className="text-center my-4">OUR POPULAR CLASSES</h2>
+      <h2 className="text-center fw-bold my-5">OUR POPULAR CLASSES</h2>
       <div className={styles.cardsContainer}>
         {classes.map((item) => (
           <div key={item.id} className={`card ${styles.card}`}>
             <div className={styles.imageContainer}>
-              <img src={item.image} className="card-img-top" alt={item.title} />
+              <img src={item.image} className={`card-img-top ${styles.gallary}`} alt={item.title} />
               <div className={styles.imageOverlay}>
                 <h5 className={styles.imageTitle}>{item.title}</h5>
-              </div>
-            </div>
-            <div className="card-body">
-              <p className="card-text">{item.description}</p>
-              <div className={styles.cardFooter}>
+                <div><p className="text-left mb-4">{item.description}</p></div>
+                <div className={styles.cardFooter}>
                 <button className="btn">Read More</button>
                 <FaCirclePlus size={35} className={styles.plusIcon} />
+              </div>
               </div>
             </div>
           </div>

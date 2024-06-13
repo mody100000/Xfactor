@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col } from 'react-bootstrap';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { motion, AnimatePresence } from 'framer-motion';
 import styles from './CoachApplicationTimeline.module.css';
 import QuestionsPage1 from './../QuestionsPage1/QuestionsPage1';
 import QuestionsPage2 from './../QuestionsPage2/QuestionsPage2';
@@ -10,6 +10,7 @@ import ImageBackground from '../../components/common/ImageBackground/ImageBackgr
 
 const CoachApplicationTimeline = () => {
   const [currentStep, setCurrentStep] = useState(0);
+  const [direction, setDirection] = useState(1);
 
   const steps = [
     { component: QuestionsPage1 },
@@ -19,12 +20,14 @@ const CoachApplicationTimeline = () => {
 
   const handleNextStep = () => {
     if (currentStep < steps.length - 1) {
+      setDirection(1);
       setCurrentStep(currentStep + 1);
     }
   };
 
   const handlePrevStep = () => {
     if (currentStep > 0) {
+      setDirection(-1);
       setCurrentStep(currentStep - 1);
     }
   };
@@ -38,28 +41,26 @@ const CoachApplicationTimeline = () => {
           <div className={styles.contentWrapper}>
             <Row>
               <Col>
-                <TransitionGroup component={null}>
-                  <CSSTransition
+                <AnimatePresence initial={false} custom={direction}>
+                  <motion.div
                     key={currentStep}
-                    timeout={300}
-                    classNames={{
-                      enter: styles.pageEnter,
-                      enterActive: styles.pageEnterActive,
-                      exit: styles.pageExit,
-                      exitActive: styles.pageExitActive,
+                    initial={{ x: direction > 0 ? 1000 : -1000, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    exit={{ x: direction < 0 ? 1000 : -1000, opacity: 0 }}
+                    transition={{
+                      x: { type: 'spring', stiffness: 300, damping: 30 },
+                      opacity: { duration: 0.5 }
                     }}
-                    unmountOnExit
+                    className={styles.timelineContent}
                   >
-                    <div className={styles.timelineContent}>
-                      <StepComponent
-                        currentStep={currentStep}
-                        handleNextStep={handleNextStep}
-                        handlePrevStep={handlePrevStep}
-                        totalSteps={steps.length}
-                      />
-                    </div>
-                  </CSSTransition>
-                </TransitionGroup>
+                    <StepComponent
+                      currentStep={currentStep}
+                      handleNextStep={handleNextStep}
+                      handlePrevStep={handlePrevStep}
+                      totalSteps={steps.length}
+                    />
+                  </motion.div>
+                </AnimatePresence>
               </Col>
             </Row>
           </div>

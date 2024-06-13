@@ -1,12 +1,13 @@
 .container {
   text-align: center;
   padding: 0 2rem;
+  background-color: white;
 }
 
 .title {
   font-size: 3rem;
   margin-bottom: 3rem;
-  font-weight: 900;
+  font-weight: 700;
 }
 
 .imagesContainer {
@@ -17,13 +18,12 @@
 
 .imageWrapper {
   position: relative;
-  width: fit-content;
-  padding: 1rem;
-  background-color: rgba(0, 0, 0, 0.877);
+  background-color: #b21f2e;
   border-radius: 10px;
 }
 
 .image {
+  flex-shrink: 0;
   display: block;
   width: 420px;
   height: 350px;
@@ -69,8 +69,37 @@
 
   .imageWrapper {
     padding: 0.5rem;
+    margin-bottom: 1rem;
+    width: 90%; /* Ensures the wrapper is responsive and not too large */
   }
 
+  .image {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .imagesContainer {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .imageWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.25rem;
+    width: 100%; /* Adjust the width to fit smaller screens */
+  }
+  .imageContainer{
+    margin-bottom: 2rem;
+  }
   .image {
     width: 100%;
     height: auto;

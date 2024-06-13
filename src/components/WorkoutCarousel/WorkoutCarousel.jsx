@@ -1,35 +1,63 @@
-import React from "react";
-import { Carousel } from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
-import styles from "./WorkoutCarousel.module.css";
-import "@fortawesome/fontawesome-free/css/all.min.css"; // Import FontAwesome
+import React, { useState } from 'react';
+import Slider from 'react-slick';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import styles from './WorkoutCarousel.module.css';
+import { CiCircleChevLeft, CiCircleChevRight } from 'react-icons/ci';
+
+const CustomArrow = ({ className, style, onClick, direction }) => {
+  return (
+    <div
+      className={`${className} ${styles.customArrow}`}
+      style={direction === 'right' ? { ...style, right: -35 } : { ...style, left: -35 }}
+      onClick={onClick}
+    >
+      {direction === 'right' ? <CiCircleChevRight size={30} /> : <CiCircleChevLeft size={30} />}
+    </div>
+  );
+};
 
 const WorkoutCarousel = () => {
   const videos = [
-    { id: 1, url: "https://www.youtube.com/embed/eMjyvIQbn9M?si" },
-    { id: 2, url: "https://www.youtube.com/embed/XIYuxAeKSM0?si" },
-    { id: 3, url: "https://www.youtube.com/embed/EKUNGQ4LmH8?si" },
-    { id: 4, url: "https://www.youtube.com/embed/3sEeVJEXTfY?si" },
-    { id: 5, url: "https://www.youtube.com/embed/korOpibkm6g?si" },
+    { id: 1, url: 'https://www.youtube.com/embed/eMjyvIQbn9M?si' },
+    { id: 2, url: 'https://www.youtube.com/embed/XIYuxAeKSM0?si' },
+    { id: 3, url: 'https://www.youtube.com/embed/EKUNGQ4LmH8?si' },
+    { id: 4, url: 'https://www.youtube.com/embed/3sEeVJEXTfY?si' },
+    { id: 5, url: 'https://www.youtube.com/embed/korOpibkm6g?si' },
   ];
+
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    centerMode: true,
+    nextArrow: <CustomArrow direction="right" />,
+    prevArrow: <CustomArrow direction="left" />,
+    centerPadding: '0',
+    beforeChange: (current, next) => setActiveIndex(next),
+  };
 
   return (
     <div className={styles.workoutCarouselContainer}>
-      <h2 className="text-center my-4 fw-bolder fs-1">See All Workouts</h2>
-      <Carousel>
-        {videos.map((video) => (
-          <Carousel.Item key={video.id}>
+      <h2 className={styles.title}>See All Workouts</h2>
+      <Slider {...settings}>
+        {videos.map((video, index) => (
+          <div key={video.id} className={`${styles.videoWrapper} ${index === activeIndex ? '' : styles.inactive}`}>
             <div className={styles.videoContainer}>
               <iframe
                 src={video.url}
                 title={`Video ${video.id}`}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                className={styles.videoFrame}
                 allowFullScreen
               />
             </div>
-          </Carousel.Item>
+          </div>
         ))}
-      </Carousel>
+      </Slider>
     </div>
   );
 };

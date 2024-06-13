@@ -1,7 +1,7 @@
 import styles from "./IntroBanner.module.css";
-import { FaCirclePlay } from "react-icons/fa6";
+import { FaPlay } from "react-icons/fa6";
 import { FaPlus } from "react-icons/fa";
-import box from "../../assets/box.webp";
+import box from "../../assets/intro.jpg";
 import { Link } from 'react-router-dom';
 
 const IntroBanner = () => {
@@ -18,7 +18,7 @@ const IntroBanner = () => {
           <button className={styles.getStartedBtn}> Get Started</button>
         </Link>
           <span className={styles.playVedio}>
-            <FaCirclePlay size={40} className={styles.playIcon} /> Play Video
+            <FaPlay size={40} className={styles.playIcon} /> Play Video
           </span>
         </div>
         <div className={styles.features}>
