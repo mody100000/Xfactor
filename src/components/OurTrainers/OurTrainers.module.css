@@ -24,12 +24,12 @@
   text-align: center;
   width: 300px; /* Increased width */
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* More noticeable shadow */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
-  transform: translateY(-10px); /* Lift the card slightly on hover */
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); 
 }
 
 .trainerImage {
