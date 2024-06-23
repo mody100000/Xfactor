@@ -31,7 +31,14 @@ const LogoutNav = () => {
               </Link>
             </Nav.Link>
             <Nav.Link  className={styles.item_links}>
-              CoachUp Nation <MdRealEstateAgent size={20} />
+            <Link to="/AboutUs" className={styles.item_links}>
+              About Us <MdRealEstateAgent size={20} />
+              </Link>
+            </Nav.Link>
+            <Nav.Link  className={styles.item_links}>
+            <Link to="/contactUs" className={styles.item_links}>
+              Contact Us <MdRealEstateAgent size={20} />
+              </Link>
             </Nav.Link>
             <Nav.Link  className={styles.item_links}>
             <Link to="/register" className={styles.item_links}>

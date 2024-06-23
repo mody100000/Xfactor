@@ -22,6 +22,7 @@ import CoachApplicationTimeline from './pages/CoachApplicationTimeline/CoachAppl
 import CourseSchedulePage from './pages/CourseSchedulePage/CourseSchedulePage';
 import CoachApplicationLayout from './layouts/CoachApplicationLayout/CoachApplicationLayout';
 import AboutUsPage from './pages/AboutUsPage/AboutUsPage';
+import ContactUs from './pages/ContactUsPage/ContactUs';
 
 const routes = createBrowserRouter([
   {
@@ -32,6 +33,7 @@ const routes = createBrowserRouter([
       { path: "questions3", element: <QuestionsPage3 /> },
       { path: "coaches", element: <CoachesResultPage /> },
       { path: "AboutUs", element: <AboutUsPage /> },
+      { path: "COntactUs", element: <ContactUs /> },
       { path: '/filtered-coaches', element: <FilteredCoachesResultPage /> },
       { path: '/coach/:id', element: <CoachProfilePage /> },
       { path: '/coach/:id', element: <CoachProfile /> },

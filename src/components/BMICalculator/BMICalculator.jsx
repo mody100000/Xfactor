@@ -80,14 +80,16 @@ const BMICalculator = () => {
             <div className={`d-flex justify-content-between align-items-center ${styles.switchRow}`}>
               <span>Metric</span>
               {toggleIcon ? (
-                <FaToggleOn size={30}  color="#BF1E2E" onClick={toggleUnitSystem} style={{ cursor: "pointer" }} />
+                <FaToggleOn size={35}  color="#BF1E2E" onClick={toggleUnitSystem} style={{ cursor: "pointer" }} />
               ) : (
-                <FaToggleOff size={30} onClick={toggleUnitSystem} style={{ cursor: "pointer" }} />
+                <FaToggleOff size={35} onClick={toggleUnitSystem} style={{ cursor: "pointer" }} />
               )}
               <span>Imperial</span>
+              <div>
               <button onClick={calculateBMI} className={styles.calculateButton}>
                 Calculate
               </button>
+              </div>
             </div>
           </div>
           <div className={styles.rightContainer}>
