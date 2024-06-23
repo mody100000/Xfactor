@@ -1,0 +1,67 @@
+.intro {
+    position: relative;
+    background-image: url('../../../assets/IntroShop.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+    height: 400px; /* Adjust the height as needed */
+  }
+  
+  .overlay {
+    background-color: rgba(0, 0, 0, 0.349);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically center content */
+    align-items: center; /* Horizontally center content */
+  }
+  
+  h1 {
+    color: rgb(255, 255, 255);
+    font-size: 3em; /* Adjust font size as needed */
+  }
+  
+  .icons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%; /* Ensure the parent container is wide enough */
+    padding: 50px 8rem 2px 8rem; /* Optional: add padding for better spacing */
+  }
+  
+  .icon {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    margin: 0 10px;
+  }
+  
+  .item {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 1rem;
+    flex: 0 1 200px;
+    position: relative; 
+  }
+  
+  .info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .number {
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+  }
+  
+  .text {
+    font-size: 1rem;
+    color: white;
+  }
+  
