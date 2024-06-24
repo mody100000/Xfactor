@@ -13,20 +13,23 @@ const productsData = [
       title: 'Lorem ipsum dolor sit',
       subtitle: 'Lorem ipsum',
       badge:"Hot",
-      price: '$599.00'
+      price: '$599.00',
+      info:"Lorem ipsum dolor sit amet consectetur. Senectus auctor in adipiscing arcu sed ornare. Eleifend id blandit nunc faucibus lacus vestibulum nibh turpis diam. Quis neque lobortis"
     },
     {
       image: item2,
       title: 'Lorem ipsum dolor sit',
       subtitle: 'Lorem ipsum',
       badge:"-50$",
-      price: '$599.00'
+      price: '$599.00',
+      info:"Lorem ipsum dolor sit amet consectetur. Senectus auctor in adipiscing arcu sed ornare. Eleifend id blandit nunc faucibus lacus vestibulum nibh turpis diam. Quis neque lobortis"
     },
     {
       image: item3,
       title: 'Lorem ipsum dolor sit',
       subtitle: 'Lorem ipsum',
-      price: '$599.00'
+      price: '$599.00',
+      info:"Lorem ipsum dolor sit amet consectetur. Senectus auctor in adipiscing arcu sed ornare. Eleifend id blandit nunc faucibus lacus vestibulum nibh turpis diam. Quis neque lobortis"
     },
     {
       image: item4,
@@ -39,105 +42,122 @@ const productsData = [
       title: 'Lorem ipsum dolor sit',
       subtitle: 'Lorem ipsum',
       badge:"Hot",
-      price: '$599.00'
+      price: '$599.00',
+      info:"Lorem ipsum dolor sit amet consectetur. Senectus auctor in adipiscing arcu sed ornare. Eleifend id blandit nunc faucibus lacus vestibulum nibh turpis diam. Quis neque lobortis"
     },
     {
       image: item5,
       title: 'Lorem ipsum dolor sit',
       subtitle: 'Lorem ipsum',
-      price: '$599.00'
+      price: '$599.00',
+      info:"Lorem ipsum dolor sit amet consectetur. Senectus auctor in adipiscing arcu sed ornare. Eleifend id blandit nunc faucibus lacus vestibulum nibh turpis diam. Quis neque lobortis"
     },
     {
       image: item6,
       title: 'Lorem ipsum dolor sit',
       subtitle: 'Lorem ipsum',
       badge:"-40%",
-      price: '$599.00'
+      price: '$599.00',
+      info:"Lorem ipsum dolor sit amet consectetur. Senectus auctor in adipiscing arcu sed ornare. Eleifend id blandit nunc faucibus lacus vestibulum nibh turpis diam. Quis neque lobortis"
     },
     {
       image: item7,
       title: 'Lorem ipsum dolor sit',
       subtitle: 'Lorem ipsum',
-      price: '$599.00'
+      price: '$599.00',
+      info:"Lorem ipsum dolor sit amet consectetur. Senectus auctor in adipiscing arcu sed ornare. Eleifend id blandit nunc faucibus lacus vestibulum nibh turpis diam. Quis neque lobortis"
     },
     {
       image: item8,
       title: 'Lorem ipsum dolor sit',
       subtitle: 'Lorem ipsum',
-      price: '$599.00'
+      price: '$599.00',
+      info:"Lorem ipsum dolor sit amet consectetur. Senectus auctor in adipiscing arcu sed ornare. Eleifend id blandit nunc faucibus lacus vestibulum nibh turpis diam. Quis neque lobortis"
     },
     {
       image: item3,
       title: 'Lorem ipsum dolor sit',
       subtitle: 'Lorem ipsum',
       badge:"-40%",
-      price: '$599.00'
+      price: '$599.00',
+      info:"Lorem ipsum dolor sit amet consectetur. Senectus auctor in adipiscing arcu sed ornare. Eleifend id blandit nunc faucibus lacus vestibulum nibh turpis diam. Quis neque lobortis"
     },
     {
       image: item5,
       title: 'Lorem ipsum dolor sit',
       subtitle: 'Lorem ipsum',
-      price: '$599.00'
+      price: '$599.00',
+      info:"Lorem ipsum dolor sit amet consectetur. Senectus auctor in adipiscing arcu sed ornare. Eleifend id blandit nunc faucibus lacus vestibulum nibh turpis diam. Quis neque lobortis"
     },
     {
       image: item7,
       title: 'Lorem ipsum dolor sit',
       subtitle: 'Lorem ipsum',
-      price: '$599.00'
+      price: '$599.00',
+      info:"Lorem ipsum dolor sit amet consectetur. Senectus auctor in adipiscing arcu sed ornare. Eleifend id blandit nunc faucibus lacus vestibulum nibh turpis diam. Quis neque lobortis"
     },
     {
       image: item8,
       title: 'Lorem ipsum dolor sit',
       subtitle: 'Lorem ipsum',
-      price: '$599.00'
+      price: '$599.00',
+      info:"Lorem ipsum dolor sit amet consectetur. Senectus auctor in adipiscing arcu sed ornare. Eleifend id blandit nunc faucibus lacus vestibulum nibh turpis diam. Quis neque lobortis"
     },
     {
       image: item3,
       title: 'Lorem ipsum dolor sit',
       subtitle: 'Lorem ipsum',
-      price: '$599.00'
+      price: '$599.00',
+      info:"Lorem ipsum dolor sit amet consectetur. Senectus auctor in adipiscing arcu sed ornare. Eleifend id blandit nunc faucibus lacus vestibulum nibh turpis diam. Quis neque lobortis"
     },
     {
       image: item2,
       title: 'Lorem ipsum dolor sit',
       subtitle: 'Lorem ipsum',
-      price: '$599.00'
+      price: '$599.00',
+      info:"Lorem ipsum dolor sit amet consectetur. Senectus auctor in adipiscing arcu sed ornare. Eleifend id blandit nunc faucibus lacus vestibulum nibh turpis diam. Quis neque lobortis"
     },
     {
       image: item1,
       title: 'Lorem ipsum dolor sit',
       subtitle: 'Lorem ipsum',
-      price: '$599.00'
+      price: '$599.00',
+      info:"Lorem ipsum dolor sit amet consectetur. Senectus auctor in adipiscing arcu sed ornare. Eleifend id blandit nunc faucibus lacus vestibulum nibh turpis diam. Quis neque lobortis"
     },
     {
       image: item5,
       title: 'Lorem ipsum dolor sit',
       subtitle: 'Lorem ipsum',
-      price: '$599.00'
+      price: '$599.00',
+      info:"Lorem ipsum dolor sit amet consectetur. Senectus auctor in adipiscing arcu sed ornare. Eleifend id blandit nunc faucibus lacus vestibulum nibh turpis diam. Quis neque lobortis"
     },
     {
       image: item6,
       title: 'Lorem ipsum dolor sit',
       subtitle: 'Lorem ipsum',
-      price: '$599.00'
+      price: '$599.00',
+      info:"Lorem ipsum dolor sit amet consectetur. Senectus auctor in adipiscing arcu sed ornare. Eleifend id blandit nunc faucibus lacus vestibulum nibh turpis diam. Quis neque lobortis"
     },
     {
       image: item7,
       title: 'Lorem ipsum dolor sit',
       subtitle: 'Lorem ipsum',
-      price: '$599.00'
+      price: '$599.00',
+      info:"Lorem ipsum dolor sit amet consectetur. Senectus auctor in adipiscing arcu sed ornare. Eleifend id blandit nunc faucibus lacus vestibulum nibh turpis diam. Quis neque lobortis"
     },
     {
       image: item8,
       title: 'Lorem ipsum dolor sit',
       subtitle: 'Lorem ipsum',
-      price: '$599.00'
+      price: '$599.00',
+      info:"Lorem ipsum dolor sit amet consectetur. Senectus auctor in adipiscing arcu sed ornare. Eleifend id blandit nunc faucibus lacus vestibulum nibh turpis diam. Quis neque lobortis"
     },
     {
       image: item2,
       title: 'Lorem ipsum dolor sit',
       subtitle: 'Lorem ipsum',
-      price: '$599.00'
+      price: '$599.00',
+      info:"Lorem ipsum dolor sit amet consectetur. Senectus auctor in adipiscing arcu sed ornare. Eleifend id blandit nunc faucibus lacus vestibulum nibh turpis diam. Quis neque lobortis"
     },
     // Add more product objects as needed
   ];
