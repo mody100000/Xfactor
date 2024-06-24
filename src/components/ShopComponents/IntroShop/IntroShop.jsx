@@ -1,3 +1,4 @@
+import React from 'react';
 import styles from "./IntroShop.module.css";
 import happy from "../../../assets/athlete_exercise.png";
 import XMLID from "../../../assets/XMLID.png";
