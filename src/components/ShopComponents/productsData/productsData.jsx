@@ -35,7 +35,8 @@ const productsData = [
       image: item4,
       title: 'Lorem ipsum dolor sit',
       subtitle: 'Lorem ipsum',
-      price: '$5s99.00'
+      price: '$599.00',
+      info:"Lorem ipsum dolor sit amet consectetur. Senectus auctor in adipiscing arcu sed ornare. Eleifend id blandit nunc faucibus lacus vestibulum nibh turpis diam. Quis neque lobortis"
     },
     {
       image: item,
