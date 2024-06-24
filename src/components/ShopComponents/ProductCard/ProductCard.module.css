@@ -1,0 +1,117 @@
+.productCard {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.productCard:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.imageContainer {
+  position: relative;
+  background-color: #f8f8f8;
+}
+
+.productImage {
+  width: 100%;
+  height: 240px;
+  object-fit: contain;
+}
+
+.badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 10px 10px;
+  font-size: 1em;
+  border-radius: 50%;
+  color: white;
+}
+
+.hotBadge {
+  background-color: red;
+}
+
+.otherBadge {
+  background-color: gray;
+}
+
+.cardBody {
+  padding: 15px;
+  text-align: center;
+  position: relative;
+}
+
+.cardTitle {
+  font-size: 1.1em;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.cardSubtitle {
+  font-size: 0.9em;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.cardPrice {
+  font-size: 1.2em;
+  color: red;
+  font-weight: bold;
+}
+
+.hoverContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  max-height: 0;
+  transition: opacity 0.3s ease, max-height 0.5s ease;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.productCard:hover .hoverContent {
+  opacity: 1;
+  max-height: 200px; /* Adjust this value based on your content's height */
+}
+
+.additionalText {
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.iconContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  margin-top: 20px;
+}
+
+.icon {
+  font-size: 1.7em;
+  cursor: pointer;
+}
+
+.button {
+  padding: 5px 10px;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: darkred;
+}

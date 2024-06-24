@@ -2,10 +2,11 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import { IoLogIn } from "react-icons/io5";
 import { RiUserAddFill } from "react-icons/ri";
-import { MdAssignmentInd, MdRealEstateAgent } from "react-icons/md";
+import { MdAssignmentInd, MdRealEstateAgent,MdOutlineContactPhone } from "react-icons/md";
 import styles from "./LandingNav.module.css";
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo.png";
+import { FiShoppingCart } from "react-icons/fi";
 
 const LogoutNav = () => {
   return (
@@ -37,7 +38,12 @@ const LogoutNav = () => {
             </Nav.Link>
             <Nav.Link  className={styles.item_links}>
             <Link to="/contactUs" className={styles.item_links}>
-              Contact Us <MdRealEstateAgent size={20} />
+              Contact Us <MdOutlineContactPhone size={23} />
+              </Link>
+            </Nav.Link>
+            <Nav.Link  className={styles.item_links}>
+            <Link to="/shop" className={styles.item_links}>
+              Shop <FiShoppingCart size={23} />
               </Link>
             </Nav.Link>
             <Nav.Link  className={styles.item_links}>
