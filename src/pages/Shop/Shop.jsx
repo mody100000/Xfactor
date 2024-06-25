@@ -8,7 +8,7 @@ import styles from "./Shop.module.css";
 
 const Shop = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery] = useState('');
 
   const itemsPerPage = 12;
   const filteredProducts = productsData.filter(product =>

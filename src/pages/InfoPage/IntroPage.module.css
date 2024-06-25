@@ -1,0 +1,14 @@
+.continer{
+    padding: 3rem 6rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    line-height: 30px;
+    font-size: 20px;
+}
+.line {
+    display: block;
+    height: 1.5px;
+    background-color: rgba(128, 128, 128, 0.378);
+    width: 100%;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+  }

@@ -1,8 +1,15 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import styles from './ProductCard.module.css';
-import { CiHeart,CiSearch  } from "react-icons/ci";
+import { CiHeart, CiSearch } from "react-icons/ci";
 
-const ProductCard = ({ image, title, subtitle, price, badge,info }) => {
+const ProductCard = ({ id, image, title, subtitle, price, badge, info }) => {
+  const navigate = useNavigate();
+
+  const handleSelectOptionClick = () => {
+    navigate(`product/${id}`);
+  };
+
   return (
     <div className={styles.productCard}>
       <div className={styles.imageContainer}>
@@ -21,7 +28,7 @@ const ProductCard = ({ image, title, subtitle, price, badge,info }) => {
           <p className={styles.additionalText}>{info}</p>
           <div className={styles.iconContainer}>
             <CiHeart className={styles.icon} />
-            <button className={styles.button}>Select Option</button>
+            <button className={styles.button} onClick={handleSelectOptionClick}>Select Option</button>
             <CiSearch className={styles.icon} />
           </div>
         </div>
