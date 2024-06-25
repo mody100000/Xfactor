@@ -26,6 +26,7 @@ import ContactUs from './pages/ContactUsPage/ContactUs';
 import Shop from './pages/Shop/Shop';
 import ProductDetails from './pages/ProductDetails/ProductDetails';
 import IntroPage from './pages/InfoPage/IntroPage';
+import CartContainer from './pages/Cart/CartContainer';
 
 const routes = createBrowserRouter([
   {
@@ -39,6 +40,7 @@ const routes = createBrowserRouter([
       { path: "ContactUs", element: <ContactUs /> },
       { path: "Shop", element: <Shop /> },
       { path: "Info", element: <IntroPage /> },
+      { path: "Cart", element: <CartContainer /> },
       { path: "Shop/product/:id", element: <ProductDetails /> },
       { path: '/filtered-coaches', element: <FilteredCoachesResultPage /> },
       { path: '/coach/:id', element: <CoachProfilePage /> },

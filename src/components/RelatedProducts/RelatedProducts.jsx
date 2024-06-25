@@ -3,7 +3,6 @@ import productsData from '../ShopComponents/productsData/productsData';
 import styles from './RelatedProducts.module.css';
 import { useNavigate } from 'react-router-dom';
 import { CiHeart, CiSearch } from 'react-icons/ci';
-import { useEffect } from 'react';
 
 const RelatedProducts = ({ relatedProductIds }) => {
   const relatedProducts = relatedProductIds.map(id => productsData.find(product => product.id === id));
