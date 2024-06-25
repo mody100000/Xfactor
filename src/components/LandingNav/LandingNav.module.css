@@ -1,12 +1,13 @@
 /* LandingNav.module.css */
 .item_links {
   color: #e4d9ef;
-  margin: 0.3rem;
+  margin: 0.2rem;
   cursor: pointer;
+  font-size: 15px;
 }
 
 .item_links:hover {
-  color: #ee7d60;
+  color: #ff4d5e;
 }
 
 .logo {

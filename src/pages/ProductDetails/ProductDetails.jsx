@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import RelatedProducts from '../../components/RelatedProducts/RelatedProducts';
 import productsData from '../../components/ShopComponents/productsData/productsData';
 import styles from './ProductDetails.module.css';
@@ -13,10 +13,15 @@ const ProductDetails = () => {
     window.scrollTo(0, 0);
   }, []);
 
+  const navigate = useNavigate();
+
+  const handelNavigate = ()=>{
+   navigate("/cart")
+  }
+
   if (!product) {
     return <div>Product not found</div>;
   }
-
   const handleIncrease = () => {
     setQuantity(quantity + 1);
   };
@@ -57,7 +62,7 @@ const ProductDetails = () => {
               <input type="text" value={quantity} className={styles.quantityInput} readOnly />
               <button className={styles.quantityButton} onClick={handleIncrease}>+</button>
             </div>
-            <button className={styles.addToCartButton}>Add To Cart</button>
+            <button className={styles.addToCartButton} onClick={handelNavigate}>Add To Cart</button>
           </div>
         </div>
       </div>

@@ -7,6 +7,7 @@ import styles from "./LandingNav.module.css";
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import { FiShoppingCart } from "react-icons/fi";
+import { TbShoppingBag } from "react-icons/tb";
 
 const LogoutNav = () => {
   return (
@@ -39,6 +40,11 @@ const LogoutNav = () => {
             <Nav.Link  className={styles.item_links}>
             <Link to="/contactUs" className={styles.item_links}>
               Contact Us <MdOutlineContactPhone size={23} />
+              </Link>
+            </Nav.Link>
+            <Nav.Link>
+              <Link to="/cart" className={styles.item_links}>
+                Cart <TbShoppingBag size={23} />
               </Link>
             </Nav.Link>
             <Nav.Link  className={styles.item_links}>
