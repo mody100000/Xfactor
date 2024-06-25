@@ -1,0 +1,64 @@
+.intro {
+  position: relative;
+  background-image: url('../../../assets/introCoach.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: cover;
+  height: 350px; /* Adjust the height as needed */
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.349);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center;
+}
+
+.suptitle {
+  color: rgba(255, 255, 255, 0.774);
+}
+
+h1 {
+  color: rgb(255, 255, 255);
+  font-size: 3em; /* Adjust font size as needed */
+  margin-bottom: 3rem; /* Add some space below the header */
+}
+
+@media (max-width: 768px) {
+  .intro {
+    height: 300px; /* Adjust height for smaller screens */
+  }
+  
+  h1 {
+    font-size: 2rem; /* Adjust font size for smaller screens */
+    margin-bottom: 1.5rem; /* Adjust margin for smaller screens */
+  }
+
+  .suptitle {
+    font-size: 1rem; /* Adjust subtitle font size for smaller screens */
+    padding: 0 1rem; /* Add padding for better readability */
+  }
+}
+
+@media (max-width: 576px) {
+  .intro {
+    height: 250px; /* Adjust height for even smaller screens */
+  }
+  
+  h1 {
+    font-size: 1.5rem; /* Adjust font size for even smaller screens */
+    margin-bottom: 1rem; /* Adjust margin for even smaller screens */
+  }
+
+  .suptitle {
+    font-size: 0.9rem; /* Adjust subtitle font size for even smaller screens */
+    padding: 0 0.5rem; /* Add padding for better readability */
+  }
+}

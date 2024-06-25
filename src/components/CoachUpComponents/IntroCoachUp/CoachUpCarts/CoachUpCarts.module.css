@@ -1,0 +1,44 @@
+.coachImg {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+  }
+  
+  .textColumn {
+    width: 100%;
+    background-color: #d9d9d973;
+    box-sizing: border-box;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+  }
+  .textColumnBlack{
+    width: 100%;
+    background-color: #0000009f;
+    color: white;
+    box-sizing: border-box;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+  }
+.text{
+    padding-left: 6rem;
+    font-weight: 400;
+}
+.textBlack{
+    padding-right: 6rem;
+    padding-left: 1rem;
+    font-weight: 400;
+}
+.suptext{
+    line-height: 1.9;
+}
+  @media (max-width: 768px) {
+    .textColumn {
+      padding: 10px;
+    }
+    .text{
+        padding-left: 1rem;
+    }
+.textBlack{
+    padding-left: 1.4rem;
+}
+  }
+  
