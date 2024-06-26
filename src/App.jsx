@@ -28,6 +28,7 @@ import ProductDetails from './pages/ProductDetails/ProductDetails';
 import IntroPage from './pages/InfoPage/IntroPage';
 import CartContainer from './pages/Cart/CartContainer';
 import CoachUp from './pages/CoachUp/CoachUp';
+import FAQ from './pages/FAQ/FAQ';
 
 const routes = createBrowserRouter([
   {
@@ -43,6 +44,7 @@ const routes = createBrowserRouter([
       { path: "Info", element: <IntroPage /> },
       { path: "Cart", element: <CartContainer /> },
       { path: "CoachUp", element: <CoachUp /> },
+      { path: "FAQ", element: <FAQ /> },
       { path: "Shop/product/:id", element: <ProductDetails /> },
       { path: '/filtered-coaches', element: <FilteredCoachesResultPage /> },
       { path: '/coach/:id', element: <CoachProfilePage /> },

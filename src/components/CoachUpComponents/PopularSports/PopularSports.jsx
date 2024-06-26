@@ -3,10 +3,17 @@ import Scocer from "../../../assets/Scocer.jpg";
 import Lacrosse from "../../../assets/Lacrosse.jpg";
 import Baseball from "../../../assets/Baseball.jpg";
 import Basketball from "../../../assets/Basketball.jpg";
+import { useNavigate } from 'react-router-dom';
+
 const PopularSports = () => {
+    const navigate = useNavigate()
+
+    const handleNavigate =()=>{
+        navigate("/contactUs")
+    }
     return ( 
         <div className={styles.container}>
-             <h2 className={styles.title}>Benefits of CoachUp</h2>
+             <h2 className={styles.title}>Browse Our Popular Sports</h2>
              <p className={styles.text}>There are many benefits for athletes and coaches who join the CoachUp community:</p>
              <div className="container">
                 <div className="row justify-content-center">
@@ -50,7 +57,7 @@ const PopularSports = () => {
             </div>
             <h2 className={`${styles.title} mt-5`}>Have Questions?</h2>
              <p className={styles.lastText}>Our Support Team can help!</p>
-             <button className={styles.contactBtn}>Contact Us</button>
+             <button className={styles.contactBtn} onClick={handleNavigate}>Contact Us</button>
         </div>
      );
 }
