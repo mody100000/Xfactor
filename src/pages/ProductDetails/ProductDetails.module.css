@@ -1,0 +1,143 @@
+.productDetailsPage {
+    margin-top: 20px;
+    padding: 5rem;
+  }
+  
+  .imageGallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .thumbnails {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+
+}
+  
+  .thumbnail {
+    width: 200px;
+    height: 150px;
+    padding: 1rem;
+    object-fit: contain;
+    background-color: #d9d9d977;
+    border-radius: 2rem;
+    cursor: pointer;
+  }
+  
+  .mainImage {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: contain;
+    background-color: #d9d9d977;
+    border-radius: 2rem;
+    margin: 2rem 1.5rem;
+    padding: 1rem;
+
+  }
+  .productInfo {
+    padding: 20px;
+  }
+  
+  .productTitle {
+    font-size: 2em;
+    font-weight: bold;
+    color: #000;
+    margin-left: 2rem;
+  }
+  
+  .productPrice {
+    font-size: 2em;
+    color: #BF1E2E;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    margin-left: 2rem;
+
+  }
+  
+  .productDescription {
+    font-size: 1.1em;
+    margin-bottom: 2rem;
+    margin-left: 2rem;
+    color: gray;
+
+  }
+  .leftColumn{
+      display: flex;
+      align-items: center;
+  }
+  .quantityContainer {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-left: 2rem;
+
+  }
+  
+  .quantityButton {
+    background-color: #BF1E2E;
+    color: white;
+    border: none;
+    height: 30px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius:10px ;
+    cursor: pointer;
+  }
+
+  .quantityButton:hover{
+    background-color: #df2537;
+  }
+  
+  .quantityInput {
+    width: 50px;
+    text-align: center;
+    border: 1px solid #e0e0e0;
+    margin: 0 10px;
+  }
+  
+  .addToCartButton {
+    background-color: #BF1E2E;
+    color: white;
+    border: none;
+    padding: 5px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 2rem;
+    font-weight: 300;
+  }
+  
+  .addToCartButton:hover {
+    background-color: #df2537;
+  }
+  
+  .productDetailsSection {
+    margin-top: 40px;
+  }
+  
+  .productDetailsSection h2 {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .productDetailsSection p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    max-width: 80%;
+    color: #969293;
+    margin-bottom: 2rem;
+  }
+  .line {
+    display: block;
+    height: 1px;
+    background-color: rgba(128, 128, 128, 0.534);
+    width: 100%;
+    margin-top: 4rem;
+  }
