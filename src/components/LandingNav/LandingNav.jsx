@@ -9,6 +9,8 @@ import logo from "../../assets/logo.png";
 import { FiShoppingCart } from "react-icons/fi";
 import { TbShoppingBag } from "react-icons/tb";
 import { GrWorkshop } from "react-icons/gr";
+import { FaRegCircleQuestion } from "react-icons/fa6";
+
 
 const LogoutNav = () => {
   return (
@@ -36,6 +38,11 @@ const LogoutNav = () => {
             <Nav.Link>
               <Link to="/CoachUp" className={styles.item_links}>
                 CoachUp Works <GrWorkshop size={20} />
+              </Link>
+            </Nav.Link>
+            <Nav.Link  className={styles.item_links}>
+            <Link to="/FAQ" className={styles.item_links}>
+              Questions<FaRegCircleQuestion size={20} />
               </Link>
             </Nav.Link>
             <Nav.Link  className={styles.item_links}>
