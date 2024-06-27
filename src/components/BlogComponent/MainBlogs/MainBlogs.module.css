@@ -77,6 +77,18 @@
     background-color: #dbdbdb81;
     width: 100%;
   }
+  .readBtn{
+    border: none;
+    outline: none;
+    background-color: #BF1E2E;
+    color: white;
+    padding: .5rem 2rem;
+    border-radius: 10px;
+  }
+  .readBtn:hover{
+    background-color: #bf1e2ec9;
+
+  }
   img {
     height: 35rem;
     object-fit: cover;

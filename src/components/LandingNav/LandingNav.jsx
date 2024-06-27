@@ -10,6 +10,7 @@ import { FiShoppingCart } from "react-icons/fi";
 import { TbShoppingBag } from "react-icons/tb";
 import { GrWorkshop } from "react-icons/gr";
 import { FaRegCircleQuestion } from "react-icons/fa6";
+import { RxReader } from "react-icons/rx";
 
 
 const LogoutNav = () => {
@@ -38,6 +39,11 @@ const LogoutNav = () => {
             <Nav.Link>
               <Link to="/CoachUp" className={styles.item_links}>
                 CoachUp Works <GrWorkshop size={20} />
+              </Link>
+            </Nav.Link>
+            <Nav.Link  className={styles.item_links}>
+            <Link to="/blogs" className={styles.item_links}>
+              Blogs<RxReader size={20} />
               </Link>
             </Nav.Link>
             <Nav.Link  className={styles.item_links}>
