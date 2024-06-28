@@ -28,6 +28,8 @@
 .gallary{
   background-color: rgba(255, 255, 255, 0);
   border-radius: 1rem;
+  height: 25rem;
+
 }
 
 .imageOverlay {
@@ -68,10 +70,6 @@
 
 .plusIcon:hover {
   color: #bf1e2ed3;
-}
-img {
-  height: 25rem;
-  object-fit: cover;
 }
 .cardFooter button {
   background-color: #BF1E2E;

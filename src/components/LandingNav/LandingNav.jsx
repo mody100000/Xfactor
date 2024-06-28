@@ -8,6 +8,10 @@ import { Link } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import { FiShoppingCart } from "react-icons/fi";
 import { TbShoppingBag } from "react-icons/tb";
+import { GrWorkshop } from "react-icons/gr";
+import { FaRegCircleQuestion } from "react-icons/fa6";
+import { RxReader } from "react-icons/rx";
+
 
 const LogoutNav = () => {
   return (
@@ -27,9 +31,24 @@ const LogoutNav = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto d-flex justify-content-center align-items-center">
-            <Nav.Link>
+          <Nav.Link>
               <Link to="/applyToCoach" className={styles.item_links}>
                 Apply to Coach <MdAssignmentInd size={20} />
+              </Link>
+            </Nav.Link>
+            <Nav.Link>
+              <Link to="/CoachUp" className={styles.item_links}>
+                CoachUp Works <GrWorkshop size={20} />
+              </Link>
+            </Nav.Link>
+            <Nav.Link  className={styles.item_links}>
+            <Link to="/blogs" className={styles.item_links}>
+              Blogs<RxReader size={20} />
+              </Link>
+            </Nav.Link>
+            <Nav.Link  className={styles.item_links}>
+            <Link to="/FAQ" className={styles.item_links}>
+              Questions<FaRegCircleQuestion size={20} />
               </Link>
             </Nav.Link>
             <Nav.Link  className={styles.item_links}>

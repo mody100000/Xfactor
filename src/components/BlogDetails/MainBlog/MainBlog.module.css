@@ -1,0 +1,31 @@
+.blogContainer{
+    padding: 1rem 5rem 5rem 5rem;
+}
+.blogImg{
+    width: 100%;
+    height: 24rem;
+    object-fit: cover;
+    border-radius: 20px;
+}
+.blogImgButtom{
+    width: 100%;
+    height: 20rem;
+    object-fit: cover;
+    border-radius: 20px;
+}
+.star{
+    width: 285px;
+    height: 45px;
+}
+
+@media (max-width: 768px) {
+    .blogContainer{
+        padding: 1rem 2rem;
+    }
+    h1, p{
+        text-align: center;
+    }
+.blogImg{
+    margin-bottom: 1rem;
+}
+}
