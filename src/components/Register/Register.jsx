@@ -6,9 +6,8 @@ import {
   IoLockClosed,
   IoPersonOutline,
 } from "react-icons/io5";
-import { FaWeightScale, FaPhone } from "react-icons/fa6";
+import {FaPhone } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
-import { CiLineHeight } from "react-icons/ci";
 import Joi from "joi";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../../assets/logo.png";
@@ -118,86 +117,94 @@ const Register = () => {
 
   return (
     <div className={`container ${styles.loginHolder}`}>
+      <h1 className="mt-3 fw-bold">Register</h1>
       <div className={styles.custom_form_holder}>
         <form className={styles.custom_form} onSubmit={handleSubmit}>
-          <h1 className={`${styles.gym_title} fw-bold`}>
-          <img src={logo} className={styles.logo} alt="XFACTOR" />
-
-          </h1>
-          <h3 className="fw-bold">Register</h3>
-          <h6 className="text-muted mb-4 ">Create your membership now</h6>
+          {/* <div className={styles.tabHeader}>
+            <span className={styles.activeTab}>Personal Information</span>
+          </div> */}
           <div className={styles.inputsWrapper}>
-            <InputWithIcon
-              type="text"
-              onChange={(e) => handleInputChange(e, "full_name")}
-              errors={errors["full_name"]}
-              placeholder={"Full Name"}
-              Icon={IoPerson}
-            />
-            <InputWithIcon
-              type="email"
-              onChange={(e) => handleInputChange(e, "email")}
-              placeholder={"email"}
-              errors={errors["email"]}
-              Icon={MdEmail}
-            />
-            {/* <InputWithIcon
-              type="number"
-              onChange={(e) => handleInputChange(e, "weight")}
-              placeholder={"weight"}
-              errors={errors["weight"]}
-              Icon={FaWeightScale}
-            />
-            <InputWithIcon
-              type="number"
-              onChange={(e) => handleInputChange(e, "height")}
-              placeholder={"height"}
-              errors={errors["height"]}
-              Icon={CiLineHeight}
-            /> */}
-            <InputWithIcon
-              type="date"
-              className="text-secondary"
-              onChange={(e) => handleInputChange(e, "birth_date")}
-              placeholder={"date"}
-              errors={errors["birth_date"]}
-              Icon={IoPersonOutline}
-            />
-            <InputWithIcon
-              type="number"
-              onChange={(e) => handleInputChange(e, "phone_number")}
-              placeholder={"phone number"}
-              errors={errors["phone_number"]}
-              Icon={FaPhone}
-            />
-            <InputWithIcon
-              type="password"
-              onChange={(e) => handleInputChange(e, "password")}
-              placeholder={"password"}
-              errors={errors["password"]}
-              Icon={IoLockClosed}
-            />
-            <InputWithIcon
-              type="password"
-              onChange={(e) => handleInputChange(e, "Cpassword")}
-              placeholder={"confirm password"}
-              errors={errors["Cpassword"]}
-              Icon={IoLockClosed}
-            />
+            <div className={styles.column}>
+            <div className="d-flex flex-column align-items-center text-white mb-3">
+  <div className="d-flex align-items-center">
+    <span className={styles.progress}></span>
+    <span className="fw-bold fs-3">General Information</span>
+  </div>
+  <span className={styles.line}></span>
+</div>
+              <InputWithIcon
+                type="text"
+                onChange={(e) => handleInputChange(e, "first_name")}
+                errors={errors["first_name"]}
+                placeholder={"First Name"}
+               
+              />
+              <InputWithIcon
+                type="text"
+                onChange={(e) => handleInputChange(e, "last_name")}
+                errors={errors["last_name"]}
+                placeholder={"Last Name"}
+               
+              />
+              <InputWithIcon
+                type="text"
+                onChange={(e) => handleInputChange(e, "additional_name")}
+                errors={errors["additional_name"]}
+                placeholder={"Additional Name"}
+               
+              />
+              <InputWithIcon
+                type="text"
+                onChange={(e) => handleInputChange(e, "about_me")}
+                errors={errors["about_me"]}
+                placeholder={"About Me"}
+               
+              />
+            </div>
+            <div className={styles.column}>
+            <div className="d-flex justify-content-center align-items-center text-white mb-3 border-bottom border-danger ">
+        <span className={styles.progressOff}></span>
+        <span className="fw-bold fs-3 ">General Information</span>
+      {/* <span className={styles.line}></span> */}
+
+        </div>
+              <InputWithIcon
+                type="text"
+                onChange={(e) => handleInputChange(e, "current_position")}
+                errors={errors["current_position"]}
+                placeholder={"Current Position"}
+               
+              />
+              <InputWithIcon
+                type="text"
+                onChange={(e) => handleInputChange(e, "phone")}
+                errors={errors["phone"]}
+                placeholder={"Phone"}
+              />
+              <InputWithIcon
+                type="email"
+                onChange={(e) => handleInputChange(e, "email")}
+                errors={errors["email"]}
+                placeholder={"Email"}
+              
+              />
+              <InputWithIcon
+                type="text"
+                onChange={(e) => handleInputChange(e, "location")}
+                errors={errors["location"]}
+                placeholder={"Location"}
+               
+              />
+            </div>
           </div>
           <button className={styles.btn} type="submit" disabled={loading}>
-            Register
+            Next
           </button>
-          <h6 className="text-muted ">
-            Already have an account ?
-            <Link to="/login" className="text-decoration-none">
-              <span className="text-dark mx-2 fw-bold ">Login Now</span>
-            </Link>
-          </h6>
         </form>
       </div>
     </div>
   );
+  
 };
 
 export default Register;

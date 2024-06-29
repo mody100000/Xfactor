@@ -1,31 +1,47 @@
+.inputsWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: space-between;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+.column {
+  flex: 1 1 48%;
+}
+
 .inputWrapper {
   display: flex;
   flex-direction: column;
   overflow-wrap: break-word;
+  width: 100%;
 }
+
 .inputGroup {
   display: flex;
   align-items: center;
-  /* scss */
-  svg {
-    color: #535353;
-  }
   position: relative;
+  width: 100%;
 }
+
 .inputGroup .iconWrapper {
   position: absolute;
   left: 7px;
 }
+
 .iconWrapper {
   padding-bottom: 3px;
 }
+
 .inputGroup .inputWrapper input[type="date"] {
   text-align: end;
   padding: 6px 3.2rem;
 }
+
 .placeholderLabel {
   position: absolute;
-  left: 20px;
   top: 95%;
   pointer-events: none;
   font-size: 20px;
@@ -40,22 +56,25 @@
   transform: translateY(-102%) scale(0.8);
   color: #535353;
 }
-/* .inputGroup .inputWrapper {
-} */
+
 .inputGroup .input {
-  padding-left: 30px;
+  padding-left: 15px;
+  width: 100%;
 }
 
 .input {
   border-radius: 5px;
-  background: white;
+  background: #ffffff2d;
   border: none;
   padding: 6px 8px;
   transition: box-shadow 0.1s ease-in-out;
   outline: none;
+  width: 100%;
+  height: 3rem;
 }
+
 .input::placeholder {
-  color: #e2e2e2;
+  color: #DBDBDB;
 }
 
 .input:focus {
@@ -73,8 +92,18 @@
   height: 13px;
   margin-top: 7px;
 }
+
 .errorField {
   font-size: 10px;
   font-weight: bold;
   color: rgb(177, 7, 7);
+}
+
+@media (max-width: 768px) {
+  .column {
+    width: 100%;
+  }
+  .custom_form_holder {
+    margin-top: 9rem;
+  }
 }
