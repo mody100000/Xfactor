@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import Tooltip from "./tooltip";
 
 const InputWithIcon = (props) => {
-  const { Icon, iconSize = 20, errors, ...rest } = props;
+  const { Icon, errors, ...rest } = props;
   const inputRef = React.createRef();
   const handleFocusInput = () => {
     if (!inputRef.current) return;
@@ -49,7 +49,6 @@ const InputWithIcon = (props) => {
 
 InputWithIcon.propTypes = {
   Icon: PropTypes.func,
-  iconSize: PropTypes.number,
   errors: PropTypes.array,
 };
 export default InputWithIcon;

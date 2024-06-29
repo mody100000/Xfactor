@@ -1,5 +1,9 @@
 body.myComponentActive {
-    background: linear-gradient(to right, #BF1E2E, #b1b1b1);
-    font-family: sans-serif;
+  position: relative;
+  background-image: url('../../assets/Register.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: cover;
   }
   

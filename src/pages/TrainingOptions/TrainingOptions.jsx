@@ -21,6 +21,7 @@ const TrainingOptions = () => {
   return (
     <ImageBackground>
     <div className={styles.container}>
+    {/* //TODO:dont forget to change this images into real divs xD */}
         <div className={styles.mainSection}>
         <h2 className='fw-bold mb-3'>You are looking for {sport} coaches near {address}</h2>
           <h2 className='mb-5'>What Kind of Training Are You Looking For?</h2>

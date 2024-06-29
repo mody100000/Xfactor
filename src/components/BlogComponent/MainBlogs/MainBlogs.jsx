@@ -9,8 +9,15 @@ import image8 from "../../../assets/blog3.jpg";
 import styles from "./MainBlogs.module.css"
 import { useState } from 'react';
 import CustomPagination from "../../common/Pagination/Pagination";
+import { useNavigate } from 'react-router-dom';
 
 const MainBlogs = () => {
+  const navigate = useNavigate()
+
+  const handleNavigate = ()=>{
+    navigate("/blog")
+  }
+//TODO: check out on the navigation when go from blogs to blog
   const classes = [
     {
       id: 1,
@@ -93,7 +100,7 @@ const MainBlogs = () => {
                   <h5 className={styles.imageTitle}>{item.title}</h5>
                   <p className={`mb-4 ${styles.description}`}>{item.description}</p>
                   <div className={`d-flex justify-content-center align-items-center my-4 `}>
-                    <button className={styles.readBtn}>Read More</button>
+                    <button className={styles.readBtn} onClick={handleNavigate}>Read More</button>
                   </div>
                   <span className={styles.line}></span>
                   <div className={`d-flex justify-content-between align-items-center my-3 px-3 ${styles.Details}`}>
