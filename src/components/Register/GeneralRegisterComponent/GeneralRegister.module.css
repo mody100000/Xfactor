@@ -1,0 +1,328 @@
+.formContainer {
+    background: linear-gradient(90deg, rgb(14, 3, 4) 0%, rgba(14, 3, 4, 0.53) 100%);
+    /* background: rgba(14, 3, 4, 0.53) 100%; */
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    box-shadow: 0 0 8px 1px rgba(255, 255, 255, 0.459);
+    backdrop-filter: blur(10px);
+  }
+  
+  .formColumns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+  }
+  
+  .progress {
+    width: 50px;
+    height: 20px;
+    text-align: center;
+    background-color: #BF1E2E;
+    border-radius: 20px;
+    margin-right: 1rem;
+    box-shadow: 0 0 8px 1px rgba(255, 255, 255, 0.459);
+  }
+  
+  .formColumn {
+    flex: 1;
+    min-width: 280px;
+    margin: 10px;
+  }
+  
+  .inputGroup {
+    margin-bottom: 20px;
+  }
+  
+  .inputWithButton {
+    display: flex;
+    margin: 2rem 0;
+  }
+  
+  .inputWithButton input {
+    flex: 1;
+    padding: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid #333;
+    background-color: #ffffff2d;
+    color: white;
+  }
+  
+  .inputWithButton button {
+    background-color: #BF1E2E;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .tags {
+    margin-top: 10px;
+  }
+  
+  .tag {
+    display: inline-block;
+    background-color: #ffffff2d;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    margin-right: 5px;
+  }
+  
+  .tag button {
+    background: none;
+    border: none;
+    color: #BF1E2E;
+    margin-left: 5px;
+    cursor: pointer;
+  }
+  
+  .workingDays button {
+    background-color: #ffffff2d;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin: 2px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .workingDays button.active {
+    background-color: #BF1E2E;
+  }
+  
+  .workType {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .radioInput {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    border-radius: 50%;
+    border: 2px solid #BF1E2E;
+    background-color: #ffffff2d;
+    box-sizing: border-box;
+    cursor: pointer;
+  }
+  .radioInputCoach {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    border-radius: 50%;
+    border: 2px solid #BF1E2E;
+    background-color: #ffffff2d;
+    box-sizing: border-box;
+  }
+  
+  .radioInputCoach.checked {
+    background-color: #BF1E2E;
+  }
+  
+  .checked {
+    background-color: #BF1E2E;
+  }
+  
+  .workType input {
+    margin-right: 30px;
+    width: 30px;
+    color: #BF1E2E;
+  }
+  
+  .label {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-right: 30px;
+  }
+  .formActionsContainer {
+    margin: 0 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .labelCoach {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 70px;
+    margin-right: 70px;
+    cursor: pointer; 
+  }
+  
+  .timeInputs {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin: 30px 0;
+    flex-wrap: wrap;
+  }
+  
+  .timeInputs label {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    gap: 5px;
+  }
+  
+  .timeInput {
+    padding: 10px;
+    background-color: #ffffff2d;
+    border: none;
+    border-radius: 5px;
+    color: white;
+  }
+  
+  .timeInput:focus {
+    border: 1px solid #BF1E2E;
+  }
+  
+  input[type="time"]::-webkit-calendar-picker-indicator {
+    filter: invert(100%);
+  }
+  
+  .addButton {
+    padding: 10px 15px;
+    background-color: #BF1E2E;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .timeSlots {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .timeSlot {
+    background-color: #52575c70;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .timeSlot button {
+    background: none;
+    border: none;
+    color: #dc3545;
+    cursor: pointer;
+    margin-left: 5px;
+  }
+  
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #333;
+    background-color: #ffffff2d;
+    color: white;
+    resize: vertical;
+    height: 100px;
+  }
+  
+  .formActions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  .nextBtn{
+    background-color: #BF1E2E;
+    color: white;
+    border: none;
+    padding: 10px 50px;
+    border-radius: 9px;
+    cursor: pointer;
+  }
+  .backBtn{
+    background-color: #ffffff00;
+    color: white;
+    border: 1px solid white;
+    padding: 7px 10px;
+    border-radius: 9px;
+    cursor: pointer;
+  }
+  
+  /* Media Queries for Responsiveness */
+  @media (max-width: 768px) {
+    .formColumns {
+      flex-direction: column;
+    }
+  
+    .inputWithButton {
+      flex-direction: column;
+    }
+  
+    .inputWithButton input {
+      margin-bottom: 10px;
+      margin-right: 0;
+    }
+  
+    .timeInputs {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .formActions {
+      flex-direction: column;
+      gap: 10px;
+    }
+    .formActionsContainer {
+        margin: 0 20px; /* Reduce margin for smaller screens */
+        flex-direction: column; /* Stack elements vertically */
+      }
+    
+      .labelCoach {
+        margin: 10px 10px; /* Add vertical margin between labels */
+        
+      }
+  }
+  
+  @media (max-width: 576px) {
+    .formContainer {
+      padding: 15px;
+    }
+  
+    .progress {
+      width: 40px;
+      height: 15px;
+    }
+  
+    .formActions button {
+      padding: 10px;
+    }
+  
+    .timeInputs label {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .formActionsContainer {
+        margin: 0 10px; /* Further reduce margin for very small screens */
+      }
+    
+      .labelCoach {
+        margin:0 28px; /* Further reduce vertical margin */
+        text-align: center; /* Center align text for better appearance */
+      }
+  }
+  

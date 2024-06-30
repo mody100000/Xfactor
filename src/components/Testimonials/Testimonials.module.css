@@ -58,7 +58,7 @@
 }
 
 .viewAll {
-  background-color: #7564e5;
+  background-color: #BF1E2E;
   padding: 0.5rem 1rem;
   border-radius: 20px;
   position: absolute;
@@ -68,8 +68,9 @@
 }
 
 .arrow {
+  margin: 0 -5px;
   font-size: 2rem;
-  color: #7564e5;
+  color: #BF1E2E;
   cursor: pointer;
 }
 
@@ -81,6 +82,7 @@
 }
 
 .title {
+  color: black;
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: 1rem;

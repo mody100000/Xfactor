@@ -1,0 +1,9 @@
+body.myComponentActive {
+  position: relative;
+  background-image: url('../../assets/Register.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: cover;
+  }
+  

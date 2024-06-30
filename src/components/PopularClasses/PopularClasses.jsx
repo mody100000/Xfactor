@@ -36,7 +36,7 @@ const PopularClasses = () => {
 
   return (
     <div className={styles.popularClassesContainer}>
-      <h2 className="text-center fw-bold my-5">OUR POPULAR CLASSES</h2>
+      <h2 className="text-center fw-bold my-5 fs-1">OUR POPULAR CLASSES</h2>
       <div className={styles.cardsContainer}>
         {classes.map((item) => (
           <div key={item.id} className={`card ${styles.card}`}>

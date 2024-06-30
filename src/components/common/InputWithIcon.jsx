@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import Tooltip from "./tooltip";
 
 const InputWithIcon = (props) => {
-  const { Icon, errors, ...rest } = props;
+  const { Icon, errors, as, ...rest } = props;
   const inputRef = React.createRef();
   const handleFocusInput = () => {
     if (!inputRef.current) return;
@@ -23,6 +23,7 @@ const InputWithIcon = (props) => {
           <Input
             ref={inputRef}
             className={errors?.length > 0 ? InputStyles.inputDanger : ""}
+            as={as}
             {...rest}
           />
           {rest.type === "date" && (
@@ -50,5 +51,10 @@ const InputWithIcon = (props) => {
 InputWithIcon.propTypes = {
   Icon: PropTypes.func,
   errors: PropTypes.array,
+  as: PropTypes.oneOf(["input", "textarea"]),
 };
+InputWithIcon.defaultProps = {
+  as: "input"
+};
+
 export default InputWithIcon;

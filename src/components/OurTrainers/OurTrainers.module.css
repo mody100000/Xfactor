@@ -2,6 +2,7 @@
   background-color: black;
   padding: 3rem 0;
   text-align: center;
+  margin-bottom: 3rem;
 }
 
 .title {
@@ -18,10 +19,12 @@
 }
 
 .card {
-  background-color: white;
+  background-color: #1A1A1A;
   border-radius: 10px;
-  padding: 1.5rem;
+  /* padding: 1.5rem; */
+  padding-bottom: 2rem;
   text-align: center;
+  color: white;
   width: 300px; /* Increased width */
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* More noticeable shadow */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -41,30 +44,31 @@
 }
 
 .trainerName {
-  font-size: 1.5rem;
+  font-size: 2rem;
+  font-weight: 700;
   margin-bottom: 0.5rem;
 }
 
 .trainerCategory {
-  font-size: 1rem;
-  color: #666;
+  font-size: 0.9rem;
+  color: white;
   margin-bottom: 1rem;
 }
 
 .socialMedia {
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  gap: 2rem;
 }
 
 .socialIcon {
   font-size: 1.5rem;
-  color: #666;
+  color: white;
   transition: color 0.3s;
 }
 
 .socialIcon:hover {
-  color: #7564e5;
+  color: #BF1E2E;
 }
 
 @media (max-width: 768px) {
