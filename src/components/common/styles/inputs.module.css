@@ -67,6 +67,7 @@
   background: #ffffff2d;
   border: none;
   padding: 6px 8px;
+  color: white;
   transition: box-shadow 0.1s ease-in-out;
   outline: none;
   width: 100%;
@@ -96,7 +97,7 @@
 .errorField {
   font-size: 10px;
   font-weight: bold;
-  color: rgb(177, 7, 7);
+  color: rgb(252, 21, 21);
 }
 
 @media (max-width: 768px) {

@@ -31,6 +31,7 @@ import CoachUp from './pages/CoachUp/CoachUp';
 import FAQ from './pages/FAQ/FAQ';
 import Blogs from './pages/Blogs/Blogs';
 import Blog from './pages/Blog/Blog';
+import GeneralRegisterPage from './pages/GeneralRegisterPage/GeneralRegisterPage';
 
 const routes = createBrowserRouter([
   {
@@ -55,6 +56,7 @@ const routes = createBrowserRouter([
       { path: '/coach/:id', element: <CoachProfile /> },
       { path: '/login', element: <LoginPage /> },
       { path: '/register', element: <RegisterPage /> },
+      { path: '/generalRegister', element: <GeneralRegisterPage /> },
     ],
   },
   {path:"",element:<CoachApplicationLayout/>, children:[
