@@ -33,7 +33,7 @@ const Testimonials = () => {
         <FaArrowRight className={styles.arrow} />
       </div>
       <div className={styles.rightSide}>
-        <h1 className={styles.title}>What Our Clients Say About Us</h1>
+        <h3 className={styles.title}>What Our Clients Say About Us</h3>
         <p className={styles.bestRating}>
           I've been a member of fitness within for 6 months now and i absolutely
           love it! The trainers are so motive and they really help to reach

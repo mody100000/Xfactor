@@ -9,7 +9,7 @@ const plans = [
   {
     title: "Standard",
     icon: <img src={standered} alt="Total Clients" className={styles.icon} />,
-    fee: "1500",
+    fee: "70",
     features: [
       "6 days per week",
       "Personal Trainer",
@@ -22,7 +22,7 @@ const plans = [
   {
     title: "Gold",
     icon: <img src={gold} alt="Total Clients" className={styles.icon} />,
-    fee: "70",
+    fee: "100",
     features: [
       "7 days per week",
       "Personal Trainer",
@@ -35,7 +35,7 @@ const plans = [
   {
     title: "Premium",
     icon: <img src={premium} alt="Total Clients" className={styles.icon} />,
-    fee: "90",
+    fee: "130",
     features: [
       "Unlimited access",
       "Premium Trainer Support",
