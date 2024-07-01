@@ -1,15 +1,12 @@
 .container {
   background-color: rgba(14, 3, 4, 0.53);
   color: white;
-  /* padding: 2rem 1rem; */
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(255, 255, 255, 0.37);
   text-align: center;
-  margin: auto;
+  padding:1rem 2rem;
   backdrop-filter: blur(10px);
-  /* max-height: 100vh; */
-   /* Set max-height to ensure content is contained */
-  overflow-y: auto;  /* Enable vertical scrolling */
+  overflow-y: auto;
 }
 
 .topSection {
@@ -30,41 +27,59 @@
   margin-bottom: 1rem;
 }
 
-.card {
-  margin-top: 2rem;
-  padding: 0 1rem;
-}
-
-.subText {
-  font-size: 1.2rem;
-  color: #747474;
-  margin-bottom: 2rem;
-}
-
 .cardsContainer {
-  cursor: pointer;
   display: flex;
   justify-content: center;
-  gap: 2rem;
-  margin-bottom: 2rem;
+  gap: 7rem;
+}
+
+.card {
+  border-radius: 1rem;
+  border: none;
+  cursor: pointer;
+  width: 300px; /* Adjust the width of the cards */
+  margin-top: 2rem;
+  border-radius: 2rem;
+}
+
+.imageContainer {
+  position: relative;
+  box-shadow: 0 0 18px 0 rgba(0, 0, 0, 0.37);
+  border-radius: 1rem;
 }
 
 .cardImage {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 1rem 1rem 0 0;
   width: 100%;
-  object-fit: contain;
-  border-radius: 20px;
+  height: 21rem; /* Adjust the height of the images */
+  object-fit: cover;
+  box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.774);
+
 }
 
-.cardImage:hover {
-  border: 2px solid rgb(240, 28, 28);
+.imageOverlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  border-top-right-radius: 1rem;
+  border-top-left-radius: 1rem;
+  background-color: rgba(14, 3, 4, 0.53);
+  backdrop-filter: blur(10px);
+  color: white;
+  padding: 0.4rem;
+  text-align: center;
 }
+
+.imageTitle {
+ margin: 3rem 0;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
 
 @media (max-width: 768px) {
   .cardsContainer {
-    padding-bottom: 2rem;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
@@ -73,14 +88,12 @@
   .card {
     width: 100%;
     max-width: 300px;
-    margin-top: 1rem;
-    padding: 0;
   }
 
   .container {
     padding: 1rem;
-    max-height: 100vh; /* Ensure max-height is maintained */
-    overflow-y: auto;  /* Ensure vertical scrolling */
+    max-height: 100vh;
+    overflow-y: auto;
   }
 
   .mainSection {

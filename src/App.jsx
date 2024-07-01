@@ -32,6 +32,7 @@ import FAQ from './pages/FAQ/FAQ';
 import Blogs from './pages/Blogs/Blogs';
 import Blog from './pages/Blog/Blog';
 import GeneralRegisterPage from './pages/GeneralRegisterPage/GeneralRegisterPage';
+import AssignClientPage from './pages/CoachDashboard/AssignClientPage/AssignClientPage';
 
 const routes = createBrowserRouter([
   {
@@ -70,7 +71,9 @@ const routes = createBrowserRouter([
       {index:true, path:"/dashboard", element: <Dashboard/>},
       {path:"courses",element:<DashboardCoursesPage/>},
       {path:"courseSchedule",element:<CourseSchedulePage/>},
-  ] },
+      {path:"assignClient",element:<AssignClientPage/>},
+
+    ] },
 ]);
 
 function App() {

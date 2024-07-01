@@ -17,7 +17,6 @@ const MainBlogs = () => {
   const handleNavigate = ()=>{
     navigate("/blog")
   }
-//TODO: check out on the navigation when go from blogs to blog
   const classes = [
     {
       id: 1,
