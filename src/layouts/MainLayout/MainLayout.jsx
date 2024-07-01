@@ -1,4 +1,4 @@
-import { Outlet } from 'react-router-dom';
+import { Outlet, ScrollRestoration } from 'react-router-dom';
 import LogoutNav from './../../components/LandingNav/LandingNav';
 import Footer from '../../components/Footer/Footer';
 
@@ -7,6 +7,7 @@ const MainLayout = () => {
       <LogoutNav/>
       <Outlet/>
       <Footer/>
+      <ScrollRestoration />
     </> );
 }
  
