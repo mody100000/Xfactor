@@ -1,9 +1,7 @@
 import styles from "./Login.module.css";
-import { IoLockClosed } from "react-icons/io5";
 import { useState } from "react";
 import { useMemo } from "react";
 import Joi from "joi";
-import { MdEmail } from "react-icons/md";
 import { Link, useNavigate } from "react-router-dom";
 import InputWithIcon from './../common/InputWithIcon';
 import logo from "../../assets/logo.png";
@@ -78,14 +76,12 @@ const Login = () => {
               onChange={(e) => handleInputChange(e, "email")}
               placeholder={"email"}
               errors={errors["email"]}
-              Icon={MdEmail}
             />
             <InputWithIcon
               type="password"
               onChange={(e) => handleInputChange(e, "password")}
               placeholder={"password"}
               errors={errors["password"]}
-              Icon={IoLockClosed}
             />
           </div>
           <button
