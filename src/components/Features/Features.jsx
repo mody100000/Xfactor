@@ -30,7 +30,7 @@ const Features = () => {
           </div>
         </div>
         <div className={styles.textContainer}>
-          <h1 className="text-black">Ready to Make Your Fitness</h1>
+          <h1>Ready to Make Your Fitness</h1>
           <p>
             Gym are an essential part of any successful gym, They will help
             toattract new customers members motivated and track achieve their

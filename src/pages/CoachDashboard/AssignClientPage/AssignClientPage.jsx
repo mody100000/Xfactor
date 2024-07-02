@@ -107,6 +107,7 @@ const AssignClientPage = () => {
   return (
     <div className="container my-5">
          <div className={`row ${styles.cardsContainer}`}>
+          <h2 className="fw-bold text-center mb-3">Your Recoustes</h2>
            {selectedCards.map((item) => (
              <div key={item.id} className="col-md-4 mb-4">
                <div className={`card ${styles.card}`}>

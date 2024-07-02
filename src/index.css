@@ -1,3 +1,39 @@
-body{
-    background-color: white;
+
+:root {
+  --background-color: white;
+  --text-color: black;
+  --navbar-background-color: white;
+  --navbar-text-color: black;
+}
+
+body.light {
+  --background-color: white !important;
+  --text-color: black;
+  --navbar-background-color: white;
+  --navbar-text-color: black;
+  --bmi-color: white; /* Added the missing semicolon here */
+  --testimonial-color: black;
+  --question-color:white;
+  --filterSidebar-color:#f0f0f0;
+}
+
+body.dark {
+  --background-color: black !important;
+  --text-color: white;
+  --navbar-background-color: black;
+  --navbar-text-color: white;
+  --bmi-color: #212121;
+  --testimonial-color: #212121;
+  --question-color:#212121;
+  --filterSidebar-color:#333;
+}
+
+body {
+  background-color: var(--background-color) !important;
+  color: var(--text-color);
+}
+
+.navbar {
+  background-color: var(--navbar-background-color) !important;
+  color: var(--navbar-text-color) !important;
 }

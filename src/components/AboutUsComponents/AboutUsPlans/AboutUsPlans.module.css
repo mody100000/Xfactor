@@ -1,14 +1,15 @@
 .ourPricing {
-    background-color: #000;
+    background-color: var(--background-color);
     padding: 4rem;
   }
   
   .sectionTitle {
     text-align: center;
+    color: var(--text-color);
   }
   
   .sectionTitleWhite {
-    color: #fff;
+    color: var(--text-color);
   }
   
   .sectionTitleWhite h1 {
