@@ -2,3 +2,7 @@
     padding: 0.7rem 6rem;
     width: 100%;
   }
+
+  .nav-link, .nav-dropdown .dropdown-item {
+    color: var(--text-color) !important;
+  }

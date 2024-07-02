@@ -37,3 +37,7 @@ body {
   background-color: var(--navbar-background-color) !important;
   color: var(--navbar-text-color) !important;
 }
+.navbar .nav-link,
+.navbar .dropdown{
+  color: var(--text-color) !important;
+}
