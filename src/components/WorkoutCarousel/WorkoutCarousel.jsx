@@ -16,7 +16,7 @@ const CustomArrow = ({ className, style, onClick, direction }) => {
     </div>
   );
 };
-
+//TODO:try to solve the arrow broplem
 const WorkoutCarousel = () => {
   const videos = [
     { id: 1, url: 'https://www.youtube.com/embed/eMjyvIQbn9M?si' },
@@ -35,10 +35,26 @@ const WorkoutCarousel = () => {
     slidesToShow: 3,
     slidesToScroll: 1,
     centerMode: true,
-    nextArrow: <CustomArrow direction="right" />,
-    prevArrow: <CustomArrow direction="left" />,
     centerPadding: '0',
     beforeChange: (current, next) => setActiveIndex(next),
+    appendDots: dots => (
+      <div>
+        <ul style={{ margin: "0px" }}> {dots} </ul>
+      </div>
+    ),
+    customPaging: i => (
+      <div
+        style={{
+          width: "20px",
+          height: "10px",
+          marginTop: "19px",
+          borderRadius: "4px",
+          background: i === activeIndex ? "rgb(100, 0, 0)" : "rgb(201, 22, 22)"
+        }}
+      ></div>
+    ),
+    nextArrow: <CustomArrow direction="right" />,
+    prevArrow: <CustomArrow direction="left" />,
   };
 
   return (

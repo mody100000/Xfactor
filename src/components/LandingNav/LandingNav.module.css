@@ -1,6 +1,6 @@
 /* LandingNav.module.css */
 .item_links {
-  color: #e4d9ef;
+  color: var(--text-color);
   margin: 0.2rem;
   cursor: pointer;
   font-size: 15px;
@@ -14,12 +14,16 @@
   object-fit: contain;
   width: 200px;
   height: auto; 
+  background-color: black;
 }
 
 .navbar {
-  background-color: #000000 !important;
+  background-color: var(--navbar-background-color) !important;
+  color: var(--navbar-text-color) !important;
 }
-
+.brand {
+  color: var(--text-color);
+}
 .line {
   display: block;
   height: 1.5px;

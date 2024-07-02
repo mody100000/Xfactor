@@ -16,7 +16,7 @@
   text-align: center;
 }
 
-h1 {
-  color: rgb(255, 255, 255);
-  font-size: 3em; /* Adjust font size as needed */
+.title {
+  font-size: 3em;
+  font-weight: bold;
 }

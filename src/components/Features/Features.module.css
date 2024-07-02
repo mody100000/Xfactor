@@ -2,10 +2,9 @@
   display: flex;
   justify-content: space-between;
   padding: 5rem 3rem;
-  background-color: white;
-  color: black;
+  background-color: var(--background-color);
+  color: var(--text-color);
   position: relative;
-  margin-bottom: 3rem;
 }
 
 .textContainer {
@@ -17,6 +16,7 @@
   font-size: 3.5rem;
   font-weight: 900;
   line-height: 1.1;
+  color: var(--text-color);
   margin-bottom: 1rem;
 }
 

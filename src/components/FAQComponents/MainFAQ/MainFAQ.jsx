@@ -52,7 +52,7 @@ const MainFAQ = () => {
                 </div>
                 {expanded[quation.id] && (
                   <div className={`${styles.expandedContent} border-top mt-4`}>
-                    <p className="text-muted mt-1 pt-2">{quation.subtitle}</p>
+                    <p className="mt-1 pt-2">{quation.subtitle}</p>
                   </div>
                 )}
               </div>

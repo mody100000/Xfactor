@@ -11,7 +11,7 @@
   }
 
   .questionCard{
-    background-color: black;
+    background-color: var(--testimonial-color);
     padding: 1rem 2rem;
     margin-bottom: 1rem;
     display: flex;
@@ -46,6 +46,8 @@
 }
 
   .courseCard {
+    background-color: var(--question-color);
+    color: var(--text-color);
     display: flex;
     flex-direction: row;
     padding: 15px;

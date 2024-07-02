@@ -1,9 +1,11 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { setCoaches } from "./store/reducers/coachesSlice";
 import { setAddress, setSport } from "./store/features/coachSlice";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import "./App.css";
+import "./index.css";
+
 import MainLayout from "./layouts/MainLayout/MainLayout";
 import Landing from "./pages/Landing/Landing";
 import ApplyToCoachPage from "./pages/ApplyToCoachPage/ApplyToCoachPage";
@@ -32,6 +34,7 @@ import FAQ from './pages/FAQ/FAQ';
 import Blogs from './pages/Blogs/Blogs';
 import Blog from './pages/Blog/Blog';
 import GeneralRegisterPage from './pages/GeneralRegisterPage/GeneralRegisterPage';
+import AssignClientPage from './pages/CoachDashboard/AssignClientPage/AssignClientPage';
 
 const routes = createBrowserRouter([
   {
@@ -70,11 +73,22 @@ const routes = createBrowserRouter([
       {index:true, path:"/dashboard", element: <Dashboard/>},
       {path:"courses",element:<DashboardCoursesPage/>},
       {path:"courseSchedule",element:<CourseSchedulePage/>},
-  ] },
+      {path:"assignClient",element:<AssignClientPage/>},
+
+    ] },
 ]);
 
 function App() {
   const dispatch = useDispatch();
+  const [theme, setTheme] = useState('light');
+
+  useEffect(() => {
+    document.body.className = theme;
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
+  };
 
   useEffect(() => {
     const sampleCoaches = [
@@ -197,7 +211,11 @@ function App() {
     dispatch(setAddress('Los Angeles'));
   }, [dispatch]);
 
-  return <RouterProvider router={routes}></RouterProvider>;
+  return(
+    <>
+     <RouterProvider router={routes}></RouterProvider>
+    </>
+  )
 }
 
 export default App;

@@ -36,7 +36,7 @@ const BMICalculator = () => {
     <section className={styles.bmiCalculatorSection}>
       <div className="container">
         <h1 className={styles.title}>BMI Calculator</h1>
-        <h2 className={styles.subtitle}>Get into shape now</h2>
+        <h2 className={styles.subtitle}>Get Into Shape , Now!</h2>
         <p className={styles.description}>
           Calculate your Body Mass Index (BMI) to find out if you are at a healthy weight.
         </p>

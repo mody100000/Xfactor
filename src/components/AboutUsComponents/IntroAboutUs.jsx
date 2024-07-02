@@ -5,7 +5,7 @@ const IntroAboutUs = () => {
     return (
         <div className={styles.intro}>
             <div className="overlay">
-                <h1>About Us</h1>
+                <h1 className={styles.title}>About Us</h1>
             </div>
         </div>
     );
