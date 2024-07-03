@@ -10,7 +10,9 @@
   display: flex;
   align-items: center;
 }
-
+.supText{
+  color: var(--supText-color);
+}
 .productImage {
   object-fit: contain;
   margin-right: 15px;

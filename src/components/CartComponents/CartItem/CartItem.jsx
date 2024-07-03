@@ -9,7 +9,7 @@ const CartItem = ({ product, quantity, onRemove, onQuantityChange }) => {
       </div>
       <div className="col-md-3">
         <h5 className='fw-bold'>{product.title}</h5>
-        <p className="text-muted">{product.subtitle}</p>
+        <p className={styles.supText}>{product.subtitle}</p>
       </div>
       <div className="col-md-2 text-center">
         <span className='fs-5'>{product.price}</span>

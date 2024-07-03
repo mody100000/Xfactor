@@ -1,4 +1,3 @@
-
 :root {
   --background-color: white;
   --text-color: black;
@@ -16,6 +15,11 @@ body.light {
   --question-color:white;
   --filterSidebar-color:#f0f0f0;
   --shifting-background-color :#F4F4F4;
+  --supText-color:#5a5a5a;
+  --placeholder-color: #000000a8;
+  --productImg-color:#F8F8F8;
+  --productCard-color:#FFFFFF;
+  --relatedProduct-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 body.dark {
@@ -28,6 +32,11 @@ body.dark {
   --question-color:#212121;
   --filterSidebar-color:#333;
   --shifting-background-color :#f4f4f433;
+  --supText-color:#ddddddbb;
+  --placeholder-color: #ffffff8e; 
+  --productImg-color:#464b50;
+  --productCard-color:#333;
+  --relatedProduct-box-shadow:0 0 20px rgb(255, 255, 255);
 }
 
 body {

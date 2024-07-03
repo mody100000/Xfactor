@@ -44,7 +44,9 @@
     color: white;
     text-align: center;
 }
-
+.supText{
+  color: var(--supText-color);
+}
   .courseCard {
     background-color: var(--question-color);
     color: var(--text-color);

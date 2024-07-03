@@ -57,15 +57,16 @@ const routes = createBrowserRouter([
       { path: '/filtered-coaches', element: <FilteredCoachesResultPage /> },
       { path: '/coach/:id', element: <CoachProfilePage /> },
       { path: '/coach/:id', element: <CoachProfile /> },
-      { path: '/login', element: <LoginPage /> },
-      { path: '/register', element: <RegisterPage /> },
-      { path: '/generalRegister', element: <GeneralRegisterPage /> },
+    
     ],
   },
   {path:"",element:<CoachApplicationLayout/>, children:[
     { path: "applyToCoach", element: <ApplyToCoachPage /> },
     { path: "ApplicationTimeline", element: <CoachApplicationTimeline /> },
     { path: "training-options", element: <TrainingOptions /> },
+    { path: '/login', element: <LoginPage /> },
+    { path: '/register', element: <RegisterPage /> },
+    { path: '/generalRegister', element: <GeneralRegisterPage /> },
 
   ]},
   { path: 'dashboard', element: <DashboardLayout />,

@@ -19,16 +19,17 @@
   padding: 10px;
   border-radius: 10px;
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
   cursor: pointer;
   position: relative;
   padding-bottom: 20px;
-  background-color: #fff;
+  background-color: var(--navbar-background-color);
 }
 
 .relatedProduct:hover {
   transform: scale(1.05);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--relatedProduct-box-shadow);
+
 }
 
 .relatedProductImage {
@@ -36,7 +37,7 @@
   height: auto;
   max-height: 200px;
   object-fit: contain;
-  background-color: #d9d9d977;
+  background-color: #d9d9d960;
   border-radius: 10px;
   margin-bottom: 10px;
 }
@@ -54,7 +55,7 @@
 
 .cardSubtitle {
   font-size: 0.9em;
-  color: #666;
+  color: var(--supText-color);
   margin-bottom: 10px;
 }
 
@@ -71,7 +72,7 @@
 
 .relatedProduct:hover .hoverContent {
   opacity: 1;
-  max-height: 200px; /* Adjust this value based on your content's height */
+  max-height: 600px; 
 }
 
 .iconContainer {
@@ -83,7 +84,7 @@
 }
 
 .additionalText {
-  color: #666;
+  color: var(--supText-color);
   margin-bottom: 10px;
 }
 

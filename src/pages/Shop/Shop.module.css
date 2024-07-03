@@ -2,9 +2,25 @@
   margin-top: 20px;
   padding: 3rem;
 }
-input:focus {
+.searchInput{
+  background-color:var(--filterSidebar-color);
+  border: none;
+  border-radius: 1rem;
+
+}
+.searchInput::placeholder {
+  color: var(--placeholder-color);
+}
+.icon{
+  border-radius: 10rem;
+  background-color: var(--filterSidebar-color);
+  color: var(--text-color);
+}
+.searchInput:focus {
+  background-color:var(--filterSidebar-color);
+  color: var(--text-color);
   border-color: #dc3545 !important; 
-  box-shadow: 4px 0 8px rgba(220, 53, 69, 0.6) !important;
+  box-shadow: 4px 2px 10px rgba(220, 53, 69, 0.6) !important;
 }
 @media (max-width: 768px) {
   .shopPage {

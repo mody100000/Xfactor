@@ -1,5 +1,5 @@
 .cartContainer {
-    background-color: #000;
+    background-color: #1c1c1c;
     color: #fff;
     padding: 40px;
     border-radius: 10px;
@@ -8,7 +8,6 @@
     align-items: center;
     /* height: 400px; */
   }
-  
   .instructions {
     padding: 20px;
     border-radius: 10px;
@@ -23,7 +22,7 @@
   
   .cartTotalDetails {
     /* background-color: #333; */
-    background-color: #222;
+    background-color: #333;
     padding: 30px;
     border-radius: 10px;
   }
