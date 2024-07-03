@@ -1,5 +1,6 @@
 .container{
-    background-color: #F4F4F4;
+    background-color: var(--shifting-background-color);
+    color: var(--text-color);
     padding: 3rem 6rem;
     margin: 2rem 0;
     display: flex;

@@ -4,8 +4,8 @@ import users from "../../../assets/users.png";
 import video from "../../../assets/video.png";
 
 const TrainingTypes = () => {
-    return ( <div className="">
-        <h1 className="text-dark text-center fw-bold">TrainingTypes</h1>
+    return ( <div>
+        <h1 className={`text-center fw-bold ${styles.titleHader}`}>TrainingTypes</h1>
         <div className={styles.icons}>
         <div className={styles.item}>
             <img src={user} alt="Total Clients" className={styles.icon} />
