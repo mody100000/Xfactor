@@ -15,6 +15,7 @@ body.light {
   --testimonial-color: black;
   --question-color:white;
   --filterSidebar-color:#f0f0f0;
+  --shifting-background-color :#F4F4F4;
 }
 
 body.dark {
@@ -26,6 +27,7 @@ body.dark {
   --testimonial-color: #212121;
   --question-color:#212121;
   --filterSidebar-color:#333;
+  --shifting-background-color :#f4f4f433;
 }
 
 body {

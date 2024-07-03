@@ -15,15 +15,19 @@
     text-align: center;
 }
 .title {
+    color: var(--text-color);
     font-size: 40px;
     font-weight: bolder;
     text-align: center;
 }
 .icon {
-    width: 100px;
-    height: 100px;
+    background-color: white;
+    width: 120px;
+    height: 110px;
+    padding: 5px;
     object-fit: contain;
     margin-bottom: 1rem;
+    border-radius: 20px;
 }
 .item {
     display: flex;
@@ -42,7 +46,7 @@
 .itemTitle {
     font-size: 1.6rem;
     font-weight: bold;
-    color: black;
+    color: var(--text-color);
     margin: 0.5rem 0;
 }
 .itemText {

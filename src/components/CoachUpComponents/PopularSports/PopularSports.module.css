@@ -2,7 +2,7 @@
     padding: 3rem 6rem;
     margin: 2rem 0;
     display: flex;
-    background-color: #F4F4F4;
+    background-color: var(--shifting-background-color);
     flex-direction: column;
     justify-content: center;
     align-items: center;

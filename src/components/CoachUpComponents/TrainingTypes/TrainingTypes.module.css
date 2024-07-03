@@ -7,12 +7,16 @@
   }
   
   .icon {
-    width: 300px;
+    width: 100px;
     height: 90px;
     object-fit: contain;
     margin: 0 10px;
+    background-color: white;
+    border-radius:10px ;
   }
-  
+  .titleHader{
+    color: var(--text-color);
+  }
   .item {
     display: flex;
     align-items: center;
@@ -32,7 +36,7 @@
   .title {
     font-size: 1.6rem;
     font-weight: bold;
-    color: black;
+    margin-top: 1rem;
   }
   
   .text {
