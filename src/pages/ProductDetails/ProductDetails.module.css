@@ -45,8 +45,8 @@
   .productTitle {
     font-size: 2em;
     font-weight: bold;
-    color: #000;
     margin-left: 2rem;
+    color: var(--text-color);
   }
   
   .productPrice {
@@ -100,17 +100,19 @@
     text-align: center;
     border: 1px solid #e0e0e0;
     margin: 0 10px;
+    border-radius: 8px;
   }
   
   .addToCartButton {
     background-color: #BF1E2E;
     color: white;
     border: none;
-    padding: 5px 20px;
+    padding: 5px 35px;
     cursor: pointer;
     border-radius: 5px;
     margin-left: 2rem;
     font-weight: 300;
+    margin-right: 5rem;
   }
   
   .addToCartButton:hover {

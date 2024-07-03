@@ -1,5 +1,5 @@
 .filterSidebar {
-  background-color: #f8f9fa;
+  background-color:var(--filterSidebar-color);
   padding: 20px;
   border-radius: 5px;
 }

@@ -30,8 +30,8 @@ const Shop = () => {
           <div className="col-md-3 col-12 order-md-2 mb-3">
           <div className="col-md-12 col-12 order-md-1 mb-3">
           <div className="input-group rounded">
-         <input type="search" className="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
-        <span className="input-group-text border-0" id="search-addon">
+         <input type="search" className={`form-control  ${styles.searchInput}`} placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+        <span className={`input-group-text border-0 mx-1 ${styles.icon}`} id="search-addon">
      <i className="fas fa-search"></i>
       </span>
      </div>
