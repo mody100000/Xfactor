@@ -20,6 +20,8 @@ body.light {
   --productImg-color:#F8F8F8;
   --productCard-color:#FFFFFF;
   --relatedProduct-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --coaches-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.214);
+  --filterInput-bgcolor:white;
 }
 
 body.dark {
@@ -37,6 +39,8 @@ body.dark {
   --productImg-color:#464b50;
   --productCard-color:#333;
   --relatedProduct-box-shadow:0 0 20px rgb(255, 255, 255);
+  --coaches-box-shadow: 0 0 10px rgb(255, 255, 255);
+  --filterInput-bgcolor:#9a9a9a;
 }
 
 body {

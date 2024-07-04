@@ -96,13 +96,25 @@ const FilteredCoachesResultPage = () => {
   };
 
   return (
+    <>
+        <div className={styles.intro}>
+        <div className={styles.overlay}>
+            <div className='d-flex flex-column align-items-center justify-content-center p-5'>
+            <h1 className="fw-bold">Coaches</h1>
+            <h3 className={`text-center ${styles.suptitle}`}>
+            Recommended {sport} coaches near {address}
+            </h3>
+            </div>
+           </div>
+            <div>
+        </div>
+      </div>
     <div className={styles.container}>
       <div className={styles.top}>
-        <h1 className={styles.title}>Recommended {sport} coaches near {address}</h1>
         <div className={styles.filters}>
           <label>
-            Price Range:
-            <select onChange={handlePriceRangeChange}>
+            <select name='Price Range:' className={styles.filterInbut}  onChange={handlePriceRangeChange}>
+             <option value=""  style={{ display: 'none' }}>Price Range:</option>
               <option value="0-25">0 - 25</option>
               <option value="26-50">26 - 50</option>
               <option value="51-75">51 - 75</option>
@@ -111,24 +123,26 @@ const FilteredCoachesResultPage = () => {
             </select>
           </label>
           <label>
-            Gender:
-            <select onChange={handleGenderFilterChange}>
+            <select className={styles.filterInbut} onChange={handleGenderFilterChange}>
+             <option value=""  style={{ display: 'none' }}>Gender:</option>
               <option value="Any">Any</option>
               <option value="Male">Male</option>
               <option value="Female">Female</option>
             </select>
           </label>
           <label>
-            Training Type:
-            <select onChange={handleTrainingTypeChange}>
+            
+            <select className={styles.filterInbut} onChange={handleTrainingTypeChange}>
+             <option value=""  style={{ display: 'none' }}>Training Type:</option>
               <option value="All">All</option>
               <option value="In-Person">In-Person</option>
               <option value="Online">Online</option>
             </select>
           </label>
           <label>
-            Sort By:
-            <select onChange={handleSortChange}>
+            
+            <select className={styles.filterInbut} onChange={handleSortChange}>
+             <option value=""  style={{ display: 'none' }}>Sort By:</option>
               <option value="Recommended">Recommended</option>
               <option value="Price">Price</option>
             </select>
@@ -162,6 +176,7 @@ const FilteredCoachesResultPage = () => {
         {renderPagination()}
       </div>
     </div>
+    </>
   );
 };
 

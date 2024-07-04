@@ -54,10 +54,20 @@ const CoachesResultPage = () => {
   };
 
   return (
-    <div className={styles.container}>
-      <div className={styles.top}>
-        <h1 className={styles.title}>Recommended {sport} coaches near {address}</h1>
+    <>
+    <div className={styles.intro}>
+        <div className={styles.overlay}>
+            <div className='d-flex flex-column align-items-center justify-content-center p-5'>
+            <h1 className="fw-bold">Coaches</h1>
+            <h3 className={`text-center ${styles.suptitle}`}>
+            Recommended {sport} coaches near {address}
+            </h3>
+            </div>
+           </div>
+            <div>
+        </div>
       </div>
+    <div className={styles.container}>
       <div className={styles.coachesContainer}>
         {currentCoaches.map((coach) => (
           <div key={coach.id} className={styles.coachCard}>
@@ -82,6 +92,7 @@ const CoachesResultPage = () => {
         {renderPagination()}
       </div>
     </div>
+    </>
   );
 };
 

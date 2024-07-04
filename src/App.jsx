@@ -57,7 +57,6 @@ const routes = createBrowserRouter([
       { path: '/filtered-coaches', element: <FilteredCoachesResultPage /> },
       { path: '/coach/:id', element: <CoachProfilePage /> },
       { path: '/coach/:id', element: <CoachProfile /> },
-    
     ],
   },
   {path:"",element:<CoachApplicationLayout/>, children:[
