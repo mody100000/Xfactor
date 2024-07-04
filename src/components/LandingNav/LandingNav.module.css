@@ -3,7 +3,8 @@
   color: var(--text-color);
   margin: 0.2rem;
   cursor: pointer;
-  font-size: 15px;
+  font-size: 13px;
+  font-weight: bold;
 }
 
 .item_links:hover {

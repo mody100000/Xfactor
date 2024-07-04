@@ -1,18 +1,39 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f8f9fa;
+/* intro image */
+.intro {
+  position: relative;
+  background-image: url('../../assets/coachItro (1).jpeg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: cover;
+  height: 350px; /* Adjust the height as needed */
 }
 
+.overlay {
+  background-color: rgba(0, 0, 0, 0.349);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center;
+}
+
+.suptitle {
+  color: rgba(255, 255, 255, 0.774);
+}
+/* page */
 .container {
   margin: 0 auto;
   padding: 20px;
 }
 .recommendedText{
-  font-style:italic ;
-font-size: 1rem;
-color: gray;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #BF1E2E;
 text-align: center;
 }
 .top {
@@ -31,20 +52,42 @@ text-align: center;
 
 .filters {
   display: flex;
-  gap: 15px;
+  align-items: center;
+  justify-content: space-around;
   flex-wrap: wrap;
-  background-color: #e9ecef;
+  background-color:var(--filterSidebar-color);
+  height: 8rem;
   padding: 10px 15px;
   border-radius: 5px;
+  width: 100%;
+  margin: 2rem 1rem;
 }
 
 .filters label {
-  display: flex;
-  flex-direction: column;
   font-weight: bold;
-  color: #495057;
+  text-align: center;
+}
+.filterInbut{
+  border: none;
+  color: black;
+  margin-top: 0.5rem;
+  padding: 0.6rem 0.4rem;
+  border-radius: 0.5rem;
+  min-width: 15rem;
+  background-color: var(--filterInput-bgcolor);
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.236);
+  cursor: pointer;
 }
 
+.filterInbut:active{
+  border: none;
+}
+
+.filterInbut:focus{
+  border: none;
+  
+
+}
 .filterSelect {
   margin-top: 5px;
   padding: 5px;
@@ -62,10 +105,10 @@ text-align: center;
 }
 
 .coachCard {
-  background-color: #fff;
+  background-color: var(--filterSidebar-color);
   border-radius: 5px;
   padding: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--coaches-box-shadow);
 }
 
 .coachImage {
@@ -81,7 +124,8 @@ text-align: center;
 }
 
 .coachCategory {
-  color: #6c757d;
+  color: var(--supText-color);
+
 }
 
 .rating {
@@ -112,7 +156,8 @@ text-align: center;
 }
 
 .distance {
-  color: #6c757d;
+  color: var(--supText-color);
+
   margin-top: 10px;
 }
 
@@ -123,7 +168,7 @@ text-align: center;
 
 .viewProfileButton {
   padding: 5px 10px;
-  background-color: #007bff;
+  background-color: #BF1E2E;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -132,7 +177,7 @@ text-align: center;
 }
 
 .viewProfileButton:hover {
-  background-color: #0056b3;
+  background-color: #a51b28;
 }
 
 .pagination {
@@ -142,7 +187,8 @@ text-align: center;
 }
 
 .coachCard.recommended {
-  background-color: #e6ffe6;
+  background-color: var(--filterSidebar-color);
+  box-shadow: var(--coaches-box-shadow);
 }
 
 .silverBadge {
@@ -158,17 +204,22 @@ text-align: center;
 }
 
 .paginationButton {
-  padding: 5px 10px;
-  margin: 0 5px;
-  background-color: #f0f0f0;
-  border: none;
-  border-radius: 5px;
+  margin: 0 5px 2rem 5px;
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  background-color: white;
   cursor: pointer;
+  border-radius: 10px;
+}
+.paginationButton:hover {
+  background-color: #f0f0f0;
+  color:#BF1E2E ;
 }
 
 .paginationButton.active {
-  background-color: #007bff;
+  background-color: #BF1E2E;
   color: white;
+  border-color: #BF1E2E;
 }
 
 @media (max-width: 768px) {
