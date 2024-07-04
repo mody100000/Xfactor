@@ -56,7 +56,7 @@ const routes = createBrowserRouter([
       { path: "Shop/product/:id", element: <ProductDetails /> },
       { path: '/filtered-coaches', element: <FilteredCoachesResultPage /> },
       { path: '/coach/:id', element: <CoachProfilePage /> },
-      { path: '/coach/:id', element: <CoachProfile /> },
+      { path: '/coaches/:id', element: <CoachProfile /> },
     ],
   },
   {path:"",element:<CoachApplicationLayout/>, children:[
