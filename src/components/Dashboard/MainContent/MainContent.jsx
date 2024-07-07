@@ -9,7 +9,7 @@ const MainContent = () => {
   return (
     <div className={`${styles.mainContent} container-fluid`}>
       <div className='d-flex flex-row justify-content-between'>
-        <h1 className='fw-bold mb-2'>Welcome Back!</h1>
+        <h1 className={`fw-bold mb-3 ${styles.welcomeTitle}`}>Welcome Back!</h1>
         <div>
           <button className={`${styles.account} btn btn-danger`}>Account</button>
           <button className={`${styles.payment} btn btn btn-outline border border-1 border-danger text-danger`}>Payment</button>
@@ -28,12 +28,6 @@ const MainContent = () => {
         <Card title="Work preferences" content="Graphic Designer / Desktop Publisher (Intern)" type="specialization" className="col-md-6 col-lg-3" />
         <Card title="Additional info" content="Help recruiters get to know you better by describing your skills" type="course" className="col-md-6 col-lg-3" />
       </div>
-      {/* <div className={`${styles.statistics} row`}>
-        <Card title="1,921 views per week" type="statistic" className="col-md-6 col-lg-3" />
-        <Card title="306 bonuses for education" type="statistic" className="col-md-6 col-lg-3" />
-        <Card title="26 courses started" type="statistic" className="col-md-6 col-lg-3" />
-        <Card title="35 courses in favorites" type="statistic" className="col-md-6 col-lg-3" />
-      </div> */}
       <div className={`${styles.workPreferences} row`}>
         <Card title="Work preferences" content="Graphic Designer / Desktop Publisher (Intern)" className="col-md-6 col-lg-3" />
         <Card title="Additional info" content="Help recruiters get to know you better by describing your skills" className="col-md-6 col-lg-3" />

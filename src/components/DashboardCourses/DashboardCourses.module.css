@@ -13,8 +13,12 @@
   padding: 1px;
   margin: 0 0.2rem;
 }
-
+.headerTitle{
+  font-weight: bold;
+}
 .courseCard {
+  background-color: var(--productCard-color);
+  color: (--text-color);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -39,6 +43,7 @@
 
 .titles {
   margin-bottom: 4rem;
+  color: var(--text-color);
 }
 
 .courseTitle {
@@ -48,7 +53,7 @@
 }
 
 .courseSubtitle {
-  color: gray;
+  color: rgb(152, 152, 152);
   margin: 0;
 }
 

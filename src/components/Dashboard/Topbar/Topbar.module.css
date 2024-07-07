@@ -1,5 +1,5 @@
 .topbar {
-    background-color: #f8f9fa;
+    background-color:var(--filterSidebar-color);
     padding: 10px 20px;
     border-bottom: 1px solid #dee2e6;
     display: flex;
@@ -10,9 +10,13 @@
   .search {
     padding: 5px 10px;
     border: 1px solid #ccc;
+    background-color: var(--filterInput-bgcolor);
     border-radius: 25px;
     flex: 0.8;
     margin: 0 20px;
+  }
+  .search::placeholder{
+    color: var(--placeholder-color);
   }
   .userImg{
     width: 100px;

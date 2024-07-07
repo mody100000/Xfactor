@@ -165,7 +165,7 @@ const FilteredCoachesResultPage = () => {
               <p className={styles.summary}>{coach.summary}</p>
               <p className={styles.distance}>{coach.distance} miles away from {address}</p>
               <p className={styles.salary}>${coach.salary}/session</p>
-              <Link to={`/coach/${coach.id}`} className={styles.viewProfileButton}>View Profile</Link>
+              <Link to={`/coaches/${coach.id}`} className={styles.viewProfileButton}>View Profile</Link>
             </div>
           ))
         ) : (

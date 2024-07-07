@@ -14,7 +14,6 @@ import { GrWorkshop } from 'react-icons/gr';
 import { FaRegCircleQuestion } from 'react-icons/fa6';
 import { RxReader } from 'react-icons/rx';
 import { CiDark } from 'react-icons/ci';
-import { MdOutlineDarkMode } from "react-icons/md";
 
 const LogoutNav = ({ theme, toggleTheme }) => {
   return (

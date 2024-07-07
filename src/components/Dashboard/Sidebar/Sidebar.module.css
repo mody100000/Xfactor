@@ -45,6 +45,7 @@ a{
 .menuItem {
   margin: 16px 0;
   align-items: center;
+  cursor: pointer;
 }
 
 .logout {
@@ -82,4 +83,13 @@ a{
   .logo img {
     margin-top: 0;
   }
+}
+.sidebar.light {
+  background-color: #fff;
+  color: #000;
+}
+
+.sidebar.dark {
+  background-color: #333;
+  color: #fff;
 }
