@@ -17,6 +17,7 @@
   
   .courseCard {
     display: flex;
+    background-color: var(--productCard-color);
     flex-direction: row;
     padding: 15px;
     height: auto; /* Adjust height to fit content */
@@ -43,10 +44,11 @@
     font-size: 1.4rem;
     font-weight: bold;
     margin-bottom: 10px;
+    color: var(--text-color);
   }
   
   .courseSubtitle {
-    color: gray;
+    color: var(--text-color);
     margin: 0;
   }
   
@@ -83,6 +85,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    color: var(--supText-color);
   }
   
   .continueBtn {
@@ -90,6 +93,8 @@
   }
   .progressCard {
     padding: 20px;
+    background-color: var(--productCard-color);
+    color: var(--text-color);
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     display: flex;
@@ -101,22 +106,29 @@
   .iconWrapper {
     display: flex;
     align-items: center;
+    color: var(--supText-color);
   }
   
   .progressNumbers {
     font-weight: bold;
+    border: 1px solid gray;
+    padding: 4px 10px;
+    text-align: center;
+    border-radius: 20px;
     color: #6c757d;
   }
   
   .progressTitle {
-    margin: 20px 0;
+    margin: 50px 0 5px 0;
     font-weight: bold;
   }
   
-  .progress-bar {
+  .progressBar {
     background-color: #dc3545;
   }
-  
+  .progress{
+    height: 14px;
+  }
   @media (max-width: 768px) {
     .courses {
       padding: 10px;

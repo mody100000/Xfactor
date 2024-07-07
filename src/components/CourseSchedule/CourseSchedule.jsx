@@ -3,6 +3,8 @@ import { CiBookmark } from "react-icons/ci";
 import { BsArrowDownRightCircle, BsArrowUpRightCircle } from "react-icons/bs";
 import { FaReact, FaCode, FaDatabase, FaMobileAlt } from "react-icons/fa";
 import styles from "./CourseSchedule.module.css";
+import { HiOutlinePlayCircle } from "react-icons/hi2";
+import { CiCirclePlus } from "react-icons/ci";
 
 const CourseSchedule = () => {
   const [expanded, setExpanded] = useState({});
@@ -17,7 +19,7 @@ const CourseSchedule = () => {
   return (
     <div className={styles.courses}>
       <div className="d-flex flex-row justify-content-between align-items-center flex-wrap mt-1 mb-4">
-        <h1 className="fw-bold">My courses</h1>
+      <h2 className={`fw-bold`}>My courses</h2>
         <div className="d-flex justify-content-between">
           <button className={`btn btn-danger ${styles.topBtn}`}>Active</button>
           <button className={`btn btn btn-outline border border-1 border-danger text-danger ${styles.topBtn}`}>Completed</button>
@@ -50,7 +52,7 @@ const CourseSchedule = () => {
                 </div>
                 {expanded[course.id] && (
                   <div className={styles.expandedContent}>
-                    <p className="text-muted mt-1 pt-2">Additional course information goes here...</p>
+                    <p className="mt-1 pt-2">Additional course information goes here...</p>
                     <button className={`btn btn-danger ${styles.topBtn}`}>Continue</button>
                   </div>
                 )}
@@ -71,10 +73,10 @@ const CourseSchedule = () => {
                   </div>
                   <span className={styles.progressNumbers}>{card.progressNumbers}</span>
                 </div>
-                <h3 className={styles.progressTitle}>{card.title}</h3>
-                <div className="progress my-3">
+                <h4 className={styles.progressTitle}>{card.title}</h4>
+                <div className={`progress my-3 ${styles.progress}`}>
                   <div 
-                    className="progress-bar" 
+                    className={styles.progressBar}
                     role="progressbar" 
                     style={{ width: `${card.progressPercentage}%` }} 
                     aria-valuenow={card.progressPercentage} 
@@ -131,33 +133,33 @@ const courses = [
 const progressCards = [
   {
     id: 1,
-    icon: <FaReact size={30} color="#61dafb" />,
+    icon: <BsArrowUpRightCircle size={30}  />,
     progressNumbers: "7/15",
-    title: "React Basics",
-    progressPercentage: 50,
+    title: "Progress by course",
+    progressPercentage: 72,
     date: "2 Feb, 2024",
   },
   {
     id: 2,
-    icon: <FaCode size={30} color="#f0db4f" />,
-    progressNumbers: "10/20",
-    title: "JavaScript Advanced",
-    progressPercentage: 75,
-    date: "5 Mar, 2024",
+    icon: <HiOutlinePlayCircle size={35}  />,
+    progressNumbers: "10/25",
+    title: "Score for today",
+    progressPercentage: 95,
+    date: "Grade A",
   },
   {
     id: 3,
-    icon: <FaDatabase size={30} color="#4DB33D" />,
+    icon: <HiOutlinePlayCircle size={35}  />,
     progressNumbers: "5/10",
-    title: "Database Management",
-    progressPercentage: 50,
+    title: "Video Review",
+    progressPercentage: 60,
     date: "12 Jan, 2024",
   },
   {
     id: 4,
-    icon: <FaMobileAlt size={30} color="#007acc" />,
+    icon: <CiCirclePlus size={35}/>,
     progressNumbers: "12/20",
-    title: "Mobile Development",
+    title: "Completed texts",
     progressPercentage: 60,
     date: "20 Apr, 2024",
   },
