@@ -15,7 +15,9 @@
   font-size: 1.2rem;
   color: white;
 }
-
+.supText{
+  color: rgb(174, 168, 168);
+}
 .mainSection {
   padding: 2rem 1rem;
   text-align: center;
@@ -52,7 +54,7 @@
 
 .cardImage {
   background-color: rgba(255, 255, 255, 0);
-  border-radius: 1rem 1rem 0 0;
+  border-radius: 1rem;
   width: 100%;
   height: 21rem; /* Adjust the height of the images */
   object-fit: cover;
@@ -65,8 +67,7 @@
   position: absolute;
   bottom: 0;
   width: 100%;
-  border-top-right-radius: 1rem;
-  border-top-left-radius: 1rem;
+ border-radius: 1rem;
   background-color: rgba(14, 3, 4, 0.53);
   backdrop-filter: blur(10px);
   color: white;
