@@ -4,7 +4,7 @@ import LogoutNav from './../../components/LandingNav/LandingNav';
 import Footer from '../../components/Footer/Footer';
 
 const MainLayout = () => {
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState('dark');
 
   useEffect(() => {
     document.body.className = theme;

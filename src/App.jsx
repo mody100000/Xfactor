@@ -35,6 +35,7 @@ import Blogs from './pages/Blogs/Blogs';
 import Blog from './pages/Blog/Blog';
 import GeneralRegisterPage from './pages/GeneralRegisterPage/GeneralRegisterPage';
 import AssignClientPage from './pages/CoachDashboard/AssignClientPage/AssignClientPage';
+import RegisterOptions from './pages/RegisterOptions/RegisterOptions';
 
 const routes = createBrowserRouter([
   {
@@ -66,6 +67,7 @@ const routes = createBrowserRouter([
     { path: '/login', element: <LoginPage /> },
     { path: '/register', element: <RegisterPage /> },
     { path: '/generalRegister', element: <GeneralRegisterPage /> },
+    { path: '/registerOptions', element: <RegisterOptions /> },
 
   ]},
   { path: 'dashboard', element: <DashboardLayout />,

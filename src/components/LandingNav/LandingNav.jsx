@@ -72,7 +72,7 @@ const LogoutNav = ({ theme, toggleTheme }) => {
               </Link>
             </Nav.Link>
             <Nav.Link className={styles.item_links}>
-              <Link to="/register" className={styles.item_links}>
+              <Link to="/registerOptions" className={styles.item_links}>
                 Register <RiUserAddFill size={20} />
               </Link>
             </Nav.Link>
