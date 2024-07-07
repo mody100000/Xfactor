@@ -21,6 +21,9 @@
     backdrop-filter: blur(10px);
     overflow-y: auto;
   }
+  .registerTitle{
+    color: rgb(174, 168, 168);
+  }
   .topSection {
     padding: 1.5rem 1rem;
     text-align: center;
