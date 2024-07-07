@@ -64,12 +64,9 @@ const Login = () => {
     <div className={`container ${styles.loginHolder}`}>
       <div className={styles.custom_form_holder}>
         <form className={styles.custom_form} onSubmit={handleSubmit}>
-          <h1 className={`${styles.gym_title} fw-bold`}>
           <img src={logo} className={styles.logo} alt="XFACTOR" />
-
-          </h1>
-          <h3 className="fw-bold">login</h3>
-          <h6 className="text-muted mb-4 ">Login to track your membership </h6>
+          <h3 className="fw-bold fs-1 mb-4">login</h3>
+          <h6 className={`mb-4 ${styles.supTitle}`}>Login to track your membership </h6>
           <div className={styles.inputsWrapper}>
             <InputWithIcon
               type="email"
@@ -90,10 +87,10 @@ const Login = () => {
           >
             Login
           </button>
-          <h6 className="text-muted ">
+          <h6 className={styles.supTitle}>
             Dont have an account yet?
-            <Link to="/register" className="text-decoration-none">
-              <span className="text-dark mx-2 fw-bold ">Register Now</span>
+            <Link to="/registerOptions" className="text-decoration-none">
+              <span className={`mx-2 fw-bold ${styles.register}`}>Register Now</span>
             </Link>
           </h6>
         </form>
