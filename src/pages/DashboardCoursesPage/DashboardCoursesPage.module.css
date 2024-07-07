@@ -17,7 +17,8 @@
   border: none;
   text-align: end;
   margin-top: 1rem;
-  background-color: #F8F9FA;
+  background-color: var( --navbar-background-color);
+  color: white;
 }
 
 @media (min-width: 768px) {
