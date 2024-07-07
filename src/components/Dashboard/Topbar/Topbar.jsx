@@ -5,7 +5,7 @@ const TopBar = ({ toggleSidebar }) => {
     return (
       <div className={styles.topbar}>
         <button className={styles.menuBtn} onClick={toggleSidebar}>&#9776;</button>
-        <input type="text" className={styles.search} placeholder="Search" />
+        <input type="text" className={styles.search} placeholder="Search..." />
         <div className={styles.userInfo}>
           <img src={user} alt="user image" className={styles.userImg} />
           <span>Shama Akhmedova</span>

@@ -14,7 +14,7 @@ const CertificateComponent = () => {
           <BsCalendar2Event className={styles.headerIcon} />
         </div>
       </div>
-      {["Football", "Basketball", "Tennis", "Volleyball"].map((sport, index) => (
+      {["Football", "Basketball", "Tennis", "Volleyball",].map((sport, index) => (
         <React.Fragment key={index}>
           <div className="row align-items-center mb-2">
             <div className="col-auto">

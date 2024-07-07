@@ -22,6 +22,7 @@ body.light {
   --relatedProduct-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   --coaches-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.214);
   --filterInput-bgcolor:white;
+  --dashbordRightSidebar-color:rgba(189, 189, 189, 0.24);
 }
 
 body.dark {
@@ -35,12 +36,13 @@ body.dark {
   --filterSidebar-color:#333;
   --shifting-background-color :#f4f4f433;
   --supText-color:#ddddddbb;
-  --placeholder-color: #ffffff8e; 
+  --placeholder-color: #ffffffd3; 
   --productImg-color:#464b50;
   --productCard-color:#333;
   --relatedProduct-box-shadow:0 0 20px rgb(255, 255, 255);
   --coaches-box-shadow: 0 0 10px rgb(255, 255, 255);
   --filterInput-bgcolor:#9a9a9a;
+  --dashbordRightSidebar-color:#333333
 }
 
 body {

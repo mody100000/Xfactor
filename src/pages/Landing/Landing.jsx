@@ -7,6 +7,7 @@ import IntroBanner from "../../components/IntroBanner/IntroBanner";
 import OurTrainers from "../../components/OurTrainers/OurTrainers";
 import Plans from "../../components/Plans/Plans";
 import PopularClasses from "../../components/PopularClasses/PopularClasses";
+// import ProductSlider from "../../components/ProductSlider/ProductSlider";
 import Testimonials from "../../components/Testimonials/Testimonials";
 import WorkoutCarousel from "../../components/WorkoutCarousel/WorkoutCarousel";
 
@@ -21,6 +22,7 @@ const Landing = () => {
       <Plans />
       <BMICalculator />
       <FitnessGallery />
+      {/* <ProductSlider/> */}
       <Testimonials />
       <OurTrainers />
     </> );

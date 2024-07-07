@@ -59,7 +59,7 @@ const routes = createBrowserRouter([
       { path: '/coaches/:id', element: <CoachProfile /> },
     ],
   },
-  {path:"",element:<CoachApplicationLayout/>, children:[
+  {path:"",element:<CoachApplicationLayout />, children:[
     { path: "applyToCoach", element: <ApplyToCoachPage /> },
     { path: "ApplicationTimeline", element: <CoachApplicationTimeline /> },
     { path: "training-options", element: <TrainingOptions /> },
@@ -80,15 +80,15 @@ const routes = createBrowserRouter([
 
 function App() {
   const dispatch = useDispatch();
-  const [theme, setTheme] = useState('light');
+  // const [theme, setTheme] = useState('light');
 
-  useEffect(() => {
-    document.body.className = theme;
-  }, [theme]);
+  // useEffect(() => {
+  //   document.body.className = theme;
+  // }, [theme]);
 
-  const toggleTheme = () => {
-    setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
-  };
+  // const toggleTheme = () => {
+  //   setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
+  // };
 
   useEffect(() => {
     const sampleCoaches = [

@@ -7,8 +7,8 @@ import { Link } from 'react-router-dom';
 const Courses = () => {
   return (
     <div className={styles.courses}>
-      <div className='d-flex flex-row justify-content-between align-items-center flex-wrap mt-1 mb-4'>
-      <h1 className='fw-bold'>My courses</h1>
+      <div className='d-flex flex-row justify-content-between align-items-center flex-wrap mb-4'>
+      <h2 className={`${styles.headerTitle}`}>My courses</h2>
       <div className="d-flex justify-content-between">
         <button className={`btn btn-danger ${styles.topBtn}`}>Active</button>
         <button className={`btn btn btn-outline border border-1 border-danger text-danger ${styles.topBtn}`}>Completed</button>
