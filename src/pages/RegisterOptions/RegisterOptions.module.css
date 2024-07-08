@@ -14,7 +14,7 @@
 .container {
     background-color: rgba(14, 3, 4, 0.53);
     color: white;
-    border-radius: 10px;
+    border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(255, 255, 255, 0.37);
     text-align: center;
     padding:2rem 6rem;
@@ -55,6 +55,7 @@
     width: 300px; /* Adjust the width of the cards */
     margin-top: 2rem;
     box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.592);
+    border-radius: 1rem;
   }
   .card:hover{
     box-shadow: 1px 1px 12px rgb(255, 255, 255);
@@ -68,7 +69,7 @@
   
   .cardImage {
     background-color: rgba(255, 255, 255, 0);
-    border-radius: 1rem 1rem 0 0;
+    border-radius: 1rem;
     width: 100%;
     height: 21rem; /* Adjust the height of the images */
     object-fit: cover;
@@ -85,6 +86,7 @@
     color: white;
     padding: 0.4rem;
     text-align: center;
+    border-radius: 1rem;
   }
   
   .imageTitle {

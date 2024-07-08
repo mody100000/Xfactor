@@ -13,7 +13,7 @@ const RegisterOptions = () => {
           <div className={styles.container}>
         <div className={styles.mainSection}>
           <h2 className='fw-bold mb-4'>Create Your Membership Now</h2>
-          <h2 className={`mb-3 ${styles.registerTitle}`}>Register As</h2>
+          <h2 className={`mb-3 ${styles.registerTitle}`}>Register As!</h2>
           <div className={styles.cardsContainer}>
             <div className={`card ${styles.card}`} onClick={handelRegisterCoachNavigation}>
               <div className={styles.imageContainer}>

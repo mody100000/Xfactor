@@ -1,9 +1,9 @@
 import { Outlet } from "react-router-dom";
-import LogoutNav from "../../components/LandingNav/LandingNav";
+import ApplicationNavbar from "../../components/ApplicationNavbar/ApplicationNavbar";
 
 const CoachApplicationLayout = () => {
     return ( <>
-      <LogoutNav/>
+      <ApplicationNavbar/>
       <Outlet/>
     </> );
 }
