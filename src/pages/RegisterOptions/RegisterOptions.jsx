@@ -5,12 +5,16 @@ import { useNavigate } from "react-router-dom";
 const RegisterOptions = () => {
   const navigate = useNavigate()
 
-  const handelRegisterCoachNavigation = ()=>{
+  const handelRegisterCoachNavigation = () => {
     navigate("/register")
+  }
+
+  const handelRegisterTrainerNavigation = () => {
+    navigate("/trainerRegister")
   }
   return (
     <div className={styles.imageBackground}>
-          <div className={styles.container}>
+      <div className={styles.container}>
         <div className={styles.mainSection}>
           <h2 className='fw-bold mb-4'>Create Your Membership Now</h2>
           <h2 className={`mb-3 ${styles.registerTitle}`}>Register As!</h2>
@@ -23,7 +27,7 @@ const RegisterOptions = () => {
                 </div>
               </div>
             </div>
-            <div className={`card ${styles.card}`} >
+            <div className={`card ${styles.card}`} onClick={handelRegisterTrainerNavigation}>
               <div className={styles.imageContainer}>
                 <img src={online} className={`card-img-top ${styles.cardImage}`} alt="Online Training" />
                 <div className={styles.imageOverlay}>
@@ -34,7 +38,7 @@ const RegisterOptions = () => {
           </div>
         </div>
       </div>
-        </div>
+    </div>
   )
 }
 

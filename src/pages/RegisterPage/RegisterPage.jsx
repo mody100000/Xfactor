@@ -1,18 +1,14 @@
-import { useEffect } from "react";
 import Register from "../../components/Register/Register";
-import "./RegisterPage.css"; // Ensure the correct import path
+import styles from "./RegisterPage.module.css"; // Ensure the correct import path
+import imgBackground from "../../assets/Register.jpg";
 
 const RegisterPage = () => {
-  useEffect(() => {
-    document.body.classList.add('myComponentActive');
-    return () => {
-      document.body.classList.remove('myComponentActive');
-    };
-  }, []);
-  
   return (
-    <div>
-      <Register />
+    <div className={styles.registerPage}>
+      <img src={imgBackground} className={styles.backgroundImage} alt="Background" />
+      <div className={styles.content}>
+        <Register />
+      </div>
     </div>
   );
 }

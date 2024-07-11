@@ -1,18 +1,15 @@
-import { useEffect } from "react";
 import Login from "../../components/Login/Login";
-import "./LoginPage.css"; // Ensure the correct import path
+import styles from "./LoginPage.module.css"; // Ensure the correct import path
+import imgBackground from "../../assets/Register.jpg";
 
 const LoginPage = () => {
-  useEffect(() => {
-    document.body.classList.add('myComponentActive');
-    return () => {
-      document.body.classList.remove('myComponentActive');
-    };
-  }, []);
-  
+
   return (
-    <div>
-      <Login />
+    <div className={styles.loginPage}>
+      <img src={imgBackground} className={styles.backgroundImage} alt="Background" />
+      <div className={styles.content}>
+        <Login />
+      </div>
     </div>
   );
 }
