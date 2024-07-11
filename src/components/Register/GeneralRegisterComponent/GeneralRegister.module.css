@@ -6,6 +6,8 @@
     border-radius: 10px;
     width: 90%;
     max-width: 1200px;
+    height: 700px;
+    overflow-y: auto;
     margin: auto;
     margin-top: 50px;
     margin-bottom: 50px;
