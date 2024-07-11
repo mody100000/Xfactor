@@ -12,7 +12,7 @@ import Joi from "joi";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../../../assets/logo.png";
 import InputWithIcon from "../../common/InputWithIcon";
-            
+
 const TrainerRegister = () => {
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState({
@@ -86,7 +86,7 @@ const TrainerRegister = () => {
       setErrors((prev) => ({ ...prev, Cpassword: [] }));
     }
     if (valid) {
-     navigate("/")
+      navigate("/")
     }
   };
   const validate = (key, value) => {
@@ -113,79 +113,62 @@ const TrainerRegister = () => {
 
   return (
     <div className={styles.imageBackground}>
-    <div className={`container ${styles.loginHolder}`}>
-      <div className={styles.custom_form_holder}>
-        <form className={styles.custom_form} onSubmit={handleSubmit}>
-          <h1 className={`${styles.gym_title} fw-bold`}>
-          <img src={logo} className={styles.logo} alt="XFACTOR" />
-
-          </h1>
-          <h3 className="fw-bold">Register</h3>
-          <h6 className="text-muted mb-4 ">Create your membership now</h6>
-          <div className={styles.inputsWrapper}>
-            <InputWithIcon
-              type="text"
-              onChange={(e) => handleInputChange(e, "full_name")}
-              errors={errors["full_name"]}
-              placeholder={"Full Name"}
-            />
-            <InputWithIcon
-              type="email"
-              onChange={(e) => handleInputChange(e, "email")}
-              placeholder={"email"}
-              errors={errors["email"]}
-            />
-            {/* <InputWithIcon
-              type="number"
-              onChange={(e) => handleInputChange(e, "weight")}
-              placeholder={"weight"}
-              errors={errors["weight"]}
-              Icon={FaWeightScale}
-            />
-            <InputWithIcon
-              type="number"
-              onChange={(e) => handleInputChange(e, "height")}
-              placeholder={"height"}
-              errors={errors["height"]}
-              Icon={CiLineHeight}
-            /> */}
-            <InputWithIcon
-              type="date"
-              className="text-secondary"
-              onChange={(e) => handleInputChange(e, "birth_date")}
-              placeholder={"date"}
-              errors={errors["birth_date"]}
-            />
-            <InputWithIcon
-              type="number"
-              onChange={(e) => handleInputChange(e, "phone_number")}
-              placeholder={"phone number"}
-              errors={errors["phone_number"]}
-            />
-            <InputWithIcon
-              type="password"
-              onChange={(e) => handleInputChange(e, "password")}
-              placeholder={"password"}
-              errors={errors["password"]}
-            />
-            <InputWithIcon
-              type="password"
-              onChange={(e) => handleInputChange(e, "Cpassword")}
-              placeholder={"confirm password"}
-              errors={errors["Cpassword"]}
-            />
-          </div>
-          <button className={styles.btn} type="submit" disabled={loading}>
-            Register
-          </button>
-          <h6 className="text-muted ">
-            Already have an account ?
-            <Link to="/login" className="text-decoration-none">
-              <span className="text-dark mx-2 fw-bold ">Login Now</span>
-            </Link>
-          </h6>
-        </form>
-      </div>
+      <div className={`container ${styles.loginHolder}`}>
+        <div className={styles.custom_form_holder}>
+          <form className={styles.custom_form} onSubmit={handleSubmit}>
+            <img src={logo} className={styles.logo} alt="XFACTOR" />
+            <h3 className="fw-bold fs-2 mb-4">Register</h3>
+            <h6 className={`mb-4 ${styles.supTitle}`}>Create your membership now</h6>
+            <div className={styles.inputsWrapper}>
+              <InputWithIcon
+                type="text"
+                onChange={(e) => handleInputChange(e, "full_name")}
+                errors={errors["full_name"]}
+                placeholder={"Full Name"}
+              />
+              <InputWithIcon
+                type="email"
+                onChange={(e) => handleInputChange(e, "email")}
+                placeholder={"Email"}
+                errors={errors["email"]}
+              />
+              <InputWithIcon
+                type="number"
+                className="text-secondary"
+                onChange={(e) => handleInputChange(e, "birth_date")}
+                placeholder={"Age"}
+                errors={errors["birth_date"]}
+              />
+              <InputWithIcon
+                type="number"
+                onChange={(e) => handleInputChange(e, "phone_number")}
+                placeholder={"Phone Number"}
+                errors={errors["phone_number"]}
+              />
+              <InputWithIcon
+                type="password"
+                onChange={(e) => handleInputChange(e, "password")}
+                placeholder={"Password"}
+                errors={errors["password"]}
+              />
+              <InputWithIcon
+                type="password"
+                onChange={(e) => handleInputChange(e, "Cpassword")}
+                placeholder={"Confirm Password"}
+                errors={errors["Cpassword"]}
+              />
+            </div>
+            <button className={styles.btn} type="submit" disabled={loading}>
+              Register
+            </button>
+            <h6 className={styles.supTitle}>
+              Already have an account ?
+              <Link to="/login" className="text-decoration-none">
+                <span className={`mx-2 fw-bold ${styles.login}`}>Login Now</span>
+              </Link>
+            </h6>
+          </form>
+        </div>
       </div>
     </div>
   );
