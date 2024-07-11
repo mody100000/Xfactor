@@ -107,6 +107,7 @@
     display: flex;
     align-items: center;
     color: var(--supText-color);
+    cursor: pointer;
   }
   
   .progressNumbers {
