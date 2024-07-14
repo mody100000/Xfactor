@@ -73,4 +73,8 @@
       cursor: not-allowed;
     }
   }
+
+  .btn:hover{
+    background-color: #bf1e2eb0;
+  }
   
