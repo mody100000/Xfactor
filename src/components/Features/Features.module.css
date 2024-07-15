@@ -8,8 +8,8 @@
 }
 
 .textContainer {
-  max-width: 50%;
-  padding-left: 3rem;
+  max-width: 40%;
+  /* padding-left: 3rem; */
 }
 
 .textContainer h1 {
@@ -108,12 +108,12 @@
     flex-direction: column;
     height: auto;
     clip-path: none;
-    padding: 3rem;
+    padding: 3rem 2rem;
   }
 
   .textContainer {
     max-width: 100%;
-    margin-left: -18px;
+    margin : 20px auto
   }
 
   .textContainer h1 {
@@ -136,6 +136,6 @@
   .badge1,
   .badge2 {
     position: static;
-    margin: 10px auto;
+    margin: 20px auto;
   }
 }

@@ -3,8 +3,15 @@ import styles from "./Testimonials.module.css";
 import clientImage from "../../assets/user.png"; // Example client image
 import { FaStar, FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { IoMdAddCircle } from "react-icons/io";
+import { useNavigate } from "react-router-dom";
 
 const Testimonials = () => {
+
+  const navigate = useNavigate()
+
+  const handelNavigate = () => {
+    navigate("/info")
+  }
   return (
     <section className={styles.testimonialsSection}>
       <div className={styles.leftSide}>
@@ -28,7 +35,7 @@ const Testimonials = () => {
             decision. From the moment I stepped inside, I knew this was gym that
             truly cares about its members' fitness journey."
           </p>
-          <span className={styles.viewAll}>View All</span>
+          <span className={styles.viewAll} onClick={handelNavigate}>View All</span>
         </div>
         <FaArrowRight className={styles.arrow} />
       </div>
