@@ -5,13 +5,13 @@ import IntroAboutUs from "../../components/AboutUsComponents/IntroAboutUs";
 import WhyChooseUs from "../../components/AboutUsComponents/WhyChooseUs/WhyChooseUs";
 
 const AboutUsPage = () => {
-    return ( <>
-    <IntroAboutUs/>
-    <AboutUsDetails/>
-    <WhyChooseUs/>
-    <AboutUsPlans/>
-    <AboutUsCard/>
-    </> );
+    return (<>
+        <IntroAboutUs />
+        <AboutUsDetails />
+        <WhyChooseUs />
+        <AboutUsPlans />
+        <AboutUsCard />
+    </>);
 }
- 
+
 export default AboutUsPage;

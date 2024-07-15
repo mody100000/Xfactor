@@ -10,26 +10,42 @@ const Footer = () => {
       <span className={styles.line}></span>
       <footer className={styles.footer}>
         <div className={styles.footerSection}>
-        <Link to="/" className={styles.brand}>
+          <Link to="/" className={styles.brand}>
             <img src={logo} className={styles.logo} alt="XFACTOR" />
           </Link>
         </div>
         <div className={styles.footerSection}>
           <h2 className={styles.sectionTitle}>My Account</h2>
           <ul className={styles.list}>
-            <li>About Us</li>
-            <li>Services</li>
-            <li>Contact</li>
-            <li>Blog</li>
+            <Link to={"/AboutUs"} className={styles.item}>
+              <li>About Us</li>
+            </Link>
+            <Link to={"/CoachUp"} className={styles.item}>
+              <li>Services</li>
+            </Link>
+            <Link to={"/contactUs"} className={styles.item}>
+              <li>Contact</li>
+            </Link>
+            <Link to={"/blogs"} className={styles.item}>
+              <li>Blogs</li>
+            </Link>
           </ul>
         </div>
         <div className={styles.footerSection}>
           <h2 className={styles.sectionTitle}>Top Links</h2>
           <ul className={styles.list}>
-            <li>Classes</li>
-            <li>FAQ</li>
-            <li>Our Trainers</li>
-            <li>Pricing</li>
+            <Link to={"/shop"} className={styles.item}>
+              <li>Shop</li>
+            </Link>
+            <Link to={"/FAQ"} className={styles.item}>
+              <li>FAQ</li>
+            </Link>
+            <Link to={"/applyToCoach"} className={styles.item}>
+              <li>Our Trainers</li>
+            </Link>
+            <Link to={"/AboutUs"} className={styles.item}>
+              <li>Pricing</li>
+            </Link>
           </ul>
         </div>
         <div className={styles.footerSection}>
