@@ -32,11 +32,11 @@ const LogoutNav = ({ theme, toggleTheme }) => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav"  ><TiThMenu className={styles.toggle} size={25} /></Navbar.Toggle>
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto d-flex justify-content-center align-items-center">
-            <Nav.Link>
+            {/* <Nav.Link>
               <Link to="/applyToCoach" className={styles.item_links}>
                 Apply to Coach <MdAssignmentInd size={20} />
               </Link>
-            </Nav.Link>
+            </Nav.Link> */}
             <Nav.Link>
               <Link to="/CoachUp" className={styles.item_links}>
                 CoachUp Works <GrWorkshop size={20} />
