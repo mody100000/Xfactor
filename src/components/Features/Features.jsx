@@ -3,8 +3,17 @@ import styles from "./Features.module.css";
 import workout from "../../assets/workout.webp";
 import { IoStatsChartOutline } from "react-icons/io5";
 import { IoMdHeart } from "react-icons/io";
+import { useNavigate } from "react-router-dom";
+
+
+
 
 const Features = () => {
+  const navigate = useNavigate()
+
+  const handelNavigate = () => {
+    navigate("/AboutUs")
+  }
   return (
     <>
       <div className={styles.heroSection}>
@@ -37,7 +46,7 @@ const Features = () => {
             goals
           </p>
           <div className={styles.media}>
-            <button className={`tn btn-outline-danger porder porder-2 ${styles.getStartedBtn}`}>Learn More</button>
+            <button className={`tn btn-outline-danger porder porder-2 ${styles.getStartedBtn}`} onClick={handelNavigate}>Learn More</button>
           </div>
         </div>
       </div>

@@ -7,7 +7,7 @@
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: 10px;
-  color :var(--text-color)
+  color: var(--text-color);
 }
 
 .subtitle {
@@ -27,8 +27,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* background-color: #f8f8f8; */
-  padding: 3rem 4rem;
+  padding: 2rem 1px;
   gap: 2rem;
   background-color: var(--bmi-color);
   box-shadow: 0 0 22px rgba(0, 0, 0, 0.223);
@@ -43,19 +42,26 @@
   flex-direction: column;
   align-items: center;
 }
-.rightContainer{
-  width: 100%;
+
+.rightContainer {
+  width: 80%;
   max-width: 700px;
-  padding: 20px;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: #000;
+  color: white;
+  border-radius: 8px;
+  justify-content: center;
+  height: 20rem;
 }
+
 .inputGroupFull {
   width: 100%;
   display: flex;
   flex-direction: column;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .inputGroup {
@@ -63,7 +69,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .inputField {
@@ -72,8 +78,8 @@
   border: 1px solid rgb(179, 179, 179);
   border-radius: 9px;
 }
+
 .inputSelectField {
-  /* width: calc(70% - 30px); */
   padding: 10px;
   border: 1px solid rgb(179, 179, 179);
   border-radius: 9px;
@@ -126,17 +132,6 @@ input::-webkit-inner-spin-button {
   background-color: #931723;
 }
 
-.rightContainer {
-  background-color: #000;
-  color: white;
-  border-radius: 8px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 20rem;
-}
-
 .bmiTitle {
   font-size: 40px;
   font-weight: 700;
@@ -148,8 +143,38 @@ input::-webkit-inner-spin-button {
   font-weight: bold;
 }
 
-@media (min-width: 768px) {
+/* Media Queries */
+
+@media (min-width: 600px) and (max-width: 829px) {
+  /* Tablet Styles */
   .calculatorContainer {
+    padding: 2rem 2rem;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .leftContainer, .rightContainer {
+    width: 50%;
+  }
+}
+
+@media (min-width: 830px) {
+  /* Medium to Large Screen Styles */
+  .calculatorContainer {
+    padding: 2rem 4rem;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .leftContainer, .rightContainer {
+    width: 45%;
+  }
+}
+
+@media (min-width: 1200px) {
+  /* Large Screen Styles */
+  .calculatorContainer {
+    padding: 3rem 4rem;
     flex-direction: row;
     justify-content: space-between;
   }

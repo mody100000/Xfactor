@@ -6,7 +6,6 @@
   color: white;
   height: 100vh;
   /* clip-path: polygon(0 0, 100% 0, 100% 93%, 0 100%); */
-
 }
 
 .textContainer {
@@ -81,12 +80,6 @@
   font-size: 2rem;
   font-weight: 900;
 }
-/* color: rgba(255, 255, 255, 0.712); */
-.featureNumber+p {
-/* color: rgba(255, 255, 255, 0.712); */
-
-  
-}
 
 .imageContainer img {
   object-fit: cover;
@@ -107,7 +100,7 @@
     flex-direction: column; /* Stack items vertically on smaller screens */
     height: auto;
     clip-path: none;
-    padding: 3rem; /* Adjust padding for smaller screens */
+    padding: 2rem; /* Adjust padding for smaller screens */
     clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%);
 
   }
@@ -126,11 +119,13 @@
   .media {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   .features {
-    flex-direction: row; /* Stack feature items vertically on smaller screens */
-    gap: 0rem;
+    flex-direction: column; /* Stack feature items vertically on smaller screens */
+    gap: 1rem;
     margin-bottom: 2rem;
   }
 }
