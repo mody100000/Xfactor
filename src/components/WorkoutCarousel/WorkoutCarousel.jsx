@@ -55,6 +55,7 @@ const WorkoutCarousel = () => {
     ),
     nextArrow: <CustomArrow direction="right" />,
     prevArrow: <CustomArrow direction="left" />,
+    arrows: false
   };
 
   return (
