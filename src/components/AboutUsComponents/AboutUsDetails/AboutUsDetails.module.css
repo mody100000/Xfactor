@@ -8,7 +8,7 @@
 }
 
 .textContainer {
-  padding: 2rem;
+  /* padding: 2rem; */
   text-align: center;
 }
 
@@ -95,6 +95,7 @@
 
   .textContainer {
     padding-left: 8rem;
+
   }
 
   .textContainer > h2 {

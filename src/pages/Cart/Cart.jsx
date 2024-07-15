@@ -41,36 +41,36 @@ const Cart = ({ items, onClearCart, onRemoveItem, onQuantityChange }) => {
           })}
         </div>
       </div>
-        <div className="my-4 d-flex justify-content-end ">
-          <button className="btn btn-danger" onClick={onClearCart}>
-            Clear Shopping Cart
-          </button>
-        </div>
-        <div className={`row my-5  ${styles.cartContainer}`}>
+      <div className="my-4 d-flex justify-content-center justify-content-md-end">
+        <button className="btn btn-danger mt-3" onClick={onClearCart}>
+          Clear Shopping Cart
+        </button>
+      </div>
+      <div className={`row my-5  ${styles.cartContainer}`}>
         <div className="col-md-6">
-            <h5 className='text-center mb-4 fw-bold'>SPECIAL INSTRUCTIONS FOR SELLER</h5>
+          <h5 className='text-center mb-4 fw-bold'>SPECIAL INSTRUCTIONS FOR SELLER</h5>
           <div className={styles.instructions}>
             <textarea className="form-control" rows="9"></textarea>
           </div>
         </div>
         <div className={`col-md-6`}>
-            <h5 className="text-center mb-5 fw-bold">Cart Total</h5>
-            <div className={styles.cartTotalDetails}>
-        <div className="d-flex justify-content-between align-items-center border-bottom mb-3">
-          <span className='mb-4'>Subtotal:</span>
-        <span>${total.toFixed(2)}</span>
+          <h5 className="text-center mb-5 fw-bold">Cart Total</h5>
+          <div className={styles.cartTotalDetails}>
+            <div className="d-flex justify-content-between align-items-center border-bottom mb-3">
+              <span className='mb-4'>Subtotal:</span>
+              <span>${total.toFixed(2)}</span>
+            </div>
+            <div className="d-flex justify-content-between align-items-center border-bottom mb-3">
+              <span className='mb-4'>Shipping:</span>
+              <span className='mb-4'>Shipping & taxes calculated at checkout</span>
+            </div>
+            <div className="d-flex justify-content-between align-items-center">
+              <span className="fw-bold mt-3">Total:</span>
+              <span className="fw-bold mt-3">${total.toFixed(2)}</span>
+            </div>
+          </div>
+          <button className="btn btn-danger w-100 mt-4">Proceed To Checkout</button>
         </div>
-         <div className="d-flex justify-content-between align-items-center border-bottom mb-3">
-        <span className='mb-4'>Shipping:</span>
-           <span className='mb-4'>Shipping & taxes calculated at checkout</span>
-          </div>
-           <div className="d-flex justify-content-between align-items-center">
-          <span className="fw-bold mt-3">Total:</span>
-         <span className="fw-bold mt-3">${total.toFixed(2)}</span>
-          </div>
-          </div>
-              <button className="btn btn-danger w-100 mt-4">Proceed To Checkout</button>
-          </div>
       </div>
     </div>
   );
