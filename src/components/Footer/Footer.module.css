@@ -28,7 +28,10 @@
   padding: 0;
   color: rgb(207, 207, 207);
 }
+.item{
+  color: rgb(207, 207, 207);
 
+}
 .list li {
   margin-bottom: 0.5rem;
   cursor: pointer;

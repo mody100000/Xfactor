@@ -1,10 +1,11 @@
 import styles from "./BlogsNavbar.module.css";
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
+import { TiThMenu } from "react-icons/ti";
 
 const BlogsNavbar = () => {
   return (
     <Navbar bg="dark" expand="lg" className={styles.customNavs}>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Toggle aria-controls="responsive-navbar-nav"  ><TiThMenu className={styles.toggle} size={25} /></Navbar.Toggle>
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="w-100 d-flex justify-content-between">
           <Nav.Link href="#home" className="fs-5">Parents</Nav.Link>
