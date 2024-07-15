@@ -14,6 +14,7 @@ import { GrWorkshop } from 'react-icons/gr';
 import { FaRegCircleQuestion } from 'react-icons/fa6';
 import { RxReader } from 'react-icons/rx';
 import { CiDark } from 'react-icons/ci';
+import { TiThMenu } from "react-icons/ti";
 
 const LogoutNav = ({ theme, toggleTheme }) => {
   return (
@@ -28,7 +29,7 @@ const LogoutNav = ({ theme, toggleTheme }) => {
             <img src={logo} className={styles.logo} alt="XFACTOR" />
           </Link>
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Toggle aria-controls="responsive-navbar-nav"  ><TiThMenu className={styles.toggle} size={25} /></Navbar.Toggle>
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto d-flex justify-content-center align-items-center">
             <Nav.Link>
@@ -83,7 +84,7 @@ const LogoutNav = ({ theme, toggleTheme }) => {
             </Nav.Link>
             <Nav.Link className={styles.item_links} onClick={toggleTheme}>
               <div className={styles.item_links}>
-              <CiDark  size={30} />
+                <CiDark size={30} />
               </div>
             </Nav.Link>
           </Nav>

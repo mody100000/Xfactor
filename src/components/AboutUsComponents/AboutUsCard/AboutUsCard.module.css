@@ -43,4 +43,8 @@
 .memberBtn{
     width: 100%;
 }
+.title{
+    font-size: 25px;
+    text-align: center;
+}
 }

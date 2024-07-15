@@ -1,8 +1,11 @@
 .customNavs {
-    padding: 0.7rem 6rem;
+    padding: 0.7rem 3rem;
     width: 100%;
   }
-
+  .toggle{
+    color: var(--text-color);
+    text-align: center;
+  }
   .nav-link, .nav-dropdown .dropdown-item {
     color: var(--text-color) !important;
   }
