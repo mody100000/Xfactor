@@ -37,6 +37,7 @@ import GeneralRegisterPage from './pages/GeneralRegisterPage/GeneralRegisterPage
 import AssignClientPage from './pages/CoachDashboard/AssignClientPage/AssignClientPage';
 import RegisterOptions from './pages/RegisterOptions/RegisterOptions';
 import TrainerRegister from './components/Register/TrainerRegister/TrainerRegister';
+import PurchasesPage from './pages/PurchasesPage/PurchasesPage';
 
 const routes = createBrowserRouter([
   {
@@ -61,25 +62,30 @@ const routes = createBrowserRouter([
       { path: '/coaches/:id', element: <CoachProfile /> },
     ],
   },
-  {path:"",element:<CoachApplicationLayout />, children:[
-    { path: "applyToCoach", element: <ApplyToCoachPage /> },
-    { path: "ApplicationTimeline", element: <CoachApplicationTimeline /> },
-    { path: "training-options", element: <TrainingOptions /> },
-    { path: '/login', element: <LoginPage /> },
-    { path: '/register', element: <RegisterPage /> },
-    { path: '/generalRegister', element: <GeneralRegisterPage /> },
-    { path: '/registerOptions', element: <RegisterOptions /> },
-    { path: '/trainerRegister', element: <TrainerRegister /> },
+  {
+    path: "", element: <CoachApplicationLayout />, children: [
+      { path: "applyToCoach", element: <ApplyToCoachPage /> },
+      { path: "ApplicationTimeline", element: <CoachApplicationTimeline /> },
+      { path: "training-options", element: <TrainingOptions /> },
+      { path: '/login', element: <LoginPage /> },
+      { path: '/register', element: <RegisterPage /> },
+      { path: '/generalRegister', element: <GeneralRegisterPage /> },
+      { path: '/registerOptions', element: <RegisterOptions /> },
+      { path: '/trainerRegister', element: <TrainerRegister /> },
 
-  ]},
-  { path: 'dashboard', element: <DashboardLayout />,
-    children:[
-      {index:true, path:"/dashboard", element: <Dashboard/>},
-      {path:"courses",element:<DashboardCoursesPage/>},
-      {path:"courseSchedule",element:<CourseSchedulePage/>},
-      {path:"assignClient",element:<AssignClientPage/>},
+    ]
+  },
+  {
+    path: 'dashboard', element: <DashboardLayout />,
+    children: [
+      { index: true, path: "/dashboard", element: <Dashboard /> },
+      { path: "courses", element: <DashboardCoursesPage /> },
+      { path: "courseSchedule", element: <CourseSchedulePage /> },
+      { path: "purchases", element: <PurchasesPage /> },
+      { path: "assignClient", element: <AssignClientPage /> },
 
-    ] },
+    ]
+  },
 ]);
 
 function App() {
@@ -104,7 +110,7 @@ function App() {
         reviews: 120,
         badge: "Gold",
         summary: "Professional trainer, experience with athletes ranging from pro to youth. As a former pro athlete, I understand what it takes to reach your fitness goals. Sports Science degree",
-        location:"LA",
+        location: "LA",
         distance: 6.5,
         salary: 22,
         image: "../public/girl.jpg",
@@ -120,7 +126,7 @@ function App() {
         reviews: 100,
         badge: "silver",
         summary: "Professional trainer, experience with athletes ranging from pro to youth. As a former pro athlete, I understand what it takes to reach your fitness goals. Sports Science degree",
-        location:"LA",
+        location: "LA",
         distance: 5.5,
         salary: 80,
         image: "../public/Strength Coach.jpg",
@@ -136,7 +142,7 @@ function App() {
         reviews: 100,
         badge: "silver",
         summary: "Professional trainer, experience with athletes ranging from pro to youth. As a former pro athlete, I understand what it takes to reach your fitness goals. Sports Science degree",
-        location:"LA",
+        location: "LA",
         distance: 5.5,
         salary: 110,
         image: "../public/Strength Coach.jpg",
@@ -152,7 +158,7 @@ function App() {
         reviews: 100,
         badge: "silver",
         summary: "Professional trainer, experience with athletes ranging from pro to youth. As a former pro athlete, I understand what it takes to reach your fitness goals. Sports Science degree",
-        location:"LA",
+        location: "LA",
         distance: 5.5,
         salary: 60,
         image: "../public/Strength Coach.jpg",
@@ -168,7 +174,7 @@ function App() {
         reviews: 100,
         badge: "Gold",
         summary: "Professional trainer, experience with athletes ranging from pro to youth. As a former pro athlete, I understand what it takes to reach your fitness goals. Sports Science degree",
-        location:"LA",
+        location: "LA",
         distance: 5.5,
         salary: 50,
         image: "../public/legGroup.png",
@@ -184,7 +190,7 @@ function App() {
         reviews: 100,
         badge: "bronze",
         summary: "Professional trainer, experience with athletes ranging from pro to youth. As a former pro athlete, I understand what it takes to reach your fitness goals. Sports Science degree",
-        location:"LA",
+        location: "LA",
         distance: 5.5,
         salary: 50,
         image: "../public/legGroup.png",
@@ -200,7 +206,7 @@ function App() {
         reviews: 100,
         badge: "bronze",
         summary: "Professional trainer, experience with athletes ranging from pro to youth. As a former pro athlete, I understand what it takes to reach your fitness goals. Sports Science degree",
-        location:"LA",
+        location: "LA",
         distance: 5.5,
         salary: 50,
         image: "../public/legGroup.png",
@@ -215,10 +221,10 @@ function App() {
     dispatch(setAddress('Los Angeles'));
   }, [dispatch]);
 
-  return(
+  return (
     <>
-     <RouterProvider router={routes}>
-     </RouterProvider>
+      <RouterProvider router={routes}>
+      </RouterProvider>
     </>
   )
 }

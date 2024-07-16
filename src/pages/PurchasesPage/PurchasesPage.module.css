@@ -1,0 +1,58 @@
+.dashboardCoursesPage {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .mainContent {
+    padding: 20px;
+  }
+  
+  .rightSidebar {
+    background-color: var(--productCard-color);
+    z-index: 1000;
+    transition: transform 0.3s ease;
+  }
+  
+  .toggleBtn {
+    border: none;
+    text-align: end;
+    margin-top: 1rem;
+    background-color: var(--navbar-background-color);
+    color: var(--text-color);
+  }
+  
+  @media (min-width: 768px) {
+    .dashboardCoursesPage {
+      flex-direction: row;
+    }
+  
+    .mainContent {
+      padding: 20px;
+    }
+  
+    .rightSidebar {
+      transform: translateX(0);
+      position: static;
+    }
+  
+    .toggleBtn {
+      display: none;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .rightSidebar {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 300px;
+      height: 100%;
+      transform: translateX(100%);
+      overflow-y: auto; /* Add this line */
+    }
+  
+    .rightSidebar.open {
+      transform: translateX(0);
+    }
+  }
+  

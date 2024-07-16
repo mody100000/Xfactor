@@ -78,7 +78,13 @@
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
+.ProgressContainer{
+  background-color: var(--navbar-background-color);
+  padding: 15px;
+  margin: 1rem 0;
+  border-radius: 8px;
 
+}
 .tasksContainer h5 {
   font-size: 1.25rem;
   margin-bottom: 10px;
