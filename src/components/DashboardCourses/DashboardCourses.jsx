@@ -8,12 +8,12 @@ const Courses = () => {
   return (
     <div className={styles.courses}>
       <div className='d-flex flex-row justify-content-between align-items-center flex-wrap mb-4'>
-      <h2 className={`${styles.headerTitle}`}>My courses</h2>
-      <div className="d-flex justify-content-between">
-        <button className={`btn btn-danger ${styles.topBtn}`}>Active</button>
-        <button className={`btn btn btn-outline border border-1 border-danger text-danger ${styles.topBtn}`}>Completed</button>
-        <button className={`btn btn btn-outline border border-1 border-danger text-danger ${styles.saveIcon}`}>
-          <CiBookmark size={25} className={`text-danger mx-1 `}/>
+        <h2 className={`${styles.headerTitle}`}>My courses</h2>
+        <div className="d-flex justify-content-between">
+          <button className={`btn btn-danger ${styles.topBtn}`}>Active</button>
+          <button className={`btn btn btn-outline border border-1 border-danger text-danger ${styles.topBtn}`}>Completed</button>
+          <button className={`btn btn btn-outline border border-1 border-danger text-danger ${styles.saveIcon}`}>
+            <CiBookmark size={25} className={`text-danger mx-1 `} />
           </button>
         </div>
       </div>
@@ -35,9 +35,9 @@ const Courses = () => {
                       <div className={styles.courseTags}>
                         {course.tags.map(tag => (
                           <>
-                          <Link to="/dashboard/courseSchedule">
-                          <button className={`btn btn-outline-danger me-2 ${styles.courseBtn}`} key={tag}>{tag}</button>
-                          </Link>
+                            <Link to="/dashboard/courses/courseSchedule">
+                              <button className={`btn btn-outline-danger me-2 ${styles.courseBtn}`} key={tag}>{tag}</button>
+                            </Link>
                           </>
                         ))}
                       </div>
@@ -70,7 +70,7 @@ const courses = [
     subtitle: 'Complete all courses from The University of Sydney',
     tags: ['continue', 'Innovation'],
     lastSeen: '2 Feb, 2024',
-     image: image,
+    image: image,
   },
   {
     id: 3,
@@ -78,7 +78,7 @@ const courses = [
     subtitle: 'Complete all courses from The University of Sydney',
     tags: ['continue', 'Innovation'],
     lastSeen: '2 Feb, 2024',
-     image: image,
+    image: image,
   },
   {
     id: 4,
@@ -86,7 +86,7 @@ const courses = [
     subtitle: 'Complete all courses from The University of Sydney',
     tags: ['continue', 'Innovation'],
     lastSeen: '2 Feb, 2024',
-     image: image,
+    image: image,
   },
   // More course objects here
 ];

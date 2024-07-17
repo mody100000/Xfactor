@@ -80,7 +80,8 @@ const routes = createBrowserRouter([
     children: [
       { index: true, path: "/dashboard", element: <Dashboard /> },
       { path: "courses", element: <DashboardCoursesPage /> },
-      { path: "courseSchedule", element: <CourseSchedulePage /> },
+      { path: "courses/courseSchedule", element: <CourseSchedulePage /> },
+      { path: "/dashboard/progress", element: <CourseSchedulePage /> },
       { path: "purchases", element: <PurchasesPage /> },
       { path: "assignClient", element: <AssignClientPage /> },
 

@@ -1,9 +1,9 @@
 import React from 'react';
+import { useLocation, NavLink } from 'react-router-dom';
 import styles from './Sidebar.module.css';
 import { FaRegTimesCircle } from "react-icons/fa";
 import { RiLogoutCircleLine } from "react-icons/ri";
 import logo from "../../../assets/logo.png";
-import { Link } from 'react-router-dom';
 import { IoPersonCircleOutline } from "react-icons/io5";
 import { BsJournalBookmark } from "react-icons/bs";
 import { RiProgress3Line } from "react-icons/ri";
@@ -15,6 +15,15 @@ import { IoIosHelpCircleOutline } from "react-icons/io";
 import { CiSettings, CiDark } from "react-icons/ci";
 
 const Sidebar = ({ isOpen, toggleSidebar, toggleTheme, theme }) => {
+  const location = useLocation();
+
+  const getMenuItemClass = (path, exact = false) => {
+    if (exact) {
+      return location.pathname === path ? `${styles.menuItem} ${styles.active}` : styles.menuItem;
+    }
+    return location.pathname.startsWith(path) ? `${styles.menuItem} ${styles.active}` : styles.menuItem;
+  };
+
   return (
     <div className={`${styles.sidebar} ${isOpen ? styles.open : ''}`}>
       <button className={styles.closeBtn} onClick={toggleSidebar}><FaRegTimesCircle /></button>
@@ -22,20 +31,48 @@ const Sidebar = ({ isOpen, toggleSidebar, toggleTheme, theme }) => {
         <img src={logo} className={styles.logo} alt="XFACTOR" />
       </h1>
       <ul className={styles.menu}>
-        <li className={styles.menuItem}><Link to="/dashboard" className='text-decoration-none text-light'><IoPersonCircleOutline size={25} className="mx-2" /> Profile</Link></li>
-        <li className={styles.menuItem}><Link to="/dashboard/courses" className='text-decoration-none text-light'><BsJournalBookmark size={20} className="mx-2" /> Courses</Link></li>
-        <li className={styles.menuItem}><RiProgress3Line size={25} className="mx-2" /> Progress</li>
-        <li className={styles.menuItem}><MdOutlineSpeakerNotes size={25} className="mx-2" /> Notes</li>
-        <li className={styles.menuItem}><BiBriefcase size={25} className="mx-2" /> Career</li>
-        <li className={`${styles.menuItem} mt-5`}><BsChat size={22} className="mx-2" /> Chat</li>
-        <li className={styles.menuItem}><Link to="/dashboard/purchases" className='text-decoration-none text-light'><IoWalletOutline size={25} className="mx-2" /> Purchases</Link></li>
-        <li className={styles.menuItem}><IoIosHelpCircleOutline size={25} className="mx-2" /> Help</li>
-        <li className={styles.menuItem}><CiSettings size={25} className="mx-2" /> Settings</li>
-        <li className={styles.menuItem} onClick={toggleTheme}><CiDark size={25} className="mx-2" /> {theme === 'dark' ? 'Light Mode' : 'Dark Mode'}</li>
+        <li className={getMenuItemClass('/dashboard', true)}>
+          <NavLink to="/dashboard" className='text-decoration-none text-light'>
+            <IoPersonCircleOutline size={25} className="mx-2" /> Profile
+          </NavLink>
+        </li>
+        <li className={getMenuItemClass('/dashboard/courses')}>
+          <NavLink to="/dashboard/courses" className='text-decoration-none text-light'>
+            <BsJournalBookmark size={20} className="mx-2" /> Courses
+          </NavLink>
+        </li>
+        <li className={getMenuItemClass('/dashboard/progress')}>
+          <NavLink to="/dashboard/progress" className='text-decoration-none text-light'>
+            <RiProgress3Line size={25} className="mx-2" /> Progress
+          </NavLink>
+        </li>
+        <li className={getMenuItemClass('/dashboard/notes')}>
+          <MdOutlineSpeakerNotes size={25} className="mx-2" /> Notes
+        </li>
+        <li className={getMenuItemClass('/dashboard/career')}>
+          <BiBriefcase size={25} className="mx-2" /> Career
+        </li>
+        <li className={`${getMenuItemClass('/dashboard/chat')} mt-5`}>
+          <BsChat size={22} className="mx-2" /> Chat
+        </li>
+        <li className={getMenuItemClass('/dashboard/purchases')}>
+          <NavLink to="/dashboard/purchases" className='text-decoration-none text-light'>
+            <IoWalletOutline size={25} className="mx-2" /> Purchases
+          </NavLink>
+        </li>
+        <li className={getMenuItemClass('/dashboard/help')}>
+          <IoIosHelpCircleOutline size={25} className="mx-2" /> Help
+        </li>
+        <li className={getMenuItemClass('/dashboard/settings')}>
+          <CiSettings size={25} className="mx-2" /> Settings
+        </li>
+        <li className={styles.menuItem} onClick={toggleTheme}>
+          <CiDark size={25} className="mx-2" /> {theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
+        </li>
       </ul>
-      <Link to="/" className={styles.logoutLink}>
+      <NavLink to="/" className={styles.logoutLink}>
         <button className={styles.logout}><RiLogoutCircleLine size={22} /> Log out</button>
-      </Link>
+      </NavLink>
     </div>
   );
 };
