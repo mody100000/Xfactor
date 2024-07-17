@@ -93,3 +93,6 @@ a{
   background-color: #333;
   color: #fff;
 }
+.active {
+  border-left: 4px solid hsla(0, 84%, 50%, 0.57); /* Add left border */
+}
