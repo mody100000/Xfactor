@@ -21,7 +21,7 @@
     color: var(--text-color);
   }
   
-  @media (min-width: 768px) {
+  @media (min-width: 1068px) {
     .dashboardCoursesPage {
       flex-direction: row;
     }
@@ -40,7 +40,7 @@
     }
   }
   
-  @media (max-width: 767px) {
+  @media (max-width: 1067px) {
     .rightSidebar {
       position: fixed;
       top: 0;
@@ -48,11 +48,33 @@
       width: 300px;
       height: 100%;
       transform: translateX(100%);
-      overflow-y: auto; /* Add this line */
+      overflow-y: auto; 
     }
   
     .rightSidebar.open {
       transform: translateX(0);
     }
   }
-  
+/* Adjustments for iPad Pro, iPad Air, and iPad Mini screens */
+@media (max-width: 1366px) and (min-width: 1024px) {
+  .mainContent {
+      width: 100%;
+  }
+
+  .rightSidebar {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 300px;
+      height: 100%;
+      transform: translateX(100%);
+  }
+
+  .rightSidebar.open {
+      transform: translateX(0);
+  }
+
+  .toggleBtn {
+      display: block;
+  }
+}

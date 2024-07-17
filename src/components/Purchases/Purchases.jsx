@@ -68,8 +68,8 @@ const Purchases = () => {
                                     </div>
                                 </div>
                                 <div className="d-flex justify-content-between">
-                                    <span>{card.date}</span>
-                                    <span>{card.salary}$</span>
+                                    <span className={styles.purchaseDate}>{card.date}</span>
+                                    <span className={styles.purchaseDate}>{card.salary}$</span>
                                 </div>
                             </div>
                         </div>
@@ -115,6 +115,40 @@ const progressCards = [
         progressPercentage: 60,
         salary: "1000",
         date: "20 Apr, 2024",
+    },
+    {
+        id: 5,
+        title: "User Experience Research and Desgin",
+        progressNumbers: "PAID",
+        state: "payment state",
+        progressPercentage: 95,
+        salary: "1000",
+        date: "2 Feb, 2024",
+    }, {
+        id: 6,
+        title: "User Experience Research and Desgin",
+        progressNumbers: "PAID",
+        state: "payment state",
+        progressPercentage: 95,
+        salary: "1000",
+        date: "2 Feb, 2024",
+    }, {
+        id: 7,
+        title: "User Experience Research and Desgin",
+        progressNumbers: "PAID",
+        state: "payment state",
+        progressPercentage: 95,
+        salary: "1000",
+        date: "2 Feb, 2024",
+    },
+    {
+        id: 8,
+        title: "Contemporary Art and Design",
+        progressNumbers: "CONTINUE",
+        state: "payment state",
+        progressPercentage: 60,
+        salary: "1000",
+        date: "12 Jan, 2024",
     },
 ];
 export default Purchases

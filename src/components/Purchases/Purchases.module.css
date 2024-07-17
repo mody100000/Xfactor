@@ -45,6 +45,12 @@
     text-align: center;
     border-radius: 20px;
     color: #6c757d;
+    cursor: pointer;
+  }
+  .progressNumbers:hover{
+    border: none;
+    background-color: #dc3545;
+    color: white;
   }
     /* margin: 50px 0 5px 0; */
 
