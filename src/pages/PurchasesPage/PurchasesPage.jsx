@@ -17,13 +17,13 @@ const PurchasesPage = () => {
 
             <div className="row">
                 {/* Main Content */}
-                <div className={`col-12 col-lg-8 ${styles.mainContent}`}>
+                <div className={`col-lg-8 ${styles.mainContent}`}>
                     <Purchases />
                     {/* <Courses /> */}
                 </div>
 
                 {/* Right Sidebar */}
-                <div className={`col-12 col-lg-4 ${styles.rightSidebar} ${isSidebarOpen ? styles.open : ''}`}>
+                <div className={`col-lg-4 ${styles.rightSidebar} ${isSidebarOpen ? styles.open : ''}`}>
                     <CoursesSidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
                 </div>
             </div>

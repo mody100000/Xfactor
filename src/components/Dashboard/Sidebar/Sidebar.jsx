@@ -28,7 +28,7 @@ const Sidebar = ({ isOpen, toggleSidebar, toggleTheme, theme }) => {
         <li className={styles.menuItem}><MdOutlineSpeakerNotes size={25} className="mx-2" /> Notes</li>
         <li className={styles.menuItem}><BiBriefcase size={25} className="mx-2" /> Career</li>
         <li className={`${styles.menuItem} mt-5`}><BsChat size={22} className="mx-2" /> Chat</li>
-        <li className={styles.menuItem}><IoWalletOutline size={25} className="mx-2" /> Purchases</li>
+        <li className={styles.menuItem}><Link to="/dashboard/purchases" className='text-decoration-none text-light'><IoWalletOutline size={25} className="mx-2" /> Purchases</Link></li>
         <li className={styles.menuItem}><IoIosHelpCircleOutline size={25} className="mx-2" /> Help</li>
         <li className={styles.menuItem}><CiSettings size={25} className="mx-2" /> Settings</li>
         <li className={styles.menuItem} onClick={toggleTheme}><CiDark size={25} className="mx-2" /> {theme === 'dark' ? 'Light Mode' : 'Dark Mode'}</li>
