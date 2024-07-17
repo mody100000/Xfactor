@@ -53,7 +53,9 @@ const Sidebar = ({ isOpen, toggleSidebar, toggleTheme, theme }) => {
           <BiBriefcase size={25} className="mx-2" /> Career
         </li>
         <li className={`${getMenuItemClass('/dashboard/chat')} mt-5`}>
-          <BsChat size={22} className="mx-2" /> Chat
+          <NavLink to="/dashboard/chat" className='text-decoration-none text-light'>
+            <BsChat size={22} className="mx-2" /> Chat
+          </NavLink>
         </li>
         <li className={getMenuItemClass('/dashboard/purchases')}>
           <NavLink to="/dashboard/purchases" className='text-decoration-none text-light'>

@@ -38,6 +38,7 @@ import AssignClientPage from './pages/CoachDashboard/AssignClientPage/AssignClie
 import RegisterOptions from './pages/RegisterOptions/RegisterOptions';
 import TrainerRegister from './components/Register/TrainerRegister/TrainerRegister';
 import PurchasesPage from './pages/PurchasesPage/PurchasesPage';
+import ChatPage from './pages/ChatPage/ChatPage';
 
 const routes = createBrowserRouter([
   {
@@ -84,6 +85,8 @@ const routes = createBrowserRouter([
       { path: "/dashboard/progress", element: <CourseSchedulePage /> },
       { path: "purchases", element: <PurchasesPage /> },
       { path: "assignClient", element: <AssignClientPage /> },
+      { path: "chat", element: <ChatPage /> },
+
 
     ]
   },
