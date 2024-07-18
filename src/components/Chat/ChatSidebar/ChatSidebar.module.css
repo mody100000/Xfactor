@@ -1,0 +1,23 @@
+.sidebar {
+    background-color: #f8f9fa;
+}
+
+.contact {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e9ecef;
+    cursor: pointer;
+}
+
+.contact:hover {
+    background-color: #e2e6ea;
+}
+
+.message {
+    font-size: 0.9em;
+}
+
+.time {
+    font-size: 0.8em;
+}

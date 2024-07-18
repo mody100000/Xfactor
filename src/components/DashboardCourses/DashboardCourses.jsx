@@ -34,11 +34,9 @@ const Courses = () => {
                     <div className={`d-flex justify-content-between align-items-end mt-auto ${styles.tagsAndLastSeen}`}>
                       <div className={styles.courseTags}>
                         {course.tags.map(tag => (
-                          <>
-                            <Link to="/dashboard/courses/courseSchedule">
-                              <button className={`btn btn-outline-danger me-2 ${styles.courseBtn}`} key={tag}>{tag}</button>
-                            </Link>
-                          </>
+                          <Link to="/dashboard/courses/courseSchedule" key={tag}>
+                            <button className={`btn btn-outline-danger me-2 ${styles.courseBtn}`} key={tag}>{tag}</button>
+                          </Link>
                         ))}
                       </div>
                       <div className={styles.lastSeen}>Last seen: {course.lastSeen}</div>
@@ -88,7 +86,6 @@ const courses = [
     lastSeen: '2 Feb, 2024',
     image: image,
   },
-  // More course objects here
 ];
 
 
