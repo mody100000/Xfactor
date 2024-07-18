@@ -1,5 +1,34 @@
 .sidebar {
     background-color: #f8f9fa;
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto; /* Changed to auto */
+    z-index: 1000;
+    transform: translateX(-100%);
+}
+
+.sidebar.open {
+    display: block; /* Changed from contents to block */
+    transform: translateX(0);
+}
+
+.searchInput {
+    position: relative; 
+    width: 100%;
+    background-color: #f8f9fa; 
+}
+
+@media (min-width: 768px) {
+    .sidebar {
+        display: block;
+        height: 100%;
+        position: relative;
+        overflow-y: auto; /* Changed to auto */
+        width: 500px;
+        transform: translateX(0);
+    }
 }
 
 .contact {
@@ -8,6 +37,7 @@
     align-items: center;
     border-bottom: 1px solid #e9ecef;
     cursor: pointer;
+    padding-top: 2rem; /* Add padding to avoid being overlapped by fixed search input */
 }
 
 .contact:hover {
@@ -20,4 +50,17 @@
 
 .time {
     font-size: 0.8em;
+}
+
+.userImg {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    object-fit: cover;
+    margin-right: 1rem;
+}
+
+.closeBtn {
+    display: block;
+    margin-bottom: 1rem;
 }
