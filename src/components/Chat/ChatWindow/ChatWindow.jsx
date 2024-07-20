@@ -1,12 +1,18 @@
 import React from 'react';
 import styles from './ChatWindow.module.css';
+import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
 
-const ChatWindow = () => {
+const ChatWindow = ({ isSidebarOpen, toggleSidebar }) => {
     return (
-        <div className={`${styles.chatWindow} d-flex flex-column`}>
-            <div className={`${styles.header} p-3`}>
-                <strong>Mark William</strong>
-                <div className="text-muted">Last seen recently</div>
+        <div className={`${styles.chatWindow} ${isSidebarOpen ? styles.hidden : ''}`}>
+            <div className={`${styles.header} p-2`}>
+                <div className='d-flex flex-column justify-content-center pt-2'>
+                    <span>Mark William</span>
+                    <p className="text-muted">Last seen recently</p>
+                </div>
+                <div>
+                    <button className={`btn btn-danger d-md-none ${styles.openBtn}`} onClick={toggleSidebar}><IoChatbubbleEllipsesOutline size={25} /></button>
+                </div>
             </div>
             <div className={`${styles.messages} flex-grow-1 p-3`}>
                 <div className={`${styles.message} mb-2`}>
@@ -22,6 +28,22 @@ const ChatWindow = () => {
                     <div className={`${styles.timestamp} text-muted`}>08:35</div>
                 </div>
                 <div className={`${styles.message} ${styles.sent} mb-2`}>
+                    <span>Absolutely! The course is designed for all levels, so whether you're a newbie or already familiar with the topic, you'll definitely learn a lot.</span>
+                    <div className={`${styles.timestamp} text-muted`}>08:35</div>
+                </div>
+                <div className={`${styles.message} ${styles.sent} mb-2`}>
+                    <span>Absolutely! The course is designed for all levels, so whether you're a newbie or already familiar with the topic, you'll definitely learn a lot.</span>
+                    <div className={`${styles.timestamp} text-muted`}>08:35</div>
+                </div> <div className={`${styles.message} ${styles.sent} mb-2`}>
+                    <span>Absolutely! The course is designed for all levels, so whether you're a newbie or already familiar with the topic, you'll definitely learn a lot.</span>
+                    <div className={`${styles.timestamp} text-muted`}>08:35</div>
+                </div> <div className={`${styles.message} ${styles.sent} mb-2`}>
+                    <span>Absolutely! The course is designed for all levels, so whether you're a newbie or already familiar with the topic, you'll definitely learn a lot.</span>
+                    <div className={`${styles.timestamp} text-muted`}>08:35</div>
+                </div> <div className={`${styles.message} ${styles.sent} mb-2`}>
+                    <span>Absolutely! The course is designed for all levels, so whether you're a newbie or already familiar with the topic, you'll definitely learn a lot.</span>
+                    <div className={`${styles.timestamp} text-muted`}>08:35</div>
+                </div> <div className={`${styles.message} ${styles.sent} mb-2`}>
                     <span>Absolutely! The course is designed for all levels, so whether you're a newbie or already familiar with the topic, you'll definitely learn a lot.</span>
                     <div className={`${styles.timestamp} text-muted`}>08:35</div>
                 </div>

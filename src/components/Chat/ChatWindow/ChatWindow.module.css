@@ -2,15 +2,36 @@
     display: flex;
     flex-direction: column;
     border-left: 1px solid #e9ecef;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+@media (min-width: 768px) {
+    .chatWindow {
+        transform: translateX(0);
+    }
+ 
+}
+
+.chatWindow.hidden {
+    transform: translateX(100%);
 }
 
 .header {
+    display: flex;
+    justify-content: space-between;
     background-color: #f8f9fa;
     border-bottom: 1px solid #e9ecef;
+    width: 100%;
+    z-index: 1;
 }
 
 .messages {
     overflow-y: auto;
+    margin-bottom: 56px; /* Adjust according to the height of the input box */
+    padding-bottom: 56px; /* Extra space for the input box */
+    flex-grow: 1;
 }
 
 .message {
@@ -29,4 +50,25 @@
 .inputBox {
     border-top: 1px solid #e9ecef;
     background-color: #f8f9fa;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.openBtn {
+    display: block;
+    margin: 1rem;
+}
+
+@media (min-width: 768px) {
+    .openBtn {
+        display: none;
+    }
+ 
+}
+@media (max-width: 768px) {
+    .messages{
+        margin-top:1rem; /* Adjust according to the height of the header */
+        }
 }
