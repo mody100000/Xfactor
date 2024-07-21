@@ -2,7 +2,7 @@
     display: flex;
     height: 100vh;
     overflow: hidden;
-    position: relative;
+    position: sticky;
 }
 .topBtn {
     border-radius: 25px;
