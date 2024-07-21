@@ -3,6 +3,7 @@
     height: 100vh;
     overflow: hidden;
     position: sticky;
+    width: 100%;
 }
 .topBtn {
     border-radius: 25px;

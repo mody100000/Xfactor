@@ -4,42 +4,147 @@ import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
 
 const ChatWindow = ({ isSidebarOpen, toggleSidebar }) => {
     return (
-        <div className={`${styles.chatWindow} ${isSidebarOpen ? "" : ''}`}>
-            <div className={`${styles.header} p-2`}>
-                <div className='d-flex flex-column justify-content-center pt-2'>
-                    <span>Mark William</span>
-                    <p className="text-muted">Last seen recently</p>
+        <div className={`${styles.msger} ${isSidebarOpen ? "" : ''}`}>
+            <header className={`${styles.msgerHeader}`}>
+                <div className={styles.msgerHeaderTitle}>
+                    <IoChatbubbleEllipsesOutline size={25} /> SimpleChat
                 </div>
-                <div>
-                    <button className={`btn btn-danger d-md-none ${styles.openBtn}`} onClick={toggleSidebar}><IoChatbubbleEllipsesOutline size={25} /></button>
+                <div className={styles.msgerHeaderOptions}>
+                    <button className={`btn btn-danger ${styles.openBtn}`} onClick={toggleSidebar}><IoChatbubbleEllipsesOutline size={25} /></button>
                 </div>
-            </div>
-            <div className={`${styles.messages} flex-grow-1 p-3`}>
-                <div className={`${styles.message} mb-2`}>
-                    <span>Oh, really? No, I didn't! Tell me more about it.</span>
-                    <div className={`${styles.timestamp} text-muted`}>08:35</div>
-                </div>
-                <div className='my-3'>
-                    <div className={`${styles.message} ${styles.sent} mb-2`}>
-                        <span>Well, it's supposed to be super exciting! They cover everything from the basics of machine learning to advanced neural networks. Plus, there are hands-on projects where we get to build our own AI models</span>
+            </header>
+
+            <main className={styles.msgerChat}>
+                <div className={`${styles.msg} ${styles.leftMsg}`}>
+                    <div className={styles.msgImg}></div>
+                    <div className={styles.msgBubble}>
+                        <div className={styles.msgInfo}>
+                            <div className={styles.msgInfoName}>BOT</div>
+                            <div className={styles.msgInfoTime}>12:45</div>
+                        </div>
+                        <div className={styles.msgText}>
+                            Hi, welcome to SimpleChat! Go ahead and send me a message. 😄
+                        </div>
                     </div>
-                    <div className={`${styles.timestampSend} text-muted`}>08:35</div>
                 </div>
-                <div className={`${styles.message} mb-2`}>
-                    <span>That sounds awesome! I've always been fascinated by AI but never knew where to start. Do you think beginners can also join?</span>
-                    <div className={`${styles.timestamp} text-muted`}>08:35</div>
-                </div>
-                <div className='my-3'>
-                    <div className={`${styles.message} ${styles.sent} mb-2`}>
-                        <span>Absolutely! The course is designed for all levels, so whether you're a newbie or already familiar with the topic, you'll definitely learn a lot</span>
+
+                <div className={`${styles.msg} ${styles.rightMsg}`}>
+                    <div className={styles.msgImg} ></div>
+                    <div className={styles.msgBubble}>
+                        <div className={styles.msgInfo}>
+                            <div className={styles.msgInfoName}>Sajad</div>
+                            <div className={styles.msgInfoTime}>12:46</div>
+                        </div>
+                        <div className={styles.msgText}>
+                            You can change your name in JS section! You can change your name in JS section!
+                        </div>
                     </div>
-                    <div className={`${styles.timestampSend} text-muted`}>08:35</div>
+                </div>
+
+                <div className={`${styles.msg} ${styles.leftMsg}`}>
+                    <div className={styles.msgImg}></div>
+                    <div className={styles.msgBubble}>
+                        <div className={styles.msgInfo}>
+                            <div className={styles.msgInfoName}>BOT</div>
+                            <div className={styles.msgInfoTime}>12:45</div>
+                        </div>
+                        <div className={styles.msgText}>
+                            Hi, welcome to SimpleChat! Go ahead and send me a message. 😄
+                        </div>
+                    </div>
+                </div>
+
+                <div className={`${styles.msg} ${styles.rightMsg}`}>
+                    <div className={styles.msgImg} ></div>
+                    <div className={styles.msgBubble}>
+                        <div className={styles.msgInfo}>
+                            <div className={styles.msgInfoName}>Sajad</div>
+                            <div className={styles.msgInfoTime}>12:46</div>
+                        </div>
+                        <div className={styles.msgText}>
+                            You can change your name in JS section! You can change your name in JS section!
+                        </div>
+                    </div>
+                </div>   <div className={`${styles.msg} ${styles.leftMsg}`}>
+                    <div className={styles.msgImg}></div>
+                    <div className={styles.msgBubble}>
+                        <div className={styles.msgInfo}>
+                            <div className={styles.msgInfoName}>BOT</div>
+                            <div className={styles.msgInfoTime}>12:45</div>
+                        </div>
+                        <div className={styles.msgText}>
+                            Hi, welcome to SimpleChat! Go ahead and send me a message. 😄
+                        </div>
+                    </div>
+                </div>
+
+                <div className={`${styles.msg} ${styles.rightMsg}`}>
+                    <div className={styles.msgImg} ></div>
+                    <div className={styles.msgBubble}>
+                        <div className={styles.msgInfo}>
+                            <div className={styles.msgInfoName}>Sajad</div>
+                            <div className={styles.msgInfoTime}>12:46</div>
+                        </div>
+                        <div className={styles.msgText}>
+                            You can change your name in JS section! You can change your name in JS section!
+                        </div>
+                    </div>
+                </div>   <div className={`${styles.msg} ${styles.leftMsg}`}>
+                    <div className={styles.msgImg}></div>
+                    <div className={styles.msgBubble}>
+                        <div className={styles.msgInfo}>
+                            <div className={styles.msgInfoName}>BOT</div>
+                            <div className={styles.msgInfoTime}>12:45</div>
+                        </div>
+                        <div className={styles.msgText}>
+                            Hi, welcome to SimpleChat! Go ahead and send me a message. 😄
+                        </div>
+                    </div>
+                </div>
+
+                <div className={`${styles.msg} ${styles.rightMsg}`}>
+                    <div className={styles.msgImg} ></div>
+                    <div className={styles.msgBubble}>
+                        <div className={styles.msgInfo}>
+                            <div className={styles.msgInfoName}>Sajad</div>
+                            <div className={styles.msgInfoTime}>12:46</div>
+                        </div>
+                        <div className={styles.msgText}>
+                            You can change your name in JS section! You can change your name in JS section!
+                        </div>
+                    </div>
+                </div>   <div className={`${styles.msg} ${styles.leftMsg}`}>
+                    <div className={styles.msgImg}></div>
+                    <div className={styles.msgBubble}>
+                        <div className={styles.msgInfo}>
+                            <div className={styles.msgInfoName}>BOT</div>
+                            <div className={styles.msgInfoTime}>12:45</div>
+                        </div>
+                        <div className={styles.msgText}>
+                            Hi, welcome to SimpleChat! Go ahead and send me a message. 😄
+                        </div>
+                    </div>
+                </div>
+
+                <div className={`${styles.msg} ${styles.rightMsg}`}>
+                    <div className={styles.msgImg} ></div>
+                    <div className={styles.msgBubble}>
+                        <div className={styles.msgInfo}>
+                            <div className={styles.msgInfoName}>Sajad</div>
+                            <div className={styles.msgInfoTime}>12:46</div>
+                        </div>
+                        <div className={styles.msgText}>
+                            You can change your name in JS section! You can change your name in JS section!
+                        </div>
+                    </div>
                 </div>
                 {/* Additional messages */}
-            </div>
-            <div className={`${styles.inputBox} p-3`}>
-                <input type="text" className="form-control" placeholder="Type a message..." />
-            </div>
+            </main>
+
+            <form className={styles.msgerInputarea}>
+                <input type="text" className={styles.msgerInput} placeholder="Enter your message..." />
+                <button type="submit" className={styles.msgerSendBtn}>Send</button>
+            </form>
         </div>
     );
 };
