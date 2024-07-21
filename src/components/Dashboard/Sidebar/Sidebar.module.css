@@ -72,7 +72,7 @@ a{
   border-radius: 20px;
 }
 
-@media (min-width: 769px) {
+@media (min-width: 968px) {
   .sidebar {
     transform: translateX(0);
   }
