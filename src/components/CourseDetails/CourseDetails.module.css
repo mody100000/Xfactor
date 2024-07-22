@@ -1,0 +1,46 @@
+.img{
+    width: 100%;
+    height:25rem;
+    object-fit: cover;
+    border-radius: 20px;
+}
+.progressCard {
+    padding: 20px;
+    background-color: var(--productCard-color);
+    color: var(--text-color);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  .iconWrapper {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: large;
+    font-weight: bold;
+}
+  .progressNumbers {
+    font-weight: bold;
+    border: 1px solid gray;
+    padding: 4px 10px;
+    text-align: center;
+    border-radius: 20px;
+    color: #6c757d;
+    cursor: pointer;
+  }
+  .progressNumbers:hover{
+    border: none;
+    background-color: #dc3545;
+    color: white;
+  }
+  .progressTitle {
+    margin-top: 1rem;
+    font-size:1.3em;
+}
+.purchaseDate{
+    color: var(--supText-color);
+  }
