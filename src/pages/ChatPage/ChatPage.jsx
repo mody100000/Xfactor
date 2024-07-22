@@ -12,7 +12,7 @@ const ChatPage = () => {
 
     return (
         <>
-            <div className='d-flex flex-row justify-content-between align-items-center flex-wrap px-3 my-3'>
+            <div className={`d-flex flex-row justify-content-between align-items-center flex-wrap px-3 my-3 ${styles.headerPage}`}>
                 <h2 className={styles.headerTitle}>Chat</h2>
                 <div className="d-flex justify-content-between">
                     <button className={`btn btn-danger ${styles.topBtn}`}>ALL (25)</button>
