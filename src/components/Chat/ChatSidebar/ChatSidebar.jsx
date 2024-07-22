@@ -24,9 +24,9 @@ const ChatSidebar = ({ isSidebarOpen, toggleSidebar }) => {
                     </div>
                     <div>
                         <strong>{contact.name}</strong>
-                        <div className={`${styles.message} text-muted`}>{contact.message}</div>
+                        <div className={`${styles.message}`}>{contact.message}</div>
                     </div>
-                    <div className={`${styles.time} text-muted`}>{contact.time}</div>
+                    <div className={`${styles.time}`}>{contact.time}</div>
                 </div>
             ))}
         </div>

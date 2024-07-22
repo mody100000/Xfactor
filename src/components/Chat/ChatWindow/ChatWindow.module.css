@@ -1,11 +1,3 @@
-:root {
-    --body-bg: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-    --msger-bg: #fff;
-    --border: 2px solid #ddd;
-    --left-msg-bg: #ececec;
-    --right-msg-bg: #579ffb;
-}
-
 .msger {
     display: flex;
     flex-flow: column wrap;
@@ -13,8 +5,7 @@
     width: 100%;
     height: 100vh;
     border: var(--border);
-    border-radius: 5px;
-    background: var(--msger-bg);
+    background: var(--ChatWindow-bgcolor);
     box-shadow: 0 15px 15px -5px rgba(0, 0, 0, 0.2);
     overflow: hidden;
 }
@@ -24,8 +15,8 @@
     justify-content: space-between;
     padding: 10px;
     border-bottom: var(--border);
-    background: #eee;
-    color: #666;
+    background: var(--msgerHeader-bgcolor);
+    color: var(--supText-color);
 }
 
 .msgerChat {
@@ -45,7 +36,6 @@
     width: 50px;
     height: 50px;
     margin-right: 10px;
-    background: #ddd;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -55,7 +45,7 @@
     max-width: 450px;
     padding: 15px;
     border-radius: 15px;
-    background: var(--left-msg-bg);
+    background: var(--message-bgcolor);
 }
 .msgInfo {
     display: flex;
@@ -79,19 +69,19 @@
     flex-direction: row-reverse;
 }
 .rightMsg .msgBubble {
-    background: var(--right-msg-bg);
+    background: #ad2734;
     color: #fff;
     border-bottom-right-radius: 0;
 }
 .rightMsg .msgImg {
-    margin: 0 0 0 10px;
+    margin: 0 0 0 5px;
 }
 
 .msgerInputarea {
     display: flex;
     padding: 10px;
     border-top: var(--border);
-    background: #eee;
+    background: var(--msgerHeader-bgcolor);
 }
 .msgerInputarea * {
     padding: 10px;
@@ -101,18 +91,20 @@
 }
 .msgerInput {
     flex: 1;
-    background: #ddd;
+     background-color: var( --filterInput-bgcolor);
+    border-radius: 10px;
 }
 .msgerSendBtn {
     margin-left: 10px;
-    background: rgb(0, 196, 65);
+    background: #BF1E2E;
     color: #fff;
     font-weight: bold;
+    border-radius: 10px;
     cursor: pointer;
     transition: background 0.23s;
 }
 .msgerSendBtn:hover {
-    background: rgb(0, 180, 50);
+    background: #dd2336;
 }
 
 .openBtn {

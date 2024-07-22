@@ -1,5 +1,5 @@
 .sidebar {
-    background-color: #f8f9fa;
+    background-color: var( --chatSidebar-bgcolor);
     display: none;
     position: absolute;
     width: 100%;
@@ -17,8 +17,10 @@
 
 .searchInput {
     position: relative; 
+    border-radius: 10px;
     width: 100%;
-    background-color: #f8f9fa; 
+    background-color: var( --filterInput-bgcolor);
+    border: none;
 }
 
 @media (min-width: 768px) {
@@ -36,21 +38,23 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid #e9ecef;
+    border-bottom: 1px solid gray;
     cursor: pointer;
     padding-top: 2rem; /* Add padding to avoid being overlapped by fixed search input */
 }
 
 .contact:hover {
-    background-color: #e2e6ea;
+    background-color: var(--hoverContacts);
 }
 
 .message {
     font-size: 0.9em;
+    color: var(--supText-color);
 }
 
 .time {
     font-size: 0.8em;
+    color: var(--supText-color);
 }
 
 .userImg {

@@ -30,6 +30,11 @@ body.light {
   --coaches-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.214);
   --filterInput-bgcolor:white;
   --dashbordRightSidebar-color:rgba(189, 189, 189, 0.24);
+  --chatSidebar-bgcolor:#eee;
+  --hoverContacts:#bcbbbb;
+  --ChatWindow-bgcolor:white;
+  --msgerHeader-bgcolor:#f0f0f0;
+  --message-bgcolor:#ececec;
 }
 
 body.dark {
@@ -49,7 +54,12 @@ body.dark {
   --relatedProduct-box-shadow:0 0 20px rgb(255, 255, 255);
   --coaches-box-shadow: 0 0 10px rgb(255, 255, 255);
   --filterInput-bgcolor:#9a9a9a;
-  --dashbordRightSidebar-color:#333333
+  --dashbordRightSidebar-color:#333333;
+  --chatSidebar-bgcolor:rgb(255 255 255 / 31%);
+  --hoverContacts:#f4f4f433;
+  --ChatWindow-bgcolor:#f4f4f433;
+  --msgerHeader-bgcolor:#f4f4f433;
+  --message-bgcolor:#818181;
 }
 
 body {
