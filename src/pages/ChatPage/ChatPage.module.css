@@ -15,4 +15,7 @@
     .chatPage {
         flex-direction: column;
     }
+.topBtn {
+padding: 3px 7px;
+}
 }

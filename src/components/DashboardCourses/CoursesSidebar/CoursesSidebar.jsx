@@ -106,7 +106,7 @@ const CoursesSidebar = ({ isOpen, toggleSidebar }) => {
           <div className="col-auto">
             <Rating
               emptySymbol={<FaStar color="lightgray" size={30} />}
-              fullSymbol={<FaStar color="gold" size={30} />}
+              fullSymbol={<FaStar color="#BF1E2E" size={30} />}
               onChange={handleRatingChange}
             />
           </div>
