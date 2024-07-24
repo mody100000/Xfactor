@@ -1,6 +1,6 @@
 .sidebarContent {
   padding: 10px;
-  background-color: rgba(189, 189, 189, 0.24);
+  /* background-color: rgba(189, 189, 189, 0.24); */
   border-radius: 8px;
   position: fixed;
   top: 0;
@@ -118,7 +118,7 @@
     transform: translateX(0);
     position: static; /* Ensure sidebar remains in place for large screens */
     width: 100%; /* Full width for sidebar content */
-  background-color: var(--dashbordRightSidebar-color);
+  background-color: var(--dashbordRightSidebarContaier-color);
   }
   .closeBtn {
     display: none;

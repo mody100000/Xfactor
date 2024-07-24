@@ -4,9 +4,16 @@ import { BsArrowDownRightCircle, BsArrowUpRightCircle } from "react-icons/bs";
 import styles from "./CourseSchedule.module.css";
 import { HiOutlinePlayCircle } from "react-icons/hi2";
 import { CiCirclePlus } from "react-icons/ci";
+import { useNavigate } from "react-router-dom";
 
 const CourseSchedule = () => {
   const [expanded, setExpanded] = useState({});
+
+  const navigate = useNavigate()
+
+  const handelNavigate = () => {
+    navigate("/dashboard/courses/CourseDetails")
+  }
 
   const toggleExpand = (id) => {
     setExpanded((prev) => ({
@@ -51,7 +58,7 @@ const CourseSchedule = () => {
                 {expanded[course.id] && (
                   <div className={styles.expandedContent}>
                     <p className="mt-1 pt-2">Additional course information goes here...</p>
-                    <button className={`btn btn-danger ${styles.topBtn}`}>Continue</button>
+                    <button onClick={handelNavigate} className={`btn btn-danger ${styles.topBtn}`}>Continue</button>
                   </div>
                 )}
               </div>

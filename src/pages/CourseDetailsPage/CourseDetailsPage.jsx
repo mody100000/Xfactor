@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import styles from "./CourseDetailsPage.module.css";
-import CoursesSidebar from "../../components/DashboardCourses/CoursesSidebar/CoursesSidebar";
 import { SlCalender } from "react-icons/sl";
 import CourseDetails from "../../components/CourseDetails/CourseDetails";
+import CourseDetailsSidebar from '../../components/CourseDetails/CourseDetailsSidebar/CourseDetailsSidebar';
 const CourseDetailsPage = () => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
@@ -24,7 +24,7 @@ const CourseDetailsPage = () => {
 
                 {/* Right Sidebar */}
                 <div className={`col-12 col-lg-4 ${styles.rightSidebar} ${isSidebarOpen ? styles.open : ''}`}>
-                    <CoursesSidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
+                    <CourseDetailsSidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
                 </div>
             </div>
         </div>
