@@ -5,9 +5,6 @@ import { FaRegTimesCircle, FaStar } from "react-icons/fa";
 import Rating from 'react-rating';
 
 const CoursesSidebar = ({ isOpen, toggleSidebar }) => {
-  const handleRatingChange = (rate) => {
-    console.log(`Rated with value ${rate}`);
-  };
 
   const showDetailsHandle = (dayStr) => {
     console.log("Selected Date:", dayStr);
@@ -107,7 +104,6 @@ const CoursesSidebar = ({ isOpen, toggleSidebar }) => {
             <Rating
               emptySymbol={<FaStar color="lightgray" size={30} />}
               fullSymbol={<FaStar color="#BF1E2E" size={30} />}
-              onChange={handleRatingChange}
             />
           </div>
         </div>

@@ -5,12 +5,8 @@ import Rating from 'react-rating';
 import { FaStar } from 'react-icons/fa';
 
 const CourseDetails = () => {
-    const [rating, setRating] = useState(0);
 
-    const handleRatingChange = (rate) => {
-        setRating(rate);
-        console.log(`Rated with value ${rate}`);
-    };
+    const rate = 4;
 
     return (
         <div className='px-1'>
@@ -19,11 +15,12 @@ const CourseDetails = () => {
             </div>
             <div className="col-auto py-4 d-flex align-items-center">
                 <Rating
-                    emptySymbol={<FaStar color="lightgray" size={25} />}
-                    fullSymbol={<FaStar color="#BF1E2E" size={25} />}
-                    onChange={handleRatingChange}
+                    emptySymbol={<FaStar color="lightgray" size={30} />}
+                    fullSymbol={<FaStar color="#BF1E2E" size={30} />}
+                    initialRating={rate}
+                    readonly
                 />
-                <span className='text-center px-3'>{rating}/5</span>
+                <span className='text-center px-3'>{rate}/5</span>
             </div>
             <h2 className='fw-bold'>Incorporating Abstraction</h2>
             <div className="mt-4">

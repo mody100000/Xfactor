@@ -1,0 +1,118 @@
+.iconSearch{
+    color: var(--supText-color);
+}
+.likeActive{
+    border-bottom: 2px solid var(--supText-color);
+}
+.checked{
+  display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    border-radius: 50%;
+    border: 2px solid #BF1E2E;
+    background-color: #ffffff2d;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.checkedActive{
+  background-color: #BF1E2E;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  border-radius: 50%;
+  border: 2px solid #BF1E2E;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.sidebarContent {
+    padding: 20px;
+    border-radius: 8px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+  }
+  
+  .open {
+    transform: translateX(0);
+  }
+  
+  .closeBtn {
+    background: none;
+    color:#dc3545;
+    border: none;
+    font-size: 24px;
+    position: absolute;
+    top: 2px;
+    left: 5px;
+    cursor: pointer;
+  }
+  
+  .card {
+    border: none;
+    background-color:var( --navbar-background-color);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  .cardActive {
+    border: none;
+    background-color:var( --activeCard-bgcolor);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  .cardBody {
+    padding: 7px 15px 7px 15px; 
+  }
+  
+  .cardTitle {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+    font-weight: bold;
+  }
+  
+  .cardText {
+    font-size: 1rem;
+    color: var(--supText-color);
+  }
+  
+  .calendarHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .taskDate {
+    font-weight: bold;
+    margin: 1rem;
+  }
+  
+  .taskTime {
+    color: #6c757d;
+    font-size: 0.875rem;
+  }
+  .topSidepar{
+    margin-top: 2rem;
+  }
+  @media (min-width: 1068px) {
+    .topSidepar{
+      margin-top: 0;
+    }
+    .sidebarContent {
+      padding: 15px;
+      transform: translateX(0);
+      position: static; /* Ensure sidebar remains in place for large screens */
+      width: 100%; /* Full width for sidebar content */
+    }
+    .closeBtn {
+      display: none;
+    }
+  }
+  
