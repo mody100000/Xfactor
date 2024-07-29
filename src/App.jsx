@@ -40,6 +40,7 @@ import TrainerRegister from './components/Register/TrainerRegister/TrainerRegist
 import PurchasesPage from './pages/PurchasesPage/PurchasesPage';
 import ChatPage from './pages/ChatPage/ChatPage';
 import CourseDetailsPage from './pages/CourseDetailsPage/CourseDetailsPage';
+import Test from './pages/CoachesResultPage/test';
 
 const routes = createBrowserRouter([
   {
@@ -48,7 +49,8 @@ const routes = createBrowserRouter([
     children: [
       { index: true, path: "", element: <Landing /> },
       { path: "questions3", element: <QuestionsPage3 /> },
-      { path: "coaches", element: <CoachesResultPage /> },
+      // { path: "coaches", element: <CoachesResultPage /> },
+      { path: "coaches", element: <Test /> },
       { path: "AboutUs", element: <AboutUsPage /> },
       { path: "ContactUs", element: <ContactUs /> },
       { path: "Shop", element: <Shop /> },
