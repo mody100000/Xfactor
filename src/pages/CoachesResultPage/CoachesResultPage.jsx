@@ -55,43 +55,49 @@ const CoachesResultPage = () => {
 
   return (
     <>
-    <div className={styles.intro}>
+      <div className={styles.intro}>
         <div className={styles.overlay}>
-            <div className='d-flex flex-column align-items-center justify-content-center p-5'>
+          <div className='d-flex flex-column align-items-center justify-content-center p-5'>
             <h1 className="fw-bold">Coaches</h1>
             <h3 className={`text-center ${styles.suptitle}`}>
-            Recommended {sport} coaches near {address}
+              Recommended {sport} coaches near {address}
             </h3>
-            </div>
-           </div>
-            <div>
+          </div>
         </div>
       </div>
-    <div className={styles.container}>
-      <div className={styles.coachesContainer}>
-        {currentCoaches.map((coach) => (
-          <div key={coach.id} className={styles.coachCard}>
-            <img src={coach.image || coachImage} alt={coach.name} className={styles.coachImage} />
-            <h2 className={styles.coachName}>{coach.name}</h2>
-            <p className={styles.coachCategory}>{coach.category}</p>
-            <div className={styles.rating}>
-              <span className={styles.stars}>{'★'.repeat(coach.rating)}{'☆'.repeat(5 - coach.rating)}</span>
-              <span className={styles.reviews}>{coach.reviews} reviews</span>
+      <div className={styles.container}>
+        <div className={styles.coachesContainer}>
+          {currentCoaches.map((coach) => (
+            <div key={coach.id} className={`row ${styles.coachRow}`}>
+              <div className="col-md-6">
+                <div className={styles.coachCard}>
+                  <div className='d-flex flex-column align-items-center'>
+                    <img src={coach.image || coachImage} alt={coach.name} className={styles.coachImage} />
+                    <h2 className={styles.coachName}>{coach.name}</h2>
+                    <p className={styles.coachCategory}>{coach.category}</p>
+                  </div>
+                  <div className={styles.coachInfo}>
+                    <span className={`${styles.badge} ${getBadgeClass(coach.badge)}`}>{coach.badge}</span>
+                    <div className={styles.rating}>
+                      <span className={styles.stars}>{'★'.repeat(coach.rating)}{'☆'.repeat(5 - coach.rating)}</span>
+                      <span className={styles.reviews}>{coach.reviews} reviews</span>
+                    </div>
+                    <p className={styles.summary}>{coach.summary}</p>
+                    <p className={styles.distance}>{coach.distance} miles away from {address}</p>
+                    <p className={styles.salary}>${coach.salary}/session</p>
+                    <Link to={`/coach/${coach.id}`} className={styles.viewProfileLink}>
+                      <button className={styles.viewProfileButton}>View Profile</button>
+                    </Link>
+                  </div>
+                </div>
+              </div>
             </div>
-            <span className={`${styles.badge} ${getBadgeClass(coach.badge)}`}>{coach.badge}</span>
-            <p className={styles.summary}>{coach.summary}</p>
-            <p className={styles.distance}>{coach.distance} miles away from {address}</p>
-            <p className={styles.salary}>${coach.salary}/session</p>
-            <Link to={`/coach/${coach.id}`} className={styles.viewProfileLink}>
-              <button className={styles.viewProfileButton}>View Profile</button>
-            </Link>
-          </div>
-        ))}
+          ))}
+        </div>
+        <div className={styles.pagination}>
+          {renderPagination()}
+        </div>
       </div>
-      <div className={styles.pagination}>
-        {renderPagination()}
-      </div>
-    </div>
     </>
   );
 };

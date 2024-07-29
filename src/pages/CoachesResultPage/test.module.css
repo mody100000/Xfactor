@@ -45,6 +45,7 @@
 
 .coachCard {
   display: flex;
+  justify-content: space-around;
   background-color: var(--filterSidebar-color);
   box-shadow: var(--coaches-box-shadow);
   padding: 1.5rem;
