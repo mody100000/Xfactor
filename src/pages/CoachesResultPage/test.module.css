@@ -46,7 +46,8 @@
 .coachCard {
   display: flex;
   justify-content: space-around;
-  background-color: var(--filterSidebar-color);
+  gap: 2rem;
+  background-color: var(--productCard-color);
   box-shadow: var(--coaches-box-shadow);
   padding: 1.5rem;
   border-radius: 8px;
@@ -62,7 +63,11 @@
 }
 
 .coachInfo {
-  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: right;
+  width: 60%;
 }
 
 .coachName {
@@ -74,7 +79,7 @@
 .coachCategory {
   font-size: 1rem;
   color: #bf1e2e;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .rating {
@@ -84,19 +89,19 @@
 }
 
 .stars {
-  color: gold;
+  color: rgb(244, 216, 57);
   margin-right: 0.5rem;
 }
 
 .reviews {
   font-size: 0.9rem;
-  color: #777;
+  color: #777777a6;
 }
 
 .badge {
   margin-top: 10px;
   padding: 5px 20px;
-  border-radius: 5px;
+  border-radius: 8px;
   font-weight: bold;
 }
 
@@ -122,9 +127,9 @@
 
 .summary {
   font-size: 0.9rem;
+  width: 80%;
   color: var(--supText-color);
   margin-bottom: 1rem;
-  margin-top: 1rem;
 }
 
 .distance {
@@ -134,12 +139,17 @@
 }
 
 .salary {
-  font-size: 1.1rem;
+  font-size: 2.4rem;
   font-weight: bold;
   color: #bf1e2e;
-  margin-bottom: 1.5rem;
 }
-
+.pluse {
+  margin: 0.1rem 0;
+  font-size: 2rem;
+}
+.fee {
+  font-size: larger;
+}
 .viewProfileButton {
   background-color: #bf1e2e;
   color: white;

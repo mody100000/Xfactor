@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import styles from './test.module.css';
 import coachImage from '../../assets/s3.jpg';
+import { IoMdAdd } from "react-icons/io";
 
 const Test = () => {
     const sport = useSelector((state) => state.coach.sport);
@@ -71,23 +72,29 @@ const Test = () => {
                         <div key={coach.id} className={`row ${styles.coachRow}`}>
                             <div className="col-md-6">
                                 <div className={styles.coachCard}>
-                                    <div className='d-flex '>
-                                        <img src={coach.image || coachImage} alt={coach.name} className={styles.coachImage} />
-                                        <div className='d-flex flex-column'>
-                                            <h2 className={styles.coachName}>{coach.name}</h2>
-                                            <div className={styles.rating}>
-                                                <span className={styles.stars}>{'★'.repeat(coach.rating)}{'☆'.repeat(5 - coach.rating)}</span>
-                                                <span className={styles.reviews}>{coach.reviews} reviews</span>
+                                    <div className='d-flex flex-column '>
+                                        <div className='d-flex'>
+                                            <img src={coach.image || coachImage} alt={coach.name} className={styles.coachImage} />
+                                            <div className='d-flex flex-column'>
+                                                <h2 className={styles.coachName}>{coach.name}</h2>
+                                                <div className={styles.rating}>
+                                                    <span className={styles.stars}>{'★'.repeat(coach.rating)}{'☆'.repeat(5 - coach.rating)}</span>
+                                                    <span className={styles.reviews}>{coach.reviews} reviews</span>
+                                                </div>
+                                                <p className={styles.coachCategory}>{coach.category}</p>
                                             </div>
-                                            <p className={styles.coachCategory}>{coach.category}</p>
                                         </div>
+                                        <p className='mt-4 fs-6'>{coach.trainingOfferIcon}{coach.trainingOffer}</p>
+                                        <p className={styles.summary}>{coach.summary}</p>
+                                        <p className={styles.distance}><span className='fw-bold'>{coach.distance}</span> miles away from {address}</p>
                                     </div>
                                     <div className={styles.coachInfo}>
                                         <span className={`${styles.badge} ${getBadgeClass(coach.badge)}`}>{coach.badge}</span>
-
-                                        <p className={styles.summary}>{coach.summary}</p>
-                                        <p className={styles.distance}>{coach.distance} miles away from {address}</p>
-                                        <p className={styles.salary}>${coach.salary}/session</p>
+                                        <p className='mt-3 mb-1 fs-5'>Starting At</p>
+                                        <p className='my-1'><span className='fs-4'>$</span><span className={styles.salary}>{coach.salary}</span>/session</p>
+                                        {/* <p className={styles.pluse}>+</p> */}
+                                        <IoMdAdd size={25} />
+                                        <p className={styles.fee}>Applicable Fees</p>
                                         <Link to={`/coach/${coach.id}`} className={styles.viewProfileLink}>
                                             <button className={styles.viewProfileButton}>View Profile</button>
                                         </Link>
