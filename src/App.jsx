@@ -5,6 +5,7 @@ import { setAddress, setSport } from "./store/features/coachSlice";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import "./App.css";
 import "./index.css";
+import { MdOnlinePrediction } from "react-icons/md";
 
 import MainLayout from "./layouts/MainLayout/MainLayout";
 import Landing from "./pages/Landing/Landing";
@@ -40,7 +41,6 @@ import TrainerRegister from './components/Register/TrainerRegister/TrainerRegist
 import PurchasesPage from './pages/PurchasesPage/PurchasesPage';
 import ChatPage from './pages/ChatPage/ChatPage';
 import CourseDetailsPage from './pages/CourseDetailsPage/CourseDetailsPage';
-import Test from './pages/CoachesResultPage/test';
 
 const routes = createBrowserRouter([
   {
@@ -49,8 +49,7 @@ const routes = createBrowserRouter([
     children: [
       { index: true, path: "", element: <Landing /> },
       { path: "questions3", element: <QuestionsPage3 /> },
-      // { path: "coaches", element: <CoachesResultPage /> },
-      { path: "coaches", element: <Test /> },
+      { path: "coaches", element: <CoachesResultPage /> },
       { path: "AboutUs", element: <AboutUsPage /> },
       { path: "ContactUs", element: <ContactUs /> },
       { path: "Shop", element: <Shop /> },
@@ -117,6 +116,8 @@ function App() {
         rating: 5,
         reviews: 120,
         badge: "Gold",
+        trainingOfferIcon: <MdOnlinePrediction size={25} />,
+        trainingOffer: "Offers Online Training",
         summary: "Professional trainer, experience with athletes ranging from pro to youth. As a former pro athlete, I understand what it takes to reach your fitness goals. Sports Science degree",
         location: "LA",
         distance: 6.5,
@@ -133,6 +134,8 @@ function App() {
         rating: 4,
         reviews: 100,
         badge: "silver",
+        trainingOfferIcon: <MdOnlinePrediction size={25} />,
+        trainingOffer: "Offers Online Training",
         summary: "Professional trainer, experience with athletes ranging from pro to youth. As a former pro athlete, I understand what it takes to reach your fitness goals. Sports Science degree",
         location: "LA",
         distance: 5.5,
@@ -149,6 +152,8 @@ function App() {
         rating: 4,
         reviews: 100,
         badge: "silver",
+        trainingOfferIcon: <MdOnlinePrediction size={25} />,
+        trainingOffer: "Offers Online Training",
         summary: "Professional trainer, experience with athletes ranging from pro to youth. As a former pro athlete, I understand what it takes to reach your fitness goals. Sports Science degree",
         location: "LA",
         distance: 5.5,
