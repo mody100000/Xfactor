@@ -22,7 +22,7 @@ const LogoutNav = ({ theme, toggleTheme }) => {
       <Navbar
         collapseOnSelect
         expand="lg"
-        className={`py-2 px-5 ${styles.navbar} ${theme === 'dark' ? 'navbar-dark bg-dark' : 'navbar-light bg-light'}`}
+        className={`py-2 px-1 px-md-5 ${styles.navbar} ${theme === 'dark' ? 'navbar-dark bg-dark' : 'navbar-light bg-light'}`}
       >
         <Navbar.Brand>
           <Link to="/" className={styles.brand}>

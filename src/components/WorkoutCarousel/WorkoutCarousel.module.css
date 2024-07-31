@@ -40,30 +40,28 @@
   border-radius: 20px;
 }
 
-.customArrow {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 30px;
-  height: 30px;
-  color: rgb(201, 22, 22);
-  cursor: pointer;
-  background: none; /* Remove background */
-  border: none; /* Remove border */
-}
-
 .customArrow:hover {
   color: rgb(201, 22, 22);
-  background: none; /* Remove hover background */
+  background: none;
 }
 
-.playButton {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 3rem;
-  color: white;
-  opacity: 0.8;
-  cursor: pointer;
+@media (max-width: 768px) {
+  .workoutCarouselContainer {
+    padding: 1rem;
+    margin: 2rem 0;
+  }
+
+  .title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .videoContainer {
+    height: 15rem;
+  }
+
+  .videoWrapper.inactive {
+    opacity: 1;
+    filter: none;
+  }
 }

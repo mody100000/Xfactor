@@ -8,15 +8,15 @@
 }
 
 .item_links:hover {
-  color: #BF1E2E;
+  color: #bf1e2e;
 }
-.toggle{
+.toggle {
   color: var(--text-color);
 }
 .logo {
   object-fit: contain;
   width: 200px;
-  height: auto; 
+  height: auto;
   background-color: black;
 }
 

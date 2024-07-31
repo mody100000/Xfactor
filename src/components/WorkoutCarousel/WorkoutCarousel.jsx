@@ -53,9 +53,18 @@ const WorkoutCarousel = () => {
         }}
       ></div>
     ),
-    nextArrow: <CustomArrow direction="right" />,
-    prevArrow: <CustomArrow direction="left" />,
-    arrows: false
+    arrows: false,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          centerMode: false,
+          arrows: false
+        }
+      }
+    ]
   };
 
   return (

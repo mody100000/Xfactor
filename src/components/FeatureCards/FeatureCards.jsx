@@ -22,14 +22,14 @@ const FeatureCards = () => {
             <img src={image1} alt="Description 3" className={styles.image} />
           </div>
           <h3 className="my-3 fw-bolder">4 Weeks Challenge</h3>
-          <button onClick={handelNavigate} className="btn btn-outline-danger porder btn-lg">Learn More</button>
+          <button onClick={handelNavigate} className={styles.getStartedBtn}>Learn More</button>
         </div>
         <div className={styles.imageContainer}>
           <div className={styles.imageWrapper}>
             <img src={carate} alt="Description 3" className={styles.image} />
           </div>
           <h3 className="my-3 fw-bolder">Personal Training</h3>
-          <button onClick={handelNavigate} className="btn btn-outline-danger porder btn-lg">Learn More</button>
+          <button onClick={handelNavigate} className={styles.getStartedBtn}>Learn More</button>
 
         </div>
         <div className={styles.imageContainer}>
@@ -37,7 +37,7 @@ const FeatureCards = () => {
             <img src={fitness} alt="Description 3" className={styles.image} />
           </div>
           <h3 className="my-3 fw-bolder">Group Classes</h3>
-          <button onClick={handelNavigate} className="btn btn-outline-danger porder btn-lg">Learn More</button>
+          <button onClick={handelNavigate} className={styles.getStartedBtn}>Learn More</button>
         </div>
       </div>
     </div>
