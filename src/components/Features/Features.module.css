@@ -37,18 +37,15 @@
   margin: 1rem 0;
   padding: 10px 20px;
   background-color: rgba(255, 255, 255, 0);
-  border: 1px solid #BF1E2E;
-  color: #BF1E2E;
+  border: 1px solid #bf1e2e;
+  color: #bf1e2e;
   text-align: center;
   white-space: nowrap;
-  transition: transform 0.5s ease-in-out;
 }
 
 .getStartedBtn:hover {
-  transform: scale(1.07);
   border: none;
-  background-color: #BF1E2E;
-  text-transform: uppercase;
+  background-color: #bf1e2e;
   color: white;
 }
 
@@ -85,7 +82,6 @@
   justify-content: center;
   align-items: center;
   backdrop-filter: blur(10px);
-
 }
 
 .badge1 {
@@ -113,7 +109,7 @@
 
   .textContainer {
     max-width: 100%;
-    margin : 20px auto
+    margin: 20px auto;
   }
 
   .textContainer h1 {
