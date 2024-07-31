@@ -1,74 +1,30 @@
 .container {
-  margin: 5rem auto;
-  padding: 20px;
-  max-width: 800px;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: #f8f9fa;
 }
 
-.profileContainer {
+.cardMain {
   display: flex;
-  gap: 20px;
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 5px;
-  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
-  box-shadow: var(--relatedProduct-box-shadow);
-
-}
-.card{
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
   background-color: var(--filterSidebar-color);
   color: var(--text-color);
 }
-.supText{
+
+.supText {
   color: var(--supText-color);
 }
+
 .coachImage {
   width: 10rem;
   height: auto;
   border-radius: 10px;
-}
-
-.details {
-  flex: 1;
-}
-
-.coachName {
-  font-size: 1.8rem;
-  font-weight: bold;
-}
-
-.coachCategory {
-  color: #6c757d;
-  font-size: 1.2rem;
-}
-
-.rating {
-  margin-top: 10px;
-}
-
-.stars {
-  color: #ffc107;
-}
-
-.reviews {
-  color: #6c757d;
-  margin-left: 10px;
-}
-
-.summary {
-  margin-top: 20px;
-  font-size: 1rem;
-}
-
-.location {
-  margin-top: 20px;
-  color: #6c757d;
-}
-
-.salary {
-  font-weight: bold;
-  font-size: 1.2rem;
-  margin-top: 20px;
 }
 
 .bookButton,
@@ -77,27 +33,36 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  margin-top: 20px;
+  margin-bottom: 1rem;
   font-size: 1rem;
 }
 
 .bookButton {
-  background-color: #BF1E2E;
+  background-color: #bf1e2e;
 }
 
 .bookButton:hover {
   background-color: #9f1a27;
-
 }
 
 .messageButton {
   margin-right: 10px;
 }
 
-/* .messageButton:hover {
-  background-color: #218838;
-} */
-
 .gradientCustom {
-  background: linear-gradient(40deg, #fc4560, #BF1E2E);
+  background: linear-gradient(40deg, #fc4560, #bf1e2e);
+}
+
+.cardContainer {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.cardBody {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
 }

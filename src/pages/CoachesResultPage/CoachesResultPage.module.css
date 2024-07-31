@@ -1,3 +1,5 @@
+/* Existing styles */
+
 .intro {
   position: relative;
   background-image: url("../../assets/coachItro (1).jpeg");
@@ -190,4 +192,41 @@
   background-color: #bf1e2e;
   color: white;
   border-color: #bf1e2e;
+}
+
+/* Media Queries for Responsiveness */
+
+/* For tablets and larger screens */
+@media (max-width: 950px) {
+  .coachCard {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .coachInfo {
+    width: 100%;
+  }
+}
+
+/* For mobile screens */
+@media (max-width: 576px) {
+  .coachCard {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .coachImage {
+    width: 100px;
+    height: 100px;
+  }
+
+  .coachInfo {
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .viewProfileButton {
+    width: 100%;
+    text-align: center;
+  }
 }
