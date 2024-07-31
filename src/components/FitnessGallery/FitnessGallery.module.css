@@ -15,81 +15,110 @@
   color: #747474;
   margin-bottom: 2rem;
 }
+
 .fitnessGallery {
-  background-color:var(---background-color) ;
-  height: 30rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 5rem;
+  padding: 1rem 3rem;
+  overflow: hidden;
 }
 
-.galleryContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
+.imageWrapper {
+  padding: 0 10px;
+  margin-bottom: 1rem;
 }
 
-.galleryImageContainer {
-  transition: transform 0.5s ease;
+.imageContainer {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  width: 100%;
+  height: 20rem;
+  border-radius: 20px;
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
+}
+
+.imageContainer.active {
+  height: 22rem;
+  width: 100%;
+  /* transform: scale(1.08); */
+  z-index: 1;
+  border-radius: 40px;
+  /* box-shadow: 2px 2px 4px 2px rgba(240, 167, 174, 0.8); */
+  /* box-shadow: rgba(240, 167, 174, 0.8) 0px 2px 5px -1px,
+    rgba(240, 167, 174, 0.8) 0px 1px 5px -1px; */
+}
+
+.imageContainer.inactive {
+  opacity: 0.6;
+  transform: scale(0.9);
   cursor: pointer;
 }
 
-.galleryImage {
-  width: 20rem;
-  height: 15rem;
-  transition: transform 0.5s ease, opacity 0.5s ease;
-  opacity: 0.6;
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  transition: all 0.3s ease;
 }
 
-.active .galleryImage {
-  transform: scale(1.2);
-  opacity: 1;
-  /* box-shadow: 0px 19px 43px 0px rgba(163, 18, 18, 0.05); */
-  /* border: 1px solid #BF1E2E; */
-
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
 }
 
-.slideLabels {
-  display: flex;
-  justify-content: center;
-  margin-top: 1rem;
-  gap: 0.5rem;
-}
-
-.slideLabel {
+.customPaging {
   width: 15px;
   height: 15px;
-  background-color: #F0A7AE;
+  background-color: #f0a7ae;
   border-radius: 50%;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
-.activeLabel {
-  background-color: #BF1E2E;
-  width: 30px;
+.activeIndex {
+  background-color: #bf1e2e;
+  width: 20px;
   border-radius: 12px;
 }
 
-@media (max-width: 1024px) {
-  .galleryImage {
-    width: 170px;
-  }
+.customArrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  cursor: pointer;
+  color: rgb(201, 22, 22);
+}
 
-  .active .galleryImage {
-    transform: scale(1.2);
-  }
+.customArrow:hover {
+  color: rgb(100, 0, 0);
 }
 
 @media (max-width: 768px) {
-  .galleryImage {
-    width: 70px;
+  .fitnessGallery {
+    padding: 1rem;
   }
 
-  .active .galleryImage {
-    transform: scale(1.2);
+  .title {
+    font-size: 2rem;
+  }
+
+  .imageContainer.active {
+    transform: none;
+  }
+
+  .imageContainer.inactive {
+    opacity: 0.8;
+    transform: none;
+  }
+
+  .overlay {
+    display: none;
   }
 }
