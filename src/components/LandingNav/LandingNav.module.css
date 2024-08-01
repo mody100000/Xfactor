@@ -1,7 +1,7 @@
 /* LandingNav.module.css */
 .item_links {
   color: var(--text-color);
-  margin: 0.2rem;
+  margin: 0.7rem;
   cursor: pointer;
   font-size: 13px;
   font-weight: bold;
