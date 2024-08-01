@@ -32,10 +32,10 @@ const WorkoutCarousel = () => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: 1,
     slidesToScroll: 1,
     centerMode: true,
-    centerPadding: '0',
+    centerPadding: '20%',
     beforeChange: (current, next) => setActiveIndex(next),
     appendDots: dots => (
       <div>
@@ -44,23 +44,19 @@ const WorkoutCarousel = () => {
     ),
     customPaging: i => (
       <div
-        style={{
-          width: "20px",
-          height: "10px",
-          marginTop: "19px",
-          borderRadius: "4px",
-          background: i === activeIndex ? "rgb(100, 0, 0)" : "rgb(201, 22, 22)"
-        }}
+        className={`${styles.customPaging} ${i === activeIndex ? styles.activeIndex : styles.inactiveIndex}`}
       ></div>
     ),
     arrows: false,
+    nextArrow: <CustomArrow direction="right" />,
+    prevArrow: <CustomArrow direction="left" />,
     responsive: [
       {
         breakpoint: 768,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1,
           centerMode: false,
+          centerPadding: '0',
           arrows: false
         }
       }
@@ -72,14 +68,15 @@ const WorkoutCarousel = () => {
       <h2 className={styles.title}>See All Workouts</h2>
       <Slider {...settings}>
         {videos.map((video, index) => (
-          <div key={video.id} className={`${styles.videoWrapper} ${index === activeIndex ? '' : styles.inactive}`}>
-            <div className={styles.videoContainer}>
+          <div key={video.id} className={styles.videoWrapper}>
+            <div className={`${styles.videoContainer} ${index === activeIndex ? styles.active : styles.inactive}`}>
               <iframe
                 src={video.url}
                 title={`Video ${video.id}`}
                 className={styles.videoFrame}
                 allowFullScreen
               />
+              {index !== activeIndex && <div className={styles.overlay}></div>}
             </div>
           </div>
         ))}

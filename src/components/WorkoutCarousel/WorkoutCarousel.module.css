@@ -11,13 +11,7 @@
 }
 
 .videoWrapper {
-  position: relative;
-  transition: opacity 0.5s, filter 0.5s;
-}
-
-.videoWrapper.inactive {
-  opacity: 0.5;
-  filter: blur(2px);
+  padding: 0 10px;
 }
 
 .videoContainer {
@@ -25,10 +19,14 @@
   padding-bottom: 56.25%; /* 16:9 aspect ratio */
   height: 0;
   overflow: hidden;
-  height: 25rem;
-  max-width: 100%;
   background-color: black;
   border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.videoContainer.inactive {
+  opacity: 0.7;
+  transform: scale(0.9);
 }
 
 .videoFrame {
@@ -40,9 +38,51 @@
   border-radius: 20px;
 }
 
-.customArrow:hover {
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.534); /* Black overlay with 50% opacity */
+  backdrop-filter: blur(2px);
+  /* pointer-events: none; */
+}
+.customPaging {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  gap: 0.5rem;
+}
+
+.activeIndex {
+  background-color: #bf1e2e;
+  width: 20px;
+  height: 15px;
+  border-radius: 12px;
+}
+
+.inactiveIndex {
+  width: 15px;
+  height: 15px;
+  background-color: #f0a7ae;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.customArrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  cursor: pointer;
   color: rgb(201, 22, 22);
-  background: none;
+}
+
+.customArrow:hover {
+  color: rgb(100, 0, 0);
 }
 
 @media (max-width: 768px) {
@@ -57,11 +97,20 @@
   }
 
   .videoContainer {
-    height: 15rem;
+    padding-bottom: 56.25%; /* Reset to standard aspect ratio for mobile */
   }
 
-  .videoWrapper.inactive {
+  .videoContainer.inactive {
     opacity: 1;
-    filter: none;
+    transform: none;
+  }
+
+  .overlay {
+    display: none; /* Hide overlay on mobile */
+  }
+
+  .customArrow {
+    top: 50%;
+    transform: translateY(-50%);
   }
 }
