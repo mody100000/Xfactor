@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 const sportsList = ["Football", "Basketball", "Tennis", "Swimming", "Running"];
 const addressesList = ["Los Angeles", "New York", "Chicago", "San Francisco", "Miami"];
 
-const ApplyToCoachForm = ({ onNext }) => {
+const ApplyToCoachForm = () => {
   const [sportInput, setSportInput] = useState('');
   const [addressInput, setAddressInput] = useState('');
   const [filteredSports, setFilteredSports] = useState([]);
@@ -64,7 +64,6 @@ const ApplyToCoachForm = ({ onNext }) => {
     dispatch(setSport(sportInput));
     dispatch(setAddress(addressInput));
     navigate('/training-options');
-    onNext();
   };
 
   return (
