@@ -1,21 +1,27 @@
 import { Outlet } from "react-router-dom";
-import ApplicationNavbar from "../../components/ApplicationNavbar/ApplicationNavbar";
 import LogoutNav from '../../components/LandingNav/LandingNav';
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { setTheme, toggleTheme } from "../../store/reducers/themeSlice";
 
 const CoachApplicationLayout = () => {
-  const [theme, setTheme] = useState('dark');
+  const dispatch = useDispatch();
+  const theme = useSelector((state) => state.theme.theme);
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme") || "dark"
+    dispatch(setTheme(savedTheme))
+    document.body.className = savedTheme
+  }, [dispatch])
 
   useEffect(() => {
     document.body.className = theme;
+    localStorage.setItem("theme", theme)
   }, [theme]);
 
-  const toggleTheme = () => {
-    setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
-  };
+
   return (<>
-    {/* <ApplicationNavbar/> */}
-    <LogoutNav toggleTheme={toggleTheme} />
+    <LogoutNav theme={theme} toggleTheme={() => dispatch(toggleTheme())} />
     <Outlet />
   </>);
 }

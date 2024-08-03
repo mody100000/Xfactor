@@ -15,18 +15,19 @@ import { FaRegCircleQuestion } from 'react-icons/fa6';
 import { RxReader } from 'react-icons/rx';
 import { CiDark } from 'react-icons/ci';
 import { TiThMenu } from "react-icons/ti";
-
+import logoLightMode from "@assets/logoLightMode.png"
 const LogoutNav = ({ theme, toggleTheme }) => {
   return (
     <>
       <Navbar
         collapseOnSelect
-        expand="lg"
+        expand="xl"
         className={`py-2 px-1 px-md-5 ${styles.navbar} ${theme === 'dark' ? 'navbar-dark bg-dark' : 'navbar-light bg-light'}`}
       >
         <Navbar.Brand>
           <Link to="/" className={styles.brand}>
-            <img src={logo} className={styles.logo} alt="XFACTOR" />
+            {theme === 'dark' ?
+              <img src={logo} className={styles.logo} alt="XFACTOR" /> : <img src={logoLightMode} className={styles.logo} alt="XFACTOR" />}
           </Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav"  ><TiThMenu className={styles.toggle} size={25} /></Navbar.Toggle>

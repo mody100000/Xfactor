@@ -73,9 +73,6 @@ const CourseDetailsSidebar = ({ isOpen, toggleSidebar }) => {
         );
     };
 
-    const showDetailsHandle = (dayStr) => {
-        console.log("Selected Date:", dayStr);
-    };
 
     return (
         <div className={`${styles.sidebarContent} ${isOpen ? styles.open : ''}`}>

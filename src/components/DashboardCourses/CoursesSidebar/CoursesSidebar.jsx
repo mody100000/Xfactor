@@ -6,10 +6,6 @@ import Rating from 'react-rating';
 
 const CoursesSidebar = ({ isOpen, toggleSidebar }) => {
 
-  const showDetailsHandle = (dayStr) => {
-    console.log("Selected Date:", dayStr);
-  };
-
   return (
     <div className={`${styles.sidebarContent} ${isOpen ? styles.open : ''}`}>
       <button className={styles.closeBtn} onClick={toggleSidebar}><FaRegTimesCircle /></button>
@@ -23,7 +19,6 @@ const CoursesSidebar = ({ isOpen, toggleSidebar }) => {
       </div>
       <div className={styles.calendarHeader}>
         <div className={styles.calendarContainer}>
-          <NewCalendar showDetailsHandle={showDetailsHandle} />
         </div>
       </div>
       <div className={styles.tasksContainer}>

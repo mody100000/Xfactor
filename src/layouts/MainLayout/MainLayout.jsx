@@ -10,13 +10,19 @@ const MainLayout = () => {
   const theme = useSelector((state) => state.theme.theme);
 
   useEffect(() => {
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    dispatch(setTheme(savedTheme));
+    document.body.className = savedTheme;
+  }, [dispatch]);
+
+  useEffect(() => {
     document.body.className = theme;
-    dispatch(setTheme(localStorage.getItem('theme') || 'dark'));
-  }, [theme, dispatch]);
+    localStorage.setItem('theme', theme);
+  }, [theme]);
 
   return (
     <>
-      <LogoutNav toggleTheme={() => dispatch(toggleTheme())} />
+      <LogoutNav theme={theme} toggleTheme={() => dispatch(toggleTheme())} />
       <Outlet />
       <Footer />
       <ScrollRestoration />
