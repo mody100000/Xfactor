@@ -9,7 +9,6 @@
 
 .textContainer {
   max-width: 40%;
-  /* padding-left: 3rem; */
 }
 
 .textContainer h1 {
@@ -101,10 +100,10 @@
     text-align: center;
   }
   .heroSection {
-    flex-direction: column;
+    flex-direction: column-reverse;
     height: auto;
     clip-path: none;
-    padding: 3rem 2rem;
+    padding: 3rem 1rem;
   }
 
   .textContainer {
@@ -113,8 +112,9 @@
   }
 
   .textContainer h1 {
-    font-size: 3rem;
+    font-size: 2rem;
     text-align: center;
+    line-height: 1.5;
   }
 
   .textContainer > p {
@@ -126,6 +126,9 @@
     display: flex;
     flex-direction: column;
   }
+  .imageContainer {
+    padding: 1rem;
+  }
   .imageContainer img {
     max-width: 100%;
   }
@@ -133,5 +136,59 @@
   .badge2 {
     position: static;
     margin: 20px auto;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .heroSection {
+    flex-direction: column-reverse;
+    height: auto;
+    padding: 3rem 2rem;
+  }
+
+  .textContainer {
+    max-width: 100%;
+    margin: 20px auto;
+  }
+
+  .textContainer h1 {
+    font-size: 3rem;
+    text-align: center;
+    line-height: 1.3;
+  }
+
+  .textContainer > p {
+    font-size: 1.2rem;
+    text-align: center;
+    line-height: 1.5;
+  }
+
+  .media {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .imageContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .imageContainer img {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .badge1,
+  .badge2 {
+    position: static;
+    margin: 20px auto;
+    width: 85%;
   }
 }

@@ -17,7 +17,6 @@
   object-fit: contain;
   width: 200px;
   height: auto;
-  background-color: black;
 }
 
 .navbar {
@@ -36,4 +35,15 @@
 
 a {
   text-decoration: none;
+}
+
+@media (max-width: 1024px) {
+  .item_links {
+    font-size: 1.5rem;
+  }
+  .item_links svg {
+    width: 1.5rem !important;
+    height: 1.5rem !important;
+    margin-left: 10px;
+  }
 }
