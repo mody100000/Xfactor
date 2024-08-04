@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import styles from './FilteredCoachesResultPage.module.css';
 import coachImage from '../../assets/s3.jpg';
 import { IoMdAdd } from "react-icons/io";
+import { MdOnlinePrediction } from 'react-icons/md';
 
 const FilteredCoachesResultPage = () => {
   const sport = useSelector((state) => state.coach.sport);
@@ -163,9 +164,12 @@ const FilteredCoachesResultPage = () => {
                         <p className={styles.coachCategory}>{coach.category}</p>
                       </div>
                     </div>
-                    <p className=''>{coach.trainingOfferIcon}{coach.trainingOffer}</p>
-                    <p className={styles.summary}>{coach.summary}</p>
-                    <p className={styles.distance}><span className='fw-bold'>{coach.distance}</span> miles away from {address}</p>
+                    <div className='d-flex flex-column justify-content-end'>
+                      <p className={styles.summary}>{coach.summary}</p>
+                      <p className={styles.distance}><span className='fw-bold'>{coach.distance}</span> miles away from {address}</p>
+                    </div>
+                    {/* {coach.trainingOffer ? <p> <MdOnlinePrediction size={25} /> Offers Online Training</p> : ""} */}
+
                   </div>
                   <div className={styles.coachInfo}>
                     <span className={`${styles.badge} ${getBadgeClass(coach.badge)}`}>{coach.badge}</span>

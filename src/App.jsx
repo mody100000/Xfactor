@@ -42,6 +42,8 @@ import PurchasesPage from './pages/PurchasesPage/PurchasesPage';
 import ChatPage from './pages/ChatPage/ChatPage';
 import CourseDetailsPage from './pages/CourseDetailsPage/CourseDetailsPage';
 
+import { sampleCoaches } from './components/CoachesData/CoachesData';
+
 const routes = createBrowserRouter([
   {
     path: "",
@@ -106,126 +108,7 @@ function App() {
   // const toggleTheme = () => {
   //   setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
   // };
-
   useEffect(() => {
-    const sampleCoaches = [
-      {
-        id: 0,
-        name: "John Doe",
-        category: "Fitness Coach",
-        rating: 5,
-        reviews: 120,
-        badge: "Gold",
-        trainingOffer: true,
-        summary: "Professional trainer, experience with athletes ranging from pro to youth. As a former pro athlete, I understand what it takes to reach your fitness goals. Sports Science degree",
-        location: "LA",
-        distance: 6.5,
-        salary: 22,
-        image: "../public/girl.jpg",
-        recommended: true,
-        trainingType: 'In-Person',
-        gender: 'Male'
-      },
-      {
-        id: 1,
-        name: "leo",
-        category: "Fitness Coach",
-        rating: 4,
-        reviews: 100,
-        badge: "silver",
-        trainingOffer: true,
-        summary: "Professional trainer, experience with athletes ranging from pro to youth. As a former pro athlete, I understand what it takes to reach your fitness goals. Sports Science degree",
-        location: "LA",
-        distance: 5.5,
-        salary: 80,
-        image: "../public/Strength Coach.jpg",
-        recommended: false,
-        trainingType: 'Online',
-        gender: 'Male'
-      },
-      {
-        id: 2,
-        name: "leo",
-        category: "Fitness Coach",
-        rating: 4,
-        reviews: 100,
-        badge: "silver",
-        trainingOffer: true,
-        summary: "Professional trainer, experience with athletes ranging from pro to youth. As a former pro athlete, I understand what it takes to reach your fitness goals. Sports Science degree",
-        location: "LA",
-        distance: 5.5,
-        salary: 110,
-        image: "../public/Strength Coach.jpg",
-        recommended: false,
-        trainingType: 'Online',
-        gender: 'Male'
-      },
-      {
-        id: 3,
-        name: "leo",
-        category: "Fitness Coach",
-        rating: 4,
-        reviews: 100,
-        badge: "silver",
-        summary: "Professional trainer, experience with athletes ranging from pro to youth. As a former pro athlete, I understand what it takes to reach your fitness goals. Sports Science degree",
-        location: "LA",
-        distance: 5.5,
-        salary: 60,
-        image: "../public/Strength Coach.jpg",
-        recommended: false,
-        trainingType: 'Online',
-        gender: 'Male'
-      },
-      {
-        id: 4,
-        name: "leo",
-        category: "Fitness Coach",
-        rating: 4,
-        reviews: 100,
-        badge: "Gold",
-        summary: "Professional trainer, experience with athletes ranging from pro to youth. As a former pro athlete, I understand what it takes to reach your fitness goals. Sports Science degree",
-        location: "LA",
-        distance: 5.5,
-        salary: 50,
-        image: "../public/legGroup.png",
-        recommended: false,
-        trainingType: 'In-Person',
-        gender: 'Female'
-      },
-      {
-        id: 5,
-        name: "leo",
-        category: "Fitness Coach",
-        rating: 4,
-        reviews: 100,
-        badge: "bronze",
-        summary: "Professional trainer, experience with athletes ranging from pro to youth. As a former pro athlete, I understand what it takes to reach your fitness goals. Sports Science degree",
-        location: "LA",
-        distance: 5.5,
-        salary: 50,
-        image: "../public/legGroup.png",
-        recommended: true,
-        trainingType: 'Online',
-        gender: 'Male'
-      },
-      {
-        id: 6,
-        name: "leo",
-        category: "Fitness Coach",
-        rating: 4,
-        reviews: 100,
-        badge: "bronze",
-        summary: "Professional trainer, experience with athletes ranging from pro to youth. As a former pro athlete, I understand what it takes to reach your fitness goals. Sports Science degree",
-        location: "LA",
-        distance: 5.5,
-        salary: 50,
-        image: "../public/legGroup.png",
-        recommended: true,
-        trainingType: 'In-Person',
-        gender: 'Female'
-      },
-    ];
-
     dispatch(setCoaches(sampleCoaches));
     dispatch(setSport('Football'));
     dispatch(setAddress('Los Angeles'));

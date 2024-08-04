@@ -131,17 +131,24 @@
   color: white;
 }
 
+.coachContentWrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Ensure it takes full height of the parent */
+}
+
 .summary {
   font-size: 0.9rem;
   color: var(--supText-color);
   margin-bottom: 1rem;
   width: 90%;
+  flex-grow: 1; /* Allow this to grow and push the distance to the bottom */
 }
 
 .distance {
   font-size: 0.9rem;
   color: var(--supText-color);
-  margin-bottom: 0.5rem;
+  margin-top: auto; /* Push this to the bottom */
 }
 
 .salary {
