@@ -102,12 +102,15 @@ input::-webkit-inner-spin-button {
 }
 
 .unit {
-  display: inline-block;
-  background-color: #BF1E2E;
-  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #bf1e2e;
+  width: 50px;
+  height: 50px;
   color: white;
+  font-size: larger;
   border-radius: 10px;
-  font-weight: 700;
   text-align: center;
 }
 
@@ -121,7 +124,7 @@ input::-webkit-inner-spin-button {
 
 .calculateButton {
   padding: 10px 20px;
-  background-color: #BF1E2E;
+  background-color: #bf1e2e;
   border: none;
   color: white;
   font-size: 16px;
@@ -135,6 +138,7 @@ input::-webkit-inner-spin-button {
 .bmiTitle {
   font-size: 40px;
   font-weight: 700;
+  text-align: center;
   margin-bottom: 10px;
 }
 
@@ -153,7 +157,8 @@ input::-webkit-inner-spin-button {
     justify-content: space-between;
   }
 
-  .leftContainer, .rightContainer {
+  .leftContainer,
+  .rightContainer {
     width: 50%;
   }
 }
@@ -166,7 +171,8 @@ input::-webkit-inner-spin-button {
     justify-content: space-between;
   }
 
-  .leftContainer, .rightContainer {
+  .leftContainer,
+  .rightContainer {
     width: 45%;
   }
 }
@@ -179,7 +185,8 @@ input::-webkit-inner-spin-button {
     justify-content: space-between;
   }
 
-  .leftContainer, .rightContainer {
+  .leftContainer,
+  .rightContainer {
     width: 45%;
   }
 }

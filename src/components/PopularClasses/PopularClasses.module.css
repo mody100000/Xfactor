@@ -8,36 +8,31 @@
   flex-wrap: wrap;
   gap: 1.5rem;
   justify-content: center;
-
 }
 
 .card {
   width: 300px;
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.37);
   border-radius: 1rem;
-
 }
 
 .imageContainer {
   position: relative;
   box-shadow: 0 0 18px 0 rgba(0, 0, 0, 0.37);
   border-radius: 1rem;
-
 }
 
-.gallary{
+.gallary {
   background-color: rgba(255, 255, 255, 0);
   border-radius: 1rem;
   height: 25rem;
-
 }
 
 .imageOverlay {
   position: absolute;
   bottom: 0;
   width: 100%;
-  border-top-right-radius: 1rem;
-  border-top-left-radius: 1rem;
+  border-radius: 1rem;
   background-color: rgba(14, 3, 4, 0.53);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(255, 255, 255, 0.37);
   backdrop-filter: blur(2.5rem);
@@ -65,14 +60,14 @@
 
 .plusIcon {
   cursor: pointer;
-  color: #BF1E2E;
+  color: #bf1e2e;
 }
 
 .plusIcon:hover {
   color: #bf1e2ed3;
 }
 .cardFooter button {
-  background-color: #BF1E2E;
+  background-color: #bf1e2e;
   color: white;
 }
 .cardFooter button:hover {
