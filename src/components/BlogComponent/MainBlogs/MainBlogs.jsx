@@ -1,9 +1,9 @@
 import image1 from "../../../assets/fitness.jpg"; // Replace with your image paths
 import image2 from "../../../assets/s3.jpg";
-import image3 from "../../../assets/legGroup.png";
+import image3 from "../../../assets/legGroup.webp";
 import image4 from "../../../assets/sixBags.jpg";
-import image5 from "../../../assets/blog1.png";
-import image6 from "../../../assets/introCoach.jpg";
+import image5 from "../../../assets/blog1.webp";
+import image6 from "../../../assets/introCoach.webp";
 import image7 from "../../../assets/blog2.jpg";
 import image8 from "../../../assets/blog3.jpg";
 import styles from "./MainBlogs.module.css"
@@ -14,7 +14,7 @@ import { useNavigate } from 'react-router-dom';
 const MainBlogs = () => {
   const navigate = useNavigate()
 
-  const handleNavigate = ()=>{
+  const handleNavigate = () => {
     navigate("/blog")
   }
   const classes = [
@@ -22,57 +22,57 @@ const MainBlogs = () => {
       id: 1,
       title: "6 Ways To Help Athletes Grow Confidence In Themselves",
       image: image1,
-      description:"Athletics play a critical role in developing a young person’s body and brain. There are many lifelong advantages to building healthy lifestyle habits in adolescence, both",
-      supDetails: ["Theresa","June 3, 2024","2 Comments"]
+      description: "Athletics play a critical role in developing a young person’s body and brain. There are many lifelong advantages to building healthy lifestyle habits in adolescence, both",
+      supDetails: ["Theresa", "June 3, 2024", "2 Comments"]
     },
     {
       id: 2,
       title: "6 Ways To Help Athletes Grow Confidence In Themselves",
       image: image2,
       description: "Athletics play a critical role in developing a young person’s body and brain. There are many lifelong advantages to building healthy lifestyle habits in adolescence, both",
-      supDetails: ["Theresa","June 3, 2024","2 Comments"]
+      supDetails: ["Theresa", "June 3, 2024", "2 Comments"]
     },
     {
       id: 3,
       title: "6 Ways To Help Athletes Grow Confidence In Themselves",
       image: image3,
       description: "Athletics play a critical role in developing a young person’s body and brain. There are many lifelong advantages to building healthy lifestyle habits in adolescence, both",
-      supDetails: ["Theresa","June 3, 2024","2 Comments"]
+      supDetails: ["Theresa", "June 3, 2024", "2 Comments"]
     },
     {
       id: 4,
       title: "6 Ways To Help Athletes Grow Confidence In Themselves",
       image: image4,
       description: "Athletics play a critical role in developing a young person’s body and brain. There are many lifelong advantages to building healthy lifestyle habits in adolescence, both",
-      supDetails: ["Theresa","June 3, 2024","2 Comments"]
+      supDetails: ["Theresa", "June 3, 2024", "2 Comments"]
     },
     {
       id: 5,
       title: "6 Ways To Help Athletes Grow Confidence In Themselves",
       image: image5,
       description: "Athletics play a critical role in developing a young person’s body and brain. There are many lifelong advantages to building healthy lifestyle habits in adolescence, both",
-      supDetails: ["Theresa","June 3, 2024","2 Comments"]
+      supDetails: ["Theresa", "June 3, 2024", "2 Comments"]
     },
     {
       id: 6,
       title: "6 Ways To Help Athletes Grow Confidence In Themselves",
       image: image6,
       description: "Athletics play a critical role in developing a young person’s body and brain. There are many lifelong advantages to building healthy lifestyle habits in adolescence, both",
-      supDetails: ["Theresa","June 3, 2024","2 Comments"]
+      supDetails: ["Theresa", "June 3, 2024", "2 Comments"]
     },
     {
       id: 7,
       title: "6 Ways To Help Athletes Grow Confidence In Themselves",
       image: image7,
       description: "Athletics play a critical role in developing a young person’s body and brain. There are many lifelong advantages to building healthy lifestyle habits in adolescence, both",
-      supDetails: ["Theresa","June 3, 2024","2 Comments"]
+      supDetails: ["Theresa", "June 3, 2024", "2 Comments"]
     },
     {
       id: 8,
       title: "6 Ways To Help Athletes Grow Confidence In Themselves",
       image: image8,
       description: "Athletics play a critical role in developing a young person’s body and brain. There are many lifelong advantages to building healthy lifestyle habits in adolescence, both",
-      supDetails: ["Theresa","June 3, 2024","2 Comments"]
+      supDetails: ["Theresa", "June 3, 2024", "2 Comments"]
     },
   ];
 
@@ -88,7 +88,7 @@ const MainBlogs = () => {
   const startIndex = (currentPage - 1) * cardsPerPage;
   const selectedCards = classes.slice(startIndex, startIndex + cardsPerPage);
   return (
- <div className="container my-5">
+    <div className="container my-5">
       <div className={`row ${styles.cardsContainer}`}>
         {selectedCards.map((item) => (
           <div key={item.id} className="col-md-4 mb-4">

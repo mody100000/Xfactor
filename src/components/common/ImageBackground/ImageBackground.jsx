@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './ImageBackground.module.css';
-import backgroundImage from '../../../assets/ImageBackground.jpg';
+import backgroundImage from '../../../assets/ImageBackground.webp';
 
 const ImageBackground = ({ children }) => {
   return (

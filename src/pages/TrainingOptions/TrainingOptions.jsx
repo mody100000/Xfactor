@@ -2,8 +2,8 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import styles from './TrainingOptions.module.css';
-import session from "../../assets/1 to 1 Session.jpeg";
-import online from "../../assets/Online Training.jpeg";
+import session from "../../assets/1 to 1 Session.webp";
+import online from "../../assets/Online Training.webp";
 import ImageBackground from '../../components/common/ImageBackground/ImageBackground';
 
 const TrainingOptions = () => {

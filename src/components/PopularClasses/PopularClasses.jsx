@@ -3,7 +3,7 @@ import styles from "./PopularClasses.module.css";
 import { FaCirclePlus } from "react-icons/fa6";
 import image1 from "../../assets/fitness.jpg"; // Replace with your image paths
 import image2 from "../../assets/s3.jpg";
-import image3 from "../../assets/legGroup.png";
+import image3 from "../../assets/legGroup.webp";
 import image4 from "../../assets/sixBags.jpg";
 
 const PopularClasses = () => {
@@ -46,9 +46,9 @@ const PopularClasses = () => {
                 <h5 className={styles.imageTitle}>{item.title}</h5>
                 <div><p className="text-left mb-4">{item.description}</p></div>
                 <div className={styles.cardFooter}>
-                <button className="btn">Read More</button>
-                <FaCirclePlus size={35} className={styles.plusIcon} />
-              </div>
+                  <button className="btn">Read More</button>
+                  <FaCirclePlus size={35} className={styles.plusIcon} />
+                </div>
               </div>
             </div>
           </div>

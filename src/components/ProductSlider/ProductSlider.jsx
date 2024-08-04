@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import styles from './ProductSlider.module.css';
-import img1 from "../../assets/intro.jpg";
-import img2 from "../../assets/intro.jpg";
-import img3 from "../../assets/intro.jpg";
-import img4 from "../../assets/intro.jpg";
-import img5 from "../../assets/intro.jpg";
+import img1 from "../../assets/intro.webp";
+import img2 from "../../assets/intro.webp";
+import img3 from "../../assets/intro.webp";
+import img4 from "../../assets/intro.webp";
+import img5 from "../../assets/intro.webp";
 
 const images = [
   { src: img1, alt: 'Image 1' },

@@ -1,7 +1,7 @@
 /* Intro image */
 .intro {
   position: relative;
-  background-image: url("../../assets/coachItro (1).jpeg");
+  background-image: url("../../assets/coachIntro.webp");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -201,11 +201,11 @@
 }
 
 .viewProfileButton {
-  padding: 5px 10px;
+  padding: 0.5rem 1.5rem;
   background-color: #bf1e2e;
   color: #fff;
   border: none;
-  border-radius: 5px;
+  border-radius: 7px;
   cursor: pointer;
   margin-top: 10px;
   transition: background-color 0.3s ease;

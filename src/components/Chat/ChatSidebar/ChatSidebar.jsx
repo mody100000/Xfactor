@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './ChatSidebar.module.css';
-import user from "@assets/user.jpeg"
+import user from "@assets/user.webp"
 const contacts = [
     { id: 1, name: 'Mark William', img: user, message: "Count me in then! I can't wait to...", time: '05:18' },
     { id: 2, name: 'Benjamin Hughes', img: user, message: "Watch your creativity bloom with...", time: '05:15' },
