@@ -84,9 +84,11 @@ const CoachesResultPage = () => {
                       <p className={styles.coachCategory}>{coach.category}</p>
                     </div>
                   </div>
-                  {coach.trainingOffer ? <p> <MdOnlinePrediction size={25} /> Offers Online Training</p> : ""}
-                  <p className={styles.summary}>{coach.summary}</p>
-                  <p className={styles.distance}><span className='fw-bold'>{coach.distance}</span> miles away from {address}</p>
+                  <div className={styles.coachContentWrapper}>
+                    {coach.trainingOffer ? <p> <MdOnlinePrediction size={25} /> Offers Online Training</p> : ""}
+                    <p className={styles.summary}>{coach.summary}</p>
+                    <span className={styles.distance}><span className='fw-bold'>{coach.distance}</span> miles away from {address}</span>
+                  </div>
                 </div>
                 <div className={styles.coachInfo}>
                   <span className={`${styles.badge} ${getBadgeClass(coach.badge)}`}>{coach.badge}</span>
