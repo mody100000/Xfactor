@@ -1,21 +1,21 @@
 import styles from "./PopularSports.module.css"
-import Scocer from "../../../assets/Scocer.jpg";
+import Scocer from "../../../assets/Scocer.webp";
 import Lacrosse from "../../../assets/Lacrosse.jpg";
-import Baseball from "../../../assets/Baseball.jpg";
-import Basketball from "../../../assets/Basketball.jpg";
+import Baseball from "../../../assets/Baseball.webp";
+import Basketball from "../../../assets/Basketball.webp";
 import { useNavigate } from 'react-router-dom';
 
 const PopularSports = () => {
     const navigate = useNavigate()
 
-    const handleNavigate =()=>{
+    const handleNavigate = () => {
         navigate("/contactUs")
     }
-    return ( 
+    return (
         <div className={styles.container}>
-             <h2 className={styles.title}>Browse Our Popular Sports</h2>
-             <p className={styles.text}>There are many benefits for athletes and coaches who join the CoachUp community:</p>
-             <div className="container">
+            <h2 className={styles.title}>Browse Our Popular Sports</h2>
+            <p className={styles.text}>There are many benefits for athletes and coaches who join the CoachUp community:</p>
+            <div className="container">
                 <div className="row justify-content-center">
                     <div className="col-md-3 col-sm-6 mb-4">
                         <div className={styles.item}>
@@ -53,13 +53,13 @@ const PopularSports = () => {
                             </div>
                         </div>
                     </div>
-                 </div>
+                </div>
             </div>
             <h2 className={`${styles.title} mt-5`}>Have Questions?</h2>
-             <p className={styles.lastText}>Our Support Team can help!</p>
-             <button className={styles.contactBtn} onClick={handleNavigate}>Contact Us</button>
+            <p className={styles.lastText}>Our Support Team can help!</p>
+            <button className={styles.contactBtn} onClick={handleNavigate}>Contact Us</button>
         </div>
-     );
+    );
 }
- 
+
 export default PopularSports;

@@ -1,5 +1,5 @@
 import styles from "./AboutUsDetails.module.css";
-import workout from "../../../assets/AboutUsDetails.jpg";
+import workout from "../../../assets/AboutUsDetails.webp";
 
 const AboutUsDetails = () => {
   return (

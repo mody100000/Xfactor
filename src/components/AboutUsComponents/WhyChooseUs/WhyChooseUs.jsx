@@ -1,9 +1,8 @@
 import React from "react";
 import styles from "./WhyChooseUs.module.css";
-import { FaCirclePlus } from "react-icons/fa6";
-import image1 from "../../../assets/Facility Amenities.jpg"; // Replace with your image paths
-import image2 from "../../../assets/Train Qualification.jpg";
-import image3 from "../../../assets/legGroup.png";
+import image1 from "../../../assets/blog5.webp"; // Replace with your image paths
+import image2 from "../../../assets/Train Qualification.webp";
+import image3 from "../../../assets/legGroup.webp";
 import image4 from "../../../assets/sixBags.jpg";
 
 const WhyChooseUs = () => {

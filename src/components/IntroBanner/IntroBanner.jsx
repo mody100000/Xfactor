@@ -1,7 +1,7 @@
 import styles from "./IntroBanner.module.css";
 import { FaPlay } from "react-icons/fa6";
 import { FaPlus } from "react-icons/fa";
-import box from "../../assets/intro.jpg";
+import box from "../../assets/intro.webp";
 import { Link } from 'react-router-dom';
 
 const IntroBanner = () => {
@@ -14,9 +14,9 @@ const IntroBanner = () => {
           through the power of fitness.
         </p>
         <div className={styles.media}>
-        <Link to="/applyToCoach">
-          <button className={styles.getStartedBtn}> Get Started</button>
-        </Link>
+          <Link to="/applyToCoach">
+            <button className={styles.getStartedBtn}> Get Started</button>
+          </Link>
           <span className={styles.playVedio}>
             <FaPlay size={40} className={styles.playIcon} /> Play Video
           </span>

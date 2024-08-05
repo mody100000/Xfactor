@@ -1,7 +1,7 @@
 import img1 from "@assets/girl.jpg";
 import img2 from "@assets/Strength Coach.jpg";
-import img3 from "@assets/legGroup.png";
-import img4 from "@assets/user.jpeg";
+import img3 from "@assets/legGroup.webp";
+import img4 from "@assets/user.webp";
 export const sampleCoaches = [
   {
     id: 0,

@@ -1,6 +1,6 @@
-.imageBackground{
+.imageBackground {
   position: relative;
-  background-image: url('../../../assets/Register.jpg');
+  background-image: url("../../../assets/Register.webp");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -8,97 +8,97 @@
 }
 
 .inputsWrapper {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
 
-    @media (max-width: 768px) {
-      grid-template-columns: repeat(1, 1fr);
-    }
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(1, 1fr);
   }
-  .logo {
-    object-fit: contain;
-    width: 230px;
-    height: auto; 
-    margin-bottom: 1rem;
-  }
+}
+.logo {
+  object-fit: contain;
+  width: 230px;
+  height: auto;
+  margin-bottom: 1rem;
+}
 
-  .supTitle{
-    color: rgb(174, 168, 168);
-  }
+.supTitle {
+  color: rgb(174, 168, 168);
+}
 
-  .loginHolder {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 28px 0;
-    @media screen and (min-width: 768px) {
-      height:100vh;
-    }    
+.loginHolder {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 28px 0;
+  @media screen and (min-width: 768px) {
+    height: 100vh;
   }
-  .custom_form_holder {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(14, 3, 4, 0.53);
-    color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(255, 255, 255, 0.37);
-    backdrop-filter: blur(10px);
-    width: 80%;
-    /* height: 40rem; */
-    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.09);
-    padding: 25px;
-    border-radius: 19px;
-  }
-  .custom_form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+}
+.custom_form_holder {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(14, 3, 4, 0.53);
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(255, 255, 255, 0.37);
+  backdrop-filter: blur(10px);
+  width: 80%;
+  /* height: 40rem; */
+  box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.09);
+  padding: 25px;
+  border-radius: 19px;
+}
+.custom_form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.gym_title {
+  color: rgb(135, 31, 161);
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.btn {
+  border: none;
+  color: white;
+  background-color: #bf1e2ed6;
+  padding: 11px;
+  border-radius: 10px;
+  display: block;
+  width: 45%;
+  margin: 12px auto;
+  margin-bottom: 2rem;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background-color: #bf1e2eb0;
+}
+
+.login {
+  color: #bf1e2eee;
+  text-decoration: underline;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"] {
+  -webkit-appearance: none;
+  margin: 0;
+}
+@media (max-width: 768px) {
+  .input {
     width: 100%;
   }
-  .gym_title {
-    color: rgb(135, 31, 161);
-    display: flex;
-    align-items: center;
-    gap: 7px;
+  .custom_form_holder {
+    margin-top: 9rem;
   }
-
-  .btn {
-    border: none;
-    color: white;
-    background-color: #bf1e2ed6;
-    padding: 11px;
-    border-radius: 10px;
-    display: block;
-    width: 45%;
-    margin: 12px auto;
-    margin-bottom: 2rem;
-    font-weight: bold;
-  }
-  
-  .btn:hover{
-    background-color: #bf1e2eb0;
-  }
-
-  .login{
-    color: #bf1e2eee;
-    text-decoration: underline;
-  }
-
-  input[type="number"]::-webkit-inner-spin-button,
-  input[type="number"]::-webkit-outer-spin-button,
-  input[type="number"] {
-    -webkit-appearance: none;
-    margin: 0;
-  }
-  @media (max-width: 768px) {
-    .input {
-      width: 100%;
-    }
-    .custom_form_holder {
-      margin-top: 9rem;
-    }
-  }
+}

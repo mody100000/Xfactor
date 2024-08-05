@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './ChatWindow.module.css';
 import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
-import user from "@assets/user.jpeg"
+import user from "@assets/user.webp"
 import me from "@assets/RegisterCoach (1).jpg"
 const ChatWindow = ({ isSidebarOpen, toggleSidebar }) => {
     return (
