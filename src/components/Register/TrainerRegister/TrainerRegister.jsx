@@ -1,13 +1,5 @@
 import { useMemo, useState } from "react";
 import styles from "./TrainerRegister.module.css";
-import {
-  IoPerson,
-  IoLockClosed,
-  IoPersonOutline,
-} from "react-icons/io5";
-import { FaWeightScale, FaPhone } from "react-icons/fa6";
-import { MdEmail } from "react-icons/md";
-import { CiLineHeight } from "react-icons/ci";
 import Joi from "joi";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../../../assets/logo.png";
@@ -44,7 +36,7 @@ const TrainerRegister = () => {
         .label("email"),
       weight: Joi.number().required().max(400).label("weight"),
       height: Joi.number().required().max(400).label("height"),
-      birth_date: Joi.date().required().label("birth_date"),
+      birth_date: Joi.date().required().label("birth_date").min(3).max(90),
       phone_number: Joi.string()
         .required()
         .min(5)
