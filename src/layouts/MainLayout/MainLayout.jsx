@@ -24,7 +24,7 @@ const MainLayout = () => {
     <>
       <LogoutNav theme={theme} toggleTheme={() => dispatch(toggleTheme())} />
       <Outlet />
-      <Footer />
+      <Footer theme={theme} />
       <ScrollRestoration />
     </>
   );
