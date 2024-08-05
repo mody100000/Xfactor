@@ -6,7 +6,7 @@ import styles from './FitnessGallery.module.css';
 import { CiCircleChevLeft, CiCircleChevRight } from 'react-icons/ci';
 
 import image1 from "../../assets/f2.jpg";
-import fitness from "../../assets/fitness.jpg";
+import fitness from "../../assets/fitness.webp";
 import carate from "../../assets/carate.avif";
 import s3 from "../../assets/s3.jpg";
 

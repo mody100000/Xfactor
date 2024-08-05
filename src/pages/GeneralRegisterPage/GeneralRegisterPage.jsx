@@ -1,6 +1,6 @@
 import GeneralRegister from "@components/Register/GeneralRegisterComponent/GeneralRegister";
 import styles from "./GeneralRegisterPage.module.css"; // Ensure the correct import path
-import imgBackground from "../../assets/Register.webp"
+import imgBackground from "../../assets/Train Qualification.webp"
 const GeneralRegisterPage = () => {
 
   return (

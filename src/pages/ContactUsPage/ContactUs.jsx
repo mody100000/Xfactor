@@ -29,16 +29,16 @@ const ContactUs = () => {
               <textarea className={`${styles.input}`} rows="5" placeholder="Message"></textarea>
             </div>
             <div className='d-flex align-items-center justify-content-center'>
-            <button type="submit" className={`${styles.submitBtn}`}>Submit</button>
+              <button type="submit" className={`${styles.submitBtn}`}>Submit</button>
             </div>
           </form>
         </div>
         <div className={`col-md-5 ${styles.infoColumn}`}>
-          <h2 className='mb-4'>Contact</h2>
+          <h2 className={`my-4 ${styles.title}`}>Contact</h2>
           <p className={styles.textInfo}>If you have any questions, feel free to reach out to us via phone or email.</p>
           <div className='mt-5'>
-          <p className='fs-5'><BsTelephone size={45} className={styles.icon}/>(123) 456-7890</p>
-          <p className='fs-5'><CiMail size={45} className={styles.icon}/> contact@example.com</p>
+            <p className='fs-5'><BsTelephone size={45} className={styles.icon} />(123) 456-7890</p>
+            <p className='fs-5'><CiMail size={45} className={styles.icon} /> contact@example.com</p>
           </div>
         </div>
       </div>

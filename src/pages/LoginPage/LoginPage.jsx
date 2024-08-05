@@ -1,6 +1,6 @@
 import Login from "../../components/Login/Login";
 import styles from "./LoginPage.module.css"; // Ensure the correct import path
-import imgBackground from "../../assets/Register.webp";
+import imgBackground from "../../assets/Train Qualification.webp";
 
 const LoginPage = () => {
 
