@@ -2,16 +2,20 @@ import React from "react";
 import styles from "./Footer.module.css";
 import { FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import logo from "../../assets/logo.png";
+import logoLightMode from "@assets/logoLightMode.png"
 import { Link } from 'react-router-dom';
 
-const Footer = () => {
+const Footer = ({ theme }) => {
+  console.log(theme)
   return (
     <>
       <span className={styles.line}></span>
       <footer className={styles.footer}>
         <div className={styles.footerSection}>
           <Link to="/" className={styles.brand}>
-            <img src={logo} className={styles.logo} alt="XFACTOR" />
+            {theme === "dark" ?
+              <img src={logo} className={styles.logo} alt="XFACTOR" />
+              : <img src={logoLightMode} className={styles.logo} alt="XFACTOR" />}
           </Link>
         </div>
         <div className={styles.footerSection}>
@@ -51,7 +55,7 @@ const Footer = () => {
         <div className={styles.footerSection}>
           <h2 className={styles.sectionTitle}>Address</h2>
           <ul className={styles.contactInfo}>
-            <li>
+            <li className={styles.contactItem}>
               <FaMapMarkerAlt /> 123 Fitness St, Gym City
             </li>
             <li>
