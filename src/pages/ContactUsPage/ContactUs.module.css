@@ -1,5 +1,5 @@
 .contactUsContainer {
-  background-image: url("../../assets/ContactUs.webp");
+  background-image: url("../../assets/Train Qualification.webp");
   background-size: cover;
   padding: 60px;
   /* height: 100vh; */
@@ -101,8 +101,12 @@ select:-webkit-autofill:focus {
 }
 
 @media (max-width: 768px) {
+  .title {
+    text-align: center;
+  }
   .contactUsContainer {
     padding: 40px 20px;
+    object-fit: contain;
   }
 
   .formColumn,

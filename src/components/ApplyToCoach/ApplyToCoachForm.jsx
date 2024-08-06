@@ -22,8 +22,12 @@ const ApplyToCoachForm = () => {
   }, [sportInput, addressInput]);
 
   const validateForm = () => {
-    const isSportValid = sportsList.includes(sportInput);
-    const isAddressValid = addressesList.includes(addressInput);
+    const isSportValid = sportsList.some(sport =>
+      sport.toLowerCase() === sportInput.toLowerCase()
+    );
+    const isAddressValid = addressesList.some(address =>
+      address.toLowerCase() === addressInput.toLowerCase()
+    );
     setIsButtonDisabled(!(isSportValid && isAddressValid));
   };
 
@@ -31,38 +35,52 @@ const ApplyToCoachForm = () => {
     const value = e.target.value;
     setSportInput(value);
     if (value.length > 0) {
-      const filtered = sportsList.filter(sport => sport.toLowerCase().includes(value.toLowerCase()));
+      const filtered = sportsList.filter(sport =>
+        sport.toLowerCase().includes(value.toLowerCase())
+      );
       setFilteredSports(filtered);
     } else {
       setFilteredSports([]);
     }
+    validateForm();
   };
 
   const handleAddressChange = (e) => {
     const value = e.target.value;
     setAddressInput(value);
     if (value.length > 0) {
-      const filtered = addressesList.filter(address => address.toLowerCase().includes(value.toLowerCase()));
+      const filtered = addressesList.filter(address =>
+        address.toLowerCase().includes(value.toLowerCase())
+      );
       setFilteredAddresses(filtered);
     } else {
       setFilteredAddresses([]);
     }
+    validateForm();
   };
 
   const handleSportSelect = (sport) => {
     setSportInput(sport);
     setFilteredSports([]);
+    validateForm();
   };
 
   const handleAddressSelect = (address) => {
     setAddressInput(address);
     setFilteredAddresses([]);
+    validateForm();
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(setSport(sportInput));
-    dispatch(setAddress(addressInput));
+    const capitalizedSport = sportsList.find(sport =>
+      sport.toLowerCase() === sportInput.toLowerCase()
+    );
+    const capitalizedAddress = addressesList.find(address =>
+      address.toLowerCase() === addressInput.toLowerCase()
+    );
+    dispatch(setSport(capitalizedSport));
+    dispatch(setAddress(capitalizedAddress));
     navigate('/training-options');
   };
 

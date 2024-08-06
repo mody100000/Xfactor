@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./FeatureCards.module.css";
 import image1 from "../../assets/f2.jpg"; // Replace with your image paths
-import fitness from "../../assets/fitness.jpg"; // Replace with your image paths
+import fitness from "../../assets/fitness.webp"; // Replace with your image paths
 import carate from "../../assets/carate.avif"; // Replace with your image paths
 import "../../utils/custom.css";
 import { useNavigate } from "react-router-dom";

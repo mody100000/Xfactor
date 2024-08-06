@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./PopularClasses.module.css";
 import { FaCirclePlus } from "react-icons/fa6";
-import image1 from "../../assets/fitness.jpg"; // Replace with your image paths
+import image1 from "../../assets/fitness.webp"; // Replace with your image paths
 import image2 from "../../assets/s3.jpg";
 import image3 from "../../assets/legGroup.webp";
 import image4 from "../../assets/sixBags.jpg";

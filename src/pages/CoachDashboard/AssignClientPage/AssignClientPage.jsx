@@ -1,5 +1,5 @@
 import styles from "./AssignClientPage.module.css"
-import image1 from "../../../assets/fitness.jpg"; // Replace with your image paths
+import image1 from "../../../assets/fitness.webp"; // Replace with your image paths
 import image2 from "../../../assets/s3.jpg";
 import image3 from "../../../assets/legGroup.webp";
 import image4 from "../../../assets/sixBags.jpg";
