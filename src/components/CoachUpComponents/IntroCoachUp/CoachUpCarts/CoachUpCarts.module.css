@@ -1,44 +1,54 @@
 .coachImg {
-    width: 100%;
-    height: 350px;
-    object-fit: cover;
-    overflow-x: hidden; /* Prevent horizontal scroll */
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+.textColumn {
+  background-color: #d9d9d973;
+  box-sizing: border-box;
+}
+.textColumnBlack {
+  background-color: #0000009f;
+  color: white;
+  box-sizing: border-box;
+}
+.text {
+  padding-left: 6rem;
+  font-weight: 400;
+}
+.textBlack {
+  font-weight: 400;
+  width: 40%;
+}
+.suptext {
+  line-height: 1.9;
+}
+
+@media (max-width: 768px) {
+  .textBlack {
+    width: 50%;
   }
-  
+}
+
+@media (max-width: 568px) {
   .textColumn {
-    width: 100%;
-    background-color: #d9d9d973;
-    box-sizing: border-box;
-    overflow-x: hidden; /* Prevent horizontal scroll */
+    padding: 10px;
   }
-  .textColumnBlack{
-    width: 100%;
-    background-color: #0000009f;
-    color: white;
-    box-sizing: border-box;
-    overflow-x: hidden; /* Prevent horizontal scroll */
+  .textColumnBlack {
+    padding: 10px;
   }
-.text{
-    padding-left: 6rem;
-    font-weight: 400;
-}
-.textBlack{
-    padding-right: 6rem;
+  .text {
     padding-left: 1rem;
-    font-weight: 400;
-}
-.suptext{
-    line-height: 1.9;
-}
-  @media (max-width: 768px) {
-    .textColumn {
-      padding: 10px;
-    }
-    .text{
-        padding-left: 1rem;
-    }
-.textBlack{
-    padding-left: 1.4rem;
-}
   }
-  
+  .textBlack {
+    width: 100%;
+  }
+  .textBlack p {
+    text-align: center;
+  }
+  .textBlack h2 {
+    padding-left: 0.7rem;
+  }
+}

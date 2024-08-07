@@ -3,8 +3,7 @@
   color: var(--text-color);
   margin: 0.7rem;
   cursor: pointer;
-  font-size: 13px;
-  font-weight: bold;
+  font-size: 14px;
 }
 
 .item_links:hover {
@@ -36,14 +35,11 @@
 a {
   text-decoration: none;
 }
-
+.darkModeIcon {
+  font-size: 2rem;
+}
 @media (max-width: 1024px) {
   .item_links {
     font-size: 1.5rem;
-  }
-  .item_links svg {
-    width: 1.5rem !important;
-    height: 1.5rem !important;
-    margin-left: 10px;
   }
 }

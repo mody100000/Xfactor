@@ -23,7 +23,7 @@ const CoachUpCarts = () => {
           <img src={step2} alt="Step 2: Book" className={styles.coachImg} />
         </div>
         <div className={`col-md-6 d-flex flex-column justify-content-center ${styles.textBlack}`}>
-          <h2 className='fw-bold mb-5'>Step 2: Book</h2>
+          <h2 className='fw-bold mb-5 mt-3'>Step 2: Book</h2>
           <p className={styles.suptext}>
             From the coach’s profile, click the “Message Coach” button if you have additional questions for the coach, or click the “Book Now” button if you are ready to start training. After you book your coach, you'll receive each other’s contact information; call or email your coach to set up your first training session.
           </p>

@@ -6,14 +6,14 @@ import Testimonials from "../../components/CoachUpComponents/Testimonials/Testim
 import TrainingTypes from "../../components/CoachUpComponents/TrainingTypes/TrainingTypes";
 
 const CoachUp = () => {
-    return ( <>
-    <IntroCoachUp/>
-    <CoachUpCarts/>
-    <TrainingTypes/>
-    <Testimonials/>
-    <Benefits/>
-    <PopularSports/>
-    </> );
+    return (<div className="overflow-hidden">
+        <IntroCoachUp />
+        <CoachUpCarts />
+        <TrainingTypes />
+        <Testimonials />
+        <Benefits />
+        <PopularSports />
+    </div>);
 }
- 
+
 export default CoachUp;

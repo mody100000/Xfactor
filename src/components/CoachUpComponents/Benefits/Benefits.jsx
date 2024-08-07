@@ -41,7 +41,7 @@ const Benefits = () => {
                         </div>
                     </div>
                 </div>
-                <div className="row justify-content-center">
+                <div className="row justify-content-center align-items-center">
                     <div className="col-md-4 col-sm-6 mb-4">
                         <div className={styles.item}>
                             <img src={Training} alt="Training Resources" className={styles.icon} />

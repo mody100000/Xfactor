@@ -58,7 +58,7 @@
 }
 
 .viewAll {
-  background-color: #BF1E2E;
+  background-color: #bf1e2e;
   padding: 0.5rem 1rem;
   border-radius: 20px;
   position: absolute;
@@ -70,7 +70,7 @@
 .arrow {
   margin: 0 -5px;
   font-size: 2rem;
-  color: #BF1E2E;
+  color: #bf1e2e;
   cursor: pointer;
 }
 
@@ -144,7 +144,6 @@
     text-align: center;
     width: 100%;
     max-width: 600px;
-
   }
 }
 
@@ -159,8 +158,7 @@
 
   .ratingSummary {
     font-size: 1.2rem;
-  justify-content: center;
-
+    justify-content: center;
   }
 
   .arrow {
