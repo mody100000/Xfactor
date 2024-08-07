@@ -1,56 +1,64 @@
-.container{
-    background-color: var(--shifting-background-color);
-    color: var(--text-color);
-    padding: 3rem 6rem;
-    margin: 2rem 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.container {
+  background-color: var(--shifting-background-color);
+  color: var(--text-color);
+  padding: 3rem 6rem;
+  margin: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.text{
-    color: #969293;
-    font-size: 20px;
-    margin: 2rem;
-    font-weight: 700;
-    text-align: center;
+.text {
+  color: #969293;
+  font-size: 20px;
+  padding: 2rem;
+  font-weight: 700;
+  text-align: center;
 }
-.title{
-    font-size: 40px;
-    font-weight: bolder;
+.title {
+  font-size: 40px;
+  font-weight: bolder;
 }
-.card{
-    background-color: black;
-    color: rgba(255, 255, 255, 0.932);
-    padding: 2rem;
-    width: 50%;
-    text-align: center;
-    border-radius: 1rem;
-    margin-top: 1rem;
+.card {
+  background-color: black;
+  color: rgba(255, 255, 255, 0.932);
+  padding: 2rem;
+  width: 50%;
+  text-align: center;
+  border-radius: 1rem;
+  margin-top: 1rem;
 }
-.viewBtn{
-    border: none;
-    outline: none;
-    background-color: #BF1E2E;
-    color: white;
-    width: 30%;
-    height: 2rem;
-    border-radius: 10px;
-    margin-top: 1rem;
+.viewBtn {
+  border: none;
+  outline: none;
+  background-color: #bf1e2e;
+  color: white;
+  width: 30%;
+  height: 2rem;
+  border-radius: 10px;
+  margin-top: 1rem;
 }
-.viewBtn:hover{
-    background-color: #d12839;
+.viewBtn:hover {
+  background-color: #d12839;
 }
-@media (max-width: 768px) {
-    .card{
-        width: 100%;
-       padding: 1rem;
-    }
-.container{
-    padding: 3rem 4rem;
-}
-.viewBtn{
-    width: 50%;
 
+@media (max-width: 1024px) {
+  .container {
+    padding: 3rem 1rem;
+  }
 }
+@media (max-width: 568px) {
+  .card {
+    width: 100%;
+    padding: 1rem;
+  }
+  .container {
+    padding: 3rem 1rem;
+  }
+  .text {
+    padding: 1rem;
+  }
+  .viewBtn {
+    width: 50%;
+  }
 }

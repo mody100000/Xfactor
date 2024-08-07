@@ -60,7 +60,7 @@ const LogoutNav = ({ theme, toggleTheme }) => {
               Login <IoLogIn size={25} />
             </Link>
             <div className={styles.item_links} onClick={toggleTheme}>
-              <CiDark size={30} />
+              Dark Mode  <CiDark className={styles.darkModeIcon} size={30} />
             </div>
           </Nav>
         </Navbar.Collapse>

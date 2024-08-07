@@ -3,20 +3,7 @@ import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import styles from './WorkoutCarousel.module.css';
-import { CiCircleChevLeft, CiCircleChevRight } from 'react-icons/ci';
 
-const CustomArrow = ({ className, style, onClick, direction }) => {
-  return (
-    <div
-      className={`${className} ${styles.customArrow}`}
-      style={direction === 'right' ? { ...style, right: -35 } : { ...style, left: -35 }}
-      onClick={onClick}
-    >
-      {direction === 'right' ? <CiCircleChevRight size={30} /> : <CiCircleChevLeft size={30} />}
-    </div>
-  );
-};
-//TODO:try to solve the arrow broplem
 const WorkoutCarousel = () => {
   const videos = [
     { id: 1, url: 'https://www.youtube.com/embed/eMjyvIQbn9M?si' },
@@ -48,8 +35,6 @@ const WorkoutCarousel = () => {
       ></div>
     ),
     arrows: false,
-    nextArrow: <CustomArrow direction="right" />,
-    prevArrow: <CustomArrow direction="left" />,
     responsive: [
       {
         breakpoint: 768,

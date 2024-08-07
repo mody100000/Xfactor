@@ -1,78 +1,77 @@
 .icons {
-    display: flex;
-    justify-content: space-around;
-    width: 100%; /* Ensure the parent container is wide enough */
-    padding: 0 2rem; /* Reduce padding for better spacing */
-    flex-wrap: wrap; /* Allow items to wrap to the next line on smaller screens */
+  display: flex;
+  justify-content: space-around;
+  width: 100%; /* Ensure the parent container is wide enough */
+  padding: 0 2rem; /* Reduce padding for better spacing */
+  flex-wrap: wrap; /* Allow items to wrap to the next line on smaller screens */
+}
+
+.icon {
+  width: 100px;
+  height: 90px;
+  object-fit: contain;
+  margin: 0 10px;
+  background-color: white;
+  border-radius: 10px;
+}
+.titleHader {
+  color: var(--text-color);
+}
+.item {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 1rem;
+  flex: 0 1 150px;
+  position: relative;
+  flex-direction: column;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center align text and numbers */
+}
+
+.title {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.text {
+  font-size: 1rem;
+  color: #969293;
+  width: 260px;
+}
+
+@media (max-width: 768px) {
+  .intro {
+    height: 300px; /* Adjust height for smaller screens */
   }
-  
-  .icon {
-    width: 100px;
-    height: 90px;
-    object-fit: contain;
-    margin: 0 10px;
-    background-color: white;
-    border-radius:10px ;
+
+  h1 {
+    font-size: 2rem; /* Adjust font size for smaller screens */
   }
-  .titleHader{
-    color: var(--text-color);
+
+  .icons {
+    padding: 0 1rem; /* Further reduce padding for smaller screens */
   }
+
   .item {
-    display: flex;
-    align-items: center;
-    text-align: center;
-    margin: 1rem;
-    flex: 0 1 150px;
-    position: relative;
-    flex-direction: column; 
+    flex: 1 0 100px; /* Allow items to shrink more on smaller screens */
   }
-  
-  .info {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center align text and numbers */
+
+  .icon {
+    width: 55px; /* Adjust icon size for smaller screens */
+    height: 55px;
   }
-  
-  .title {
-    font-size: 1.6rem;
-    font-weight: bold;
-    margin-top: 1rem;
+
+  .number {
+    font-size: 1.5rem; /* Adjust number size for smaller screens */
   }
-  
+
   .text {
-    font-size: 1rem;
-    color: #969293;
-    width: 260px;
+    font-size: 0.875rem; /* Adjust text size for smaller screens */
   }
-  
-  @media (max-width: 768px) {
-    .intro {
-      height: 300px; /* Adjust height for smaller screens */
-    }
-  
-    h1 {
-      font-size: 2rem; /* Adjust font size for smaller screens */
-    }
-  
-    .icons {
-      padding: 0 1rem; /* Further reduce padding for smaller screens */
-    }
-  
-    .item {
-      flex: 1 0 100px; /* Allow items to shrink more on smaller screens */
-    }
-  
-    .icon {
-      width: 40px; /* Adjust icon size for smaller screens */
-      height: 40px;
-    }
-  
-    .number {
-      font-size: 1.5rem; /* Adjust number size for smaller screens */
-    }
-  
-    .text {
-      font-size: 0.875rem; /* Adjust text size for smaller screens */
-    }
-  }
-  
+}
