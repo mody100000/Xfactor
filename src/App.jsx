@@ -43,6 +43,7 @@ import ChatPage from './pages/ChatPage/ChatPage';
 import CourseDetailsPage from './pages/CourseDetailsPage/CourseDetailsPage';
 
 import { sampleCoaches } from './components/CoachesData/CoachesData';
+import CoachDetails from './pages/CoachDetails/CoachDetails';
 
 const routes = createBrowserRouter([
   {
@@ -65,6 +66,7 @@ const routes = createBrowserRouter([
       { path: '/filtered-coaches', element: <FilteredCoachesResultPage /> },
       { path: '/coach/:id', element: <CoachProfilePage /> },
       { path: '/coaches/:id', element: <CoachProfile /> },
+      { path: 'CoachDetails', element: <CoachDetails /> },
     ],
   },
   {
