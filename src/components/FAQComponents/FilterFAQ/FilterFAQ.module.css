@@ -1,78 +1,76 @@
 .filterSidebar {
-    background-color: var(--filterSidebar-color);
-    padding: 20px;
-    border-radius: 20px;
+  background-color: var(--filterSidebar-color);
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.checkboxGroup {
+  margin-top: 25px;
+  color: #969293;
+}
+
+input[type="checkbox"] {
+  transform: scale(1.5); /* Adjust the scaling factor as needed */
+  outline: none;
+  border: none;
+}
+.grayColor {
+  width: 20px;
+  height: 20px; /* Set the same height as width for a perfect circle */
+  background-color: #969293;
+  border-radius: 50%;
+  display: inline-block; /* Ensure it takes up space */
+  vertical-align: sub; /* Vertically align with the label and input */
+  margin-right: 10px;
+}
+.blackColor {
+  width: 20px;
+  height: 20px; /* Set the same height as width for a perfect circle */
+  background-color: black;
+  border-radius: 50%;
+  display: inline-block; /* Ensure it takes up space */
+  vertical-align: sub; /* Vertically align with the label and input */
+  margin-right: 10px;
+}
+.redColor {
+  width: 20px;
+  height: 20px; /* Set the same height as width for a perfect circle */
+  background-color: red;
+  border-radius: 50%;
+  display: inline-block; /* Ensure it takes up space */
+  vertical-align: sub; /* Vertically align with the label and input */
+  margin-right: 10px;
+}
+.link {
+  color: red;
+  margin-top: 1rem;
+  text-decoration: underline;
+}
+.checkboxGroup input {
+  margin-right: 20px;
+}
+
+h4 {
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 3rem;
+}
+
+@media (max-width: 768px) {
+  .filterSidebar {
+    padding: 10px;
+    margin-bottom: 20px; /* Add margin-bottom to separate the sidebar from the content */
   }
-  
-  .checkboxGroup {
-    margin-top: 25px;
-    color: #969293;
-  }
-  
-  input[type="checkbox"] {
-    transform: scale(1.5); /* Adjust the scaling factor as needed */
-    outline: none;
-    border: none;
-  }
-  .grayColor{
-    width: 20px;
-    height: 20px; /* Set the same height as width for a perfect circle */
-    background-color: #969293;
-    border-radius: 50%;
-    display: inline-block; /* Ensure it takes up space */
-    vertical-align: sub; /* Vertically align with the label and input */
-    margin-right: 10px;
-  }
-  .blackColor{
-    width: 20px;
-    height: 20px; /* Set the same height as width for a perfect circle */
-    background-color: black;
-    border-radius: 50%;
-    display: inline-block; /* Ensure it takes up space */
-    vertical-align: sub; /* Vertically align with the label and input */
-    margin-right: 10px;
-  }
-  .redColor{
-    width: 20px;
-    height: 20px; /* Set the same height as width for a perfect circle */
-    background-color: red;
-    border-radius: 50%;
-    display: inline-block; /* Ensure it takes up space */
-    vertical-align: sub; /* Vertically align with the label and input */
-    margin-right: 10px;
-  }
-  .link{
-    color: red;
-    margin-top: 1rem;
-    text-decoration: underline;
-  
-  }
-  .checkboxGroup input {
-    margin-right: 20px;
-  }
-  
+
   h4 {
-    font-weight: bold;
-    margin-top: 20px;
-    margin-bottom: 3rem;
+    font-size: 1.2rem;
   }
-  
-  @media (max-width: 768px) {
-    .filterSidebar {
-      padding: 10px;
-      margin-bottom: 20px; /* Add margin-bottom to separate the sidebar from the content */
-    }
-  
-    h4 {
-      font-size: 1.2rem;
-    }
-  
-    .checkboxGroup {
-      margin-bottom: 8px;
-    }
-  
-    .checkboxGroup input {
-      margin-right: 5px;
-    }
+
+  .checkboxGroup {
+    margin-bottom: 8px;
   }
-  
+
+  .checkboxGroup input {
+    margin-right: 5px;
+  }
+}

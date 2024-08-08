@@ -1,19 +1,19 @@
-.shopPage {
+.coachContainer {
   margin-top: 20px;
-  padding: 3rem 4rem;
+  padding: 2rem;
 }
 input:focus {
   border-color: #dc3545 !important;
   box-shadow: 4px 0 8px rgba(220, 53, 69, 0.6) !important;
 }
 @media (max-width: 569px) {
-  .shopPage {
+  .coachContainer {
     margin-top: 10px;
     padding: 1rem;
   }
 }
 @media (min-width: 569px) and (max-width: 1024px) {
-  .shopPage {
+  .coachContainer {
     margin-top: 10px;
     padding: 1rem;
   }

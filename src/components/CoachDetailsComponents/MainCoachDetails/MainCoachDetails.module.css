@@ -1,0 +1,157 @@
+.container {
+  margin: 0 auto;
+  padding: 0 4rem;
+}
+
+.coachCard {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--productCard-color);
+  box-shadow: var(--coaches-box-shadow);
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  width: 100%;
+}
+
+.coachImage {
+  width: 120px;
+  height: 120px;
+  border-radius: 10px;
+}
+
+.coachName {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.coachCategory {
+  font-size: 1rem;
+  color: #bf1e2e;
+  margin-bottom: 0.5rem;
+}
+.rating {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.stars {
+  color: rgb(244, 216, 57);
+  margin-right: 0.5rem;
+}
+
+.reviews {
+  font-size: 0.9rem;
+  color: #777777a6;
+}
+
+.summary {
+  font-size: 0.9rem;
+  color: var(--supText-color);
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+  width: 80%;
+}
+.verified {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  align-self: flex-end;
+  font-size: 1rem;
+  margin-top: auto;
+}
+
+.distance {
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+}
+
+.textLink {
+  color: #bf1e2e;
+  text-decoration: underline;
+}
+
+.viewProfileButton {
+  padding: 0.5rem 1.5rem;
+  background-color: #bf1e2e;
+  color: #fff;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.viewProfileButton:hover {
+  background-color: #a51b28;
+}
+.dropdown {
+  margin: 0.5rem auto;
+  padding: 0.75rem 0.2rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+  background-color: var(--productCard-color);
+  color: var(--supText-color);
+  cursor: pointer;
+}
+/* Responsive adjustments */
+@media (max-width: 950px) {
+  .coachCard {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .coachInfo {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .coachesContainer {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+
+  .coachCard {
+    padding: 10px;
+  }
+
+  .coachName {
+    font-size: 1rem;
+  }
+
+  .summary {
+    font-size: 0.9rem;
+  }
+
+  .distance,
+  .salary {
+    font-size: 0.8rem;
+  }
+
+  .viewProfileButton {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .coachImage {
+    width: 100px;
+    height: 100px;
+  }
+
+  .viewProfileButton {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.noResults {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #6c757d;
+  margin-top: 20px;
+}

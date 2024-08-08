@@ -6,7 +6,6 @@ import logoLightMode from "@assets/logoLightMode.png"
 import { Link } from 'react-router-dom';
 
 const Footer = ({ theme }) => {
-  console.log(theme)
   return (
     <>
       <span className={styles.line}></span>
