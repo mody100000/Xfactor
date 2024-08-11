@@ -55,11 +55,15 @@
   margin-bottom: 2rem;
   width: 80%;
 }
+.verifiedUser {
+  display: flex;
+  align-self: flex-end;
+  justify-content: center;
+  gap: 0.5rem;
+}
 .verified {
   display: flex;
   flex-direction: column;
-  align-items: start;
-  align-self: flex-end;
   font-size: 1rem;
   margin-top: auto;
 }
@@ -99,53 +103,75 @@
   cursor: pointer;
 }
 /* Responsive adjustments */
-@media (max-width: 950px) {
-  .coachCard {
-    flex-direction: column;
-    align-items: center;
+/* @media (max-width: 769px) {
+  .summary {
+    width: 100%;
+  }
+} */
+@media (max-width: 820px) {
+  .container {
+    padding: 0 1rem;
   }
 
-  .coachInfo {
+  .coachCard {
+    padding: 1rem;
+  }
+
+  /* .coachMain > div:first-child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  } */
+
+  .coachImage {
+    margin-bottom: 1rem;
+  }
+
+  .coachName {
+    font-size: 1.2rem;
+  }
+
+  .summary {
+    font-size: 0.8rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     width: 100%;
+  }
+
+  .verified {
+    font-size: 0.9rem;
+  }
+
+  .dropdown {
+    max-width: none;
   }
 }
 
-@media (max-width: 768px) {
-  .coachesContainer {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  }
-
-  .coachCard {
-    padding: 10px;
+@media (max-width: 480px) {
+  .coachImage {
+    width: 100px;
+    height: 100px;
   }
 
   .coachName {
     font-size: 1rem;
   }
 
+  .reviews {
+    font-size: 0.8rem;
+  }
+
   .summary {
-    font-size: 0.9rem;
-  }
-
-  .distance,
-  .salary {
-    font-size: 0.8rem;
-  }
-
-  .viewProfileButton {
-    font-size: 0.8rem;
-  }
-}
-
-@media (max-width: 576px) {
-  .coachImage {
-    width: 100px;
-    height: 100px;
-  }
-
-  .viewProfileButton {
+    font-size: 0.75rem;
     width: 100%;
-    text-align: center;
+  }
+  .verifiedUser {
+    align-self: center;
+  }
+
+  .verified {
+    font-size: 0.8rem;
   }
 }
 
