@@ -1,0 +1,57 @@
+.headTitle {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+.packageCard {
+  border: 1px solid #33333334;
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+.cardHeader {
+  padding: 0.4rem 2rem;
+  border-bottom: 1px solid #33333334;
+}
+.cardTitle {
+  color: #bf1e2e;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+.cardBody {
+  padding: 1rem 2rem;
+  display: flex;
+  gap: 3rem;
+}
+.coachDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.coachInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.salary {
+  font-size: 2.4rem;
+  font-weight: bold;
+  color: #bf1e2e;
+}
+.fee {
+  font-size: larger;
+}
+.viewProfileButton {
+  background-color: #bf1e2e;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.viewProfileButton:hover {
+  background-color: rgb(158, 33, 46);
+}
