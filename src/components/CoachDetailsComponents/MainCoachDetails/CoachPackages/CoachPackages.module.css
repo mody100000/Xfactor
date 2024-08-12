@@ -2,15 +2,18 @@
   font-size: 1.5rem;
   font-weight: 500;
 }
+
 .packageCard {
-  border: 1px solid #33333334;
+  border: 1px solid var(--border-color);
   display: flex;
   flex-direction: column;
-  margin-top: 1rem;
+  margin-bottom: 2rem;
+  border-radius: 10px;
+  box-shadow: var(--coaches-box-shadow);
 }
 .cardHeader {
   padding: 0.4rem 2rem;
-  border-bottom: 1px solid #33333334;
+  border-bottom: 1px solid var(--border-color);
 }
 .cardTitle {
   color: #bf1e2e;
@@ -54,4 +57,13 @@
 
 .viewProfileButton:hover {
   background-color: rgb(158, 33, 46);
+}
+@media (max-width: 480px) {
+  .cardBody {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .coachDetails {
+    gap: 1rem;
+  }
 }
