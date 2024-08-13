@@ -3,47 +3,102 @@
   font-weight: 500;
 }
 
+.arrow {
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.arrow:hover {
+  transform: scale(1.1);
+}
+
+.packagesContainer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out;
+}
+
+.packagesContainer.expanded {
+  max-height: 2000px; /* Adjust this value based on your content */
+  transition: max-height 0.5s ease-in;
+}
+
 .packageCard {
   border: 1px solid var(--border-color);
   display: flex;
   flex-direction: column;
   margin-bottom: 2rem;
   border-radius: 10px;
-  box-shadow: var(--coaches-box-shadow);
+  /* box-shadow: var(--coaches-box-shadow); */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden; /* Ensures the box-shadow doesn't get clipped */
 }
+
+.expanded .packageCard {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Add a delay for each card to create a staggered animation */
+.expanded .packageCard:nth-child(1) {
+  transition-delay: 0.1s;
+}
+.expanded .packageCard:nth-child(2) {
+  transition-delay: 0.2s;
+}
+.expanded .packageCard:nth-child(3) {
+  transition-delay: 0.3s;
+}
+/* Add more if you have more packages */
+
 .cardHeader {
   padding: 0.4rem 2rem;
   border-bottom: 1px solid var(--border-color);
 }
+
 .cardTitle {
   color: #bf1e2e;
   font-size: 1.3rem;
   font-weight: 600;
 }
+
 .cardBody {
   padding: 1rem 2rem;
   display: flex;
+  justify-content: space-between;
   gap: 3rem;
 }
+
 .coachDetails {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
 }
+
 .coachInfo {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
 }
+
 .salary {
   font-size: 2.4rem;
   font-weight: bold;
   color: #bf1e2e;
 }
-.fee {
-  font-size: larger;
+
+.trainingType {
+  margin-right: 1rem;
+  font-size: 2rem;
 }
+
+.title {
+  margin-top: 5px;
+}
+
 .viewProfileButton {
   background-color: #bf1e2e;
   color: white;
@@ -58,6 +113,7 @@
 .viewProfileButton:hover {
   background-color: rgb(158, 33, 46);
 }
+
 @media (max-width: 480px) {
   .cardBody {
     flex-direction: column;
@@ -65,5 +121,8 @@
   }
   .coachDetails {
     gap: 1rem;
+  }
+  .trainingType {
+    font-size: 3rem;
   }
 }

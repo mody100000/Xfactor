@@ -4,6 +4,7 @@ import coachImage from "@assets/user.webp"
 import { MdOutlineVerifiedUser } from "react-icons/md";
 
 const MainCoachDetails = ({ coach }) => {
+    const { packages } = coach
     return (
         <div className={styles.container}>
             <div className="d-flex flex-column justify-content-center">
@@ -44,7 +45,7 @@ const MainCoachDetails = ({ coach }) => {
                         </div>
                     </div>
                 </div>
-                <CoachPackages />
+                <CoachPackages packages={packages} />
             </div>
         </div>
     );
