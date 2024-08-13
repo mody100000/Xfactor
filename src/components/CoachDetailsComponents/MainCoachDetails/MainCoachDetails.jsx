@@ -1,3 +1,4 @@
+import CoachCredentials from "./CoachCredentials/CoachCredentials";
 import CoachPackages from "./CoachPackages/CoachPackages";
 import styles from "./MainCoachDetails.module.css"
 import coachImage from "@assets/user.webp"
@@ -5,6 +6,7 @@ import { MdOutlineVerifiedUser } from "react-icons/md";
 
 const MainCoachDetails = ({ coach }) => {
     const { packages } = coach
+    const { credentials } = coach
     return (
         <div className={styles.container}>
             <div className="d-flex flex-column justify-content-center">
@@ -46,6 +48,10 @@ const MainCoachDetails = ({ coach }) => {
                     </div>
                 </div>
                 <CoachPackages packages={packages} />
+                <CoachCredentials credentials={credentials} />
+                <div>
+                    <h2>hello mom</h2>
+                </div>
             </div>
         </div>
     );
