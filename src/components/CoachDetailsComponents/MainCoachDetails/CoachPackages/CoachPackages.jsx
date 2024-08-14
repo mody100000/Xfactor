@@ -4,6 +4,8 @@ import styles from "./CoachPackages.module.css"
 import { IoMdAdd } from "react-icons/io";
 import { MdOnlinePrediction } from "react-icons/md";
 import { IoPerson } from "react-icons/io5";
+import { FaStar } from "react-icons/fa";
+
 
 const CoachPackages = ({ packages }) => {
     const [isExpanded, setIsExpanded] = useState(true);
@@ -28,6 +30,11 @@ const CoachPackages = ({ packages }) => {
                     <div className={styles.packageCard} key={coachPackage.id}>
                         <div className={styles.cardHeader}>
                             <h3 className={styles.cardTitle}>{coachPackage.packageType} Package</h3>
+                            {coachPackage.recommended && <div className='d-flex justify-content-center align-items-center gap-1'>
+                                <FaStar size={19} color='#bf1e2e' />
+                                <p className='m-0'>Recommended</p>
+                                <FaStar size={19} color='#bf1e2e' />
+                            </div>}
                         </div>
                         <div className={styles.cardBody}>
                             <div className={styles.coachDetails}>
@@ -56,6 +63,7 @@ const CoachPackages = ({ packages }) => {
                     </div>
                 ))}
             </div>
+            {!isExpanded && <span className={styles.line}></span>}
         </div>
     );
 }
