@@ -1,8 +1,8 @@
 import { useParams } from "react-router-dom";
 import MainCoachDetails from "../../components/CoachDetailsComponents/MainCoachDetails/MainCoachDetails";
-import FilterFAQ from "../../components/FAQComponents/FilterFAQ/FilterFAQ";
 import styles from "./CoachDetails.module.css"
 import { useSelector } from "react-redux";
+import CoachSidebar from "../../components/CoachDetailsComponents/CoachSidebar/CoachSidebar";
 
 const CoachDetails = () => {
     const { id } = useParams();
@@ -21,7 +21,7 @@ const CoachDetails = () => {
                     </div>
                 </div>
                 <div className="col-md-4 col-12 order-md-2 mb-3">
-                    <FilterFAQ />
+                    <CoachSidebar coach={coach} />
                 </div>
             </div>
         </div>
