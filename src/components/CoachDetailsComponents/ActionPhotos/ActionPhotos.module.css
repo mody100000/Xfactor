@@ -1,0 +1,123 @@
+.fitnessGallerySection {
+  padding: 3rem 0;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+}
+
+.description {
+  font-size: 1.2rem;
+  color: #747474;
+  margin-bottom: 2rem;
+}
+
+.fitnessGallery {
+  padding: 1rem 3rem;
+  overflow: hidden;
+}
+
+.imageWrapper {
+  padding: 0 10px;
+  margin-bottom: 1rem;
+}
+
+.imageContainer {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  width: 100%;
+  height: 20rem;
+  border-radius: 20px;
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
+}
+
+.imageContainer.active {
+  height: 22rem;
+  width: 100%;
+  /* transform: scale(1.08); */
+  z-index: 1;
+  border-radius: 40px;
+  /* box-shadow: 2px 2px 4px 2px rgba(240, 167, 174, 0.8); */
+  /* box-shadow: rgba(240, 167, 174, 0.8) 0px 2px 5px -1px,
+      rgba(240, 167, 174, 0.8) 0px 1px 5px -1px; */
+}
+
+.imageContainer.inactive {
+  opacity: 0.6;
+  transform: scale(0.9);
+  cursor: pointer;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
+}
+
+.customPaging {
+  width: 15px;
+  height: 15px;
+  background-color: #f0a7ae;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.activeIndex {
+  background-color: #bf1e2e;
+  width: 20px;
+  border-radius: 12px;
+}
+
+.customArrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  cursor: pointer;
+  color: rgb(201, 22, 22);
+}
+
+.customArrow:hover {
+  color: rgb(100, 0, 0);
+}
+
+@media (max-width: 768px) {
+  .fitnessGallery {
+    padding: 1rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .imageContainer.active {
+    transform: none;
+  }
+
+  .imageContainer.inactive {
+    opacity: 0.8;
+    transform: none;
+  }
+
+  .overlay {
+    display: none;
+  }
+}

@@ -1,9 +1,11 @@
+import CoachExperience from "../CoachExperience/CoachExperience";
 import CoachCredentials from "./CoachCredentials/CoachCredentials";
 import CoachPackages from "./CoachPackages/CoachPackages";
 import CoachServices from "./CoachServices";
 import styles from "./MainCoachDetails.module.css"
 import coachImage from "@assets/user.webp"
 import { MdOutlineVerifiedUser } from "react-icons/md";
+import ActionPhotos from "../ActionPhotos/ActionPhotos";
 
 const MainCoachDetails = ({ coach }) => {
     const { packages } = coach
@@ -52,6 +54,8 @@ const MainCoachDetails = ({ coach }) => {
                 <CoachPackages packages={packages} />
                 <CoachCredentials credentials={credentials} />
                 <CoachServices services={services} />
+                <CoachExperience coach={coach} />
+                <ActionPhotos />
             </div>
         </div>
     );
