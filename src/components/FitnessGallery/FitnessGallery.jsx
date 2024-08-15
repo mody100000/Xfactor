@@ -3,24 +3,11 @@ import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import styles from './FitnessGallery.module.css';
-import { CiCircleChevLeft, CiCircleChevRight } from 'react-icons/ci';
-
 import image1 from "../../assets/f2.jpg";
 import fitness from "../../assets/fitness.webp";
 import carate from "../../assets/carate.avif";
 import s3 from "../../assets/s3.jpg";
 
-const CustomArrow = ({ className, style, onClick, direction }) => {
-  return (
-    <div
-      className={`${className} ${styles.customArrow}`}
-      style={direction === 'right' ? { ...style, right: -35 } : { ...style, left: -35 }}
-      onClick={onClick}
-    >
-      {direction === 'right' ? <CiCircleChevRight size={30} /> : <CiCircleChevLeft size={30} />}
-    </div>
-  );
-};
 
 const FitnessGallery = () => {
   const images = [image1, fitness, carate, s3];

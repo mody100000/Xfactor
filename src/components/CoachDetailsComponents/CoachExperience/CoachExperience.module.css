@@ -1,0 +1,92 @@
+.coachProfile {
+  margin-top: 1rem;
+}
+
+.title {
+  margin-bottom: 3rem;
+}
+
+.nav {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tab {
+  padding: 0.6rem 1.3rem;
+  /* Remove the horizontal auto margin */
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  background-color: var(--background-color);
+  color: #bf1e2e;
+  border: 1px solid #bf1e2e;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: larger;
+}
+
+.activeTab {
+  padding: 0.6rem 1.3rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  background-color: #bf1e2e;
+  color: #fff;
+  border: 1px solid #bf1e2e;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+  font-size: larger;
+}
+.leftBtn {
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+.rightBtn {
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.content {
+  padding: 2rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.25rem;
+  line-height: 30px;
+}
+
+.customDropdownToggle {
+  background-color: #bf1e2e !important;
+  color: #fff !important;
+  border: 1px solid #bf1e2e !important;
+  font-weight: bold;
+  font-size: larger;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.customDropdownToggle:hover,
+.customDropdownToggle:focus,
+.customDropdownToggle:active {
+  background-color: #bf1e2e !important;
+  color: #fff !important;
+  border-color: #bf1e2e !important;
+  box-shadow: none !important;
+}
+
+@media (min-width: 500px) and (max-width: 1024px) {
+  .tab {
+    padding: 0.6rem 0.3rem;
+    font-size: smaller;
+  }
+  .activeTab {
+    padding: 0.6rem 0.3rem;
+    font-size: smaller;
+  }
+}
+
+@media (max-width: 477px) {
+  .content {
+    padding: 1rem;
+  }
+}
