@@ -55,7 +55,7 @@ const MainCoachDetails = ({ coach }) => {
                 <CoachCredentials credentials={credentials} />
                 <CoachServices services={services} />
                 <CoachExperience coach={coach} />
-                <ActionPhotos />
+                <ActionPhotos coach={coach} />
             </div>
         </div>
     );

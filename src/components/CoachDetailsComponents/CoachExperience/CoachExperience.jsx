@@ -77,6 +77,7 @@ const CoachExperience = ({ coach }) => {
           </div>
         </Col>
       </Row>
+      <span className={styles.line}></span>
     </Container>
   );
 };

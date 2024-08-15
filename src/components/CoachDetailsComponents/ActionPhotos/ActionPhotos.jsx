@@ -9,8 +9,11 @@ import carate from "@assets/carate.avif";
 import s3 from "@assets/s3.jpg";
 
 
-const ActionPhotos = () => {
-    const images = [image1, fitness, carate, s3];
+const ActionPhotos = ({ coach }) => {
+    let images = coach.actionPhotos;
+    if (!images || images.length === 0) {
+        images = [image1, fitness, carate, s3]
+    }
     const [activeIndex, setActiveIndex] = useState(0);
     const [sliderRef, setSliderRef] = useState(null);
 
@@ -54,11 +57,7 @@ const ActionPhotos = () => {
 
     return (
         <section className={styles.fitnessGallerySection}>
-            <h1 className={styles.title}>Fitness Gallery</h1>
-            <p className={styles.description}>
-                Check out our amazing fitness gallery showcasing our state-of-the-art
-                facilities and enthusiastic members.
-            </p>
+            <h2 className="mb-5">Fitness Gallery</h2>
             <div className={styles.fitnessGallery}>
                 <Slider ref={setSliderRef} {...settings}>
                     {images.map((image, index) => (
