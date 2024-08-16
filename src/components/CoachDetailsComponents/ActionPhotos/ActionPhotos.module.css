@@ -1,5 +1,5 @@
 .fitnessGallerySection {
-  padding: 3rem 1rem;
+  padding: 1rem;
 }
 
 .title {
@@ -97,6 +97,12 @@
 
 .customArrow:hover {
   color: rgb(100, 0, 0);
+}
+.line {
+  display: block;
+  height: 1px;
+  margin-top: 4rem;
+  background-color: var(--border-color);
 }
 
 @media (max-width: 768px) {

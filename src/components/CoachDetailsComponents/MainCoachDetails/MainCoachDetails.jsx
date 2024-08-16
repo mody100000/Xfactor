@@ -6,6 +6,7 @@ import styles from "./MainCoachDetails.module.css"
 import coachImage from "@assets/user.webp"
 import { MdOutlineVerifiedUser } from "react-icons/md";
 import ActionPhotos from "../ActionPhotos/ActionPhotos";
+import ClientReviews from "../ClientReviews/ClientReviews";
 
 const MainCoachDetails = ({ coach }) => {
     const { packages } = coach
@@ -56,6 +57,7 @@ const MainCoachDetails = ({ coach }) => {
                 <CoachServices services={services} />
                 <CoachExperience coach={coach} />
                 <ActionPhotos coach={coach} />
+                <ClientReviews />
             </div>
         </div>
     );
