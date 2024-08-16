@@ -2,6 +2,12 @@ import img1 from "@assets/girl.jpg";
 import img2 from "@assets/Strength Coach.jpg";
 import img3 from "@assets/legGroup.webp";
 import img4 from "@assets/user.webp";
+import actionPhoto1 from "@assets/ActionPhoto1.avif";
+import actionPhoto2 from "@assets/actionPhoto2.jpg";
+import actionPhoto3 from "@assets/actionPhoto3.jpg";
+import actionPhoto4 from "@assets/actionPhoto4.webp";
+import actionPhoto5 from "@assets/actionPhoto5.jpg";
+
 export const sampleCoaches = [
   {
     id: 0,
@@ -97,6 +103,13 @@ export const sampleCoaches = [
           "Hand Placement",
         ],
       },
+    ],
+    actionPhotos: [
+      actionPhoto1,
+      actionPhoto2,
+      actionPhoto3,
+      actionPhoto4,
+      actionPhoto5,
     ],
   },
   {
@@ -195,6 +208,13 @@ export const sampleCoaches = [
         ],
       },
     ],
+    actionPhotos: [
+      actionPhoto1,
+      actionPhoto2,
+      actionPhoto3,
+      actionPhoto4,
+      actionPhoto5,
+    ],
   },
   {
     id: 2,
@@ -291,6 +311,13 @@ export const sampleCoaches = [
         ],
       },
     ],
+    actionPhotos: [
+      actionPhoto1,
+      actionPhoto2,
+      actionPhoto3,
+      actionPhoto4,
+      actionPhoto5,
+    ],
   },
   {
     id: 3,
@@ -385,6 +412,13 @@ export const sampleCoaches = [
           "Hand Placement",
         ],
       },
+    ],
+    actionPhotos: [
+      actionPhoto1,
+      actionPhoto2,
+      actionPhoto3,
+      actionPhoto4,
+      actionPhoto5,
     ],
   },
   {
@@ -481,6 +515,13 @@ export const sampleCoaches = [
         ],
       },
     ],
+    actionPhotos: [
+      actionPhoto1,
+      actionPhoto2,
+      actionPhoto3,
+      actionPhoto4,
+      actionPhoto5,
+    ],
   },
   {
     id: 5,
@@ -576,6 +617,13 @@ export const sampleCoaches = [
         ],
       },
     ],
+    actionPhotos: [
+      actionPhoto1,
+      actionPhoto2,
+      actionPhoto3,
+      actionPhoto4,
+      actionPhoto5,
+    ],
   },
   {
     id: 6,
@@ -669,6 +717,13 @@ export const sampleCoaches = [
           "Hand Placement",
         ],
       },
+    ],
+    actionPhotos: [
+      actionPhoto1,
+      actionPhoto2,
+      actionPhoto3,
+      actionPhoto4,
+      actionPhoto5,
     ],
   },
 ];

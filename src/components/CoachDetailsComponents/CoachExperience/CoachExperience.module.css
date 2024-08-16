@@ -73,6 +73,12 @@
   border-color: #bf1e2e !important;
   box-shadow: none !important;
 }
+.line {
+  display: block;
+  height: 1px;
+  margin-top: 4rem;
+  background-color: var(--border-color);
+}
 
 @media (min-width: 500px) and (max-width: 1024px) {
   .tab {
