@@ -74,6 +74,7 @@ const ActionPhotos = ({ coach }) => {
                     ))}
                 </Slider>
             </div>
+            <span className={styles.line}></span>
         </section>
     );
 };
