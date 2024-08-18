@@ -4,7 +4,6 @@ import { useSelector } from 'react-redux';
 import styles from './FilteredCoachesResultPage.module.css';
 import coachImage from '../../assets/s3.jpg';
 import { IoMdAdd } from "react-icons/io";
-import { MdOnlinePrediction } from 'react-icons/md';
 
 const FilteredCoachesResultPage = () => {
   const sport = useSelector((state) => state.coach.sport);
@@ -13,7 +12,7 @@ const FilteredCoachesResultPage = () => {
   const location = useLocation();
 
   const [currentPage, setCurrentPage] = useState(1);
-  const [coachesPerPage] = useState(4);
+  const [coachesPerPage, setCoachesPerPage] = useState(4);
   const [priceRange, setPriceRange] = useState([0, 75]);
   const [genderFilter, setGenderFilter] = useState('Any');
   const [trainingType, setTrainingType] = useState(location.state?.trainingType || 'All');
@@ -32,31 +31,29 @@ const FilteredCoachesResultPage = () => {
     }
   };
 
-  const filteredCoaches = coaches
-    .filter(coach => {
-      return coach.salary >= priceRange[0] && coach.salary <= priceRange[1];
-    })
-    .filter(coach => {
-      return genderFilter === 'Any' || coach.gender === genderFilter;
-    })
-    .filter(coach => {
-      return trainingType === 'All' || coach.trainingType === trainingType;
-    });
+  const getFilteredAndSortedCoaches = () => {
+    return coaches
+      .filter(coach => {
+        return coach.salary >= priceRange[0] && coach.salary <= priceRange[1];
+      })
+      .filter(coach => {
+        return genderFilter === 'Any' || coach.gender === genderFilter;
+      })
+      .filter(coach => {
+        return trainingType === 'All' || coach.trainingType === trainingType;
+      })
+      .sort((a, b) => {
+        if (sortCriteria === 'Recommended') {
+          return b.recommended - a.recommended;
+        } else if (sortCriteria === 'Price') {
+          return a.salary - b.salary;
+        }
+        return 0;
+      });
+  };
 
-  const sortedCoaches = filteredCoaches.sort((a, b) => {
-    if (sortCriteria === 'Recommended') {
-      return b.recommended - a.recommended;
-    } else if (sortCriteria === 'Price') {
-      return a.salary - b.salary;
-    }
-    return 0;
-  });
-
-  const indexOfLastCoach = currentPage * coachesPerPage;
-  const indexOfFirstCoach = indexOfLastCoach - coachesPerPage;
-  const currentCoaches = sortedCoaches.slice(indexOfFirstCoach, indexOfLastCoach);
-
-  const totalPages = Math.ceil(sortedCoaches.length / coachesPerPage);
+  const filteredAndSortedCoaches = getFilteredAndSortedCoaches();
+  const totalPages = Math.ceil(filteredAndSortedCoaches.length / coachesPerPage);
 
   const handlePageClick = (event, number) => {
     event.preventDefault();
@@ -83,18 +80,24 @@ const FilteredCoachesResultPage = () => {
   const handlePriceRangeChange = (event) => {
     const value = event.target.value.split('-').map(Number);
     setPriceRange(value);
+    setCurrentPage(1);
   };
 
   const handleGenderFilterChange = (event) => {
     setGenderFilter(event.target.value);
+    setCurrentPage(1);
   };
 
   const handleTrainingTypeChange = (event) => {
     setTrainingType(event.target.value);
+    setCurrentPage(1);
   };
 
   const handleSortChange = (event) => {
-    setSortCriteria(event.target.value);
+    const newSortCriteria = event.target.value;
+    setSortCriteria(newSortCriteria);
+    setCoachesPerPage(newSortCriteria === 'Recommended' ? 6 : 4);
+    setCurrentPage(1);
   };
 
   return (
@@ -112,6 +115,16 @@ const FilteredCoachesResultPage = () => {
       <div className={styles.container}>
         <div className={styles.top}>
           <div className={styles.filters}>
+            <label>
+              <select className={styles.filterInbut}>
+                <option value="" style={{ display: 'none' }}>Location:</option>
+                <option value="Any">Any</option>
+                <option value="Nearby">Nearby</option>
+                <option value="Within 5 miles">Within 5 miles</option>
+                <option value="Within 10 miles">Within 10 miles</option>
+                <option value="Within 20 miles">Within 20 miles</option>
+              </select>
+            </label>
             <label>
               <select name='Price Range:' className={styles.filterInbut} onChange={handlePriceRangeChange}>
                 <option value="" style={{ display: 'none' }}>Price Range:</option>
@@ -148,8 +161,8 @@ const FilteredCoachesResultPage = () => {
           </div>
         </div>
         <div className='row'>
-          {currentCoaches.length > 0 ? (
-            currentCoaches.map((coach) => (
+          {filteredAndSortedCoaches.length > 0 ? (
+            filteredAndSortedCoaches.slice((currentPage - 1) * coachesPerPage, currentPage * coachesPerPage).map((coach) => (
               <div key={coach.id} className={`col-md-6 ${styles.coachColumn}`}>
                 <div className={styles.coachCard}>
                   <div className={styles.coachMain}>
@@ -168,8 +181,6 @@ const FilteredCoachesResultPage = () => {
                       <p className={styles.summary}>{coach.summary}</p>
                       <p className={styles.distance}><span className='fw-bold'>{coach.distance}</span> miles away from {address}</p>
                     </div>
-                    {/* {coach.trainingOffer ? <p> <MdOnlinePrediction size={25} /> Offers Online Training</p> : ""} */}
-
                   </div>
                   <div className={styles.coachInfo}>
                     <span className={`${styles.badge} ${getBadgeClass(coach.badge)}`}>{coach.badge}</span>
