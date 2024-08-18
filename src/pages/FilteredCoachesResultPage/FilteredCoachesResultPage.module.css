@@ -57,11 +57,11 @@
   justify-content: space-around;
   flex-wrap: wrap;
   background-color: var(--filterSidebar-color);
-  height: 8rem;
+  height: 7rem;
   padding: 10px 15px;
   border-radius: 5px;
   width: 100%;
-  margin: 2rem 1rem;
+  margin: 2rem 0rem;
 }
 
 .filters label {
@@ -251,6 +251,9 @@
   .coachInfo {
     width: 100%;
   }
+  .filters {
+    height: auto;
+  }
 }
 
 @media (max-width: 768px) {
@@ -298,14 +301,12 @@
 
   .filters {
     flex-direction: column;
-    align-items: flex-start;
     height: auto;
     padding: 20px;
     gap: 20px;
   }
 
   .filterInbut {
-    min-width: auto;
     width: 100%;
   }
 }

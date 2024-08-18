@@ -14,6 +14,7 @@ import { FaRegCircleQuestion } from 'react-icons/fa6';
 import { RxReader } from 'react-icons/rx';
 import { CiDark } from 'react-icons/ci';
 import { TiThMenu } from "react-icons/ti";
+import { BsFilePerson } from "react-icons/bs";
 import logoLightMode from "@assets/logoLightMode.png"
 const LogoutNav = ({ theme, toggleTheme }) => {
   return (
@@ -32,6 +33,9 @@ const LogoutNav = ({ theme, toggleTheme }) => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav"  ><TiThMenu className={styles.toggle} size={25} /></Navbar.Toggle>
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto d-flex justify-content-center align-items-center">
+            <Link to="/filtered-coaches" className={styles.item_links}>
+              See Our Coaches <BsFilePerson size={20} />
+            </Link>
             <Link to="/CoachUp" className={styles.item_links}>
               CoachUp Works <GrWorkshop size={20} />
             </Link>
