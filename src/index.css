@@ -98,3 +98,17 @@ body {
   background: #a1a1a1;
   border-radius: 0px;
 }
+.btn-danger {
+  background-color: #bf1e2e;
+  border-color: #bf1e2e;
+}
+.btn-danger:hover {
+  background-color: #a51b28;
+}
+.btn-outline-danger {
+  border-color: #bf1e2e;
+  color: #bf1e2e;
+}
+.btn-outline-danger:hover {
+  background-color: #bf1e2e;
+}

@@ -16,7 +16,8 @@ const FilteredCoachesResultPage = () => {
   const [priceRange, setPriceRange] = useState([0, 75]);
   const [genderFilter, setGenderFilter] = useState('Any');
   const [trainingType, setTrainingType] = useState(location.state?.trainingType || 'All');
-  const [sortCriteria, setSortCriteria] = useState('Recommended');
+  const [sortCriteria, setSortCriteria] = useState('');
+  const [distanceRange, setDistanceRange] = useState(30);
 
   const getBadgeClass = (badge) => {
     switch (badge.toLowerCase()) {
@@ -41,6 +42,9 @@ const FilteredCoachesResultPage = () => {
       })
       .filter(coach => {
         return trainingType === 'All' || coach.trainingType === trainingType;
+      })
+      .filter(coach => {
+        return coach.distance <= distanceRange;
       })
       .sort((a, b) => {
         if (sortCriteria === 'Recommended') {
@@ -78,13 +82,12 @@ const FilteredCoachesResultPage = () => {
   };
 
   const handlePriceRangeChange = (event) => {
-    const value = event.target.value.split('-').map(Number);
-    setPriceRange(value);
+    setPriceRange([0, parseInt(event.target.value)]);
     setCurrentPage(1);
   };
 
-  const handleGenderFilterChange = (event) => {
-    setGenderFilter(event.target.value);
+  const handleDistanceRangeChange = (event) => {
+    setDistanceRange(parseInt(event.target.value));
     setCurrentPage(1);
   };
 
@@ -99,7 +102,6 @@ const FilteredCoachesResultPage = () => {
     setCoachesPerPage(newSortCriteria === 'Recommended' ? 6 : 4);
     setCurrentPage(1);
   };
-
   return (
     <>
       <div className={styles.intro}>
@@ -112,58 +114,119 @@ const FilteredCoachesResultPage = () => {
           </div>
         </div>
       </div>
-      <div className={styles.container}>
-        <div className={styles.top}>
-          <div className={styles.filters}>
-            <label>
-              <select className={styles.filterInbut}>
-                <option value="" style={{ display: 'none' }}>Location:</option>
-                <option value="Any">Any</option>
-                <option value="Nearby">Nearby</option>
-                <option value="Within 5 miles">Within 5 miles</option>
-                <option value="Within 10 miles">Within 10 miles</option>
-                <option value="Within 20 miles">Within 20 miles</option>
-              </select>
-            </label>
-            <label>
-              <select name='Price Range:' className={styles.filterInbut} onChange={handlePriceRangeChange}>
-                <option value="" style={{ display: 'none' }}>Price Range:</option>
-                <option value="0-25">0 - 25</option>
-                <option value="26-50">26 - 50</option>
-                <option value="51-75">51 - 75</option>
-                <option value="76-100">76 - 100</option>
-                <option value="101-9999">100+</option>
-              </select>
-            </label>
-            <label>
-              <select className={styles.filterInbut} onChange={handleGenderFilterChange}>
-                <option value="" style={{ display: 'none' }}>Gender:</option>
-                <option value="Any">Any</option>
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
-              </select>
-            </label>
-            <label>
-              <select className={styles.filterInbut} onChange={handleTrainingTypeChange}>
-                <option value="" style={{ display: 'none' }}>Training Type:</option>
-                <option value="All">All</option>
-                <option value="In-Person">In-Person</option>
-                <option value="Online">Online</option>
-              </select>
-            </label>
-            <label>
-              <select className={styles.filterInbut} onChange={handleSortChange}>
-                <option value="" style={{ display: 'none' }}>Sort By:</option>
-                <option value="Recommended">Recommended</option>
-                <option value="Price">Price</option>
-              </select>
-            </label>
+      <div className={styles.pageContainer}>
+        <div className={styles.sidebar}>
+          <h3 className='mb-4 fs-4'>Find Your Coach</h3>
+          <p className={styles.filterTitle}>Location: {address}</p>
+          <p className={styles.filterTitle}>Sport: {sport}</p>
+          <p className={styles.editLink}>Edit Sport And Location</p>
+          <span className={styles.line}></span>
+          <h3 className='mb-4 fs-4'>Distance</h3>
+          <input
+            type="range"
+            min="1"
+            max="30"
+            value={distanceRange}
+            onChange={handleDistanceRangeChange}
+            className={`${styles.rangeSlider} custom-range-slider`}
+          />
+          <div className={styles.rangeLabels}>
+            <span>1 mi</span>
+            <span>30 mi</span>
+          </div>
+          <span className={styles.line}></span>
+
+          <h3 className='mb-4 fs-4'>Travel To Me</h3>
+          <label>
+            <input type="checkbox" /> Show Only Coaches Willing To Travel
+          </label>
+          <span className={styles.line}></span>
+
+          <h3 className='mb-4 fs-4'>Price Range</h3>
+          <input
+            type="range"
+            min="0"
+            max="75"
+            value={priceRange[1]}
+            onChange={handlePriceRangeChange}
+            className={styles.rangeSlider}
+          />
+          <div className={styles.rangeLabels}>
+            <span>$0</span>
+            <span>$75+</span>
+          </div>
+          <span className={styles.line}></span>
+          <h3 className='mb-4 fs-4'>Coach's Gender</h3>
+          <div className='d-flex justify-content-between align-items-center'>
+            <div className='d-flex'>
+              <p
+                onClick={() => setGenderFilter('Male')}
+                className={`${genderFilter === 'Male' ? styles.checkedActive : styles.checked}`}
+              ></p>
+              <span>Male</span>
+            </div>
+            <div className='d-flex'>
+              <p
+                onClick={() => setGenderFilter('Female')}
+                className={`${genderFilter === 'Female' ? styles.checkedActive : styles.checked}`}
+              ></p>
+              <span>Female</span>
+            </div>
+            <div className='d-flex'>
+              <p
+                onClick={() => setGenderFilter('Any')}
+                className={`${genderFilter === 'Any' ? styles.checkedActive : styles.checked}`}
+              ></p>
+              <span>Any</span>
+            </div>
+          </div>
+          <span className={styles.line}></span>
+          <h3 className='mb-4'>Position(s)</h3>
+          <div className={styles.positionGrid}>
+            <label><input type="checkbox" /> Defensive Back</label>
+            <label><input type="checkbox" /> Defensive Line</label>
+            <label><input type="checkbox" /> Kicker</label>
+            <label><input type="checkbox" /> Linebacker</label>
+            <label><input type="checkbox" /> Offensive Line</label>
+            <label><input type="checkbox" /> Punter</label>
+            <label><input type="checkbox" /> Quarterback</label>
+            <label><input type="checkbox" /> Running Back</label>
+            <label><input type="checkbox" /> Tight End</label>
+            <label><input type="checkbox" /> Wide Receiver</label>
           </div>
         </div>
-        <div className='row'>
+
+        <div className={styles.mainContent}>
+          <div className="row mb-4">
+            <div className="col d-flex flex-column flex-sm-row gap-4 justify-content-between align-items-center">
+              <div>
+                <button
+                  className={`btn ${trainingType === 'In-Person' ? 'btn-danger' : 'btn-outline-danger'} me-1 fs-5`}
+                  onClick={() => handleTrainingTypeChange({ target: { value: 'In-Person' } })}
+                >
+                  In-Person
+                </button>
+                <button
+                  className={`btn fs-5 ${trainingType === 'Online' ? 'btn-danger' : 'btn-outline-danger'}`}
+                  onClick={() => handleTrainingTypeChange({ target: { value: 'Online' } })}
+                >
+                  Online
+                </button>
+              </div>
+              <div className="d-flex align-items-center ">
+                <label className="me-2 fs-5">Sort by:</label>
+                <select className="form-select d-inline-block w-auto fs-5" onChange={handleSortChange} value={sortCriteria}>
+                  <option value="" style={{ display: 'none' }}>Select...</option>
+                  <option value="Recommended">Recommended</option>
+                  <option value="Price">Price</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
           {filteredAndSortedCoaches.length > 0 ? (
             filteredAndSortedCoaches.slice((currentPage - 1) * coachesPerPage, currentPage * coachesPerPage).map((coach) => (
-              <div key={coach.id} className={`col-md-6 ${styles.coachColumn}`}>
+              <div key={coach.id} className={`${styles.coachColumn}`}>
                 <div className={styles.coachCard}>
                   <div className={styles.coachMain}>
                     <div className='d-flex gap-3'>
@@ -198,9 +261,9 @@ const FilteredCoachesResultPage = () => {
           ) : (
             <p className={styles.noResults}>No coaches found matching your criteria.</p>
           )}
-        </div>
-        <div className={styles.pagination}>
-          {renderPagination()}
+          <div className={styles.pagination}>
+            {renderPagination()}
+          </div>
         </div>
       </div>
     </>
