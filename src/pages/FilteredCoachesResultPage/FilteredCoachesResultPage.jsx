@@ -4,6 +4,8 @@ import { useSelector } from 'react-redux';
 import styles from './FilteredCoachesResultPage.module.css';
 import coachImage from '../../assets/s3.jpg';
 import { IoMdAdd } from "react-icons/io";
+import { CiEdit } from "react-icons/ci";
+import { MdOnlinePrediction } from 'react-icons/md';
 
 const FilteredCoachesResultPage = () => {
   const sport = useSelector((state) => state.coach.sport);
@@ -102,6 +104,11 @@ const FilteredCoachesResultPage = () => {
     setCoachesPerPage(newSortCriteria === 'Recommended' ? 6 : 4);
     setCurrentPage(1);
   };
+  const getReponseRate = (rate) => {
+    if (rate >= 80) return "Fast";
+    else if (rate >= 50 && rate < 80) return "Good";
+    return "Bad"
+  }
   return (
     <>
       <div className={styles.intro}>
@@ -119,9 +126,12 @@ const FilteredCoachesResultPage = () => {
           <h3 className='mb-4 fs-4'>Find Your Coach</h3>
           <p className={styles.filterTitle}>Location: {address}</p>
           <p className={styles.filterTitle}>Sport: {sport}</p>
-          <p className={styles.editLink}>Edit Sport And Location</p>
+          <Link to="/applyToCoach">
+            <p className={styles.editLink}><CiEdit /> Edit Sport And Location</p>
+          </Link>
           <span className={styles.line}></span>
           <h3 className='mb-4 fs-4'>Distance</h3>
+          <span className='d-flex justify-content-center'>{distanceRange} mi</span>
           <input
             type="range"
             min="1"
@@ -143,6 +153,7 @@ const FilteredCoachesResultPage = () => {
           <span className={styles.line}></span>
 
           <h3 className='mb-4 fs-4'>Price Range</h3>
+          <span className='d-flex justify-content-center'>${priceRange[1]}+</span>
           <input
             type="range"
             min="0"
@@ -215,7 +226,7 @@ const FilteredCoachesResultPage = () => {
               </div>
               <div className="d-flex align-items-center ">
                 <label className="me-2 fs-5">Sort by:</label>
-                <select className="form-select d-inline-block w-auto fs-5" onChange={handleSortChange} value={sortCriteria}>
+                <select className={`form-select d-inline-block w-auto fs-5 ${styles.filterInbut}`} onChange={handleSortChange} value={sortCriteria}>
                   <option value="" style={{ display: 'none' }}>Select...</option>
                   <option value="Recommended">Recommended</option>
                   <option value="Price">Price</option>
@@ -228,8 +239,13 @@ const FilteredCoachesResultPage = () => {
             filteredAndSortedCoaches.slice((currentPage - 1) * coachesPerPage, currentPage * coachesPerPage).map((coach) => (
               <div key={coach.id} className={`${styles.coachColumn}`}>
                 <div className={styles.coachCard}>
+                  {coach.badge && (
+                    <span className={`${styles.badge} ${getBadgeClass(coach.badge)}`}>
+                      {coach.badge}
+                    </span>
+                  )}
                   <div className={styles.coachMain}>
-                    <div className='d-flex gap-3'>
+                    <div className='d-flex gap-4'>
                       <img src={coach.image || coachImage} alt={coach.name} className={styles.coachImage} />
                       <div className={styles.coachDetails}>
                         <h2 className={styles.coachName}>{coach.name}</h2>
@@ -238,15 +254,18 @@ const FilteredCoachesResultPage = () => {
                           <span className={styles.reviews}>{coach.reviews} reviews</span>
                         </div>
                         <p className={styles.coachCategory}>{coach.category}</p>
+                        {coach.trainingType === "Online" ? <p className={styles.onlineOffer}> <MdOnlinePrediction size={25} className='mb-1' color='green' /> Offers Online Training</p> : ""}
                       </div>
                     </div>
-                    <div className='d-flex flex-column justify-content-end'>
+                    <div className='d-flex flex-column justify-content-end '>
+                      {/* {coach.trainingType === "Online" ? <p className={styles.onlineOffer}> <MdOnlinePrediction size={25} className='mb-1' /> Offers Online Training</p> : ""} */}
                       <p className={styles.summary}>{coach.summary}</p>
                       <p className={styles.distance}><span className='fw-bold'>{coach.distance}</span> miles away from {address}</p>
+                      <p className={`${styles.distance} mt-2 mb-0`}> {getReponseRate(coach.responseRate)} Reponse Rate: <span className='fw-bold'>{coach.responseRate}%</span></p>
                     </div>
                   </div>
                   <div className={styles.coachInfo}>
-                    <span className={`${styles.badge} ${getBadgeClass(coach.badge)}`}>{coach.badge}</span>
+                    {coach.recommended && <span className={styles.recommendedBadge}>Recomended</span>}
                     <p className='mt-3 mb-1 fs-5'>Starting At</p>
                     <p className='my-1'><span className='fs-4'>$</span><span className={styles.salary}>{coach.salary}</span>/session</p>
                     <IoMdAdd size={25} />

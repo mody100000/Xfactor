@@ -2,12 +2,14 @@ import img1 from "@assets/girl.jpg";
 import img2 from "@assets/Strength Coach.jpg";
 import img3 from "@assets/legGroup.webp";
 import img4 from "@assets/user.webp";
+import img5 from "@assets/registerTrainer.webp";
+import img6 from "@assets/RegisterCoach (1).jpg";
+import img7 from "@assets/review2.jpeg";
 import actionPhoto1 from "@assets/ActionPhoto1.avif";
 import actionPhoto2 from "@assets/actionPhoto2.jpg";
 import actionPhoto3 from "@assets/actionPhoto3.jpg";
 import actionPhoto4 from "@assets/actionPhoto4.webp";
 import actionPhoto5 from "@assets/actionPhoto5.jpg";
-
 export const sampleCoaches = [
   {
     id: 0,
@@ -28,6 +30,7 @@ export const sampleCoaches = [
     recommended: true,
     trainingType: "In-Person",
     gender: "Male",
+    responseRate: 100,
     packages: [
       {
         id: 1,
@@ -132,6 +135,7 @@ export const sampleCoaches = [
     recommended: true,
     trainingType: "Online",
     gender: "Male",
+    responseRate: 100,
     packages: [
       {
         id: 1,
@@ -231,10 +235,11 @@ export const sampleCoaches = [
     distance: 5.5,
     verified: true,
     salary: 110,
-    image: img4,
+    image: img3,
     recommended: false,
     trainingType: "Online",
     gender: "Male",
+    responseRate: 100,
     packages: [
       {
         id: 1,
@@ -333,10 +338,11 @@ export const sampleCoaches = [
     distance: 5.5,
     verified: true,
     salary: 60,
-    image: img2,
+    image: img4,
     recommended: true,
     trainingType: "Online",
     gender: "Male",
+    responseRate: 70,
     packages: [
       {
         id: 1,
@@ -434,11 +440,12 @@ export const sampleCoaches = [
     location: "LA",
     distance: 5.5,
     verified: true,
-    salary: 50,
-    image: img3,
+    salary: 40,
+    image: img5,
     recommended: true,
     trainingType: "In-Person",
     gender: "Female",
+    responseRate: 60,
     packages: [
       {
         id: 1,
@@ -537,10 +544,11 @@ export const sampleCoaches = [
     distance: 5.5,
     verified: true,
     salary: 50,
-    image: img3,
+    image: img6,
     recommended: true,
     trainingType: "Online",
     gender: "Male",
+    responseRate: 40,
     packages: [
       {
         id: 1,
@@ -638,10 +646,11 @@ export const sampleCoaches = [
     location: "LA",
     distance: 5.5,
     salary: 50,
-    image: img4,
-    recommended: true,
+    image: img7,
+    recommended: false,
     trainingType: "In-Person",
     gender: "Female",
+    responseRate: 40,
     packages: [
       {
         id: 1,
@@ -733,7 +742,7 @@ export const sampleCoaches = [
     categories: ["Football", "Fitness", "Swimming", "Basketball"],
     rating: 4,
     reviews: 100,
-    badge: "bronze",
+    badge: "gold",
     summary:
       "Professional trainer, experience with athletes ranging from pro to youth. As a former pro athlete, I understand what it takes to reach your fitness goals. Sports Science degree",
     location: "LA",
@@ -743,6 +752,7 @@ export const sampleCoaches = [
     recommended: true,
     trainingType: "In-Person",
     gender: "Female",
+    responseRate: 70,
     packages: [
       {
         id: 1,
@@ -834,16 +844,17 @@ export const sampleCoaches = [
     categories: ["Football", "Fitness", "Swimming", "Basketball"],
     rating: 4,
     reviews: 100,
-    badge: "bronze",
+    badge: "selver",
     summary:
       "Professional trainer, experience with athletes ranging from pro to youth. As a former pro athlete, I understand what it takes to reach your fitness goals. Sports Science degree",
     location: "LA",
     distance: 5.5,
     salary: 50,
-    image: img4,
+    image: img5,
     recommended: false,
     trainingType: "In-Person",
     gender: "Female",
+    responseRate: 100,
     packages: [
       {
         id: 1,
