@@ -49,10 +49,11 @@
   margin-bottom: 10px;
 }
 .editLink {
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   font-size: 22px;
   color: #bf1e2e;
   cursor: pointer;
+  text-align: center;
 }
 .line {
   display: block;
@@ -95,6 +96,7 @@
   box-sizing: border-box;
   cursor: pointer;
 }
+
 .checkedActive {
   background-color: #bf1e2e;
   display: inline-block;
@@ -111,7 +113,10 @@
   grid-template-columns: 1fr 1fr;
   gap: 20px;
 }
-
+.coachDetails {
+  display: flex;
+  flex-direction: column;
+}
 /* Coach card styles */
 .coachCard {
   display: flex;
@@ -123,12 +128,16 @@
   border-radius: 8px;
   border: 1px solid #e0e0e0;
   width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
 }
 
 .coachImage {
   width: 120px;
   height: 120px;
   border-radius: 10px;
+  margin-bottom: 2rem;
 }
 
 .coachName {
@@ -148,6 +157,7 @@
   font-size: 1rem;
   color: #bf1e2e;
   margin-bottom: 0.5rem;
+  text-align: start;
 }
 
 .rating {
@@ -167,37 +177,70 @@
 }
 
 .badge {
-  display: inline-block;
-  padding: 5px 10px;
+  position: absolute;
+  top: 20px;
+  right: -30px;
+  width: 120px;
+  height: 20px;
+  line-height: 20px;
+  font-size: 13px;
   font-weight: bold;
-  border-radius: 5px;
-  margin-top: 10px;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  transform: rotate(45deg);
+  z-index: 1;
+  overflow: hidden;
 }
 
-.goldBadge {
-  background-color: gold;
-  color: black;
+.badge::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  /* transform: rotate(-45deg) translateX(-25%) translateY(10%); */
+  clip-path: polygon(
+    120px 20px,
+    90px -10px,
+    30px -10px,
+    0px 20px,
+    10px 30px,
+    110px 30px
+  );
 }
 
-.silverBadge {
-  background-color: #c0c0c0;
-  color: black;
+.goldBadge::before {
+  background: linear-gradient(#ffd700 0%, #ffcc00 100%);
+  box-shadow: 0 3px 10px -5px rgb(0, 0, 0);
 }
 
-.bronzeBadge {
-  background-color: #cd7f32;
-  color: white;
+.silverBadge::before {
+  background: linear-gradient(#c0c0c0 0%, #a9a9a9 100%);
+  box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
+}
+
+.bronzeBadge::before {
+  background: linear-gradient(#cd7f32 0%, #b8732e 100%);
+  box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
 }
 
 .defaultBadge {
   background-color: #888;
   color: white;
 }
-
+.recommendedBadge {
+  background-color: #bf1e2e20;
+  color: #bf1e2e;
+  padding: 0.5rem 1rem;
+  border-radius: 6rem;
+}
 .summary {
   font-size: 0.9rem;
   color: var(--supText-color);
-  margin-top: 1.5rem;
+  /* margin-top: 0.5rem; */
   margin-bottom: 2rem;
   width: 80%;
 }
@@ -266,11 +309,21 @@
   color: #6c757d;
   margin-top: 20px;
 }
-
+.filterInbut {
+  background-color: var(--filterInput-bgcolor);
+  border-color: var(--border-color);
+}
+.filterInbut:focus {
+  box-shadow: none;
+  border-color: #bf1e2e;
+}
 /* Responsive adjustments */
 @media (max-width: 768px) {
+  .recommendedBadge {
+    margin-top: 1rem;
+  }
   .pageContainer {
-    padding: 2rem;
+    padding: 1rem;
     flex-direction: column;
   }
   .summary {
