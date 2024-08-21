@@ -14,7 +14,12 @@ const WorkoutCarousel = () => {
   ];
 
   const [activeIndex, setActiveIndex] = useState(0);
+  const sliderRef = React.useRef(null);
 
+  const handleVideoClick = (index) => {
+    setActiveIndex(index);
+    sliderRef.current.slickGoTo(index, true);
+  };
   const settings = {
     dots: true,
     infinite: true,
@@ -24,6 +29,7 @@ const WorkoutCarousel = () => {
     centerMode: true,
     centerPadding: '20%',
     beforeChange: (current, next) => setActiveIndex(next),
+    ref: sliderRef,
     appendDots: dots => (
       <div>
         <ul style={{ margin: "0px" }}> {dots} </ul>
@@ -53,7 +59,11 @@ const WorkoutCarousel = () => {
       <h2 className={styles.title}>See All Workouts</h2>
       <Slider {...settings}>
         {videos.map((video, index) => (
-          <div key={video.id} className={styles.videoWrapper}>
+          <div
+            key={video.id}
+            className={styles.videoWrapper}
+            onClick={() => handleVideoClick(index)}
+          >
             <div className={`${styles.videoContainer} ${index === activeIndex ? styles.active : styles.inactive}`}>
               <iframe
                 src={video.url}
