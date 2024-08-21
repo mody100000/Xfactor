@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import styles from './FilteredCoachesResultPage.module.css';
@@ -6,7 +6,18 @@ import coachImage from '../../assets/s3.jpg';
 import { IoMdAdd } from "react-icons/io";
 import { CiEdit } from "react-icons/ci";
 import { MdOnlinePrediction } from 'react-icons/md';
+import { mapStyles } from '../../utils/mapStyles';
+import { useLoadScript } from '@react-google-maps/api';
+import { FaQuoteLeft } from "react-icons/fa";
+import img7 from "@assets/review2.jpeg";
 
+const center = {
+  lat: 40.782865,
+  lng: -73.965355
+};
+
+
+const libraries = ['places'];
 const FilteredCoachesResultPage = () => {
   const sport = useSelector((state) => state.coach.sport);
   const address = useSelector((state) => state.coach.address);
@@ -109,8 +120,47 @@ const FilteredCoachesResultPage = () => {
     else if (rate >= 50 && rate < 80) return "Good";
     return "Bad"
   }
+  const { isLoaded, loadError } = useLoadScript({
+    googleMapsApiKey: import.meta.env.VITE_GOOGLE_MAPS_API_KEY,
+    version: 'weekly',
+    libraries, // Use the constant array here
+  });
+
+  useEffect(() => {
+    if (!isLoaded || !google.maps) return;
+
+    const map = new google.maps.Map(document.getElementById('map'), {
+      center,
+      zoom: 14,
+      styles: mapStyles,
+    });
+
+    // Check if the AdvancedMarkerElement is available
+    if (google.maps.marker && google.maps.marker.AdvancedMarkerElement) {
+      new google.maps.marker.AdvancedMarkerElement({
+        map,
+        position: center,
+      });
+    } else {
+      // Fallback to the old Marker if AdvancedMarkerElement is not available
+      new google.maps.Marker({
+        map,
+        position: center,
+      });
+    }
+
+  }, [isLoaded]);
+
+  if (loadError) return <div>Error loading maps</div>;
+  if (!isLoaded) return <div>Loading...</div>;
+
   return (
     <>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Zen+Tokyo+Zoo&display=swap"
+        rel="stylesheet"
+      />
+      <link href="https://fonts.googleapis.com/css2?family=Seaweed+Script&family=Zen+Tokyo+Zoo&display=swap" rel="stylesheet" />
       <div className={styles.intro}>
         <div className={styles.overlay}>
           <div className='d-flex flex-column align-items-center justify-content-center p-5'>
@@ -205,6 +255,27 @@ const FilteredCoachesResultPage = () => {
             <label><input type="checkbox" /> Tight End</label>
             <label><input type="checkbox" /> Wide Receiver</label>
           </div>
+          <span className={styles.line}></span>
+          <div className={styles.mapContainer} id="map"></div>
+          <span className={styles.line}></span>
+          <FaQuoteLeft size={25} />
+          <p className='lh-lg my-4'>New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart</p>
+          <div className='d-flex justify-content-center align-items-center gap-3 mt-5'>
+            <img src={img7} alt="clientImg" className={styles.clientImg} />
+            <div className='d-flex flex-column'>
+              <h5>Ahmed Ragab</h5>
+              <p className={styles.clientTitle}>President of the Boston Bruins,Hockey legend (sports dad)</p>
+            </div>
+          </div>
+          <span className={styles.line}></span>
+          <div>
+            <h3 className='mb-4'>Featured In</h3>
+            <div className='d-flex gap-5'>
+              <p className={styles.firstFeatur}>Dexter</p>
+              <p className={styles.secondFeatur}>Dexter</p>
+              <p className={styles.thirdFeatur}>Dexter</p>
+            </div>
+          </div>
         </div>
 
         <div className={styles.mainContent}>
@@ -224,7 +295,7 @@ const FilteredCoachesResultPage = () => {
                   Online
                 </button>
               </div>
-              <div className="d-flex align-items-center ">
+              <div className="d-flex align-items-center">
                 <label className="me-2 fs-5">Sort by:</label>
                 <select className={`form-select d-inline-block w-auto fs-5 ${styles.filterInbut}`} onChange={handleSortChange} value={sortCriteria}>
                   <option value="" style={{ display: 'none' }}>Select...</option>

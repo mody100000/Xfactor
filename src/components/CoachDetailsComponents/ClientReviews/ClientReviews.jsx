@@ -15,37 +15,37 @@ const ClientReviews = () => {
             content: 'Coach Michael came well prepared, he is knowledgeable about the game and detailed about the specific positions. Looking forward to upcoming sessions.'
         },
         {
-            id: 1,
+            id: 2,
             name: 'Ahmed Ragab',
             image: review1,
             rating: 4,
             content: 'Coach Michael came well prepared, he is knowledgeable about the game and detailed about the specific positions. Looking forward to upcoming sessions.'
         }, {
-            id: 1,
+            id: 3,
             name: 'Ahmed Ragab',
             image: review2,
             rating: 3,
             content: 'Coach Michael came well prepared, he is knowledgeable about the game and detailed about the specific positions. Looking forward to upcoming sessions.'
         }, {
-            id: 1,
+            id: 4,
             name: 'Ahmed Ragab',
             image: review2,
             rating: 5,
             content: 'Coach Michael came well prepared, he is knowledgeable about the game and detailed about the specific positions. Looking forward to upcoming sessions.'
         }, {
-            id: 1,
+            id: 5,
             name: 'Ahmed Ragab',
             image: review2,
             rating: 5,
             content: 'Coach Michael came well prepared, he is knowledgeable about the game and detailed about the specific positions. Looking forward to upcoming sessions.'
         }, {
-            id: 1,
+            id: 6,
             name: 'Ahmed Ragab',
             image: user,
             rating: 5,
             content: 'Coach Michael came well prepared, he is knowledgeable about the game and detailed about the specific positions. Looking forward to upcoming sessions.'
         }, {
-            id: 1,
+            id: 7,
             name: 'Ahmed Ragab',
             image: user,
             rating: 5,
