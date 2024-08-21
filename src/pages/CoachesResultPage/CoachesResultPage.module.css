@@ -48,6 +48,8 @@
   border-radius: 8px;
   border: 1px solid #e0e0e0;
   width: 100%;
+  position: relative;
+  overflow: hidden;
 }
 
 .coachMain {
@@ -105,30 +107,65 @@
 }
 
 .badge {
-  margin-top: 10px;
-  padding: 5px 20px;
-  border-radius: 8px;
+  position: absolute;
+  top: 20px;
+  right: -30px;
+  width: 120px;
+  height: 20px;
+  line-height: 20px;
+  font-size: 13px;
   font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  transform: rotate(45deg);
+  z-index: 1;
+  overflow: hidden;
 }
 
-.goldBadge {
-  background-color: gold;
-  color: black;
+.badge::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  /* transform: rotate(-45deg) translateX(-25%) translateY(10%); */
+  clip-path: polygon(
+    120px 20px,
+    90px -10px,
+    30px -10px,
+    0px 20px,
+    10px 30px,
+    110px 30px
+  );
 }
 
-.silverBadge {
-  background-color: silver;
-  color: black;
+.goldBadge::before {
+  background: linear-gradient(#ffd700 0%, #ffcc00 100%);
+  box-shadow: 0 3px 10px -5px rgb(0, 0, 0);
 }
 
-.bronzeBadge {
-  background-color: #cd7f32;
-  color: white;
+.silverBadge::before {
+  background: linear-gradient(#c0c0c0 0%, #a9a9a9 100%);
+  box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
+}
+
+.bronzeBadge::before {
+  background: linear-gradient(#cd7f32 0%, #b8732e 100%);
+  box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
 }
 
 .defaultBadge {
-  background-color: gray;
+  background-color: #888;
   color: white;
+}
+.recommendedBadge {
+  background-color: #bf1e2e20;
+  color: #bf1e2e;
+  padding: 0.5rem 1rem;
+  border-radius: 6rem;
 }
 
 .coachContentWrapper {

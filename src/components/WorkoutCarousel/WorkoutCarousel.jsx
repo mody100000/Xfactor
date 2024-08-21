@@ -10,7 +10,7 @@ const WorkoutCarousel = () => {
     { id: 2, url: 'https://www.youtube.com/embed/XIYuxAeKSM0?si' },
     { id: 3, url: 'https://www.youtube.com/embed/EKUNGQ4LmH8?si' },
     { id: 4, url: 'https://www.youtube.com/embed/3sEeVJEXTfY?si' },
-    { id: 5, url: 'https://www.youtube.com/embed/korOpibkm6g?si' },
+    { id: 5, url: 'https://www.youtube.com/embed/eTxO5ZMxcsc?si' },
   ];
 
   const [activeIndex, setActiveIndex] = useState(0);

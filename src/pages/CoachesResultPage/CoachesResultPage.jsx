@@ -54,7 +54,11 @@ const CoachesResultPage = () => {
       </button>
     ));
   };
-
+  const getReponseRate = (rate) => {
+    if (rate >= 80) return "Fast";
+    else if (rate >= 50 && rate < 80) return "Good";
+    return "Bad"
+  }
   return (
     <>
       <div className={styles.intro}>
@@ -72,8 +76,13 @@ const CoachesResultPage = () => {
           {currentCoaches.map((coach) => (
             <div key={coach.id} className={`col-md-6 ${styles.coachColumn}`}>
               <div className={styles.coachCard}>
+                {coach.badge && (
+                  <span className={`${styles.badge} ${getBadgeClass(coach.badge)}`}>
+                    {coach.badge}
+                  </span>
+                )}
                 <div className={styles.coachMain}>
-                  <div className='d-flex gap-3'>
+                  <div className='d-flex gap-4'>
                     <img src={coach.image || coachImage} alt={coach.name} className={styles.coachImage} />
                     <div className={styles.coachDetails}>
                       <h2 className={styles.coachName}>{coach.name}</h2>
@@ -82,16 +91,18 @@ const CoachesResultPage = () => {
                         <span className={styles.reviews}>{coach.reviews} reviews</span>
                       </div>
                       <p className={styles.coachCategory}>{coach.category}</p>
+                      {coach.trainingType === "Online" ? <p className={styles.onlineOffer}> <MdOnlinePrediction size={25} className='mb-1' color='green' /> Offers Online Training</p> : ""}
                     </div>
                   </div>
-                  <div className={styles.coachContentWrapper}>
-                    {coach.trainingOffer ? <p> <MdOnlinePrediction size={25} /> Offers Online Training</p> : ""}
+                  <div className='d-flex flex-column justify-content-end '>
+                    {/* {coach.trainingType === "Online" ? <p className={styles.onlineOffer}> <MdOnlinePrediction size={25} className='mb-1' /> Offers Online Training</p> : ""} */}
                     <p className={styles.summary}>{coach.summary}</p>
-                    <span className={styles.distance}><span className='fw-bold'>{coach.distance}</span> miles away from {address}</span>
+                    <p className={styles.distance}><span className='fw-bold'>{coach.distance}</span> miles away from {address}</p>
+                    <p className={`${styles.distance} mt-2 mb-0`}> {getReponseRate(coach.responseRate)} Reponse Rate: <span className='fw-bold'>{coach.responseRate}%</span></p>
                   </div>
                 </div>
                 <div className={styles.coachInfo}>
-                  <span className={`${styles.badge} ${getBadgeClass(coach.badge)}`}>{coach.badge}</span>
+                  {coach.recommended && <span className={styles.recommendedBadge}>Recomended</span>}
                   <p className='mt-3 mb-1 fs-5'>Starting At</p>
                   <p className='my-1'><span className='fs-4'>$</span><span className={styles.salary}>{coach.salary}</span>/session</p>
                   <IoMdAdd size={25} />
