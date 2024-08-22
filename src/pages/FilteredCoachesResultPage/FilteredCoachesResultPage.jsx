@@ -10,6 +10,7 @@ import { mapStyles } from '../../utils/mapStyles';
 import { useLoadScript } from '@react-google-maps/api';
 import { FaQuoteLeft } from "react-icons/fa";
 import img7 from "@assets/review2.jpeg";
+import { CiGrid2H, CiGrid2V } from "react-icons/ci";
 
 const center = {
   lat: 40.782865,
@@ -31,6 +32,8 @@ const FilteredCoachesResultPage = () => {
   const [trainingType, setTrainingType] = useState(location.state?.trainingType || 'All');
   const [sortCriteria, setSortCriteria] = useState('');
   const [distanceRange, setDistanceRange] = useState(30);
+  const [viewMode, setViewMode] = useState('list');
+
 
   const getBadgeClass = (badge) => {
     switch (badge.toLowerCase()) {
@@ -108,7 +111,10 @@ const FilteredCoachesResultPage = () => {
     setTrainingType(event.target.value);
     setCurrentPage(1);
   };
-
+  const handleGridChange = (event) => {
+    setTrainingType(event.target.value);
+    setViewMode(viewMode === 'grid' ? 'list' : 'grid');
+  };
   const handleSortChange = (event) => {
     const newSortCriteria = event.target.value;
     setSortCriteria(newSortCriteria);
@@ -270,7 +276,7 @@ const FilteredCoachesResultPage = () => {
           <span className={styles.line}></span>
           <div>
             <h3 className='mb-4'>Featured In</h3>
-            <div className='d-flex gap-5'>
+            <div className={styles.featured}>
               <p className={styles.firstFeatur}>Dexter</p>
               <p className={styles.secondFeatur}>Dexter</p>
               <p className={styles.thirdFeatur}>Dexter</p>
@@ -279,8 +285,8 @@ const FilteredCoachesResultPage = () => {
         </div>
 
         <div className={styles.mainContent}>
-          <div className="row mb-4">
-            <div className="col d-flex flex-column flex-sm-row gap-4 justify-content-between align-items-center">
+          <div className="row mb-4 px-5">
+            <div className="col d-flex flex-lg-row flex-md-column flex-sm-column flex-column gap-4 justify-content-between align-items-center">
               <div>
                 <button
                   className={`btn ${trainingType === 'In-Person' ? 'btn-danger' : 'btn-outline-danger'} me-1 fs-5`}
@@ -295,7 +301,14 @@ const FilteredCoachesResultPage = () => {
                   Online
                 </button>
               </div>
-              <div className="d-flex align-items-center">
+              <div className={`cursor-pointer ${styles.toggleIcon}`} onClick={() => setViewMode(viewMode === 'grid' ? 'list' : 'grid')}>
+                {viewMode === 'grid' ? (
+                  <CiGrid2H size={40} />
+                ) : (
+                  <CiGrid2V size={40} />
+                )}
+              </div>
+              <div className="d-flex align-items-center justify-content-between">
                 <label className="me-2 fs-5">Sort by:</label>
                 <select className={`form-select d-inline-block w-auto fs-5 ${styles.filterInbut}`} onChange={handleSortChange} value={sortCriteria}>
                   <option value="" style={{ display: 'none' }}>Select...</option>
@@ -305,52 +318,52 @@ const FilteredCoachesResultPage = () => {
               </div>
             </div>
           </div>
-
-          {filteredAndSortedCoaches.length > 0 ? (
-            filteredAndSortedCoaches.slice((currentPage - 1) * coachesPerPage, currentPage * coachesPerPage).map((coach) => (
-              <div key={coach.id} className={`${styles.coachColumn}`}>
-                <div className={styles.coachCard}>
-                  {coach.badge && (
-                    <span className={`${styles.badge} ${getBadgeClass(coach.badge)}`}>
-                      {coach.badge}
-                    </span>
-                  )}
-                  <div className={styles.coachMain}>
-                    <div className='d-flex gap-4'>
-                      <img src={coach.image || coachImage} alt={coach.name} className={styles.coachImage} />
-                      <div className={styles.coachDetails}>
-                        <h2 className={styles.coachName}>{coach.name}</h2>
-                        <div className={styles.rating}>
-                          <span className={styles.stars}>{'★'.repeat(coach.rating)}{'☆'.repeat(5 - coach.rating)}</span>
+          <div className={styles.coachesContainer}>
+            {filteredAndSortedCoaches.length > 0 ? (
+              filteredAndSortedCoaches.slice((currentPage - 1) * coachesPerPage, currentPage * coachesPerPage).map((coach) => (
+                <div key={coach.id} className={`${viewMode === 'grid' ? 'col-md-6' : 'col-md-12'} mb-4`}>
+                  <div className={styles.coachCard}>
+                    {coach.badge && (
+                      <span className={`${styles.badge} ${getBadgeClass(coach.badge)}`}>
+                        {coach.badge}
+                      </span>
+                    )}
+                    <div className={styles.coachMain}>
+                      <div className="d-flex gap-4">
+                        <img src={coach.image || coachImage} alt={coach.name} className={styles.coachImage} />
+                        <div className={styles.coachDetails}>
+                          <h2 className={styles.coachName}>{coach.name}</h2>
+                          <div className={styles.rating}>
+                            <span className={styles.stars}>{'★'.repeat(coach.rating)}{'☆'.repeat(5 - coach.rating)}</span>
+                          </div>
                           <span className={styles.reviews}>{coach.reviews} reviews</span>
+                          <p className={styles.coachCategory}>{coach.category}</p>
                         </div>
-                        <p className={styles.coachCategory}>{coach.category}</p>
-                        {coach.trainingType === "Online" ? <p className={styles.onlineOffer}> <MdOnlinePrediction size={25} className='mb-1' color='green' /> Offers Online Training</p> : ""}
+                      </div>
+                      <div className="d-flex flex-column justify-content-end">
+                        {coach.trainingType === "Online" ? <p className={styles.onlineOffer}> <MdOnlinePrediction size={25} className="mb-1" color="green" /> Offers Online Training</p> : ""}
+                        <p className={styles.summary}>{coach.summary}</p>
+                        <p className={styles.distance}><span className="fw-bold">{coach.distance}</span> miles away from {address}</p>
+                        <p className={`${styles.distance} mt-2 mb-0`}> {getReponseRate(coach.responseRate)} Reponse Rate: <span className="fw-bold">{coach.responseRate}%</span></p>
                       </div>
                     </div>
-                    <div className='d-flex flex-column justify-content-end '>
-                      {/* {coach.trainingType === "Online" ? <p className={styles.onlineOffer}> <MdOnlinePrediction size={25} className='mb-1' /> Offers Online Training</p> : ""} */}
-                      <p className={styles.summary}>{coach.summary}</p>
-                      <p className={styles.distance}><span className='fw-bold'>{coach.distance}</span> miles away from {address}</p>
-                      <p className={`${styles.distance} mt-2 mb-0`}> {getReponseRate(coach.responseRate)} Reponse Rate: <span className='fw-bold'>{coach.responseRate}%</span></p>
+                    <div className={styles.coachInfo}>
+                      {coach.recommended && <span className={styles.recommendedBadge}>Recomended</span>}
+                      <p className="mt-3 mb-1 fs-5">Starting At</p>
+                      <p className="my-1"><span className="fs-4">$</span><span className={styles.salary}>{coach.salary}</span>/session</p>
+                      <IoMdAdd size={25} />
+                      <p className={styles.fee}>Applicable Fees</p>
+                      <Link to={`/coach/${coach.id}`} className={styles.viewProfileLink}>
+                        <button className={styles.viewProfileButton}>View Profile</button>
+                      </Link>
                     </div>
                   </div>
-                  <div className={styles.coachInfo}>
-                    {coach.recommended && <span className={styles.recommendedBadge}>Recomended</span>}
-                    <p className='mt-3 mb-1 fs-5'>Starting At</p>
-                    <p className='my-1'><span className='fs-4'>$</span><span className={styles.salary}>{coach.salary}</span>/session</p>
-                    <IoMdAdd size={25} />
-                    <p className={styles.fee}>Applicable Fees</p>
-                    <Link to={`/coach/${coach.id}`} className={styles.viewProfileLink}>
-                      <button className={styles.viewProfileButton}>View Profile</button>
-                    </Link>
-                  </div>
                 </div>
-              </div>
-            ))
-          ) : (
-            <p className={styles.noResults}>No coaches found matching your criteria.</p>
-          )}
+              ))
+            ) : (
+              <p className={styles.noResults}>No coaches found matching your criteria.</p>
+            )}
+          </div>
           <div className={styles.pagination}>
             {renderPagination()}
           </div>

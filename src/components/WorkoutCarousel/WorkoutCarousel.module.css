@@ -27,6 +27,7 @@
 .videoContainer.inactive {
   opacity: 0.7;
   transform: scale(0.9);
+  cursor: pointer;
 }
 
 .videoFrame {

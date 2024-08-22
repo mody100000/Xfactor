@@ -28,12 +28,12 @@
 /* Page layout */
 .pageContainer {
   display: flex;
-  padding: 3rem 6rem;
+  padding: 3rem 5rem;
   gap: 2rem;
 }
 
 .sidebar {
-  width: 400px;
+  width: 350px;
   height: fit-content;
   padding: 2rem;
   border-radius: 15px;
@@ -118,16 +118,21 @@
   flex-direction: column;
 }
 /* Coach card styles */
+.coachesContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .coachCard {
   display: flex;
   justify-content: space-between;
   background-color: var(--productCard-color);
   box-shadow: var(--coaches-box-shadow);
-  margin-bottom: 2rem;
+  /* margin-bottom: 2rem; */
   padding: 1.5rem;
   border-radius: 8px;
   border: 1px solid #e0e0e0;
-  width: 100%;
+  width: 95%;
   height: 100%;
   position: relative;
   overflow: hidden;
@@ -150,7 +155,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .coachCategory {
@@ -172,6 +177,7 @@
 }
 
 .reviews {
+  margin-bottom: 0.5rem;
   font-size: 0.9rem;
   color: #777777a6;
 }
@@ -242,7 +248,7 @@
   color: var(--supText-color);
   /* margin-top: 0.5rem; */
   margin-bottom: 2rem;
-  width: 80%;
+  width: 90%;
 }
 
 .distance {
@@ -334,6 +340,10 @@
   text-align: start;
   margin-bottom: 0;
 }
+.featured {
+  display: flex;
+  justify-content: space-between;
+}
 .firstFeatur {
   color: #7f7f7f;
   font-size: 25px;
@@ -357,7 +367,7 @@
 }
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
+@media (max-width: 668px) {
   .recommendedBadge {
     margin-top: 1rem;
   }
@@ -375,10 +385,25 @@
 
   .coachCard {
     flex-direction: column;
+    width: 100%;
   }
 
   .priceInfo {
     align-items: flex-start;
     margin-top: 20px;
+  }
+  .toggleIcon {
+    display: none;
+  }
+}
+@media (max-width: 1024px) and (min-width: 768px) {
+  .sidebar {
+    width: 300px;
+  }
+  .pageContainer {
+    padding: 1rem;
+  }
+  .toggleIcon {
+    display: none;
   }
 }
