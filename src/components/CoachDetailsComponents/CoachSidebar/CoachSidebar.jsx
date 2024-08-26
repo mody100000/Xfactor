@@ -18,7 +18,11 @@ const CoachSidebar = ({ coach }) => {
         version: 'weekly',
         libraries, // Use the constant array here
     });
-
+    const getReponseRate = (rate) => {
+        if (rate >= 80) return "Fast";
+        else if (rate >= 50 && rate < 80) return "Good";
+        return "Bad"
+    }
     useEffect(() => {
         if (!isLoaded || !google.maps) return;
 
@@ -52,7 +56,7 @@ const CoachSidebar = ({ coach }) => {
             <div className="d-flex flex-column align-items-center">
                 <h3 className='text-center'>Questions For Coach {coach.name}?</h3>
                 <button className={styles.messageBtn}>Message Coach</button>
-                <p className={styles.rateText}>Fast Response Rate : <span className="fw-bold">100%</span></p>
+                <p className={styles.rateText}>{getReponseRate(coach.responseRate)} Reponse Rate: <span className="fw-bold">{coach.responseRate}%</span></p>
             </div>
             <span className={styles.line}></span>
             <div className="d-flex flex-column align-items-center">
