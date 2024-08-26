@@ -153,6 +153,9 @@
 }
 
 @media (max-width: 768px) {
+  .quations {
+    padding: 0 1rem;
+  }
   .courses {
     padding: 10px;
   }
