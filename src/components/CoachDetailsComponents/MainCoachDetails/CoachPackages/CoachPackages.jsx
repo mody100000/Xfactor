@@ -5,9 +5,10 @@ import { IoMdAdd } from "react-icons/io";
 import { MdOnlinePrediction } from "react-icons/md";
 import { IoPerson } from "react-icons/io5";
 import { FaStar } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 
-const CoachPackages = ({ packages }) => {
+const CoachPackages = ({ packages, coach }) => {
     const [isExpanded, setIsExpanded] = useState(true);
 
     const toggleExpansion = () => {
@@ -55,9 +56,11 @@ const CoachPackages = ({ packages }) => {
                                 <p className="mb-0">{coachPackage.sessionSalary}</p>
                                 <p className="my-1"><IoMdAdd size={25} /></p>
                                 <p>Applicable Fees</p>
-                                <span className={styles.viewProfileLink}>
-                                    <button className={styles.viewProfileButton}>Book Now</button>
-                                </span>
+                                <Link to={`/coach/${coach.id}/package/${coachPackage.id}`}>
+                                    <span className={styles.viewProfileLink}>
+                                        <button className={styles.viewProfileButton}>Book Now</button>
+                                    </span>
+                                </Link>
                             </div>
                         </div>
                     </div>
