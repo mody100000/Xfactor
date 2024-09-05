@@ -1,5 +1,5 @@
 .filterSidebar {
-  background-color:var(--filterSidebar-color);
+  background-color: var(--filterSidebar-color);
   padding: 20px;
   border-radius: 5px;
 }
@@ -10,11 +10,11 @@
 }
 
 input[type="checkbox"] {
-  transform: scale(1.5); /* Adjust the scaling factor as needed */
+  transform: scale(1.5);
   outline: none;
   border: none;
 }
-.grayColor{
+.grayColor {
   width: 20px;
   height: 20px; /* Set the same height as width for a perfect circle */
   background-color: #969293;
@@ -23,7 +23,7 @@ input[type="checkbox"] {
   vertical-align: sub; /* Vertically align with the label and input */
   margin-right: 10px;
 }
-.blackColor{
+.blackColor {
   width: 20px;
   height: 20px; /* Set the same height as width for a perfect circle */
   background-color: black;
@@ -32,7 +32,7 @@ input[type="checkbox"] {
   vertical-align: sub; /* Vertically align with the label and input */
   margin-right: 10px;
 }
-.redColor{
+.redColor {
   width: 20px;
   height: 20px; /* Set the same height as width for a perfect circle */
   background-color: red;
@@ -41,11 +41,10 @@ input[type="checkbox"] {
   vertical-align: sub; /* Vertically align with the label and input */
   margin-right: 10px;
 }
-.link{
+.link {
   color: red;
   margin-top: 1rem;
   text-decoration: underline;
-
 }
 .checkboxGroup input {
   margin-right: 20px;
