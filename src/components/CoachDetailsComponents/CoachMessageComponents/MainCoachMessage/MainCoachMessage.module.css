@@ -1,0 +1,39 @@
+.input {
+  background-color: var(--filterSidebar-color) !important;
+  color: var(--text-color) !important;
+  border: none;
+}
+textarea.input {
+  height: 8rem !important;
+}
+input.input {
+  border-radius: 5px;
+  padding: 0.4rem 0.2rem 0.4rem 1rem !important;
+  border: 1px solid var(--border-color);
+}
+.input::placeholder {
+  color: var(--placeholder-color) !important;
+}
+.moreText {
+  font-size: 14px;
+}
+.boxContainer {
+  background-color: var(--filterSidebar-color) !important;
+  padding: 1rem;
+  border-radius: 5px;
+}
+.messageBtn {
+  padding: 0.6rem 2rem;
+  margin: 1rem auto;
+  background-color: #bf1e2e;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+  font-size: larger;
+  @media only screen and (min-width: 768px) and (max-width: 1024px) {
+    padding: 0.8rem 1rem;
+  }
+}

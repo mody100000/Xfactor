@@ -2,10 +2,7 @@
   margin-top: 20px;
   padding: 3rem 4rem;
 }
-input:focus {
-  border-color: #dc3545 !important;
-  box-shadow: 4px 0 8px rgba(220, 53, 69, 0.6) !important;
-}
+
 @media (max-width: 569px) {
   .shopPage {
     margin-top: 10px;

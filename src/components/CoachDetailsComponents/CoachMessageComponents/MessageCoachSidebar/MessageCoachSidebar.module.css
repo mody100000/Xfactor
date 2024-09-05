@@ -1,0 +1,36 @@
+.title {
+  font-size: 24px;
+}
+.boxContainer {
+  background-color: var(--filterSidebar-color) !important;
+  padding: 1rem;
+}
+.boxContant {
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-color);
+  border-left: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
+}
+.arrow {
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.arrow:hover {
+  transform: scale(1.1);
+}
+.messageBtn {
+  padding: 0.6rem 1.4rem;
+  margin: 0.1rem auto;
+  background-color: #bf1e2e;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+  font-size: larger;
+  @media only screen and (min-width: 768px) and (max-width: 1024px) {
+    padding: 0.8rem 1rem;
+  }
+}

@@ -75,11 +75,12 @@
 }
 
 .input::placeholder {
-  color: #DBDBDB;
+  color: #dbdbdb;
 }
 
 .input:focus {
-  box-shadow: 0px 0px 0.5px 2.5px #000000;
+  border-color: #dc3545;
+  box-shadow: 4px 0 8px rgba(220, 53, 69, 0.6);
 }
 
 .inputDanger:focus {

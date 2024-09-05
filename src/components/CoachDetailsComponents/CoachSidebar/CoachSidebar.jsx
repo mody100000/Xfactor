@@ -3,6 +3,7 @@ import { useLoadScript } from '@react-google-maps/api';
 import styles from "./CoachSidebar.module.css";
 import logo from "@assets/goodFit.png"
 import { mapStyles } from '../../../utils/mapStyles';
+import { Link } from 'react-router-dom';
 
 const center = {
     lat: 40.782865,
@@ -55,7 +56,9 @@ const CoachSidebar = ({ coach }) => {
         <div className="px-3">
             <div className="d-flex flex-column align-items-center">
                 <h3 className='text-center'>Questions For Coach {coach.name}?</h3>
-                <button className={styles.messageBtn}>Message Coach</button>
+                <Link to={`/coach/${coach.id}/message`}>
+                    <button className={styles.messageBtn}>Message Coach</button>
+                </Link>
                 <p className={styles.rateText}>{getReponseRate(coach.responseRate)} Reponse Rate: <span className="fw-bold">{coach.responseRate}%</span></p>
             </div>
             <span className={styles.line}></span>
