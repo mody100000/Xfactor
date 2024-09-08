@@ -52,7 +52,7 @@ const MainCoachDetails = ({ coach }) => {
                         </div>
                     </div>
                 </div>
-                <CoachPackages packages={packages} />
+                <CoachPackages packages={packages} coach={coach} />
                 <CoachCredentials credentials={credentials} />
                 <CoachServices services={services} />
                 <CoachExperience coach={coach} />

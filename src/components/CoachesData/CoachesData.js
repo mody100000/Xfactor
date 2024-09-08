@@ -41,6 +41,7 @@ export const sampleCoaches = [
         description: `3 session package with Coach John Doe. 60 minute session length`,
         sessionLength: "1 hour",
         salary: 105,
+        feeSalary: 2,
         sessionSalary: "3 sessions ($35/ea)",
       },
       {
@@ -52,6 +53,7 @@ export const sampleCoaches = [
         description: `6 session package with Coach John Doe. 60 minute session length`,
         sessionLength: "1 hour",
         salary: 175,
+        feeSalary: 2,
         sessionSalary: "6 sessions ($35/ea)",
       },
       {
@@ -63,6 +65,7 @@ export const sampleCoaches = [
         description: `10 session package with Coach John Doe. 60 minute session length`,
         sessionLength: "1 hour",
         salary: 250,
+        feeSalary: 2,
         sessionSalary: "10 sessions ($35/ea)",
       },
     ],
@@ -151,6 +154,7 @@ export const sampleCoaches = [
         description: `3 session package with Coach John Doe. 60 minute session length`,
         sessionLength: "1 hour",
         salary: 105,
+        feeSalary: 2,
         sessionSalary: "3 sessions ($35/ea)",
       },
       {
@@ -162,6 +166,7 @@ export const sampleCoaches = [
         description: `6 session package with Coach John Doe. 60 minute session length`,
         sessionLength: "1 hour",
         salary: 175,
+        feeSalary: 2,
         sessionSalary: "6 sessions ($35/ea)",
       },
       {
@@ -173,6 +178,7 @@ export const sampleCoaches = [
         description: `10 session package with Coach John Doe. 60 minute session length`,
         sessionLength: "1 hour",
         salary: 250,
+        feeSalary: 2,
         sessionSalary: "10 sessions ($35/ea)",
       },
     ],
@@ -260,6 +266,7 @@ export const sampleCoaches = [
         description: `3 session package with Coach John Doe. 60 minute session length`,
         sessionLength: "1 hour",
         salary: 105,
+        feeSalary: 2,
         sessionSalary: "3 sessions ($35/ea)",
       },
       {
@@ -271,6 +278,7 @@ export const sampleCoaches = [
         description: `6 session package with Coach John Doe. 60 minute session length`,
         sessionLength: "1 hour",
         salary: 175,
+        feeSalary: 2,
         sessionSalary: "6 sessions ($35/ck, Quaea)",
       },
       {
@@ -282,6 +290,7 @@ export const sampleCoaches = [
         description: `10 session package with Coach John Doe. 60 minute session length`,
         sessionLength: "1 hour",
         salary: 250,
+        feeSalary: 2,
         sessionSalary: "10 sessions ($35/ea)",
       },
     ],
@@ -368,6 +377,7 @@ export const sampleCoaches = [
         description: `3 session package with Coach John Doe. 60 minute session length`,
         sessionLength: "1 hour",
         salary: 105,
+        feeSalary: 2,
         sessionSalary: "3 sessions ($35/ea)",
       },
       {
@@ -379,6 +389,8 @@ export const sampleCoaches = [
         description: `6 session package with Coach John Doe. 60 minute session length`,
         sessionLength: "1 hour",
         salary: 175,
+        feeSalary: 2,
+
         sessionSalary: "6 sessions ($35/ea)",
       },
       {
@@ -390,6 +402,7 @@ export const sampleCoaches = [
         description: `10 session package with Coach John Doe. 60 minute session length`,
         sessionLength: "1 hour",
         salary: 250,
+        feeSalary: 2,
         sessionSalary: "10 sessions ($35/ea)",
       },
     ],
@@ -476,6 +489,7 @@ export const sampleCoaches = [
         description: `3 session package with Coach John Doe. 60 minute session length`,
         sessionLength: "1 hour",
         salary: 105,
+        feeSalary: 2,
         sessionSalary: "3 sessions ($35/ea)",
       },
       {
@@ -487,6 +501,7 @@ export const sampleCoaches = [
         description: `6 session package with Coach John Doe. 60 minute session length`,
         sessionLength: "1 hour",
         salary: 175,
+        feeSalary: 2,
         sessionSalary: "6 sessions ($35/ea)",
       },
       {
@@ -498,6 +513,7 @@ export const sampleCoaches = [
         description: `10 session package with Coach John Doe. 60 minute session length`,
         sessionLength: "1 hour",
         salary: 250,
+        feeSalary: 2,
         sessionSalary: "10 sessions ($35/ea)",
       },
     ],
@@ -584,6 +600,7 @@ export const sampleCoaches = [
         description: `3 session package with Coach John Doe. 60 minute session length`,
         sessionLength: "1 hour",
         salary: 105,
+        feeSalary: 2,
         sessionSalary: "3 sessions ($35/ea)",
       },
       {
@@ -595,6 +612,7 @@ export const sampleCoaches = [
         description: `6 session package with Coach John Doe. 60 minute session length`,
         sessionLength: "1 hour",
         salary: 175,
+        feeSalary: 2,
         sessionSalary: "6 sessions ($35/ea)",
       },
       {
@@ -606,6 +624,7 @@ export const sampleCoaches = [
         description: `10 session package with Coach John Doe. 60 minute session length`,
         sessionLength: "1 hour",
         salary: 250,
+        feeSalary: 2,
         sessionSalary: "10 sessions ($35/ea)",
       },
     ],
@@ -691,6 +710,8 @@ export const sampleCoaches = [
         description: `3 session package with Coach John Doe. 60 minute session length`,
         sessionLength: "1 hour",
         salary: 105,
+        feeSalary: 2,
+
         sessionSalary: "3 sessions ($35/ea)",
       },
       {
@@ -702,6 +723,8 @@ export const sampleCoaches = [
         description: `6 session package with Coach John Doe. 60 minute session length`,
         sessionLength: "1 hour",
         salary: 175,
+        feeSalary: 2,
+
         sessionSalary: "6 sessions ($35/ea)",
       },
       {
@@ -713,6 +736,8 @@ export const sampleCoaches = [
         description: `10 session package with Coach John Doe. 60 minute session length`,
         sessionLength: "1 hour",
         salary: 250,
+        feeSalary: 2,
+
         sessionSalary: "10 sessions ($35/ea)",
       },
     ],
@@ -798,6 +823,8 @@ export const sampleCoaches = [
         description: `3 session package with Coach John Doe. 60 minute session length`,
         sessionLength: "1 hour",
         salary: 105,
+        feeSalary: 2,
+
         sessionSalary: "3 sessions ($35/ea)",
       },
       {
@@ -809,6 +836,8 @@ export const sampleCoaches = [
         description: `6 session package with Coach John Doe. 60 minute session length`,
         sessionLength: "1 hour",
         salary: 175,
+        feeSalary: 2,
+
         sessionSalary: "6 sessions ($35/ea)",
       },
       {
@@ -820,6 +849,8 @@ export const sampleCoaches = [
         description: `10 session package with Coach John Doe. 60 minute session length`,
         sessionLength: "1 hour",
         salary: 250,
+        feeSalary: 2,
+
         sessionSalary: "10 sessions ($35/ea)",
       },
     ],
@@ -905,6 +936,8 @@ export const sampleCoaches = [
         description: `3 session package with Coach John Doe. 60 minute session length`,
         sessionLength: "1 hour",
         salary: 105,
+        feeSalary: 2,
+
         sessionSalary: "3 sessions ($35/ea)",
       },
       {
@@ -916,6 +949,8 @@ export const sampleCoaches = [
         description: `6 session package with Coach John Doe. 60 minute session length`,
         sessionLength: "1 hour",
         salary: 175,
+        feeSalary: 2,
+
         sessionSalary: "6 sessions ($35/ea)",
       },
       {
@@ -927,6 +962,8 @@ export const sampleCoaches = [
         description: `10 session package with Coach John Doe. 60 minute session length`,
         sessionLength: "1 hour",
         salary: 250,
+        feeSalary: 2,
+
         sessionSalary: "10 sessions ($35/ea)",
       },
     ],

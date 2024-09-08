@@ -1,0 +1,77 @@
+.title {
+  font-size: 24px;
+}
+.boxContainer {
+  background-color: var(--filterSidebar-color) !important;
+  padding: 1rem;
+}
+.boxContant {
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-color);
+  border-left: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
+}
+.arrow {
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.arrow:hover {
+  transform: scale(1.1);
+}
+.messageBtn {
+  padding: 0.6rem 1.4rem;
+  margin: 0.1rem auto;
+  background-color: #bf1e2e;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+  font-size: larger;
+  @media only screen and (min-width: 768px) and (max-width: 1024px) {
+    padding: 0.8rem 1rem;
+  }
+}
+.coachImage {
+  width: 120px;
+  height: 120px;
+  border-radius: 10px;
+}
+
+.stars {
+  color: rgb(244, 216, 57);
+  font-size: larger;
+}
+.verifiedUser {
+  display: flex;
+}
+.verified {
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+  margin-top: auto;
+}
+.distance {
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+}
+.coachCard {
+  background-color: var(--filterSidebar-color);
+  width: fit-content;
+  padding: 1rem 3rem;
+  border-radius: 2rem;
+  margin-bottom: 1rem;
+}
+.line {
+  display: block;
+  height: 1px;
+  margin: 1rem 0;
+  background-color: var(--border-color);
+}
+.logo {
+  margin: 1rem auto;
+  width: 120px;
+  height: 120px;
+}
