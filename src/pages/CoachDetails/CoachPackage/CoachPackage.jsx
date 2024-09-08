@@ -6,8 +6,6 @@ import MainCoachPackage from "../../../components/CoachDetailsComponents/CoachPa
 
 const CoachPackage = () => {
     const { id, packageId } = useParams(); // Get coachId and packageId from the URL
-    console.log("Coach ID:", id);
-    console.log("Package ID:", packageId);
     const coach = useSelector((state) => state.coaches.list.find((coach) => coach.id === parseInt(id)));
 
     const packages = coach?.packages || [];
