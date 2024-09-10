@@ -1,127 +1,118 @@
-/* :root {
-    --main-color: #ff006a;
-    --text-color: #777;
-    --text-color-light: #ccc;
-    --border-color: #eee;
-    --bg-color: #f9f9f9;
-    --neutral-color: #fff;
-} */
-
 .calendar {
-    display: block;
-    position: relative;
-    width: 100%;
-    background: var( --navbar-background-color);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  display: block;
+  position: relative;
+  width: 100%;
+  background: var(--navbar-background-color);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .header {
-    text-transform: uppercase;
-    font-weight: 700;
-    font-size: 1rem;
-    padding: 1rem 0;
-    border-bottom: 1px solid var(--border-color);
-    display: flex;
-    justify-content: space-between;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
 }
 
 .icon {
-    cursor: pointer;
-    transition: 0.15s ease-out;
-    font-size: 1.5rem;
+  cursor: pointer;
+  transition: 0.15s ease-out;
+  font-size: 1.5rem;
 }
 
 .icon:hover {
-    color: var(--main-color);
+  color: var(--main-color);
 }
 
 .days {
-    text-transform: uppercase;
-    font-weight: 400;
-    color: var(--text-color-light);
-    font-size: 0.875rem;
-    padding: 0.5rem 0;
-    border-bottom: 1px solid var(--border-color);
-    display: flex;
-    justify-content: space-around;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: var(--text-color-light);
+  font-size: 0.875rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-around;
 }
 
 .body .cell {
-    position: relative;
-    height: 4em;
-    border-right: 1px solid var(--border-color);
-    overflow: hidden;
-    cursor: pointer;
-    background: var(--neutral-color);
-    transition: 0.25s ease-out;
-    font-size: 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  position: relative;
+  height: 4em;
+  border-right: 1px solid var(--border-color);
+  overflow: hidden;
+  cursor: pointer;
+  background: var(--neutral-color);
+  transition: 0.25s ease-out;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .body .cell:hover {
-    background: var(--bg-color);
+  background: var(--bg-color);
 }
 
 .selected {
-    border-left: 4px solid var(--main-color);
+  border-left: 4px solid var(--main-color);
 }
 
 .today {
-    border-left: 4px solid #e63345;
+  border-left: 4px solid #e63345;
 }
 
 .row {
-    display: flex;
+  display: flex;
 }
 
 .number {
-    position: absolute;
-    font-size: 1rem;
-    top: 0.5rem;
-    right: 0.5rem;
-    font-weight: 700;
+  position: absolute;
+  font-size: 1rem;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-weight: 700;
 }
 
 .disabled {
-    color: var(--text-color-light);
-    pointer-events: none;
+  color: var(--text-color-light);
+  pointer-events: none;
 }
 
 .bg {
-    font-weight: 700;
-    color: #ff707f;
-    margin-top: 1rem;
-    opacity: 0;
-    font-size: 3.7rem;
-    position: absolute;
-    top: 0;
-    right: 0;
-    transition: 0.25s ease-out;
-    letter-spacing: -0.07em;
+  font-weight: 700;
+  color: #ff707f;
+  margin-top: 1rem;
+  opacity: 0;
+  font-size: 3.7rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition: 0.25s ease-out;
+  letter-spacing: -0.07em;
 }
 
 .cell:hover .bg,
 .selected .bg {
-    opacity: 0.5;
+  opacity: 0.5;
 }
 
 .today .bg {
-    color: #ff0019;
-    opacity: 0.7;
-    margin-top: 1rem;
+  color: #ff0019;
+  opacity: 0.7;
+  margin-top: 1rem;
 }
 
 .col {
-    flex: 1;
-    text-align: center;
+  flex: 1;
+  text-align: center;
 }
 
 @media (max-width: 768px) {
-.bg {
+  .bg {
     font-size: 2rem;
-}
+  }
 }

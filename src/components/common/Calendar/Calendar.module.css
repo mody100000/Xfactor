@@ -1,0 +1,108 @@
+.calendarContainer {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+}
+
+.dateRangeSelector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.chevronLeft,
+.chevronRight {
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin: 0 10px;
+}
+
+.disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.daysGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-gap: 3px;
+  margin-bottom: 20px;
+}
+.timesGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 5px;
+  margin-bottom: 20px;
+}
+.dayBox {
+  text-align: center;
+  padding: 7px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  position: relative;
+}
+.timeBox {
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  position: relative;
+}
+
+.dayBox input,
+.timeBox input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.unavailable {
+  background-color: var(--border-color);
+  color: #aaa;
+  cursor: not-allowed;
+}
+
+.active {
+  background-color: var(--SelectedTime-color);
+  border-color: #bf1e2e;
+}
+
+.selected {
+  background-color: var(--SelectedTime-color);
+  border-color: #bf1e2e;
+}
+
+.legend {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.4rem;
+}
+
+.generalAvailability {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  border: 1px solid var(--border-color);
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.confirmedAvailability {
+  width: 20px;
+  height: 20px;
+  background-color: #bf1e2e;
+  display: inline-block;
+  margin-right: 10px;
+  border-radius: 4px;
+}
+.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+  cursor: not-allowed;
+}

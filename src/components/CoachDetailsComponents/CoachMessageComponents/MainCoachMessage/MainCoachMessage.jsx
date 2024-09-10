@@ -5,7 +5,6 @@ function MainCoachMessage({ coach }) {
     const handleLearnMoreClick = () => {
         setShowMoreText(!showMoreText);
     };
-    console.log(coach)
     return (
         <div className='d-flex flex-column'>
             <div className='d-flex flex-column flex-md-row justify-content-between align-items-center mb-3'>

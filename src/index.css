@@ -39,6 +39,7 @@ body.light {
   --activeCard-bgcolor: rgb(188 188 188);
   --border-color: #33333334;
   --placeholder-color: #6d6d6d;
+  --SelectedTime-color: #bf1e2e32;
 }
 
 body.dark {
@@ -69,6 +70,7 @@ body.dark {
   --activeCard-bgcolor: rgba(197, 197, 197, 0.164);
   --border-color: #dddddd5f;
   --placeholder-color: #ddddddbb;
+  --SelectedTime-color: #bf1e2ea8;
 }
 
 body {
