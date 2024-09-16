@@ -40,6 +40,8 @@ body.light {
   --border-color: #33333334;
   --placeholder-color: #6d6d6d;
   --SelectedTime-color: #bf1e2e32;
+  --modalBg-color: white;
+  --modalInput-color: #898989;
 }
 
 body.dark {
@@ -71,6 +73,8 @@ body.dark {
   --border-color: #dddddd5f;
   --placeholder-color: #ddddddbb;
   --SelectedTime-color: #bf1e2ea8;
+  --modalBg-color: #212121;
+  --modalInput-color: #333;
 }
 
 body {
