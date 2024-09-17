@@ -1,29 +1,43 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useLoadScript } from '@react-google-maps/api';
 import styles from "./CoachSidebar.module.css";
 import logo from "@assets/goodFit.png"
 import { mapStyles } from '../../../utils/mapStyles';
-import { Link } from 'react-router-dom';
 
 const center = {
     lat: 40.782865,
     lng: -73.965355
 };
 
+const libraries = ['places'];
 
-const libraries = ['places']; // Keep this array constant to avoid reloading the script
+const Modal = ({ isOpen, onClose, children }) => {
+    if (!isOpen) return null;
+
+    return (
+        <div className={styles.modalOverlay}>
+            <div className={styles.modalContent}>
+                {children}
+            </div>
+        </div>
+    );
+};
 
 const CoachSidebar = ({ coach }) => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [message, setMessage] = useState('');
     const { isLoaded, loadError } = useLoadScript({
         googleMapsApiKey: import.meta.env.VITE_GOOGLE_MAPS_API_KEY,
         version: 'weekly',
-        libraries, // Use the constant array here
+        libraries,
     });
+
     const getReponseRate = (rate) => {
         if (rate >= 80) return "Fast";
         else if (rate >= 50 && rate < 80) return "Good";
         return "Bad"
     }
+
     useEffect(() => {
         if (!isLoaded || !google.maps) return;
 
@@ -33,21 +47,25 @@ const CoachSidebar = ({ coach }) => {
             styles: mapStyles,
         });
 
-        // Check if the AdvancedMarkerElement is available
         if (google.maps.marker && google.maps.marker.AdvancedMarkerElement) {
             new google.maps.marker.AdvancedMarkerElement({
                 map,
                 position: center,
             });
         } else {
-            // Fallback to the old Marker if AdvancedMarkerElement is not available
             new google.maps.Marker({
                 map,
                 position: center,
             });
         }
-
     }, [isLoaded]);
+
+    const handleMessageSubmit = () => {
+        // Handle message submission logic here
+        console.log("Message submitted:", message);
+        setIsModalOpen(false);
+        setMessage('');
+    }
 
     if (loadError) return <div>Error loading maps</div>;
     if (!isLoaded) return <div>Loading...</div>;
@@ -56,9 +74,9 @@ const CoachSidebar = ({ coach }) => {
         <div className="px-3">
             <div className="d-flex flex-column align-items-center">
                 <h3 className='text-center'>Questions For Coach {coach.name}?</h3>
-                <Link to={`/coach/${coach.id}/message`}>
-                    <button className={styles.messageBtn}>Message Coach</button>
-                </Link>
+                <button className={styles.messageBtn} onClick={() => setIsModalOpen(true)}>
+                    Message Coach
+                </button>
                 <p className={styles.rateText}>{getReponseRate(coach.responseRate)} Reponse Rate: <span className="fw-bold">{coach.responseRate}%</span></p>
             </div>
             <span className={styles.line}></span>
@@ -93,8 +111,25 @@ const CoachSidebar = ({ coach }) => {
                     <li className='fs-5'>Captures post-session feedback directly from your coach</li>
                 </ul>
             </div>
+
+            <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+                <h2>Message Coach {coach.name}</h2>
+                <textarea
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    placeholder="Type your message here..."
+                    className={styles.messageTextarea}
+                />
+                <div className={styles.buttonContainer}>
+                    <button className={styles.sendButton} onClick={handleMessageSubmit}>Send Message</button>
+                    <button className={styles.closeButton} onClick={() => setIsModalOpen(false)}>Close</button>
+                </div>
+            </Modal>
         </div>
     );
 }
 
 export default CoachSidebar;
+{/* <Link to={`/coach/${coach.id}/message`}>
+<button className={styles.messageBtn}>Message Coach</button>
+</Link> */}

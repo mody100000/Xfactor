@@ -125,7 +125,6 @@ const Calendar = () => {
                     <GrFormNext size={25} />
                 </i>
             </div>
-
             <div className={styles.daysGrid}>
                 {days.map((day, index) => (
                     <label

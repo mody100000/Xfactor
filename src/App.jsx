@@ -5,7 +5,6 @@ import { setAddress, setSport } from "./store/features/coachSlice";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import "./App.css";
 import "./index.css";
-import { MdOnlinePrediction } from "react-icons/md";
 
 import MainLayout from "./layouts/MainLayout/MainLayout";
 import Landing from "./pages/Landing/Landing";
@@ -14,7 +13,6 @@ import TrainingOptions from "./pages/TrainingOptions/TrainingOptions";
 import QuestionsPage3 from './pages/QuestionsPage3/QuestionsPage3';
 import CoachesResultPage from './pages/CoachesResultPage/CoachesResultPage';
 import FilteredCoachesResultPage from './pages/FilteredCoachesResultPage/FilteredCoachesResultPage';
-import CoachProfilePage from './pages/CoachProfilePage/CoachProfilePage';
 import CoachProfile from './pages/CoachProfile/CoachProfile';
 import LoginPage from './pages/LoginPage/LoginPage';
 import RegisterPage from './pages/RegisterPage/RegisterPage';
@@ -107,15 +105,7 @@ const routes = createBrowserRouter([
 
 function App() {
   const dispatch = useDispatch();
-  // const [theme, setTheme] = useState('light');
 
-  // useEffect(() => {
-  //   document.body.className = theme;
-  // }, [theme]);
-
-  // const toggleTheme = () => {
-  //   setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
-  // };
   useEffect(() => {
     dispatch(setCoaches(sampleCoaches));
     dispatch(setSport('Football'));
