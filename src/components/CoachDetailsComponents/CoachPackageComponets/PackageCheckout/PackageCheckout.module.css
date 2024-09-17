@@ -23,13 +23,14 @@ input.input {
   border-radius: 5px;
   padding: 0.4rem 0.2rem 0.4rem 1rem !important;
   border: 1px solid var(--border-color);
+  height: 2.5rem;
 }
 .input::placeholder {
   color: var(--placeholder-color) !important;
 }
 
 .boxContainer {
-  background-color: var(--filterSidebar-color) !important;
+  background-color: var(--filterSidebar-color);
   padding: 1rem;
   border-radius: 5px;
 }

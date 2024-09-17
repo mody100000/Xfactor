@@ -70,6 +70,14 @@
   align-items: center;
   justify-content: center;
   backdrop-filter: blur(5px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modalOpen {
+  opacity: 1;
+  visibility: visible;
 }
 
 .modalContent {
@@ -78,6 +86,14 @@
   border-radius: 15px;
   max-width: 500px;
   width: 90%;
+  transform: scale(0.8);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.modalContentOpen {
+  transform: scale(1);
+  opacity: 1;
 }
 
 .messageTextarea {
@@ -91,34 +107,67 @@
   resize: vertical;
 }
 
-.sendButton {
-  padding: 0.5rem 1rem;
-  background-color: #bf1e2e;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.sendButton:hover {
-  background-color: #a51b28;
-}
 .buttonContainer {
   display: flex;
   justify-content: space-between;
   margin-top: 1rem;
 }
+
+.sendButton,
 .closeButton {
   padding: 0.5rem 1rem;
-  background-color: #ccc;
-  color: #333;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.sendButton {
+  background-color: #bf1e2e;
+  color: #fff;
+}
+
+.sendButton:hover {
+  background-color: #a51b28;
+  transform: scale(1.05);
+}
+
+.closeButton {
+  background-color: #ccc;
+  color: #333;
 }
 
 .closeButton:hover {
   background-color: #bbb;
+  transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+.modalContent > * {
+  animation: fadeIn 0.3s ease forwards;
+}
+
+.modalContent.closing > * {
+  animation: fadeOut 0.3s ease forwards;
 }

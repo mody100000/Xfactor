@@ -44,6 +44,7 @@ import { sampleCoaches } from './components/CoachesData/CoachesData';
 import CoachDetails from './pages/CoachDetails/CoachDetails';
 import CoachMessage from './pages/CoachDetails/CoachMessage/CoachMessage';
 import CoachPackage from './pages/CoachDetails/CoachPackage/CoachPackage';
+import PackageCheckoutPage from './pages/CoachDetails/PackageCheckout/PackageCheckoutPage';
 
 const routes = createBrowserRouter([
   {
@@ -69,7 +70,9 @@ const routes = createBrowserRouter([
       { path: '/coaches/:id', element: <CoachProfile /> },
       { path: 'CoachDetails', element: <CoachDetails /> },
       { path: "/coach/:id/message", element: <CoachMessage /> },
-      { path: "/coach/:id/package/:packageId", element: <CoachPackage /> }
+      { path: "/coach/:id/package/:packageId", element: <CoachPackage /> },
+      { path: "/coach/:id/package/:packageId/checkout", element: <PackageCheckoutPage /> }
+
 
     ],
   },
