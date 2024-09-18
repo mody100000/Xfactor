@@ -12,11 +12,9 @@ const center = {
 const libraries = ['places'];
 
 const Modal = ({ isOpen, onClose, children }) => {
-    if (!isOpen) return null;
-
     return (
-        <div className={styles.modalOverlay}>
-            <div className={styles.modalContent}>
+        <div className={`${styles.modalOverlay} ${isOpen ? styles.modalOpen : ''}`}>
+            <div className={`${styles.modalContent} ${isOpen ? styles.modalContentOpen : ''}`}>
                 {children}
             </div>
         </div>
@@ -63,8 +61,17 @@ const CoachSidebar = ({ coach }) => {
     const handleMessageSubmit = () => {
         // Handle message submission logic here
         console.log("Message submitted:", message);
-        setIsModalOpen(false);
-        setMessage('');
+        handleCloseModal();
+    }
+
+    const handleCloseModal = () => {
+        const modalContent = document.querySelector(`.${styles.modalContent}`);
+        modalContent.classList.add(styles.closing);
+        setTimeout(() => {
+            setIsModalOpen(false);
+            setMessage('');
+            modalContent.classList.remove(styles.closing);
+        }, 300); // Match this delay with the animation duration
     }
 
     if (loadError) return <div>Error loading maps</div>;
@@ -112,7 +119,7 @@ const CoachSidebar = ({ coach }) => {
                 </ul>
             </div>
 
-            <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+            <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
                 <h2>Message Coach {coach.name}</h2>
                 <textarea
                     value={message}
@@ -122,7 +129,7 @@ const CoachSidebar = ({ coach }) => {
                 />
                 <div className={styles.buttonContainer}>
                     <button className={styles.sendButton} onClick={handleMessageSubmit}>Send Message</button>
-                    <button className={styles.closeButton} onClick={() => setIsModalOpen(false)}>Close</button>
+                    <button className={styles.closeButton} onClick={handleCloseModal}>Close</button>
                 </div>
             </Modal>
         </div>
