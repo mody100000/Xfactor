@@ -45,6 +45,12 @@ import CoachDetails from './pages/CoachDetails/CoachDetails';
 import CoachMessage from './pages/CoachDetails/CoachMessage/CoachMessage';
 import CoachPackage from './pages/CoachDetails/CoachPackage/CoachPackage';
 import PackageCheckoutPage from './pages/CoachDetails/PackageCheckout/PackageCheckoutPage';
+import CoachExperiencePage from './pages/RegisterPage/CoachExperiencePage/CoachExperiencePage';
+import CoachBackgroundPage from './pages/RegisterPage/CoachBackgroundPage/CoachBackgroundPage';
+import CoachProfilePage from './pages/RegisterPage/CoachProfilePage/CoachProfilePage';
+import CoachPricePage from './pages/RegisterPage/CoachPricePage/CoachPricePage';
+import CoachAvailabilityPage from './pages/RegisterPage/CoachAvailabilityPage/CoachAvailabilityPage';
+import CoachPaymentPage from './pages/RegisterPage/CoachPaymentPage/CoachPaymentPage';
 
 const routes = createBrowserRouter([
   {
@@ -84,6 +90,12 @@ const routes = createBrowserRouter([
       { path: '/login', element: <LoginPage /> },
       { path: '/register', element: <RegisterPage /> },
       { path: '/generalRegister', element: <GeneralRegisterPage /> },
+      { path: '/CoachExperience', element: <CoachExperiencePage /> },
+      { path: '/CoachBackground', element: <CoachBackgroundPage /> },
+      { path: '/CoachProfile', element: <CoachProfilePage /> },
+      { path: '/CoachAvailability', element: <CoachAvailabilityPage /> },
+      { path: '/CoachPayment', element: <CoachPaymentPage /> },
+      { path: '/CoachPrice', element: <CoachPricePage /> },
       { path: '/registerOptions', element: <RegisterOptions /> },
       { path: '/trainerRegister', element: <TrainerRegister /> },
 

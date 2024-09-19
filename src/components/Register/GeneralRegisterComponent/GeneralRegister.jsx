@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styles from "./GeneralRegister.module.css";
 import { IoChevronBackOutline } from "react-icons/io5";
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const GeneralRegister = () => {
   const [specialists, setSpecialists] = useState([]);
@@ -14,14 +14,14 @@ const GeneralRegister = () => {
   const [toTime, setToTime] = useState('');
   const [placesWorked, setPlacesWorked] = useState('');
   const [timeSlots, setTimeSlots] = useState([]);
-  const [trainerType, setTrainerType] = useState(''); 
+  const [trainerType, setTrainerType] = useState('');
 
 
-const navigate = useNavigate();
+  const navigate = useNavigate();
 
-const handelNavigate = ()=>{
+  const handelNavigate = () => {
     navigate("/register")
-}
+  }
 
   const handleAddItem = (setter, items, value, setInputValue) => {
     if (value.trim() !== '') {
@@ -53,14 +53,10 @@ const handelNavigate = ()=>{
 
   return (
     <div className={styles.formContainer}>
+      <h2 className={styles.title}>General Information</h2>
       <div className={styles.formColumns}>
         <div className={styles.formColumn}>
-          <div className="d-flex flex-column align-items-center text-white mb-5">
-            <div className="d-flex align-items-center">
-              <span className={styles.progress}></span>
-              <span className="fw-bold fs-3">Personal Information</span>
-            </div>
-          </div>
+
           <div className={styles.inputGroup}>
             <div className={styles.inputWithButton}>
               <input
@@ -155,12 +151,6 @@ const handelNavigate = ()=>{
           </div>
         </div>
         <div className={styles.formColumn}>
-          <div className="d-flex flex-column align-items-center text-white mb-5">
-            <div className="d-flex align-items-center border-bottom border-danger">
-              <span className={styles.progress}></span>
-              <span className="fw-bold fs-3">General Information</span>
-            </div>
-          </div>
           <div className={styles.inputGroup}>
             <label>Available Working Hour</label>
             <div className={styles.workingDays}>
@@ -232,25 +222,27 @@ const handelNavigate = ()=>{
         </div>
       </div>
       <div className={styles.formActions}>
-          <div className={`d-flex ${styles.formActionsContiner}`}>
-      <label className={styles.labelCoach}>
-                <span
-                  onClick={() => handleTrainerTypeChange('online')}
-                  className={`${styles.radioInputCoach} ${trainerType === 'online' ? styles.checked : ''}`}
-                ></span>
-              <p className="fs-3 mb-1">Online Trainer</p> 
-              </label>
-                <label className={styles.labelCoach}>
-                <span
-                  onClick={() => handleTrainerTypeChange('offline')}
-                  className={`${styles.radioInputCoach} ${trainerType === 'offline' ? styles.checked : ''}`}
-                ></span>
-               <p className="fs-3 mb-1">Offline Trainer</p>
-              </label>
-              </div>
-              <div className="d-flex gap-2 mt-3 mb-4">
-        <button type="button" className={styles.backBtn} onClick={handelNavigate}><IoChevronBackOutline size={25}/></button>
-        <button type="submit" className={styles.nextBtn}>Next</button>
+        <div className={`d-flex ${styles.formActionsContiner}`}>
+          <label className={styles.labelCoach}>
+            <span
+              onClick={() => handleTrainerTypeChange('online')}
+              className={`${styles.radioInputCoach} ${trainerType === 'online' ? styles.checked : ''}`}
+            ></span>
+            <p className="fs-3 mb-1">Online Trainer</p>
+          </label>
+          <label className={styles.labelCoach}>
+            <span
+              onClick={() => handleTrainerTypeChange('offline')}
+              className={`${styles.radioInputCoach} ${trainerType === 'offline' ? styles.checked : ''}`}
+            ></span>
+            <p className="fs-3 mb-1">Offline Trainer</p>
+          </label>
+        </div>
+        <div className="d-flex gap-2 mt-3 mb-4">
+          <button type="button" className={styles.backBtn} onClick={handelNavigate}><IoChevronBackOutline size={25} /></button>
+          <Link to="/CoachExperience">
+            <button type="submit" className={styles.nextBtn}>Next</button>
+          </Link>
         </div>
       </div>
     </div>
