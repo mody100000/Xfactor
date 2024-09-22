@@ -51,6 +51,7 @@ import CoachProfilePage from './pages/RegisterPage/CoachProfilePage/CoachProfile
 import CoachPricePage from './pages/RegisterPage/CoachPricePage/CoachPricePage';
 import CoachAvailabilityPage from './pages/RegisterPage/CoachAvailabilityPage/CoachAvailabilityPage';
 import CoachPaymentPage from './pages/RegisterPage/CoachPaymentPage/CoachPaymentPage';
+import CoachingJobs from './pages/CoachingJobs/CoachingJobs';
 
 const routes = createBrowserRouter([
   {
@@ -71,6 +72,7 @@ const routes = createBrowserRouter([
       { path: "blog", element: <Blog /> },
       { path: "Shop/product/:id", element: <ProductDetails /> },
       { path: '/filtered-coaches', element: <FilteredCoachesResultPage /> },
+      { path: "/coachingJobs", element: <CoachingJobs /> },
       // { path: '/coach/:id', element: <CoachProfilePage /> },
       { path: '/coach/:id', element: <CoachDetails /> },
       { path: '/coaches/:id', element: <CoachProfile /> },

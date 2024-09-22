@@ -38,8 +38,32 @@ a {
 .darkModeIcon {
   font-size: 2rem;
 }
+.item_links:global(.dropdown-toggle)::after {
+  display: none; /* Hide the default dropdown arrow */
+}
+
+:global(.dropdown-menu) {
+  background-color: var(--navbar-background-color);
+  border-color: var(--text-color);
+}
+
+:global(.dropdown-item) {
+  color: var(--text-color);
+  font-size: 14px;
+  margin: 10px 0px !important;
+}
+
+:global(.dropdown-item:hover),
+:global(.dropdown-item:focus) {
+  background-color: rgba(128, 128, 128, 0.212);
+  color: #bf1e2e;
+}
+
 @media (max-width: 1024px) {
   .item_links {
+    font-size: 1.5rem;
+  }
+  :global(.dropdown-item) {
     font-size: 1.5rem;
   }
 }
