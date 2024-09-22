@@ -3,18 +3,20 @@ import InputWithIcon from "../../components/common/InputWithIcon";
 import styles from "./Register.module.css";
 import Joi from "joi";
 import { useNavigate } from "react-router-dom";
+import CustomDropdown from "../common/CustomDropdown/CustomDropdown";
 
 const Register = () => {
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState({
     first_name: "",
     last_name: "",
-    additional_name: "",
-    about_me: "",
-    current_position: "",
-    location: "",
     email: "",
     phone_number: "",
+    date_Of_birth: "",
+    zib_code: "",
+    gender: "",
+    referral_code: "",
+    heardAboutUs: "",
     password: undefined,
     Cpassword: undefined,
   });
@@ -25,10 +27,9 @@ const Register = () => {
     () => ({
       first_name: Joi.string().min(3).max(50).required().label("First Name"),
       last_name: Joi.string().min(3).max(50).required().label("Last Name"),
-      additional_name: Joi.string().max(50).label("Additional Name"),
-      about_me: Joi.string().max(500).label("About Me"),
-      current_position: Joi.string().max(100).label("Current Position"),
-      location: Joi.string().max(100).label("Location"),
+      zib_code: Joi.string().required().label("Zib Code"),
+      date_Of_birth: Joi.date().required().label("Date Of Birth"),
+      gender: Joi.string().required().label("Gender"),
       email: Joi.string()
         .email({ tlds: { allow: false } })
         .required()
@@ -41,13 +42,15 @@ const Register = () => {
           "string.pattern.base": "Please enter a valid phone number.",
         })
         .label("Phone Number"),
+      // referral_code: Joi.string().label("Referral Code"),
       password: Joi.string()
         .required()
         .pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,20}$/)
         .message(
           "Password must contain at least one digit, one uppercase letter, and one lowercase letter"
-        ),
+        ).label("Password"),
       Cpassword: Joi.string().required().label("Confirm Password"),
+      heardAboutUs: Joi.string().required().label("Heard About Us")
     }),
     []
   );
@@ -113,17 +116,11 @@ const Register = () => {
 
   return (
     <div className={`container ${styles.loginHolder}`}>
-      <h1 className="mt-3 fw-bold">Register</h1>
       <div className={styles.custom_form_holder}>
+        <h2 className={styles.title}>Personal information</h2>
         <form className={styles.custom_form} onSubmit={handleSubmit}>
           <div className={styles.inputsWrapper}>
             <div className={styles.column}>
-              <div className="d-flex flex-column align-items-center text-white mb-3">
-                <div className="d-flex align-items-center border-bottom border-danger">
-                  <span className={styles.progress}></span>
-                  <span className="fw-bold fs-3">Personal information</span>
-                </div>
-              </div>
               <InputWithIcon
                 type="text"
                 onChange={(e) => handleInputChange(e, "first_name")}
@@ -132,15 +129,21 @@ const Register = () => {
               />
               <InputWithIcon
                 type="text"
-                onChange={(e) => handleInputChange(e, "last_name")}
-                errors={errors["last_name"]}
-                placeholder={"Last Name"}
+                onChange={(e) => handleInputChange(e, "phone_number")}
+                errors={errors["phone_number"]}
+                placeholder={"Phone"}
               />
               <InputWithIcon
                 type="text"
                 onChange={(e) => handleInputChange(e, "additional_name")}
                 errors={errors["additional_name"]}
                 placeholder={"Additional Name"}
+              />
+              <InputWithIcon
+                type="text"
+                onChange={(e) => handleInputChange(e, "zib_code")}
+                errors={errors["zib_code"]}
+                placeholder={"Zib Code"}
               />
               <InputWithIcon
                 type="password"
@@ -150,30 +153,17 @@ const Register = () => {
               />
               <InputWithIcon
                 type="text"
-                onChange={(e) => handleInputChange(e, "about_me")}
-                errors={errors["about_me"]}
-                placeholder={"About Me"}
-                as="textarea"
+                onChange={(e) => handleInputChange(e, "referral_code")}
+                errors={errors["referral_code"]}
+                placeholder={"Referral Code"}
               />
             </div>
             <div className={styles.column}>
-              <div className="d-flex flex-column align-items-center text-white mb-3">
-                <div className="d-flex align-items-center">
-                  <span className={styles.progressOff}></span>
-                  <span className="fw-bold fs-3">General Information</span>
-                </div>
-              </div>
               <InputWithIcon
                 type="text"
-                onChange={(e) => handleInputChange(e, "current_position")}
-                errors={errors["current_position"]}
-                placeholder={"Current Position"}
-              />
-              <InputWithIcon
-                type="text"
-                onChange={(e) => handleInputChange(e, "phone_number")}
-                errors={errors["phone_number"]}
-                placeholder={"Phone"}
+                onChange={(e) => handleInputChange(e, "last_name")}
+                errors={errors["last_name"]}
+                placeholder={"Last Name"}
               />
               <InputWithIcon
                 type="email"
@@ -182,16 +172,28 @@ const Register = () => {
                 placeholder={"Email"}
               />
               <InputWithIcon
+                type="date"
+                onChange={(e) => handleInputChange(e, "date_Of_birth")}
+                errors={errors["date_Of_birth"]}
+                placeholder={"Date Of birth"}
+              />
+              <CustomDropdown
+                options={["Male", "Female", "Other"]}
+                placeholder="Gender"
+                onChange={(e) => handleInputChange(e, "gender")}
+                errors={errors["gender"]}
+              />
+              <InputWithIcon
                 type="password"
                 onChange={(e) => handleInputChange(e, "Cpassword")}
                 errors={errors["Cpassword"]}
                 placeholder={"Confirm Password"}
               />
-              <InputWithIcon
-                type="text"
-                onChange={(e) => handleInputChange(e, "location")}
-                errors={errors["location"]}
-                placeholder={"Location"}
+              <CustomDropdown
+                options={["Facebook", "Instagram", "Twitter", "Company Website", "Other"]}
+                placeholder="How did you hear about us?"
+                onChange={(e) => handleInputChange(e, "heardAboutUs")}
+                errors={errors["heardAboutUs"]}
               />
             </div>
           </div>

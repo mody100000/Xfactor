@@ -1,0 +1,79 @@
+.dropdownContainer {
+  position: relative;
+  width: 100%;
+}
+
+.dropdownHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 3rem;
+  padding: 6px 8px;
+  background: rgba(255, 255, 255, 0.18);
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: box-shadow 0.1s ease-in-out;
+}
+
+.dropdownHeader:focus {
+  box-shadow: 2px 0 10px rgba(220, 53, 69, 0.6);
+  outline: none;
+}
+
+.chevron {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid white;
+  transition: transform 0.2s ease;
+}
+
+.chevronUp {
+  transform: rotate(180deg);
+}
+
+.dropdownList {
+  position: absolute;
+  top: 90%;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.668);
+  border: 1px solid #e2e2e2;
+  border-radius: 5px;
+  max-height: 150px;
+  overflow-y: auto;
+  z-index: 1000;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdownItem {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.dropdownItem:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.errorSpace {
+  min-height: 15px; /* Adjust this value to match your desired error space height */
+  margin-top: 7px;
+}
+
+.errorField {
+  display: block;
+  font-size: 10px;
+  font-weight: bold;
+  color: rgb(252, 21, 21);
+  line-height: 13px;
+}
+
+.errorPlaceholder {
+  display: block;
+  height: 13px;
+}

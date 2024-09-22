@@ -1,0 +1,33 @@
+.registerPage {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Ensure the full height of the viewport is covered */
+  overflow: hidden;
+}
+
+.backgroundImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: -1; /* Ensure the image is behind the content */
+}
+
+.content {
+  position: relative;
+  z-index: 1; /* Ensure the content is above the image */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Make the content take full height of the viewport */
+}
+@media (max-width: 600px) {
+  .content {
+    height: auto;
+  }
+  .registerPage {
+    height: auto;
+  }
+}
