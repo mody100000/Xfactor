@@ -1,0 +1,24 @@
+.rowWhite {
+  background-color: #d9d9d973;
+}
+
+.rowGray {
+  background-color: #00000075;
+  color: white;
+}
+
+.myCol {
+  margin: 15px 0;
+  padding: 10px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.boxContainer {
+  border: 1px solid #dbdbdb81;
+  padding: 5px 15px;
+  margin-bottom: 2rem;
+}
+.link {
+  color: inherit;
+}
