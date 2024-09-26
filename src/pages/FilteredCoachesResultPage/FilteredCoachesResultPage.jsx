@@ -11,6 +11,8 @@ import { useLoadScript } from '@react-google-maps/api';
 import { FaQuoteLeft } from "react-icons/fa";
 import img7 from "@assets/review2.jpeg";
 import { CiGrid2H, CiGrid2V } from "react-icons/ci";
+import MapDistanceSelector from './MapDistanceSelector/MapDistanceSelector';
+import MapComponent from './MapComponent/MapComponent';
 
 const center = {
   lat: 40.782865,
@@ -18,7 +20,9 @@ const center = {
 };
 
 
-const libraries = ['places'];
+const libraries = ['places', 'geometry'];
+
+
 const FilteredCoachesResultPage = () => {
   const sport = useSelector((state) => state.coach.sport);
   const address = useSelector((state) => state.coach.address);
@@ -34,6 +38,11 @@ const FilteredCoachesResultPage = () => {
   const [distanceRange, setDistanceRange] = useState(30);
   const [viewMode, setViewMode] = useState('list');
 
+  const { isLoaded, loadError } = useLoadScript({
+    googleMapsApiKey: import.meta.env.VITE_GOOGLE_MAPS_API_KEY,
+    version: 'weekly',
+    libraries, // Use the constant array here
+  });
 
   const getBadgeClass = (badge) => {
     switch (badge.toLowerCase()) {
@@ -71,7 +80,10 @@ const FilteredCoachesResultPage = () => {
         return 0;
       });
   };
-
+  const handleDistanceChange = (newDistance) => {
+    setDistanceRange(newDistance);
+    setCurrentPage(1);
+  };
   const filteredAndSortedCoaches = getFilteredAndSortedCoaches();
   const totalPages = Math.ceil(filteredAndSortedCoaches.length / coachesPerPage);
 
@@ -126,11 +138,7 @@ const FilteredCoachesResultPage = () => {
     else if (rate >= 50 && rate < 80) return "Good";
     return "Bad"
   }
-  const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey: import.meta.env.VITE_GOOGLE_MAPS_API_KEY,
-    version: 'weekly',
-    libraries, // Use the constant array here
-  });
+
 
   useEffect(() => {
     if (!isLoaded || !google.maps) return;
@@ -186,17 +194,15 @@ const FilteredCoachesResultPage = () => {
             <p className={styles.editLink}><CiEdit /> Edit Sport And Location</p>
           </Link>
           <span className={styles.line}></span>
-          <h3 className='mb-4 fs-4'>Distance</h3>
-          <span className='d-flex justify-content-center'>{distanceRange} mi</span>
-          <input
-            type="range"
-            min="1"
-            max="30"
-            value={distanceRange}
-            onChange={handleDistanceRangeChange}
-            className={`${styles.rangeSlider} custom-range-slider`}
+          <h3 className='mb-4 fs-4'>Distance Location</h3>
+          <span className='d-flex justify-content-center mb-2'>{distanceRange} mi</span>
+          <MapDistanceSelector
+            center={center}
+            distanceRange={distanceRange}
+            onDistanceChange={handleDistanceChange}
+            isLoaded={isLoaded}
           />
-          <div className={styles.rangeLabels}>
+          <div className={`mt-2 ${styles.rangeLabels}`}>
             <span>1 mi</span>
             <span>30 mi</span>
           </div>
@@ -262,7 +268,9 @@ const FilteredCoachesResultPage = () => {
             <label><input type="checkbox" /> Wide Receiver</label>
           </div>
           <span className={styles.line}></span>
-          <div className={styles.mapContainer} id="map"></div>
+          <div className={styles.mapContainer} >
+            <MapComponent isLoaded={isLoaded} />
+          </div>
           <span className={styles.line}></span>
           <FaQuoteLeft size={25} />
           <p className='lh-lg my-4'>New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart</p>
