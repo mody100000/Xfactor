@@ -1,34 +1,38 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import TopBar from '../../components/Dashboard/Topbar/Topbar';
 import styles from './CoachDashboardLayout.module.css';
 import Sidebar from './../../components/Dashboard/Sidebar/Sidebar';
+import { useSelector, useDispatch } from 'react-redux';
+import { setTheme, toggleTheme } from '../../store/reducers/themeSlice';
 
 const CoachDashboardLayout = () => {
+
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const [theme, setTheme] = useState('light');
-  
+
+  const dispatch = useDispatch();
+  const theme = useSelector((state) => state.theme.theme);
+
+  useEffect(() => {
+    document.body.className = theme;
+    dispatch(setTheme(localStorage.getItem('theme') || 'dark'));
+  }, [theme, dispatch]);
+
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
-  useEffect(() => {
-    document.body.className = theme; // Apply the theme class to the body
-  }, [theme]);
 
-  const toggleTheme = () => {
-    setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
-  };
 
   return (
     <div className={styles.dashboard}>
-      <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} toggleTheme={toggleTheme} theme={theme} />
+      <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} toggleTheme={() => dispatch(toggleTheme())} />
       <div className={styles.mainSection}>
         <TopBar toggleSidebar={toggleSidebar} />
         <Outlet />
       </div>
     </div>
   );
-};
+}
 
 export default CoachDashboardLayout;

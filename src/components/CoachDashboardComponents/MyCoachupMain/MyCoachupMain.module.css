@@ -1,0 +1,40 @@
+.coachContainer {
+  margin-top: 20px;
+  overflow: hidden;
+}
+.line {
+  display: block;
+  height: 1px;
+  background-color: #dbdbdb81;
+  width: 100%;
+  margin: 1rem auto 2rem auto;
+}
+.messagesCard {
+  border: 1px solid var(--border-color);
+}
+.cardBody {
+  border-bottom: 1px solid var(--border-color);
+}
+.supText {
+  color: var(--supText-color);
+}
+.ClientName {
+  background-color: #bf1e2e;
+  font-size: 1.4rem;
+  color: white;
+  padding: 0.8rem 1rem;
+  border-radius: 100%;
+  font-weight: bold;
+}
+@media (max-width: 569px) {
+  .coachContainer {
+    margin-top: 10px;
+    padding: 1rem;
+  }
+}
+@media (min-width: 569px) and (max-width: 1024px) {
+  .coachContainer {
+    margin-top: 10px;
+    padding: 1rem;
+  }
+}
