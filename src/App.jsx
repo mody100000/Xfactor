@@ -52,6 +52,8 @@ import CoachPricePage from './pages/RegisterPage/CoachPricePage/CoachPricePage';
 import CoachAvailabilityPage from './pages/RegisterPage/CoachAvailabilityPage/CoachAvailabilityPage';
 import CoachPaymentPage from './pages/RegisterPage/CoachPaymentPage/CoachPaymentPage';
 import CoachingJobs from './pages/CoachingJobs/CoachingJobs';
+import CoachDashboardLayout from './layouts/CoachDashboardLayout/CoachDashboardLayout';
+import MyCoachup from './pages/CoachDashboardPages/MyCoachupPage/MyCoachup';
 
 const routes = createBrowserRouter([
   {
@@ -116,6 +118,12 @@ const routes = createBrowserRouter([
       { path: "chat", element: <ChatPage /> },
 
 
+    ]
+  }, {
+    path: 'coach-dashboard', element: <CoachDashboardLayout />,
+    children: [
+      { index: true, path: "/coach-dashboard", element: <MyCoachup /> },
+      { path: "courses", element: <DashboardCoursesPage /> },
     ]
   },
 ]);
