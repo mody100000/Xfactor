@@ -1,9 +1,8 @@
 import React from 'react'
 import styles from "./MyCoachupMain.module.css"
 import CoachDashboardCalendar from '../../common/CoachDashboardCalendar/CoachDashboardCalendar'
-import CoachCalendar from '../../common/CoachCalendar/CoachCalendar';
-import { BsPersonCheck } from 'react-icons/bs';
 import { IoIosArrowForward } from 'react-icons/io';
+import MyCoachUpSidepar from './MyCoachUpSidepar/MyCoachUpSidepar';
 
 function MyCoachupMain() {
     return (
@@ -50,7 +49,7 @@ function MyCoachupMain() {
                                     </div>
                                 </div>
                                 <div className={`p-2`}>
-                                    <div className='d-flex justify-content-between'>
+                                    <div className='d-flex justify-content-between cursor-pointer'>
                                         <div className='d-flex flex-row gap-3 align-items-center'>
                                             <div className={styles.ClientName}>
                                                 AA
@@ -66,13 +65,12 @@ function MyCoachupMain() {
                                     </div>
                                 </div>
                             </div>
-                            <p className='text-danger fs-5 p-3'>View all messages</p>
+                            <p className='text-danger fs-5 p-3 cursor-pointer'>View all messages</p>
                         </div>
                     </div>
                 </div>
                 <div className="col-md-4 col-12 order-md-2 mb-3">
-                    {/* <CoachPackageSidebar coach={coach} /> */}
-                    <h1>helooooo</h1>
+                    <MyCoachUpSidepar />
                 </div>
             </div>
         </div>

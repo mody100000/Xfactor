@@ -124,7 +124,7 @@ const CoachDashboardCalendar = () => {
                 <span className={styles.line}></span>
                 <p className='mb-0 fs-6'>Click a date to schedule a session.</p>
                 <span className={styles.line}></span>
-                <p className='mb-0 fs-6 text-danger'>Manage Group Events</p>
+                <p className='mb-0 fs-6 text-danger cursor-pointer'>Manage Group Events</p>
             </div>
         </div>
     );
