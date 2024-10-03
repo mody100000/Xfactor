@@ -1,0 +1,81 @@
+.line {
+  display: block;
+  height: 1px;
+  background-color: #dbdbdb81;
+  width: 100%;
+  margin: 1.3rem auto;
+}
+.stNumber {
+  font-size: 3.6rem;
+  margin-bottom: 5px;
+}
+.rankedBox {
+  background-color: var(--filterSidebar-color);
+  padding: 1rem;
+}
+.rankedDetails {
+  border-bottom: 1px solid var(--border-color);
+  border-left: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
+  padding: 1rem;
+  font-size: 1.1rem;
+}
+.shopBox {
+  border: 1px solid var(--border-color);
+}
+.imgLogo {
+  width: 50px;
+  height: 50px;
+}
+.badge {
+  text-align: center;
+  background-color: var(--filterSidebar-color);
+  padding: 0.3rem;
+  font-size: larger;
+  font-weight: bold;
+}
+.messageBtn {
+  display: flex;
+  padding: 0.6rem 3rem;
+  background-color: #bf1e2e;
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+  font-size: larger;
+  margin-bottom: 1rem;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .messageBtn {
+    padding: 0.8rem 1rem;
+  }
+}
+
+.messageBtn:hover {
+  background-color: #a51b28;
+}
+.infoBtn {
+  display: flex;
+  padding: 0.5rem 6rem;
+  background-color: #bf1e2e;
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+  font-size: larger;
+  margin-bottom: 1rem;
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .infoBtn {
+    padding: 0.8rem 1rem;
+  }
+}
+
+.infoBtn:hover {
+  background-color: #a51b28;
+}
