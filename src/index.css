@@ -42,6 +42,7 @@ body.light {
   --SelectedTime-color: #bf1e2e32;
   --modalBg-color: white;
   --modalInput-color: #898989;
+  --dropdownList-color: #61616197;
 }
 
 body.dark {
@@ -75,6 +76,7 @@ body.dark {
   --SelectedTime-color: #bf1e2ea8;
   --modalBg-color: #212121;
   --modalInput-color: #333;
+  --dropdownList-color: #0302044a;
 }
 
 body {
