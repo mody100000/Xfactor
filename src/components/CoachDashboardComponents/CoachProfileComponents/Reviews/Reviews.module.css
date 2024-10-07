@@ -1,0 +1,43 @@
+.cardHeader {
+  background-color: #bf1e2e;
+}
+.cardBody {
+  border-bottom: 1px solid var(--border-color);
+  border-left: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
+}
+.supText {
+  color: var(--supText-color);
+}
+.savebtn {
+  padding: 0.5rem 2rem;
+  text-align: center;
+  font-size: larger;
+  border-radius: 10px;
+}
+.input {
+  background-color: var(--filterSidebar-color) !important;
+  color: var(--text-color) !important;
+  border: none;
+  border-radius: 5px;
+  padding: 0.6rem 0.2rem 0.6rem 1rem !important;
+  border: 1px solid var(--border-color);
+  width: 100%;
+}
+
+.input::placeholder {
+  color: var(--placeholder-color) !important;
+}
+.reviewsCard {
+  background-color: var(--filterSidebar-color);
+  padding: 1rem;
+  font-size: large;
+}
+.reviewCardContainer {
+  border-bottom: 1px solid var(--border-color);
+  border-left: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
+}
+.rating {
+  color: #ffc107;
+}
