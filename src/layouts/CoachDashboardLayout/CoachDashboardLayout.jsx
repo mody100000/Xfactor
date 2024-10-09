@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import { Outlet } from 'react-router-dom';
-import TopBar from '../../components/Dashboard/Topbar/Topbar';
 import styles from './CoachDashboardLayout.module.css';
-import Sidebar from './../../components/Dashboard/Sidebar/Sidebar';
 import { useSelector, useDispatch } from 'react-redux';
 import { setTheme, toggleTheme } from '../../store/reducers/themeSlice';
+import CoachDashboardSidebar from '../../components/CoachDashboardComponents/CoachDashboardSidebar/CoachDashboardSidebar';
+import CoachDashboardTopbar from '../../components/CoachDashboardComponents/CoachDashboardTopbar/CoachDashboardTopbar';
 
 const CoachDashboardLayout = () => {
 
@@ -26,9 +26,9 @@ const CoachDashboardLayout = () => {
 
   return (
     <div className={styles.dashboard}>
-      <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} toggleTheme={() => dispatch(toggleTheme())} />
+      <CoachDashboardSidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} toggleTheme={() => dispatch(toggleTheme())} />
       <div className={styles.mainSection}>
-        <TopBar toggleSidebar={toggleSidebar} />
+        <CoachDashboardTopbar toggleSidebar={toggleSidebar} />
         <Outlet />
       </div>
     </div>

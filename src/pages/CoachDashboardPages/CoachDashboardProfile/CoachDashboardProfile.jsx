@@ -133,8 +133,8 @@ function CoachDashboardProfile() {
                                 <div className='d-flex flex-column flex-md-row col-12 col-md-6 justify-content-center align-items-center'>
                                     <label className="mx-2">Distance</label>
                                     <CustomDropdownMenu
-                                        options={["Male", "Female", "Other"]}
-                                        placeholder="Gender"
+                                        options={["Up to 5 miles", "Up to 10 miles", "Up to 25 miles", "Up to 50 miles"]}
+                                        placeholder="Up to 25 miles"
                                     />
                                 </div>
                             </div>
