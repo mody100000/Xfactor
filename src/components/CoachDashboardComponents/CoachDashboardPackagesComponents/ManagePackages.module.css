@@ -1,0 +1,155 @@
+.headTitle {
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.packageRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.packageCard {
+  flex: 0 0 calc(50% - 1rem);
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.packageCard:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cardHeader {
+  padding: 0.4rem 2rem;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cardTitle {
+  color: #bf1e2e;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.cardBody {
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.coachInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.packageDetail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.packageDetail:last-child {
+  border-bottom: none;
+}
+
+.detailLabel {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.detailValue {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.totalPrice {
+  font-size: 1.2rem;
+  color: #bf1e2e;
+  font-weight: 700;
+}
+
+.trainingType {
+  margin-right: 1rem;
+  font-size: 2rem;
+}
+
+.title {
+  margin-top: 5px;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.viewProfileButton {
+  background-color: #bf1e2e;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  align-self: flex-start;
+  margin-top: 1rem;
+}
+.deleteButton {
+  border: 2px solid #bf1e2e !important;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  padding: 0.5rem 1rem;
+  border: none;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  align-self: flex-start;
+  margin-top: 1rem;
+}
+
+.viewProfileButton:hover {
+  background-color: rgb(158, 33, 46);
+}
+
+@media (max-width: 768px) {
+  .packageRow {
+    flex-direction: column;
+  }
+
+  .packageCard {
+    flex: 0 0 100%;
+  }
+
+  .cardBody {
+    flex-direction: column;
+  }
+
+  .cardHeader {
+    padding: 0.4rem 1rem;
+  }
+
+  .coachDetails {
+    gap: 1rem;
+  }
+
+  .trainingType {
+    font-size: 2.5rem;
+  }
+}

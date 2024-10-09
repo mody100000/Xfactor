@@ -24,7 +24,7 @@ export const sampleCoaches = [
     summary:
       "Professional trainer, experience with athletes ranging from pro to youth. As a former pro athlete, I understand what it takes to reach your fitness goals. Sports Science degree",
     location: "LA",
-    distance: 6.5,
+    distance: 9.5,
     salary: 22,
     image: img1,
     recommended: true,
@@ -136,7 +136,7 @@ export const sampleCoaches = [
     summary:
       "Professional trainer, experience with athletes ranging from pro to youth. As a former pro athlete, I understand what it takes to reach your fitness goals. Sports Science degree",
     location: "LA",
-    distance: 5.5,
+    distance: 30,
     verified: true,
     salary: 80,
     image: img2,
@@ -248,7 +248,7 @@ export const sampleCoaches = [
     summary:
       "Professional trainer, experience with athletes ranging from pro to youth. As a former pro athlete, I understand what it takes to reach your fitness goals. Sports Science degree",
     location: "LA",
-    distance: 5.5,
+    distance: 19,
     verified: true,
     salary: 110,
     image: img3,
@@ -359,7 +359,7 @@ export const sampleCoaches = [
     summary:
       "Professional trainer, experience with athletes ranging from pro to youth. As a former pro athlete, I understand what it takes to reach your fitness goals. Sports Science degree",
     location: "LA",
-    distance: 5.5,
+    distance: 215,
     verified: true,
     salary: 60,
     image: img4,
@@ -471,7 +471,7 @@ export const sampleCoaches = [
     summary:
       "Professional trainer, experience with athletes ranging from pro to youth. As a former pro athlete, I understand what it takes to reach your fitness goals. Sports Science degree",
     location: "LA",
-    distance: 5.5,
+    distance: 25.5,
     verified: true,
     salary: 40,
     image: img5,
@@ -582,7 +582,7 @@ export const sampleCoaches = [
     summary:
       "Professional trainer, experience with athletes ranging from pro to youth. As a former pro athlete, I understand what it takes to reach your fitness goals. Sports Science degree",
     location: "LA",
-    distance: 5.5,
+    distance: 28,
     verified: true,
     salary: 50,
     image: img6,
@@ -693,7 +693,7 @@ export const sampleCoaches = [
     summary:
       "Professional trainer, experience with athletes ranging from pro to youth. As a former pro athlete, I understand what it takes to reach your fitness goals. Sports Science degree",
     location: "LA",
-    distance: 5.5,
+    distance: 17,
     salary: 50,
     image: img7,
     recommended: false,
@@ -806,7 +806,7 @@ export const sampleCoaches = [
     summary:
       "Professional trainer, experience with athletes ranging from pro to youth. As a former pro athlete, I understand what it takes to reach your fitness goals. Sports Science degree",
     location: "LA",
-    distance: 5.5,
+    distance: 22,
     salary: 50,
     image: img4,
     recommended: true,
@@ -919,7 +919,7 @@ export const sampleCoaches = [
     summary:
       "Professional trainer, experience with athletes ranging from pro to youth. As a former pro athlete, I understand what it takes to reach your fitness goals. Sports Science degree",
     location: "LA",
-    distance: 5.5,
+    distance: 1.5,
     salary: 50,
     image: img5,
     recommended: false,

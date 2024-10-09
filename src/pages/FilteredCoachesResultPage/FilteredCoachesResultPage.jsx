@@ -194,7 +194,8 @@ const FilteredCoachesResultPage = () => {
             <p className={styles.editLink}><CiEdit /> Edit Sport And Location</p>
           </Link>
           <span className={styles.line}></span>
-          <h3 className='mb-4 fs-4'>Distance Location</h3>
+          <h3 className='fs-4'>Distance Location</h3>
+          <p className='text-danger'>(Click On Your Nearest Location)</p>
           <span className='d-flex justify-content-center mb-2'>{distanceRange} mi</span>
           <MapDistanceSelector
             center={center}
@@ -203,7 +204,14 @@ const FilteredCoachesResultPage = () => {
             isLoaded={isLoaded}
           />
           <div className={`mt-2 ${styles.rangeLabels}`}>
-            <span>1 mi</span>
+            <span className='d-flex justify-content-center'>{distanceRange} mi</span>
+            <input
+              type="range"
+              min="1"
+              max="30"
+              value={distanceRange}
+              onChange={handleDistanceRangeChange}
+              className={`${styles.rangeSlider} custom-range-slider`} />
             <span>30 mi</span>
           </div>
           <span className={styles.line}></span>

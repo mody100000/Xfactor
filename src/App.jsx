@@ -55,6 +55,7 @@ import CoachingJobs from './pages/CoachingJobs/CoachingJobs';
 import CoachDashboardLayout from './layouts/CoachDashboardLayout/CoachDashboardLayout';
 import MyCoachup from './pages/CoachDashboardPages/MyCoachupPage/MyCoachup';
 import CoachDashboardProfile from './pages/CoachDashboardPages/CoachDashboardProfile/CoachDashboardProfile';
+import CoachDashboardPackages from './pages/CoachDashboardPages/CoachDashboardPackages/CoachDashboardPackages';
 
 const routes = createBrowserRouter([
   {
@@ -125,6 +126,9 @@ const routes = createBrowserRouter([
     children: [
       { index: true, path: "/coach-dashboard", element: <MyCoachup /> },
       { path: "coach-profile", element: <CoachDashboardProfile /> },
+      { path: "coach-Packages", element: <CoachDashboardPackages /> },
+
+
     ]
   },
 ]);
