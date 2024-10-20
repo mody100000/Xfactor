@@ -1,0 +1,31 @@
+.cardHeader {
+  background-color: #bf1e2e;
+}
+.cardBody {
+  border-bottom: 1px solid var(--border-color);
+  border-left: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
+}
+.supText {
+  color: var(--supText-color);
+}
+.savebtn {
+  padding: 0.5rem 2rem;
+  text-align: center;
+  font-size: larger;
+  border-radius: 10px;
+}
+.sessionHader {
+  border-bottom: 1px solid var(--border-color);
+  width: 100%;
+}
+.sessionCard {
+  border-right: 1px solid var(--border-color);
+  width: 100%;
+}
+@media (max-width: 576px) {
+  .sessionHader {
+    border-top: 1px solid var(--border-color);
+    border-bottom: 0;
+  }
+}

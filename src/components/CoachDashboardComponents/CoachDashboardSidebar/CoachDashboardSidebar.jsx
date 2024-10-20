@@ -42,10 +42,10 @@ const CoachDashboardSidebar = ({ isOpen, toggleSidebar, toggleTheme, theme }) =>
                         <BsJournalBookmark size={20} className="mx-2" /> My Coachup
                     </NavLink>
                 </li>
-                <li className={getMenuItemClass('/dashboard/progress')}>
-                    {/* <NavLink to="/dashboard/progress" className='text-decoration-none text-light'> */}
-                    <LuPackageSearch size={25} className="mx-2" /> Packages
-                    {/* </NavLink> */}
+                <li className={getMenuItemClass('/coach-dashboard/coach-Packages')}>
+                    <NavLink to="/coach-dashboard/coach-Packages" className='text-decoration-none text-light'>
+                        <LuPackageSearch size={25} className="mx-2" /> Packages
+                    </NavLink>
                 </li>
                 <li className={getMenuItemClass('/dashboard/notes')}>
                     <MdOutlineSpeakerNotes size={25} className="mx-2" /> Sessions

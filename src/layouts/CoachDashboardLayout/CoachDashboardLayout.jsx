@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { setTheme, toggleTheme } from '../../store/reducers/themeSlice';
 import CoachDashboardSidebar from '../../components/CoachDashboardComponents/CoachDashboardSidebar/CoachDashboardSidebar';
 import CoachDashboardTopbar from '../../components/CoachDashboardComponents/CoachDashboardTopbar/CoachDashboardTopbar';
+import Footer from '../../components/Footer/Footer';
 
 const CoachDashboardLayout = () => {
 
@@ -30,6 +31,7 @@ const CoachDashboardLayout = () => {
       <div className={styles.mainSection}>
         <CoachDashboardTopbar toggleSidebar={toggleSidebar} />
         <Outlet />
+        <Footer theme={theme} />
       </div>
     </div>
   );
