@@ -4,6 +4,7 @@ import Card from './../common/Card/Card';
 import ChartComponent from '../common/Chart/ChartComponent/ChartComponent';
 import CertificateComponent from '../common/Chart/CertificateComponent/CertificateComponent';
 import Views from './../Views/Views';
+import DashboardCalender from '../DashboardCalender/DashboardCalender';
 
 const MainContent = () => {
   return (
@@ -28,9 +29,13 @@ const MainContent = () => {
         <Card title="Work preferences" content="Graphic Designer / Desktop Publisher (Intern)" type="specialization" className="col-md-6 col-lg-3" />
         <Card title="Additional info" content="Help recruiters get to know you better by describing your skills" type="course" className="col-md-6 col-lg-3" />
       </div>
+
       <div className={`${styles.workPreferences} row`}>
         <Card title="Work preferences" content="Graphic Designer / Desktop Publisher (Intern)" className="col-md-6 col-lg-3" />
         <Card title="Additional info" content="Help recruiters get to know you better by describing your skills" className="col-md-6 col-lg-3" />
+      </div>
+      <div>
+        <DashboardCalender />
       </div>
       <div className={`${styles.resume} row`}>
         <button className="btn btn-danger col-md-6 col-lg-3">Download certificates</button>
