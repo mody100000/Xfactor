@@ -2,7 +2,6 @@ import React from "react";
 import styles from "./CoachPayment.module.css";
 import { Link, useNavigate } from "react-router-dom";
 import { IoChevronBackOutline } from "react-icons/io5";
-import CoachCalendar from "../../common/CoachCalendar/CoachCalendar";
 import Input from "../../common/Input";
 
 const CoachPayment = () => {
@@ -53,7 +52,7 @@ const CoachPayment = () => {
                         <button type="button" className={styles.backBtn} onClick={handleNavigate}>
                             <IoChevronBackOutline size={25} />
                         </button>
-                        <Link to="/dashboard">
+                        <Link to="/coach-dashboard">
                             <button className={styles.nextBtn} type="button">
                                 Next
                             </button>
