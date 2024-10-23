@@ -29,7 +29,7 @@
 .daysGrid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  grid-gap: 3px;
+  grid-gap: 10px;
   margin-bottom: 20px;
 }
 
@@ -42,7 +42,10 @@
 
 .dayBox,
 .timeBox {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   border: 1px solid #ddd;
   cursor: pointer;
   height: 5rem;
@@ -50,6 +53,7 @@
   position: relative;
   font-size: 17px;
   font-weight: bold;
+  border-radius: 10px;
 }
 
 .dayBox input,
@@ -125,6 +129,11 @@
   padding: 15px;
   font-size: 20px;
 }
+.eventDetails {
+  justify-content: center;
+  align-items: center;
+}
+
 .line {
   display: block;
   height: 1.4px;
@@ -155,7 +164,16 @@
 .eventTitle {
   font-size: 12px;
 }
-
+.eventImage {
+  max-width: 300px;
+  height: 200px;
+  border-radius: 1rem;
+}
+.eventDescription {
+  color: var(--supText-color);
+  font-size: large;
+  text-align: start;
+}
 @media (max-width: 600px) {
   .daysGrid {
     grid-template-columns: repeat(7, 1fr);
@@ -187,6 +205,9 @@
   .chevronLeft,
   .chevronRight {
     font-size: 1rem;
+  }
+  .eventDescription {
+    text-align: center;
   }
 }
 

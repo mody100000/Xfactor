@@ -15,10 +15,10 @@ const DashboardCalender = () => {
     const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
     const events = [
-        { id: 1, title: "First Event", img: event1, description: "This is the first event", date: new Date(2024, 9, 21) }, // 21st October 2024
-        { id: 2, title: "Second Event", img: event2, description: "This is another event", date: new Date(2024, 9, 5) }, // 5th October 2024
-        { id: 3, title: "Third Event", img: event3, description: "This is the third event", date: new Date(2024, 9, 5) }, // 5th October 2024
-        { id: 4, title: "Fourth Event", img: event4, description: "This is the final event", date: new Date(2024, 9, 28) }  // 28th October 2024
+        { id: 1, title: "First Event", img: event1, description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates blanditiis velit distinctio iusto nulla eos quidem quos cupiditate dolorum vel reprehenderit praesentium architecto libero excepturi esse molestiae quas, temporibus nam?", date: new Date(2024, 9, 21) }, // 21st October 2024
+        { id: 2, title: "Second Event", img: event2, description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis dolore error eveniet voluptates maiores quasi ab quam accusantium expedita, et in eligendi officia vitae aut libero consequuntur accusamus voluptas numquam.", date: new Date(2024, 9, 5) }, // 5th October 2024
+        { id: 3, title: "Third Event", img: event3, description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem in error rem eveniet, quisquam et eaque. Rem ducimus, quo accusantium possimus veritatis, quos dolores reiciendis et dignissimos fugiat cupiditate enim!", date: new Date(2024, 9, 5) }, // 5th October 2024
+        { id: 4, title: "Fourth Event", img: event4, description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore ipsam commodi odit molestiae debitis, maiores tempore in! Dolorum, fugit obcaecati! Voluptates provident eius ad laudantium exercitationem, vel corrupti aliquid quo?", date: new Date(2024, 9, 28) }  // 28th October 2024
     ];
 
     useEffect(() => {
@@ -103,11 +103,11 @@ const DashboardCalender = () => {
                     className={`${styles.chevronLeft} ${isPreviousMonthDisabled() ? styles.disabled : ''}`}
                     onClick={handlePreviousMonth}
                 >
-                    <GrFormPrevious size={25} />
+                    <GrFormPrevious size={45} />
                 </i>
-                <span>{formatMonthYear(currentDate)}</span>
+                <span className='fs-3'>{formatMonthYear(currentDate)}</span>
                 <i className={styles.chevronRight} onClick={handleNextMonth}>
-                    <GrFormNext size={25} />
+                    <GrFormNext size={45} />
                 </i>
             </div>
             <div className={styles.daysGrid}>
@@ -158,9 +158,17 @@ const DashboardCalender = () => {
             <div className={styles.scheduleInf}>
                 {selectedEvents.length > 0 ? (
                     selectedEvents.map(event => (
-                        <div key={event.id} className={styles.eventDetails}>
-                            <h5>{event.title}</h5>
-                            <p className='mb-0'>{event.description}</p>
+                        <div key={event.id}>
+                            <div className={`d-flex flex-column flex-sm-row gap-4 px-3 py-1 ${styles.eventDetails}`}>
+                                <div>
+                                    <img src={event.img} alt={event.title} className={styles.eventImage} />
+                                </div>
+                                <div className='d-flex flex-column mt-3'>
+                                    <h5 className='fw-bolder fs-2 text-center text-sm-start '>{event.title}</h5>
+                                    <p className={styles.eventDescription}>{event.description}</p>
+                                </div>
+                            </div>
+                            <span className={styles.line}></span>
                         </div>
                     ))
                 ) : (
