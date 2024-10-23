@@ -56,6 +56,7 @@ import CoachDashboardLayout from './layouts/CoachDashboardLayout/CoachDashboardL
 import MyCoachup from './pages/CoachDashboardPages/MyCoachupPage/MyCoachup';
 import CoachDashboardProfile from './pages/CoachDashboardPages/CoachDashboardProfile/CoachDashboardProfile';
 import CoachDashboardPackages from './pages/CoachDashboardPages/CoachDashboardPackages/CoachDashboardPackages';
+import Sessions from './pages/ClientDashboard/Sessions/Sessions';
 
 const routes = createBrowserRouter([
   {
@@ -118,7 +119,7 @@ const routes = createBrowserRouter([
       { path: "purchases", element: <PurchasesPage /> },
       { path: "assignClient", element: <AssignClientPage /> },
       { path: "chat", element: <ChatPage /> },
-
+      { path: "sessions", element: <Sessions /> }
 
     ]
   }, {
