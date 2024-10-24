@@ -186,7 +186,7 @@ const ScheduleSessions = () => {
                     <span className={styles.confirmedAvailability}></span> Confirmed times
                 </div>
             </div>
-            <div className='d-flex justify-content-between align-items-center my-4'>
+            <div className='d-flex flex-column flex-sm-row gap-4 justify-content-between align-items-center my-4'>
                 <div className='d-flex'>
                     <p className='fw-bold fs-5 mb-0'>Your preferred time:</p>
                     <p className='text-danger mx-2 fs-5 mb-0'>{formatSelected()}</p>
