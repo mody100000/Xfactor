@@ -1,0 +1,99 @@
+.mainCard {
+  border: none;
+  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+  box-shadow: var(--coaches-box-shadow);
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: var(--background-color);
+}
+
+.cardHeader {
+  background-color: #bf1e2e;
+  padding: 1.5rem;
+  border: none;
+}
+
+.cardBody {
+  padding: 2rem;
+}
+
+.description {
+  color: var(--supText-color);
+  font-size: 0.95rem;
+  background-color: var(--filterSidebar-color);
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  margin-bottom: 1.5rem;
+}
+
+.toggleContainer {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.toggleButton {
+  padding: 0.5rem 2rem;
+  border-radius: 6px;
+  border: 2px solid #bf1e2e;
+  background-color: transparent;
+  color: #bf1e2e;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.toggleButtonActive {
+  background-color: #bf1e2e;
+  color: white;
+  border: 2px solid #bf1e2e;
+}
+
+.inputGroup {
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  margin: 1rem 0;
+}
+
+.label {
+  color: var(--text-color);
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.input,
+.select {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  background-color: var(--filterSidebar-color);
+  color: var(--text-color);
+}
+.input::placeholder {
+  color: var(--supText-color);
+}
+.saveButton {
+  background-color: #bf1e2e;
+  color: white;
+  padding: 0.75rem 2rem;
+  border-radius: 6px;
+  border: none;
+  transition: all 0.2s ease;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.icon {
+  font-size: 1.2rem;
+  margin-right: 0.5rem;
+}

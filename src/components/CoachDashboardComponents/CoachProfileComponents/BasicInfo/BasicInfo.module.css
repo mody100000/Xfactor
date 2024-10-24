@@ -1,0 +1,77 @@
+.mainCard {
+  border: none;
+  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+  box-shadow: var(--coaches-box-shadow);
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: var(--background-color);
+}
+
+.cardHeader {
+  background-color: #bf1e2e;
+  padding: 1.5rem;
+  border: none;
+}
+
+.cardBody {
+  padding: 2rem;
+  background-color: white;
+}
+
+.checkboxContainer {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.customCheckbox {
+  width: 1.2rem;
+  height: 1.2rem;
+  margin-right: 0.75rem;
+  cursor: pointer;
+  accent-color: #bf1e2e;
+}
+
+.checkboxLabel {
+  color: var(--supText-color) !important;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.bioLabel {
+  color: var(--supText-color) !important;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.textArea {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  min-height: 120px;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  resize: vertical;
+  color: var(--text-color) !important;
+  background-color: var(--filterSidebar-color) !important;
+}
+.textArea::placeholder {
+  color: var(--supText-color);
+}
+.btnSave {
+  background-color: #bf1e2e;
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  border: none;
+  margin-top: 1rem;
+}
+
+.btnSave:hover {
+  background-color: #dd2235;
+  color: white;
+}

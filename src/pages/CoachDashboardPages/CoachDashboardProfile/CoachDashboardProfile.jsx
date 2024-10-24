@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import styles from "./CoachDashboardProfile.module.css";
 import coachImg from "@assets/user.webp";
-import CustomDropdown from '../../../components/common/CustomDropdown/CustomDropdown';
 import CustomDropdownMenu from '../../../components/common/CustomDropdownMenu/CustomDropdownMenu';
 import TrainingLocations from '../../../components/CoachDashboardComponents/CoachProfileComponents/TrainingLocations/TrainingLocations';
 import MyServices from '../../../components/CoachDashboardComponents/CoachProfileComponents/MyServices/MyServices';
 import MoreAboutYou from '../../../components/CoachDashboardComponents/CoachProfileComponents/MoreAboutYou/MoreAboutYou';
 import Reviews from '../../../components/CoachDashboardComponents/CoachProfileComponents/Reviews/Reviews';
+import BasicInfo from '../../../components/CoachDashboardComponents/CoachProfileComponents/BasicInfo/BasicInfo';
+import TravelPreferences from '../../../components/CoachDashboardComponents/CoachProfileComponents/TravelPreferences/TravelPreferences';
+import MyCredentials from '../../../components/CoachDashboardComponents/MyCredentials/MyCredentials';
 
 function CoachDashboardProfile() {
     const [canTravel, setCanTravel] = useState(false);
@@ -14,9 +16,17 @@ function CoachDashboardProfile() {
     const handleToggle = (value) => {
         setCanTravel(value);
     };
-    const handleSelect = (option) => {
-        console.log('Selected option:', option);
+    const [url, setUrl] = useState('');
+    const [saved, setSaved] = useState(false);
+
+
+    const handleSave = () => {
+        setSaved(true);
+        setTimeout(() => setSaved(false), 2000);
     };
+
+
+
 
     return (
         <div className='p-4 p-sm-5'>
@@ -61,147 +71,70 @@ function CoachDashboardProfile() {
                     </div>
                 </div>
             </div>
-            <div className={`d-flex flex-column my-5 ${styles.coachCard}`}>
-                <div className={`${styles.cardHeader} p-3 py-3 fw-bold`}>
-                    <p className='mb-0 fs-5 text-white'>Custom Profile URL</p>
-                </div>
-                <div className={`p-3  ${styles.cardBody}`}>
-                    <div className='d-flex flex-column justify-content-between'>
-                        <p className={`${styles.supText}`}>Your Custom Profile URL allows you to share or post a link to your profile that is clean and easy to type. Example: coachup.com/me/samsfitness</p>
-                        <div className="d-flex flex-column flex-md-row my-2"><h5 className="text-center mx-2 mt-2">coachup.com/me/</h5>
-                            <input type="number" placeholder="URL" className="mx-auto mx-md-0  _input_xdvt1_16" />
-                        </div>
-                        <div className='mx-auto mx-sm-1'>
-                            <button className={`btn btn-danger mt-3 ${styles.savebtn}`}>save</button>
-                        </div>
+            {/* Test */}
+            <div className={`card mt-5 ${styles.mainCard}`}>
+                <div className={`card-header ${styles.cardHeader}`}>
+                    <div className="d-flex flex-column gap-2">
+                        <i className="bi bi-link-45deg text-white"></i>
+                        <h3 className="mb-2 text-white">Custom Profile URL</h3>
+                        <p className="mb-0 text-white">
+                            Create a memorable URL for your profile that's easy to share with others.
+                            Make it unique and professional!
+                        </p>
                     </div>
                 </div>
-            </div>
-            <div className={`d-flex flex-column my-5 ${styles.coachCard}`}>
-                <div className={`${styles.cardHeader} p-3 py-3 fw-bold`}>
-                    <p className='mb-0 fs-5 text-white'>Basic Info</p>
-                </div>
-                <div className={`p-3  ${styles.cardBody}`}>
-                    <div className='d-flex flex-column justify-content-between'>
-                        <div className="d-flex mb-1"><input type="checkbox" id="baseballQuestions" className="mx-2" />
-                            <label htmlFor="baseballQuestions"> Display full name publicly</label>
-                        </div>
-                        <div className="d-flex flex-column my-2"><h5 className="mt-2">One Sentence Bio</h5>
-                            <textarea className="_input_1v580_1" rows="5" placeholder="To develop players to achieve their maximum potential."></textarea>
-                        </div>
-                        <div className='mx-auto mx-sm-1'>
-                            <button className={`btn btn-danger mt-3 ${styles.savebtn}`}>save Description</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className={`d-flex flex-column my-5 ${styles.coachCard}`}>
-                <div className={`${styles.cardHeader} p-3 py-3 fw-bold`}>
-                    <p className='mb-0 fs-5 text-white'>Travel</p>
-                </div>
-                <div className={`p-3  ${styles.cardBody}`}>
-                    <div className='d-flex flex-column justify-content-between'>
-                        <p className={`${styles.supText}`}>Are you willing to meet clients at a training location near them? If so, enter your base address (typically your home or work address) and how many miles you're willing to travel from there.</p>
-                        <p>Can You Travel To Sessions?</p>
-                        <div className='d-flex gap-4'>
-                            <div
-                                className="d-flex align-items-center cursor-pointer"
-                                onClick={() => handleToggle(true)}
-                            >
-                                <p className={canTravel ? "_checkedActive_1sd20_18" : "_checked_1sd20_7"}></p>
-                                <p className="_iconSearch_1sd20_1">yes</p>
-                            </div>
-                            <div
-                                className="d-flex align-items-center cursor-pointer"
-                                onClick={() => handleToggle(false)}
-                            >
-                                <p className={!canTravel ? "_checkedActive_1sd20_18" : "_checked_1sd20_7"}></p>
-                                <p className="_iconSearch_1sd20_1">no</p>
-                            </div>
-                        </div>
-                        {canTravel && (
-                            <div className="d-flex justify-content-center align-items-center flex-md-row flex-column my-2">
-                                <div className='d-flex flex-column col-12 col-md-6 flex-md-row justify-content-center align-items-center'>
-                                    <label className="col-12 col-md-3 text-center">From Location</label>
-                                    <input
-                                        type="text"
-                                        placeholder="Falls Church, VA"
-                                        className={`mx-auto mx-md-0 ${styles.input}`}
-                                    />
-                                </div>
 
-                                <div className='d-flex flex-column flex-md-row col-12 col-md-6 justify-content-center align-items-center'>
-                                    <label className="mx-2">Distance</label>
-                                    <CustomDropdownMenu
-                                        options={["Up to 5 miles", "Up to 10 miles", "Up to 25 miles", "Up to 50 miles"]}
-                                        placeholder="Up to 25 miles"
-                                    />
+                <div className={`card-body ${styles.cardBody}`}>
+                    <div className={`${styles.urlInputContainer} p-4 mb-4`}>
+                        <div className="row g-2 align-items-center">
+                            <div className="col-12 col-sm-auto">
+                                <div className={styles.baseUrl}>
+                                    <span>coachup.com/me/</span>
                                 </div>
                             </div>
-
-                        )}
-                        <div className='mx-auto mx-sm-1'>
-                            <button className={`btn btn-danger mt-3 ${styles.savebtn}`}>Update Location</button>
+                            <div className="col">
+                                <input
+                                    type="text"
+                                    className={`form-control ${styles.urlInput}`}
+                                    value={url}
+                                    onChange={(e) => setUrl(e.target.value)}
+                                    placeholder="your-profile-name"
+                                />
+                            </div>
                         </div>
+                    </div>
+
+                    <div className="d-flex justify-content-end mb-4">
+                        <button
+                            onClick={handleSave}
+                            className={`btn ${saved ? styles.btnSaved : styles.btnSave}`}
+                        >
+                            {saved ? (
+                                <span className="d-flex align-items-center gap-2">
+                                    <i className="bi bi-check-circle"></i>
+                                    Saved!
+                                </span>
+                            ) : (
+                                'Save URL'
+                            )}
+                        </button>
+                    </div>
+
+                    <div className={styles.previewContainer}>
+                        <p className={styles.previewText}>
+                            Your profile will be available at:{' '}
+                            <span className={styles.previewUrl}>
+                                coachup.com/me/{url || 'your-profile-name'}
+                            </span>
+                        </p>
                     </div>
                 </div>
             </div>
+            {/* Test */}
+            <BasicInfo />
+            <TravelPreferences />
             <TrainingLocations />
-            <div className={`d-flex flex-column my-5 ${styles.coachCard}`}>
-                <div className={`${styles.cardHeader} p-3 py-3 fw-bold`}>
-                    <p className='mb-0 fs-5 text-white'>My Credentials</p>
-                </div>
-                <div className={`p-3  ${styles.cardBody}`}>
-                    <div className='d-flex flex-column justify-content-between'>
-                        <div className="d-flex justify-content-center align-items-center flex-md-row flex-column my-2 gap-3">
-                            <div className='d-flex flex-column col-12 col-md-6 justify-content-center align-items-center gap-3'>
-                                <label className="mx-2 fs-5">College Attended</label>
-                                <CustomDropdownMenu
-                                    options={["None",
-                                        "US",
-                                        "CA",
-                                        "MX",
-                                        "UK",
-                                        "FR",
-                                        "DE",
-                                        "AL",
-                                        "AK",
-                                        "AZ",
-                                        "AR",
-                                        "CA",
-                                        "CO",
-                                        "CT",
-                                        "DE",
-                                        "FL",
-                                        "GA",
-                                        "HI",
-                                        "ID",
-                                        "IL",
-                                        "IN",
-                                        "IA",
-                                        "KS",
-                                        "KY",
-                                        "LA",]}
-                                    placeholder="Country or US State"
-                                />
-                            </div>
-
-                            <div className='d-flex flex-column col-12 col-md-6 justify-content-center align-items-center gap-3'>
-                                <label className="mx-2 fs-5">Years Coaching </label>
-                                <CustomDropdownMenu
-                                    options={["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
-                                        "11", "12", "13", "14", "15", "16", "17", "18",
-                                        "19", "20", "21", "22", "23", "24", "25"]}
-                                    placeholder="15"
-                                />
-                            </div>
-                        </div>
-                        <div className='mx-auto mx-sm-1'>
-                            <button className={`btn btn-danger mt-3 ${styles.savebtn}`}>Update Credentials</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <MyCredentials />
             <MyServices />
             <div className={`d-flex flex-column my-5 ${styles.coachCard}`}>
                 <div className={`${styles.cardHeader} p-3 py-3 fw-bold`}>

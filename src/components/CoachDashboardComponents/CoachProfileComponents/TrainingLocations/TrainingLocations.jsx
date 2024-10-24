@@ -1,141 +1,286 @@
-import React, { useEffect, useState } from 'react'
-import styles from "./TrainingLocations.module.css"
-import { MdMenu } from "react-icons/md";
-import { CiCircleRemove } from "react-icons/ci";
+import React, { useEffect, useState, useRef } from 'react';
+import styles from "./TrainingLocations.module.css";
+import { MdMenu, MdLocationOn, MdAdd } from "react-icons/md";
 import { useLoadScript } from '@react-google-maps/api';
+import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import { mapStyles } from '../../../../utils/mapStyles';
 
 const locationsAddress = [
     {
-        id: 1,
+        id: "1",
         name: "3600 N Harrison St",
         address: "3600 North Harrison Street, Arlington, VA",
     },
     {
-        id: 2,
+        id: "2",
         name: "Stuart High School",
         address: "3301 Peace Valley Lane, Falls Church, VA",
     },
     {
-        id: 3,
+        id: "3",
         name: "Long Bridge Park",
         address: "Arlington, VA",
     },
     {
-        id: 4,
+        id: "4",
         name: "Thomas Jefferson Middle School",
         address: "125 S Old Glebe Rd, Arlington, VA",
     },
     {
-        id: 5,
+        id: "5",
         name: "5801 Franconia Rd",
         address: "5801 Franconia Road, Alexandria, VA",
     },
     {
-        id: 6,
+        id: "6",
         name: "9537 Courthouse Rd",
         address: "Vienna, VA",
     },
     {
-        id: 7,
+        id: "7",
         name: "7550 Reservation Dr",
         address: "7550 Reservation Drive, Springfield, VA",
     },
     {
-        id: 8,
+        id: "8",
         name: "3301 Peace Valley Ln",
         address: "3301 Peace Valley Lane, Falls Church, VA",
     },
 ];
 
-const center = {
-    lat: 40.782865,
-    lng: -73.965355
-};
-
 const libraries = ['places'];
+const center = { lat: 38.8977, lng: -77.0365 }; // Centered around Arlington, VA
 
 function TrainingLocations() {
-    const [locations, setLocations] = useState(locationsAddress)
+    const [locations, setLocations] = useState(locationsAddress);
+    const [searchValue, setSearchValue] = useState('');
+    const [mapInstance, setMapInstance] = useState(null);
+    const [markers, setMarkers] = useState([]);
+    const autocompleteRef = useRef(null);
+
     const { isLoaded, loadError } = useLoadScript({
         googleMapsApiKey: import.meta.env.VITE_GOOGLE_MAPS_API_KEY,
         version: 'weekly',
         libraries,
     });
+
     useEffect(() => {
         if (!isLoaded || !google.maps) return;
 
         const map = new google.maps.Map(document.getElementById('map'), {
             center,
-            zoom: 14,
+            zoom: 11,
             styles: mapStyles,
         });
+        setMapInstance(map);
 
-        if (google.maps.marker && google.maps.marker.AdvancedMarkerElement) {
-            new google.maps.marker.AdvancedMarkerElement({
-                map,
-                position: center,
-            });
-        } else {
-            new google.maps.Marker({
-                map,
-                position: center,
-            });
-        }
+        // Initialize Google Places Autocomplete
+        const autocomplete = new google.maps.places.Autocomplete(
+            document.getElementById('location-search'),
+            { types: ['establishment', 'geocode'] }
+        );
+
+        autocomplete.addListener('place_changed', () => {
+            const place = autocomplete.getPlace();
+            if (!place.geometry) return;
+
+            // Add marker for the new location
+            addMarkerToMap(place);
+
+            // Add location to the list
+            const newLocation = {
+                id: Date.now(),
+                name: place.name || place.formatted_address.split(',')[0],
+                address: place.formatted_address,
+                lat: place.geometry.location.lat(),
+                lng: place.geometry.location.lng()
+            };
+
+            setLocations(prev => [...prev, newLocation]);
+            setSearchValue('');
+        });
+
+        autocompleteRef.current = autocomplete;
+
+        // Add markers for initial locations
+        addInitialMarkers(map);
     }, [isLoaded]);
-    const deleteLocation = (id) => {
-        const updatedLocations = locations.filter(location => location.id !== id);
-        setLocations(updatedLocations); // Update the state with the filtered array
+
+    const addInitialMarkers = async (map) => {
+        const geocoder = new google.maps.Geocoder();
+        const bounds = new google.maps.LatLngBounds();
+
+        for (const location of locations) {
+            try {
+                const result = await geocodeAddress(geocoder, location.address);
+                const marker = new google.maps.Marker({
+                    map,
+                    position: result.geometry.location,
+                    title: location.name
+                });
+                bounds.extend(result.geometry.location);
+                setMarkers(prev => [...prev, marker]);
+            } catch (error) {
+                console.error('Geocoding error:', error);
+            }
+        }
+
+        map.fitBounds(bounds);
     };
+
+    const geocodeAddress = (geocoder, address) => {
+        return new Promise((resolve, reject) => {
+            geocoder.geocode({ address }, (results, status) => {
+                if (status === 'OK') {
+                    resolve(results[0]);
+                } else {
+                    reject(status);
+                }
+            });
+        });
+    };
+
+    const addMarkerToMap = (place) => {
+        if (!mapInstance) return;
+
+        const marker = new google.maps.Marker({
+            map: mapInstance,
+            position: place.geometry.location,
+            animation: google.maps.Animation.DROP,
+            title: place.name
+        });
+
+        mapInstance.panTo(place.geometry.location);
+        mapInstance.setZoom(15);
+
+        setMarkers(prev => [...prev, marker]);
+    };
+
+    const deleteLocation = (id) => {
+        setLocations(prev => prev.filter(location => location.id !== id));
+    };
+
+    const handleDragEnd = (result) => {
+        if (!result.destination) return;
+
+        const items = Array.from(locations);
+        const [reorderedItem] = items.splice(result.source.index, 1);
+        items.splice(result.destination.index, 0, reorderedItem);
+
+        setLocations(items);
+    };
+
+    const handleAddLocation = () => {
+        const searchInput = document.getElementById('location-search');
+        searchInput.focus();
+    };
+
+    if (loadError) {
+        return <div>Error loading maps</div>;
+    }
+
+    if (!isLoaded) {
+        return <div>Loading maps...</div>;
+    }
+
     return (
-        <div>
-            <div className={`d-flex flex-column my-5 ${styles.coachCard}`}>
-                <div className={`${styles.cardHeader} p-3 py-3 fw-bold`}>
-                    <p className='mb-0 fs-5 text-white'>Training Locations</p>
+        <div className="container py-5">
+            <div className={styles.mainCard}>
+                <div className={styles.headerSection}>
+                    <h2 className="fs-2 fw-bold mb-0">Training Locations</h2>
+                    <p className="mb-0 mt-2 opacity-75">
+                        Manage and organize your training venues
+                    </p>
                 </div>
-                <div className={`p-3  ${styles.cardBody}`}>
-                    <div className='d-flex flex-column justify-content-between'>
-                        <p className={`${styles.supText}`}>You can add most locations (e.g. facilities, parks, or schools) by name or by address. Please choose your location from the auto-suggestion list that appears when you begin typing.</p>
-                        <p className={`${styles.supText}`}>The top 3 locations will appear on your profile. You can drag and drop to reorder your locations.</p>
-                        <p className='fw-bold fs-5'>Soccer Locations</p>
-                        {locations.map((location) => (
-                            <div className={styles.locationCard} key={location.id}>
-                                <div className='d-flex flex-column flex-sm-row justify-content-cente align-items-center p-3'>
-                                    <MdMenu size={30} />
-                                    <p className=' mb-0 fs-5 px-3'> {location.name}-{location.address}</p>
-                                    <p className='text-danger mb-0 cursor-pointer' onClick={() => deleteLocation(location.id)}>
-                                        <CiCircleRemove size={30} /> Delete
-                                    </p>
-                                </div>
+
+                <div className="row p-4 g-4">
+                    <div className="col-12 col-md-6">
+                        <div className={`${styles.infoBox} mb-4`}>
+                            <MdLocationOn className="fs-3 text-danger" />
+                            <p className="small mb-0">
+                                Add locations by name or address. Drag and drop to reorder.
+                                The top 3 locations will be featured on your profile.
+                            </p>
+                        </div>
+
+                        <DragDropContext onDragEnd={handleDragEnd}>
+                            <Droppable droppableId="droppable-locations">
+                                {(provided) => (
+                                    <div
+                                        ref={provided.innerRef}
+                                        {...provided.droppableProps}
+                                        className={styles.locationsList}
+                                    >
+                                        {locations.map((location, index) => (
+                                            <Draggable
+                                                key={location.id.toString()}
+                                                draggableId={location.id.toString()}
+                                                index={index}
+                                            >
+                                                {(provided, snapshot) => (
+                                                    <div
+                                                        ref={provided.innerRef}
+                                                        {...provided.draggableProps}
+                                                        className={`${styles.locationItem} mb-2 ${snapshot.isDragging ? styles.dragging : ''}`}
+                                                    >
+                                                        <div className="d-flex align-items-center gap-3">
+                                                            <div
+                                                                {...provided.dragHandleProps}
+                                                                className={styles.dragHandle}
+                                                            >
+                                                                <MdMenu className="text-secondary" />
+                                                            </div>
+                                                            <div>
+                                                                <h3 className="fw-semibold mb-0 fs-6">{location.name}</h3>
+                                                                <p className="small text-secondary mb-0">{location.address}</p>
+                                                            </div>
+                                                        </div>
+                                                        <button
+                                                            onClick={() => deleteLocation(location.id)}
+                                                            className={`${styles.deleteBtn} btn btn-link text-danger p-2`}
+                                                        >
+                                                            Remove
+                                                        </button>
+                                                    </div>
+                                                )}
+                                            </Draggable>
+                                        ))}
+                                        {provided.placeholder}
+                                    </div>
+                                )}
+                            </Droppable>
+                        </DragDropContext>
+
+                        <div className="mt-4">
+                            <div className="mb-3 position-relative">
+                                <input
+                                    id="location-search"
+                                    type="text"
+                                    placeholder="Search location or enter address..."
+                                    className={styles.searchInput}
+                                    value={searchValue}
+                                    onChange={(e) => setSearchValue(e.target.value)}
+                                />
                             </div>
-                        ))}
-                        <div className='mx-auto mx-sm-1'>
+                            <button
+                                className={`${styles.addButton} d-flex align-items-center justify-content-center gap-2`}
+                                onClick={handleAddLocation}
+                            >
+                                <MdAdd size={20} />
+                                Add Location
+                            </button>
                         </div>
                     </div>
-                    <div className='d-flex flex-column flex-sm-row gap-3 py-5 px-0 px-sm-3'>
-                        <div className='col-12 col-sm-6'>
-                            <p className='fs-5'>Location Name / Address and City</p>
-                            <input
-                                type="text"
-                                placeholder="Falls Church, VA"
-                                className={`mx-auto mx-md-0 ${styles.input}`}
-                            />
-                            <div>
-                                <div className='mx-auto mx-sm-1'>
-                                    <button className={`btn btn-danger mt-3 ${styles.savebtn}`}>Update Location</button>
-                                </div>
 
-                            </div>
-                        </div>
-                        <div className='col-12 col-md-6'>
-                            <div className={styles.mapContainer} id="map"></div>
+                    <div className="col-12 col-md-6">
+                        <div className={styles.mapSection}>
+                            <div id="map" className={styles.map}></div>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
-    )
+    );
 }
 
-export default TrainingLocations
+export default TrainingLocations;
