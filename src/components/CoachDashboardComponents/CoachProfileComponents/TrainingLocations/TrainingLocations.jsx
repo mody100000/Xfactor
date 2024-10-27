@@ -184,11 +184,11 @@ function TrainingLocations() {
     }
 
     return (
-        <div className="container py-5">
+        <div className="py-5">
             <div className={styles.mainCard}>
                 <div className={styles.headerSection}>
-                    <h2 className="fs-2 fw-bold mb-0">Training Locations</h2>
-                    <p className="mb-0 mt-2 opacity-75">
+                    <h2 className="fs-2 fw-bold mb-3">Training Locations</h2>
+                    <p className="mb-0 mt-2">
                         Manage and organize your training venues
                     </p>
                 </div>

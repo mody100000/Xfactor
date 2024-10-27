@@ -1,43 +1,177 @@
-.cardHeader {
-  background-color: #bf1e2e;
-}
-.cardBody {
-  border-bottom: 1px solid var(--border-color);
-  border-left: 1px solid var(--border-color);
-  border-right: 1px solid var(--border-color);
-}
-.supText {
-  color: var(--supText-color);
-}
-.savebtn {
-  padding: 0.5rem 2rem;
-  text-align: center;
-  font-size: larger;
-  border-radius: 10px;
-}
-.input {
-  background-color: var(--filterSidebar-color) !important;
-  color: var(--text-color) !important;
-  border: none;
-  border-radius: 5px;
-  padding: 0.6rem 0.2rem 0.6rem 1rem !important;
-  border: 1px solid var(--border-color);
-  width: 100%;
+/* Reviews.module.css */
+.reviewsContainer {
+  margin: 0 auto;
 }
 
+.card {
+  border: none;
+  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+  box-shadow: var(--coaches-box-shadow);
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: var(--background-color);
+}
+
+.cardHeaderNew {
+  background-color: #bf1e2e;
+  color: white;
+  padding: 20px;
+  position: relative;
+}
+
+.cardHeaderNew h4 {
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+.cardBodyNew {
+  padding: 25px;
+}
+
+.formLabel {
+  font-weight: 600;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.textarea,
+.input {
+  width: 100%;
+  border-radius: 8px;
+  padding: 12px 15px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  background: var(--filterSidebar-color) !important;
+}
+.textarea::placeholder,
 .input::placeholder {
-  color: var(--placeholder-color) !important;
+  color: var(--supText-color);
 }
-.reviewsCard {
-  background-color: var(--filterSidebar-color);
-  padding: 1rem;
-  font-size: large;
+.textarea:focus,
+.input:focus {
+  border-color: #e52d27;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(229, 45, 39, 0.1);
 }
-.reviewCardContainer {
-  border-bottom: 1px solid var(--border-color);
-  border-left: 1px solid var(--border-color);
-  border-right: 1px solid var(--border-color);
+
+.submitButton {
+  background-color: #bf1e2e;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
-.rating {
+
+.submitButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(229, 45, 39, 0.2);
+}
+
+.reviewsList {
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.reviewItem {
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.reviewItem:last-child {
+  border-bottom: none;
+}
+
+.reviewHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.reviewerInfo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.avatarCircle {
+  width: 45px;
+  height: 45px;
+  background: linear-gradient(135deg, #e52d27 0%, #b31217 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.reviewerDetails {
+  display: flex;
+  flex-direction: column;
+}
+
+.reviewerName {
+  margin: 0;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.reviewRating {
+  margin-top: 4px;
+}
+
+.stars {
   color: #ffc107;
+  font-size: 16px;
+  letter-spacing: 2px;
+}
+
+.reviewText {
+  color: var(--supText-color);
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.overallRating {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.ratingNumber {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.reviewCount {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .reviewsContainer {
+    padding: 10px;
+  }
+
+  .cardHeaderNew,
+  .cardBodyNew {
+    padding: 15px;
+  }
+
+  .overallRating {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
 }

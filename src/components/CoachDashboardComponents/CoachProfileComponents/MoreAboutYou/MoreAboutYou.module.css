@@ -1,17 +1,303 @@
+.mainCard {
+  border: none;
+  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+  box-shadow: var(--coaches-box-shadow);
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: var(--background-color);
+}
+
 .cardHeader {
   background-color: #bf1e2e;
+  padding: 2rem;
+  border-bottom: none;
 }
+
 .cardBody {
-  border-bottom: 1px solid var(--border-color);
-  border-left: 1px solid var(--border-color);
-  border-right: 1px solid var(--border-color);
+  padding: 2rem;
 }
-.supText {
+
+.tabNavigation {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  padding: 0.5rem;
+  border-radius: 15px;
+}
+
+.tabItem {
+  position: relative;
+  padding: 1rem 2rem;
+  border: none;
+  background: none;
+  /* color: #666; */
+  color: var(--text-color);
+  background-color: var(--filterSidebar-color);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tabItem::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  width: 0;
+  height: 3px;
+  background: #bf1e2e;
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+  border-radius: 3px;
+}
+
+.tabItem:hover {
+  color: #bf1e2e;
+  background: rgba(191, 30, 46, 0.1);
+}
+
+.activeTab {
+  color: white;
+  background: rgba(191, 30, 46, 0.875);
+}
+
+.activeTab::after {
+  width: 80%;
+}
+
+.tabIcon {
+  font-size: 1.2rem;
+}
+
+/* Ensure the tab content area has a smooth transition */
+.tab-content {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.tab-pane {
+  transition: opacity 0.3s ease;
+}
+
+.tab-pane.active {
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.formSection {
+  margin-bottom: 3rem;
+}
+
+.textareaWrapper {
+  display: none;
+  margin-bottom: 2rem;
+}
+
+.textareaWrapper.active {
+  display: block;
+  animation: fadeIn 0.3s ease-in;
+}
+
+.textareaLabel {
+  display: block;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid #e1e1e1;
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  resize: vertical;
+  min-height: 150px;
+  background: var(--filterSidebar-color) !important;
+}
+.textarea::placeholder {
   color: var(--supText-color);
 }
-.savebtn {
-  padding: 0.5rem 2rem;
+.textarea:focus {
+  outline: none;
+  border-color: #bf1e2e;
+  box-shadow: 0 0 0 3px rgba(191, 30, 46, 0.1);
+}
+
+.saveButton {
+  background: #bf1e2e;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.saveButton:hover {
+  background: #a01825;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(191, 30, 46, 0.2);
+}
+
+.photoSection {
+  border-top: 1px solid #eee;
+  padding-top: 3rem;
+}
+
+.photoTitle {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.photoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.photoCard {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  aspect-ratio: 16/9;
+}
+
+.photoWrapper {
+  position: relative;
+  height: 100%;
+}
+
+.actionPhoto {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.photoOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.photoWrapper:hover .photoOverlay {
+  opacity: 1;
+}
+
+.photoWrapper:hover .actionPhoto {
+  transform: scale(1.05);
+}
+
+.photoAction {
+  background: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.photoAction:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.uploadBox {
+  border: 2px dashed #e1e1e1;
+  border-radius: 15px;
+  padding: 2rem;
   text-align: center;
-  font-size: larger;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  aspect-ratio: 16/9;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.uploadBox i {
+  font-size: 2rem;
+  color: #666;
+}
+
+.uploadBox.dragging {
+  border-color: #bf1e2e;
+  background: rgba(191, 30, 46, 0.1);
+}
+
+.uploadButton {
+  background: none;
+  border: 2px solid #bf1e2e;
+  color: #bf1e2e;
+  padding: 0.75rem 1.5rem;
   border-radius: 10px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.uploadButton:hover {
+  background: #bf1e2e;
+  color: white;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .cardBody {
+    padding: 1rem;
+  }
+
+  .sectionTabs {
+    padding: 0.25rem;
+  }
+
+  .sectionTab {
+    padding: 0.75rem 1rem;
+  }
+
+  .photoGrid {
+    grid-template-columns: 1fr;
+  }
 }

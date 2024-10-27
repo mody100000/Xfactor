@@ -136,29 +136,6 @@ function CoachDashboardProfile() {
             <TrainingLocations />
             <MyCredentials />
             <MyServices />
-            <div className={`d-flex flex-column my-5 ${styles.coachCard}`}>
-                <div className={`${styles.cardHeader} p-3 py-3 fw-bold`}>
-                    <p className='mb-0 fs-5 text-white'>My Details</p>
-                </div>
-                <div className={`p-3  ${styles.cardBody}`}>
-                    <div className='d-flex flex-column justify-content-between'>
-                        <div className="d-flex justify-content- align-items-center flex-md-row flex-column my-2 gap-3">
-                            <div className='d-flex flex-column col-12 col-md-6 justify-content-center align-items-center gap-3'>
-                                <label className="mx-2 fs-5">Facility Costs</label>
-                                <CustomDropdownMenu
-                                    options={["N/A - No Facility",
-                                        "Not Included",
-                                        "Included",]}
-                                    placeholder="N/A - No Facility"
-                                />
-                            </div>
-                        </div>
-                        <div className='mx-auto mx-sm-1'>
-                            <button className={`btn btn-danger mt-3 ${styles.savebtn}`}>Update Credentials</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <MoreAboutYou />
             <Reviews />
         </div>
