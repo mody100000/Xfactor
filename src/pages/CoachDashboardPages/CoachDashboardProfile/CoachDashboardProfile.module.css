@@ -20,7 +20,116 @@
   background-color: #9d9d9d;
   color: white;
 }
+/* Test */
+
+.urlContainer {
+  max-width: 700px;
+  margin: 2rem auto;
+}
+
+.mainCard {
+  border: none;
+  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+  box-shadow: var(--coaches-box-shadow);
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: var(--background-color);
+}
+
 .cardHeader {
+  background-color: #bf1e2e;
+  padding: 1.5rem;
+  border: none;
+}
+
+.cardBody {
+  padding: 2rem;
+}
+
+.description {
+  color: var(--supText-color);
+  font-size: 0.95rem;
+}
+
+.urlInputContainer {
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+}
+
+.baseUrl {
+  background-color: var(--filterSidebar-color);
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  color: #6b7280;
+  font-family: monospace;
+  white-space: nowrap;
+}
+
+.urlInput {
+  font-family: monospace;
+  border: 1px solid var(--border-color);
+  padding: 0.5rem 1rem;
+  background-color: var(--filterSidebar-color);
+  color: var(--supText-color) !important;
+}
+.urlInput::placeholder {
+  color: var(--supText-color);
+}
+.urlInput:focus {
+  border-color: #bf1e2e;
+  background-color: var(--filterSidebar-color);
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.1);
+}
+
+.btnSave {
+  background-color: #bf1e2e;
+  color: white;
+  padding: 0.7rem 2.5rem;
+  border-radius: 10px;
+  margin: 1px auto;
+  transition: all 0.2s ease;
+  font-size: large;
+}
+
+.btnSave:hover {
+  background-color: #dd2235;
+  color: white;
+}
+
+.btnSaved {
+  background-color: #10b981;
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  margin: 1px auto;
+}
+
+.btnSaved:hover {
+  background-color: #059669;
+  color: white;
+}
+
+.previewContainer {
+  border: 1px solid #ede9fe;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.previewText {
+  color: var(--text-color);
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.previewUrl {
+  font-family: monospace;
+  font-weight: bold;
+}
+/* Test */
+
+/* .cardHeader {
   background-color: #bf1e2e;
 }
 .cardBody {
@@ -30,7 +139,7 @@
 }
 .supText {
   color: var(--supText-color);
-}
+} */
 .scheduleCard {
   background-color: var(--filterSidebar-color);
 }
