@@ -1,31 +1,184 @@
-.cardHeader {
-  background-color: #bf1e2e;
+.headerSection {
+  text-align: left;
+  margin-bottom: 3rem;
 }
-.cardBody {
-  border-bottom: 1px solid var(--border-color);
-  border-left: 1px solid var(--border-color);
-  border-right: 1px solid var(--border-color);
-}
+
 .supText {
   color: var(--supText-color);
+  font-size: 1.1rem;
+  line-height: 1.6;
 }
-.savebtn {
-  padding: 0.5rem 2rem;
+
+.mainCard {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: var(--coaches-box-shadow);
+  overflow: hidden;
+}
+
+.cardHeaderNew {
+  background: linear-gradient(135deg, #bf1e2e 0%, #e74c3c 100%);
+  color: white;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.headerBadge {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.timelineContainer {
+  padding: 3rem 1.5rem;
+  position: relative;
+  background: var(--background-color);
+}
+
+.timeline {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  z-index: 1;
+  background: var(--filterSidebar-color);
+}
+
+.sessionsRow {
+  position: relative;
+  z-index: 2;
+}
+
+.sessionCardNew {
+  padding: 1rem;
   text-align: center;
-  font-size: larger;
+  position: relative;
+  background: transparent;
+}
+
+.sessionNumber {
+  font-weight: 600;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  background: #bf1e2e;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 3px solid white;
+  margin-bottom: 4px;
+}
+
+.rateBox {
+  background: var(--filterSidebar-color);
   border-radius: 10px;
+  padding: 1rem;
+  margin: 1.5rem 0.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
-.sessionHader {
-  border-bottom: 1px solid var(--border-color);
-  width: 100%;
+
+.percentage {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #bf1e2e;
+  display: block;
 }
-.sessionCard {
-  border-right: 1px solid var(--border-color);
-  width: 100%;
+
+.label {
+  font-size: 0.9rem;
+  /* color: #6c757d; */
 }
-@media (max-width: 576px) {
-  .sessionHader {
-    border-top: 1px solid var(--border-color);
-    border-bottom: 0;
+
+.feeDetails {
+  font-size: 0.85rem;
+  color: var(--supText-color);
+}
+
+.feeDetails p {
+  margin: 0.2rem 0;
+}
+
+.packagesSection {
+  margin-top: 4rem;
+}
+
+.trainingTypes {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.trainingCard {
+  flex: 1;
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.trainingCard:hover {
+  transform: translateY(-5px);
+}
+
+.iconContainer {
+  width: 60px;
+  height: 60px;
+  background: rgba(191, 30, 46, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+}
+
+.iconContainer i {
+  font-size: 1.5rem;
+  color: #bf1e2e;
+}
+
+@media (max-width: 768px) {
+  .timelineContainer {
+    padding: 2rem 1rem;
+  }
+
+  .timeline {
+    display: none;
+  }
+
+  .sessionsRow {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .sessionCardNew {
+    border-bottom: 1px solid #e9ecef;
+    padding: 1.5rem 1rem;
+  }
+
+  .dot {
+    display: none;
+  }
+
+  .trainingTypes {
+    flex-direction: column;
+  }
+
+  .cardHeaderNew {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
   }
 }

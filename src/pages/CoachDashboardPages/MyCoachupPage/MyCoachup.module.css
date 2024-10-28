@@ -1,15 +1,153 @@
-.cardHeader {
-  background-color: #bf1e2e;
+/* Card.module.css */
+/* Common Card Styles */
+.card {
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 2rem;
 }
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.cardHeader {
+  background: linear-gradient(135deg, #bf1e2e 0%, #e4364a 100%);
+  padding: 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.badge {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  color: white;
+  font-weight: bold;
+}
+
 .cardBody {
-  border-bottom: 1px solid var(--border-color);
-  border-left: 1px solid var(--border-color);
-  border-right: 1px solid var(--border-color);
+  border: 1px solid #eaeaea;
+  border-top: none;
+  border-bottom-right-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+/* Icon Styles */
+.iconWrapper {
+  background-color: rgba(191, 30, 46, 0.1);
+  color: #bf1e2e;
+  padding: 0.75rem;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Arrow Styles */
+.arrowWrapper {
+  color: #bf1e2e;
+  opacity: 0.7;
+  transition: transform 0.2s ease;
+  padding: 0.5rem;
+  border-radius: 50%;
   cursor: pointer;
 }
-.supText {
-  color: var(--supText-color);
+
+.card:hover .arrowWrapper {
+  transform: translateX(5px);
+  opacity: 1;
+  background-color: rgba(191, 30, 46, 0.1);
 }
-.scheduleCard {
+
+/* CoachUp Card Specific Styles */
+.coachCard .cardBody {
+  padding: 1.5rem;
+}
+
+.coachCard .title {
+  color: #bf1e2e;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 0.25rem 0;
+}
+
+.coachCard .subtitle {
+  color: #666;
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* Todo Card Specific Styles */
+.todoCard .taskItem {
+  padding: 1.25rem;
+  border-bottom: 1px solid #eaeaea;
+  transition: background-color 0.2s ease;
+}
+
+.todoCard .taskItem:last-child {
+  border-bottom: none;
+}
+
+.todoCard .taskItem:hover {
   background-color: var(--filterSidebar-color);
+  border-bottom-right-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+.todoCard .scheduleTask:hover {
+  background-color: var(--filterSidebar-color);
+}
+
+.todoCard .taskTitle {
+  color: #bf1e2e;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.3;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.todoCard .highlight {
+  color: #666;
+  font-weight: normal;
+}
+
+.todoCard .messagePreview {
+  color: #666;
+  font-size: 0.95rem;
+  display: flex;
+  gap: 0.35rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.todoCard .sender {
+  font-weight: 600;
+  color: #444;
+}
+
+.todoCard .messageText {
+  color: #666;
+}
+
+/* Responsive Styles */
+@media (max-width: 576px) {
+  .todoCard .taskTitle {
+    font-size: 1rem;
+  }
+
+  .todoCard .messagePreview {
+    font-size: 0.875rem;
+  }
+
+  .iconWrapper {
+    padding: 0.5rem;
+  }
 }

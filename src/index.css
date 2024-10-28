@@ -125,3 +125,6 @@ body {
 .text-danger {
   color: #bf1e2e !important;
 }
+.text-muted {
+  color: var(--supText-color) !important;
+}

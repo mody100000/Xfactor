@@ -1,0 +1,85 @@
+.coachCard {
+  border: none;
+  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+  box-shadow: var(--coaches-box-shadow);
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: var(--filterSidebar-color);
+  padding: 1rem;
+}
+
+.profileSection {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.coachImage {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #fff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.uploadButton {
+  background: #dc3545;
+  color: white;
+  border-radius: 20px;
+  padding: 0.5rem 1.5rem;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  border: none;
+  margin-top: 1rem;
+}
+
+.uploadButton:hover {
+  background: #c82333;
+  transform: translateY(-2px);
+}
+
+.statsCard {
+  background-color: var(--productCard-color);
+  border-radius: 15px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  border: 1px solid #f0f0f0;
+}
+
+.statsCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.statValue {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #dc3545;
+  margin: 0;
+  text-align: start;
+}
+
+.tierBadge {
+  background: linear-gradient(45deg, #7d8491, #9d9d9d);
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 25px;
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.progressContainer {
+  background-color: var(--productCard-color);
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  border: 1px solid #f0f0f0;
+}
+
+.progressBar {
+  height: 10px;
+  border-radius: 5px;
+  background: linear-gradient(90deg, #dc3545, #ff6b6b);
+}

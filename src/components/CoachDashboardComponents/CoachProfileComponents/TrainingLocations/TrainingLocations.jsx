@@ -196,7 +196,7 @@ function TrainingLocations() {
                 <div className="row p-4 g-4">
                     <div className="col-12 col-md-6">
                         <div className={`${styles.infoBox} mb-4`}>
-                            <MdLocationOn className="fs-3 text-danger" />
+                            <MdLocationOn className="text-danger" size={50} />
                             <p className="small mb-0">
                                 Add locations by name or address. Drag and drop to reorder.
                                 The top 3 locations will be featured on your profile.
@@ -232,7 +232,7 @@ function TrainingLocations() {
                                                             </div>
                                                             <div>
                                                                 <h3 className="fw-semibold mb-0 fs-6">{location.name}</h3>
-                                                                <p className="small text-secondary mb-0">{location.address}</p>
+                                                                <p className="small text-secondary text-start mb-0">{location.address}</p>
                                                             </div>
                                                         </div>
                                                         <button
