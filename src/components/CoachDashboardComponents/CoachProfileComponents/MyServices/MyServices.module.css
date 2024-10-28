@@ -1,17 +1,148 @@
+.title {
+  font-size: 5rem;
+}
+.mainCard {
+  border: none;
+  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+  box-shadow: var(--coaches-box-shadow);
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: var(--background-color);
+}
+
 .cardHeader {
   background-color: #bf1e2e;
 }
-.cardBody {
-  border-bottom: 1px solid var(--border-color);
-  border-left: 1px solid var(--border-color);
-  border-right: 1px solid var(--border-color);
+
+.tabNavigation {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  padding: 0.5rem;
+  border-radius: 15px;
 }
-.supText {
-  color: var(--supText-color);
+
+.tabItem {
+  position: relative;
+  padding: 1rem 2rem;
+  border: none;
+  background: none;
+  /* color: #666; */
+  color: var(--text-color);
+  background-color: var(--filterSidebar-color);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
-.savebtn {
-  padding: 0.5rem 2rem;
-  text-align: center;
-  font-size: larger;
-  border-radius: 10px;
+
+.tabItem::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  width: 0;
+  height: 3px;
+  background: #bf1e2e;
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+  border-radius: 3px;
+}
+
+.tabItem:hover {
+  color: #bf1e2e;
+  background: rgba(191, 30, 46, 0.1);
+}
+
+.activeTab {
+  color: white;
+  background: rgba(191, 30, 46, 0.875);
+}
+
+.activeTab::after {
+  width: 80%;
+}
+
+.tabIcon {
+  font-size: 1.2rem;
+}
+
+/* Ensure the tab content area has a smooth transition */
+.tab-content {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.tab-pane {
+  transition: opacity 0.3s ease;
+}
+
+.tab-pane.active {
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.serviceCard {
+  background: var(--filterSidebar-color);
+  border-radius: 12px;
+  padding: 1rem;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.serviceCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.selected {
+  background: rgba(191, 30, 46, 0.1);
+  border-color: #bf1e2e;
+}
+
+.checkbox {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+}
+
+.checkbox:checked {
+  background-color: #bf1e2e;
+  border-color: #bf1e2e;
+}
+
+.icon {
+  font-size: 1.2rem;
+  margin-right: 8px;
+}
+
+.saveButton {
+  background-color: #bf1e2e;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.saveButton:hover {
+  background-color: #a01825;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(191, 30, 46, 0.2);
 }

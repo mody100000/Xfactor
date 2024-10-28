@@ -69,11 +69,11 @@ const ManagePackages = () => {
                     {/* Add New Package Card */}
                     <div className={styles.packageCard}>
                         <div className={styles.cardHeader}>
-                            <AiOutlinePlus size={40} color='#000' className="text-danger" /> {/* Plus Icon */}
+                            <AiOutlinePlus size={40} className="text-danger" /> {/* Plus Icon */}
                         </div>
                         <div className={styles.cardBody}>
                             <div className="d-flex flex-column justify-content-center align-items-center">
-                                <AiOutlinePlus size={40} color='#000' />
+                                <AiOutlinePlus size={40} />
                                 <h4 className='text-center'>Add New Package</h4>
                             </div>
                         </div>
