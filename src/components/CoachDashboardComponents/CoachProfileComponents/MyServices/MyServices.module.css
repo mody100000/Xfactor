@@ -21,6 +21,44 @@
   margin-bottom: 3rem;
   padding: 0.5rem;
   border-radius: 15px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  white-space: nowrap;
+  /* Custom scrollbar styling */
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: #bf1e2e #f0f0f0; /* Firefox: thumb and track colors */
+}
+
+/* Custom scrollbar for Chrome, Safari and Opera */
+.tabNavigation::-webkit-scrollbar {
+  height: 8px; /* Scrollbar height */
+}
+
+.tabNavigation::-webkit-scrollbar-track {
+  background: #f0f0f0; /* Track color */
+  border-radius: 4px;
+}
+
+.tabNavigation::-webkit-scrollbar-thumb {
+  background: #bf1e2e; /* Thumb color matching your theme */
+  border-radius: 4px;
+}
+
+.tabNavigation::-webkit-scrollbar-thumb:hover {
+  background: #a01825; /* Darker shade on hover */
+}
+
+/* Make tab items more compact on mobile */
+@media (max-width: 768px) {
+  .tabNavigation {
+    justify-content: flex-start;
+  }
+  .tabItem {
+    padding: 0.75rem 1.5rem;
+    flex-shrink: 0; /* Prevent tabs from shrinking */
+    margin-bottom: 2rem;
+  }
 }
 
 .tabItem {
@@ -40,6 +78,7 @@
   gap: 0.5rem;
 }
 
+/* Rest of the CSS remains the same */
 .tabItem::after {
   content: "";
   position: absolute;

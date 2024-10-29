@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import styles from "./CoachDashboardProfile.module.css";
-import coachImg from "@assets/user.webp";
 import CustomDropdownMenu from '../../../components/common/CustomDropdownMenu/CustomDropdownMenu';
 import TrainingLocations from '../../../components/CoachDashboardComponents/CoachProfileComponents/TrainingLocations/TrainingLocations';
 import MyServices from '../../../components/CoachDashboardComponents/CoachProfileComponents/MyServices/MyServices';
@@ -9,6 +8,7 @@ import Reviews from '../../../components/CoachDashboardComponents/CoachProfileCo
 import BasicInfo from '../../../components/CoachDashboardComponents/CoachProfileComponents/BasicInfo/BasicInfo';
 import TravelPreferences from '../../../components/CoachDashboardComponents/CoachProfileComponents/TravelPreferences/TravelPreferences';
 import MyCredentials from '../../../components/CoachDashboardComponents/MyCredentials/MyCredentials';
+import CoachProfileCard from '../../../components/CoachDashboardComponents/CoachProfileComponents/CoachProfileCard/CoachProfileCard';
 
 function CoachDashboardProfile() {
     const [canTravel, setCanTravel] = useState(false);
@@ -30,7 +30,8 @@ function CoachDashboardProfile() {
 
     return (
         <div className='p-4 p-sm-5'>
-            <div className={`d-flex flex-column flex-md-row justify-content-between ${styles.coachProfileCard}`}>
+            <CoachProfileCard />
+            {/* <div className={`d-flex flex-column flex-md-row justify-content-between ${styles.coachProfileCard}`}>
                 <div className='d-flex flex-column flex-md-row align-items-center'>
                     <div className='d-flex flex-column'>
                         <img src={coachImg} alt="coachImg" className={styles.coachImage} />
@@ -70,7 +71,7 @@ function CoachDashboardProfile() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
             {/* Test */}
             <div className={`card mt-5 ${styles.mainCard}`}>
                 <div className={`card-header ${styles.cardHeader}`}>

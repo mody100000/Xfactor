@@ -1,85 +1,91 @@
-import React from 'react'
-import styles from "./CoachDashboardPackages.module.css"
-import ManagePackages from '../../../components/CoachDashboardComponents/CoachDashboardPackagesComponents/ManagePackages'
+import React from 'react';
+import styles from "./CoachDashboardPackages.module.css";
+import ManagePackages from '../../../components/CoachDashboardComponents/CoachDashboardPackagesComponents/ManagePackages';
 
 function CoachDashboardPackages() {
     return (
-        <div className='p-4'>
-            <h2 className='mb-4 fw-bold text-center text-sm-start'>Pay Structure</h2>
-            <p className={styles.supText}>
-                Our pay scale rewards coaches for promoting a long-term commitment to personalized training with their clients on the CoachUp platform.
-                The longer you train a client, the more you earn for each session!
-            </p>
-            <div className={`my-5 ${styles.coachCard}`}>
-                <div className={`${styles.cardHeader} p-3 py-3 fw-bold`}>
-                    <p className='mb-0 fs-5 text-white'>Earnings per session with the same client</p>
+        <div className='container py-5'>
+            {/* Header Section */}
+            <div className={styles.headerSection}>
+                <h2 className='display-5 mb-4'>Your Earning Structure</h2>
+                <p className={`lead ${styles.supText}`}>
+                    Build lasting relationships and earn more! Our tiered payment structure rewards your dedication
+                    to client success. Watch your earnings grow with each session.
+                </p>
+            </div>
+
+            {/* Main Card */}
+            <div className={`${styles.mainCard} my-5`}>
+                <div className={styles.cardHeaderNew}>
+                    <h3 className='mb-0'>Session-Based Earnings</h3>
+                    <span className={styles.headerBadge}>Up to 94% earnings</span>
                 </div>
-                <div className={`${styles.cardBody}`}>
-                    {/* Responsive flex: flex-column on small screens, flex-row on md and larger */}
-                    <div className='d-flex flex-column flex-md-row justify-content-between'>
-                        <div className={`d-flex flex-column justify-content-center align-items-center ${styles.sessionCard}`}>
-                            <div className={styles.sessionHader}>
-                                <p className='my-2 fs-5 text-center'>Session 1</p>
+
+                {/* Progress Timeline */}
+                <div className={styles.timelineContainer}>
+                    <div className={styles.timeline}></div>
+                    <div className={`row g-0 position-relative ${styles.sessionsRow}`}>
+                        {[
+                            { session: 1, rate: 57, fee: 40 },
+                            { session: 2, rate: 72, fee: 25 },
+                            { session: 3, rate: 82, fee: 15 },
+                            { session: 4, rate: 87, fee: 10 },
+                            { session: 5, rate: 94, fee: 3 }
+                        ].map((item, index) => (
+                            <div key={index} className='col'>
+                                <div className={styles.sessionCardNew}>
+                                    <div className={styles.sessionNumber}>
+                                        Session {item.session}
+                                        <div className={styles.dot}></div>
+                                    </div>
+                                    <div className={styles.rateBox}>
+                                        <span className={styles.percentage}>{item.rate}%</span>
+                                        <span className={styles.label}>Your Rate</span>
+                                    </div>
+                                    <div className={styles.feeDetails}>
+                                        <p>Platform Fee: {item.fee}%</p>
+                                        <p>Processing: 3%</p>
+                                    </div>
+                                </div>
                             </div>
-                            <div className='d-flex flex-column justify-content-center align-items-center'>
-                                <p className='fw-bold my-2 text-center'>57% of session rate</p>
-                                <p className='mb-2'>40% CoachUp fee</p>
-                                <p>3% CC processing</p>
-                            </div>
-                        </div>
-                        <div className={`d-flex flex-column justify-content-center align-items-center ${styles.sessionCard}`}>
-                            <div className={styles.sessionHader}>
-                                <p className='my-2 fs-5 text-center'>Session 2</p>
-                            </div>
-                            <div className='d-flex flex-column justify-content-center align-items-center'>
-                                <p className='fw-bold my-2 text-center'>72% of session rate</p>
-                                <p className='mb-2'>25% CoachUp fee</p>
-                                <p>3% CC processing</p>
-                            </div>
-                        </div>
-                        <div className={`d-flex flex-column justify-content-center align-items-center ${styles.sessionCard}`}>
-                            <div className={styles.sessionHader}>
-                                <p className='my-2 fs-5 text-center'>Session 3</p>
-                            </div>
-                            <div className='d-flex flex-column justify-content-center align-items-center'>
-                                <p className='fw-bold my-2 text-center'>82% of session rate</p>
-                                <p className='mb-2'>15% CoachUp fee</p>
-                                <p>3% CC processing</p>
-                            </div>
-                        </div>
-                        <div className={`d-flex flex-column justify-content-center align-items-center ${styles.sessionCard}`}>
-                            <div className={styles.sessionHader}>
-                                <p className='my-2 fs-5 text-center'>Session 4</p>
-                            </div>
-                            <div className='d-flex flex-column justify-content-center align-items-center'>
-                                <p className='fw-bold my-2 text-center'>87% of session rate</p>
-                                <p className='mb-2'>10% CoachUp fee</p>
-                                <p>3% CC processing</p>
-                            </div>
-                        </div>
-                        <div className={`d-flex flex-column justify-content-center align-items-center ${styles.sessionCard}`}>
-                            <div className={styles.sessionHader}>
-                                <p className='my-2 fs-5 text-center'>Session 5</p>
-                            </div>
-                            <div className='d-flex flex-column justify-content-center align-items-center'>
-                                <p className='fw-bold my-2 text-center'>94% of session rate</p>
-                                <p className='mb-2'>3% CoachUp fee</p>
-                                <p>3% CC processing</p>
-                            </div>
-                        </div>
+                        ))}
                     </div>
                 </div>
             </div>
-            <h2 className='mb-4 fw-bold text-center text-sm-start'>Manage Packages</h2>
-            <p className={styles.supText}>
-                Customize the training packages you offer to athletes. You can train clients in-person, online, or both!
-            </p>
-            <p className={`mb-5 ${styles.supText}`}>
-                Online training is a great option for athletes all over the country who are unable to train in-person due to location or scheduling restraints. Online training can include written training plans, live video sessions, pre-recorded videos, video analysis, and more!
-            </p>
-            <ManagePackages />
+
+            {/* Packages Section */}
+            <div className={styles.packagesSection}>
+                <h2 className='display-5 mb-4'>Training Packages</h2>
+                <div className='row mb-4'>
+                    <div className='col-md-8'>
+                        <p className={styles.supText}>
+                            Create custom training packages that work for you and your athletes.
+                            Offer flexibility with both in-person and online training options.
+                        </p>
+                    </div>
+                </div>
+                {/* 
+                <div className={`${styles.trainingTypes} mb-5`}>
+                    <div className={styles.trainingCard}>
+                        <div className={styles.iconContainer}>
+                            <i className="bi bi-person-fill"></i>
+                        </div>
+                        <h4>In-Person Training</h4>
+                        <p>Direct, hands-on coaching for maximum impact</p>
+                    </div>
+                    <div className={styles.trainingCard}>
+                        <div className={styles.iconContainer}>
+                            <i className="bi bi-camera-video-fill"></i>
+                        </div>
+                        <h4>Online Training</h4>
+                        <p>Reach athletes anywhere with virtual sessions</p>
+                    </div>
+                </div> */}
+
+                <ManagePackages />
+            </div>
         </div>
-    )
+    );
 }
 
-export default CoachDashboardPackages
+export default CoachDashboardPackages;

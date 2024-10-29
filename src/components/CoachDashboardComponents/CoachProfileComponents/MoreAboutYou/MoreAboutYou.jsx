@@ -31,24 +31,6 @@ function MoreAboutYou() {
         }
     };
 
-    useEffect(() => {
-        checkScroll();
-        window.addEventListener('resize', checkScroll);
-        return () => window.removeEventListener('resize', checkScroll);
-    }, []);
-
-    const scroll = (direction) => {
-        const container = scrollContainerRef.current;
-        if (container) {
-            const scrollAmount = direction === 'left' ? -200 : 200;
-            container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-        }
-    };
-
-    const handleScroll = () => {
-        checkScroll();
-    };
-
     const handleDragOver = (e) => {
         e.preventDefault();
         setIsDragging(true);
@@ -73,19 +55,8 @@ function MoreAboutYou() {
 
                 <div className={`${styles.cardBody}`}>
                     <div className={styles.tabNavigationWrapper}>
-                        {showLeftScroll && (
-                            <button
-                                className={`${styles.scrollButton} ${styles.scrollLeft}`}
-                                onClick={() => scroll('left')}
-                            >
-                                <i className="bi bi-chevron-left"></i>
-                            </button>
-                        )}
-
                         <div
-                            ref={scrollContainerRef}
                             className={styles.tabNavigation}
-                            onScroll={handleScroll}
                         >
                             <button
                                 className={`${styles.tabItem} ${activeSection === 'experience' ? styles.activeTab : ''}`}
