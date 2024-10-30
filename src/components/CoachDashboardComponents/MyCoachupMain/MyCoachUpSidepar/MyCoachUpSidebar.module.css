@@ -1,0 +1,205 @@
+/* MyCoachUpSidebar.module.css */
+.sidebarContainer {
+  padding: 1.5rem;
+  background: var(--background-color);
+  border-radius: 10px;
+  box-shadow: 0 2px 8px var(--border-color);
+  color: var(--text-color);
+}
+
+.section {
+  margin-bottom: 2rem;
+}
+
+.completionHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.checkmark {
+  background: #28a745;
+  color: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.customProgress {
+  height: 8px;
+  background-color: var(--filterSidebar-color);
+  border-radius: 4px;
+}
+
+.customProgressBar {
+  background-color: #bf1e2e !important;
+  border-radius: 4px;
+}
+
+.divider {
+  height: 1px;
+  background-color: var(--border-color);
+  margin: 2rem 0;
+}
+
+.sectionTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+}
+
+.rankCard {
+  background: var(--filterSidebar-color);
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 1rem;
+  border: 1px solid var(--border-color);
+}
+
+.rankNumber {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #bf1e2e;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.rankLocation {
+  font-size: 1.1rem;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+}
+
+.statsContainer {
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 1.5rem;
+  background: var(--background-color);
+}
+
+.statItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.statLabel {
+  color: var(--supText-color);
+}
+
+.statValue {
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.proShopCard {
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--background-color);
+}
+
+.proShopHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: var(--filterSidebar-color);
+}
+
+.shopLogo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.shopTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  font-style: italic;
+  margin: 0;
+  color: var(--text-color);
+}
+
+.discountBadge {
+  background: #bf1e2e;
+  color: white;
+  text-align: center;
+  padding: 0.5rem;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.shopDescription {
+  padding: 1.5rem;
+  color: var(--supText-color);
+  line-height: 1.6;
+}
+
+.linkButton {
+  background: none;
+  border: none;
+  color: #bf1e2e;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.linkButton:hover {
+  color: #a51b28;
+  text-decoration: underline;
+  background: var(--shifting-background-color);
+  border-radius: 4px;
+}
+
+.linksList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.primaryButton {
+  background: #bf1e2e;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 0.8rem 5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-bottom: 1rem;
+}
+
+.primaryButton:hover {
+  background: #a51b28;
+}
+
+.actionButtons {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+.shopNowLink {
+  display: flex;
+  justify-content: center;
+}
+/* Responsive adjustments */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .primaryButton {
+    padding: 0.8rem 1rem;
+  }
+
+  .rankNumber {
+    font-size: 3rem;
+  }
+}

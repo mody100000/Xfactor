@@ -4,10 +4,10 @@ import ManagePackages from '../../../components/CoachDashboardComponents/CoachDa
 
 function CoachDashboardPackages() {
     return (
-        <div className='container py-5'>
+        <div className='container py-5 px-sm-4'>
             {/* Header Section */}
             <div className={styles.headerSection}>
-                <h2 className='display-5 mb-4'>Your Earning Structure</h2>
+                <h2 className='display-5 mb-4 text-center'>Your Earning Structure</h2>
                 <p className={`lead ${styles.supText}`}>
                     Build lasting relationships and earn more! Our tiered payment structure rewards your dedication
                     to client success. Watch your earnings grow with each session.
@@ -55,9 +55,9 @@ function CoachDashboardPackages() {
 
             {/* Packages Section */}
             <div className={styles.packagesSection}>
-                <h2 className='display-5 mb-4'>Training Packages</h2>
+                <h2 className='display-5 mb-4 text-center'>Training Packages</h2>
                 <div className='row mb-4'>
-                    <div className='col-md-8'>
+                    <div className='col-md-12'>
                         <p className={styles.supText}>
                             Create custom training packages that work for you and your athletes.
                             Offer flexibility with both in-person and online training options.

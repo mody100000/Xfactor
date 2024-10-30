@@ -9,23 +9,160 @@
   width: 100%;
   margin: 1rem auto 2rem auto;
 }
-.messagesCard {
-  border: 1px solid var(--border-color);
+/* ConversationList.module.css */
+.conversationContainer {
+  margin-top: 2rem;
 }
-.cardBody {
-  border-bottom: 1px solid var(--border-color);
+
+.headerSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.headerSection h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.newBadge {
+  background: #bf1e2e15;
+  color: #bf1e2e;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.notificationIcon {
+  color: #718096;
+  cursor: pointer;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.notificationIcon:hover {
+  color: #bf1e2e;
+}
+
+.conversationsList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.conversationCard {
+  padding: 1rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  border: 1px solid #e2e8f0;
   cursor: pointer;
 }
-.supText {
+
+.conversationCard:hover {
+  background: var(--filterSidebar-color);
+  transform: translateX(4px);
+}
+
+.avatarSection {
+  position: relative;
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  background: #bf1e2e;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.statusDot {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: #10b981;
+  font-size: 12px;
+  background: white;
+  border-radius: 50%;
+}
+
+.contentSection {
+  flex: 1;
+  min-width: 0;
+}
+
+.name {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.timestamp {
+  font-size: 0.875rem;
   color: var(--supText-color);
 }
-.ClientName {
-  background-color: #bf1e2e;
-  font-size: 1.4rem;
+
+.message {
+  margin: 0.25rem 0 0;
+  color: var(--supText-color);
+  font-size: 0.875rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.arrowIcon {
+  color: #cbd5e0;
+  transition: color 0.2s;
+}
+
+.conversationCard:hover .arrowIcon {
+  color: #bf1e2e;
+}
+
+.viewAllButton {
+  background: none;
+  border: none;
+  color: #bf1e2e;
+  font-weight: 500;
+  font-size: 1rem;
+  margin-top: 1.5rem;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.2s;
+}
+
+.viewAllButton:hover {
+  background: #bf1e2e;
   color: white;
-  padding: 0.8rem 1rem;
-  border-radius: 100%;
-  font-weight: bold;
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  .conversationContainer {
+    padding: 1rem;
+  }
+
+  .headerSection h2 {
+    font-size: 1.25rem;
+  }
+
+  .avatar {
+    width: 40px;
+    height: 40px;
+    font-size: 0.875rem;
+  }
 }
 @media (max-width: 569px) {
   .coachContainer {
