@@ -5,6 +5,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   object-fit: cover;
+  padding: 3rem;
 }
 
 .inputsWrapper {
@@ -49,8 +50,10 @@
   width: 80%;
   /* height: 40rem; */
   box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.09);
-  padding: 25px;
+  padding: 20px 0;
   border-radius: 19px;
+  /* overflow-y: auto; */
+  /* overflow: hidden; */
 }
 .custom_form {
   display: flex;
@@ -87,7 +90,30 @@
   color: #bf1e2eee;
   text-decoration: underline;
 }
+.labelCoach {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.radioInputCoach {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+  border-radius: 50%;
+  border: 2px solid #bf1e2e;
+  background-color: #ffffff2d;
+  box-sizing: border-box;
+}
 
+.radioInputCoach.checked {
+  background-color: #bf1e2e;
+}
+
+.checked {
+  background-color: #bf1e2e;
+}
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"] {
@@ -99,6 +125,15 @@ input[type="number"] {
     width: 100%;
   }
   .custom_form_holder {
-    margin-top: 9rem;
+    margin-top: 3rem;
+  }
+  .imageBackground {
+    padding: 0;
+  }
+}
+@media (max-width: 1268px) {
+  .custom_form_holder {
+    justify-content: start;
+    overflow-y: auto;
   }
 }

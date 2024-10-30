@@ -1,8 +1,8 @@
 import { Outlet } from "react-router-dom";
-import LogoutNav from '../../components/LandingNav/LandingNav';
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setTheme, toggleTheme } from "../../store/reducers/themeSlice";
+import CoachApplicationNavbar from "../../components/CoachApplicationNavbar/CoachApplicationNavbar";
 
 const CoachApplicationLayout = () => {
   const dispatch = useDispatch();
@@ -21,7 +21,7 @@ const CoachApplicationLayout = () => {
 
 
   return (<>
-    <LogoutNav theme={theme} toggleTheme={() => dispatch(toggleTheme())} />
+    <CoachApplicationNavbar theme={theme} toggleTheme={() => dispatch(toggleTheme())} />
     <Outlet />
   </>);
 }

@@ -18,7 +18,7 @@ function MyCoachup() {
                     <span className={styles.badge}>Premium</span>
                 </div>
                 <div className={styles.cardBody}>
-                    <div className="d-flex align-items-center gap-4">
+                    <div className="d-flex align-items-center gap-2 gap-sm-4">
                         <div className={styles.iconWrapper}>
                             <BsPersonCheck size={30} />
                         </div>

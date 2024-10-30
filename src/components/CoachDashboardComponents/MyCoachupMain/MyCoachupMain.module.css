@@ -169,6 +169,9 @@
     margin-top: 10px;
     padding: 1rem;
   }
+  .newBadge {
+    padding: 5px 3px;
+  }
 }
 @media (min-width: 569px) and (max-width: 1024px) {
   .coachContainer {

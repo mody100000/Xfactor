@@ -44,6 +44,7 @@
   border: 1px solid #e2e2e2;
   border-radius: 5px;
   max-height: 150px;
+  color: white;
   overflow-y: auto;
   z-index: 1000;
   list-style: none;
