@@ -223,7 +223,7 @@ function TrainingLocations() {
                                                         {...provided.draggableProps}
                                                         className={`${styles.locationItem} mb-2 ${snapshot.isDragging ? styles.dragging : ''}`}
                                                     >
-                                                        <div className="d-flex align-items-center gap-3">
+                                                        <div className="d-flex  align-items-center gap-1">
                                                             <div
                                                                 {...provided.dragHandleProps}
                                                                 className={styles.dragHandle}
@@ -231,13 +231,13 @@ function TrainingLocations() {
                                                                 <MdMenu className="text-secondary" />
                                                             </div>
                                                             <div>
-                                                                <h3 className="fw-semibold mb-0 fs-6">{location.name}</h3>
+                                                                <h3 className="fw-semibold mb-2 fs-6">{location.name}</h3>
                                                                 <p className="small text-secondary text-start mb-0">{location.address}</p>
                                                             </div>
                                                         </div>
                                                         <button
                                                             onClick={() => deleteLocation(location.id)}
-                                                            className={`${styles.deleteBtn} btn btn-link text-danger p-2`}
+                                                            className={`${styles.deleteBtn} btn btn-link text-danger p-0`}
                                                         >
                                                             Remove
                                                         </button>

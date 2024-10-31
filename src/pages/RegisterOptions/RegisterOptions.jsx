@@ -23,7 +23,7 @@ const RegisterOptions = () => {
               <div className={styles.imageContainer}>
                 <img src={session} className={`card-img-top ${styles.cardImage}`} alt="1 to 1 session" />
                 <div className={styles.imageOverlay}>
-                  <h5 className={styles.imageTitle}>Choach</h5>
+                  <h5 className={styles.imageTitle}>Coach</h5>
                 </div>
               </div>
             </div>
@@ -31,7 +31,7 @@ const RegisterOptions = () => {
               <div className={styles.imageContainer}>
                 <img src={online} className={`card-img-top ${styles.cardImage}`} alt="Online Training" />
                 <div className={styles.imageOverlay}>
-                  <h5 className={styles.imageTitle}>Trainer</h5>
+                  <h5 className={styles.imageTitle}>Client</h5>
                 </div>
               </div>
             </div>

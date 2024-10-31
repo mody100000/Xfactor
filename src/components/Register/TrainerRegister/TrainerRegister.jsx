@@ -4,16 +4,18 @@ import Joi from "joi";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../../../assets/logo.png";
 import InputWithIcon from "../../common/InputWithIcon";
+import CustomDropdown from "../../common/CustomDropdown/CustomDropdown";
 
 const TrainerRegister = () => {
   const [loading, setLoading] = useState(false);
+  const [trainerType, setTrainerType] = useState('');
   const [data, setData] = useState({
     full_name: "",
     email: "",
-    weight: undefined,
-    height: undefined,
     birth_date: undefined,
+    zib_code: "",
     phone_number: "",
+    spoutOfInterest: "",
     password: undefined,
     Cpassword: undefined,
   });
@@ -34,9 +36,8 @@ const TrainerRegister = () => {
         .email({ tlds: { allow: false } })
         .required()
         .label("email"),
-      weight: Joi.number().required().max(400).label("weight"),
-      height: Joi.number().required().max(400).label("height"),
       birth_date: Joi.date().required().label("birth_date").min(3).max(90),
+      zib_code: Joi.string().required().label("Zib Code"),
       phone_number: Joi.string()
         .required()
         .min(5)
@@ -52,6 +53,7 @@ const TrainerRegister = () => {
           "invalid password :Password must be(one digit-one uppercase letter-one lowercase letter"
         ),
       Cpassword: Joi.string().required().label("Cpassword"),
+      spoutOfInterest: Joi.string().required().label("Heard About Us")
     }),
     []
   );
@@ -102,7 +104,9 @@ const TrainerRegister = () => {
       setData((prev) => ({ ...prev, [key]: val }));
     }
   };
-
+  const handleTrainerTypeChange = (type) => {
+    setTrainerType(type);
+  };
   return (
     <div className={styles.imageBackground}>
       <div className={`container ${styles.loginHolder}`}>
@@ -112,6 +116,24 @@ const TrainerRegister = () => {
             <h3 className="fw-bold fs-2 mb-4">Register</h3>
             <h6 className={`mb-4 ${styles.supTitle}`}>Create your membership now</h6>
             <div className={styles.inputsWrapper}>
+              <div className="my-2">
+                <label className={styles.labelCoach}>
+                  <span
+                    onClick={() => handleTrainerTypeChange('online')}
+                    className={`${styles.radioInputCoach} ${trainerType === 'online' ? styles.checked : ''}`}
+                  ></span>
+                  <p className="fs-5 text-decoration-underline mb-0">Athlete</p>
+                </label>
+              </div>
+              <div className="my-2">
+                <label className={styles.labelCoach}>
+                  <span
+                    onClick={() => handleTrainerTypeChange('offline')}
+                    className={`${styles.radioInputCoach} ${trainerType === 'offline' ? styles.checked : ''}`}
+                  ></span>
+                  <p className="fs-5 text-decoration-underline mb-0">Parent</p>
+                </label>
+              </div>
               <InputWithIcon
                 type="text"
                 onChange={(e) => handleInputChange(e, "full_name")}
@@ -137,6 +159,18 @@ const TrainerRegister = () => {
                 placeholder={"Phone Number"}
                 errors={errors["phone_number"]}
               />
+              <CustomDropdown
+                options={["Football", "Basketball", "Tennis", "Swimming", "Running", "Other"]}
+                placeholder="Spout of interest"
+                onChange={(e) => handleInputChange(e, "spoutOfInterest")}
+                errors={errors["spoutOfInterest"]}
+              />
+              <InputWithIcon
+                type="text"
+                onChange={(e) => handleInputChange(e, "zib_code")}
+                errors={errors["zib_code"]}
+                placeholder={"Zib Code"}
+              />
               <InputWithIcon
                 type="password"
                 onChange={(e) => handleInputChange(e, "password")}
@@ -149,6 +183,7 @@ const TrainerRegister = () => {
                 placeholder={"Confirm Password"}
                 errors={errors["Cpassword"]}
               />
+
             </div>
             <button className={styles.btn} type="submit" disabled={loading}>
               Register
