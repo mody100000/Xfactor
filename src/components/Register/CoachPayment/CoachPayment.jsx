@@ -8,7 +8,7 @@ const CoachPayment = () => {
     const navigate = useNavigate();
 
     const handleNavigate = () => {
-        navigate("/CoachAvailability");
+        navigate("/CoachPaymentMethod");
     };
 
     return (
