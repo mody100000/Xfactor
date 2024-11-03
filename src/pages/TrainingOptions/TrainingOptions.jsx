@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import styles from './TrainingOptions.module.css';
 import session from "../../assets/registerCoach.webp";
 import online from "../../assets/Online Training.webp";
+import clinic from "../../assets/coachIntro.webp"; // New image import
 import ImageBackground from '../../components/common/ImageBackground/ImageBackground';
 
 const TrainingOptions = () => {
@@ -18,6 +19,10 @@ const TrainingOptions = () => {
   const handleCardClickForOnline = () => {
     navigate('/filtered-coaches');
   };
+
+  // const handleCardClickForClinic = () => {
+  //   navigate('/clinic-options');
+  // };
 
   return (
     <ImageBackground>
@@ -39,6 +44,14 @@ const TrainingOptions = () => {
                 <img src={online} className={`card-img-top ${styles.cardImage}`} alt="Online Training" />
                 <div className={styles.imageOverlay}>
                   <h5 className={styles.imageTitle}>Online Training</h5>
+                </div>
+              </div>
+            </div>
+            <div className={`card ${styles.card}`} onClick={handleCardClickForOnline}>
+              <div className={styles.imageContainer}>
+                <img src={clinic} className={`card-img-top ${styles.cardImage}`} alt="Clinic & Campus" />
+                <div className={styles.imageOverlay}>
+                  <h5 className={styles.imageTitle}>Clinic & Campus</h5>
                 </div>
               </div>
             </div>

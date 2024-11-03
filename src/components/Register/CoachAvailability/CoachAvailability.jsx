@@ -24,7 +24,7 @@ const CoachAvailability = () => {
                         <button type="button" className={styles.backBtn} onClick={handleNavigate}>
                             <IoChevronBackOutline size={25} />
                         </button>
-                        <Link to="/CoachPayment">
+                        <Link to="/CoachPaymentMethod">
                             <button className={styles.nextBtn} type="button">
                                 Next
                             </button>
