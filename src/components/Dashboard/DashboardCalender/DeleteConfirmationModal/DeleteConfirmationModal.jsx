@@ -16,7 +16,7 @@ const DeleteConfirmationModal = ({
             <div className={`${styles.modalWrapper} ${styles.confirmationModalWrapper}`}>
                 <div className={`${styles.modalCard} ${styles.confirmationModalCard}`}>
                     <div className={styles.modalHeader}>
-                        <h2>Confirm Deletion</h2>
+                        <h2 className='fw-bold'>Confirm Deletion</h2>
                         <button
                             className={styles.closeButton}
                             onClick={() => {

@@ -8,6 +8,7 @@ import event4 from "@assets/review1.jpeg";
 import { FaClock, FaTrash } from 'react-icons/fa6';
 import { FaCalendarAlt, FaCheckCircle, FaMapMarkerAlt } from 'react-icons/fa';
 import DeleteConfirmationModal from './DeleteConfirmationModal/DeleteConfirmationModal';
+import { toast, ToastContainer } from 'react-toastify';
 
 // DashboardCalender.jsx
 
@@ -71,7 +72,13 @@ const DashboardCalender = () => {
         if (!date) return '';
         return date.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
     };
-
+    const formatDate = (date) => {
+        return date.toLocaleDateString('en-US', {
+            month: 'short',
+            day: 'numeric',
+            year: 'numeric'
+        });
+    };
     const isToday = (date) => {
         const today = new Date();
         return date.getDate() === today.getDate() &&
@@ -101,6 +108,36 @@ const DashboardCalender = () => {
         const now = new Date();
         return currentDate.getMonth() === now.getMonth() && currentDate.getFullYear() === now.getFullYear();
     };
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const formattedToday = today.toISOString().split('T')[0];
+
+    const handleDateChange = (e) => {
+        const selectedDate = new Date(e.target.value);
+        selectedDate.setHours(0, 0, 0, 0);
+
+        if (selectedDate >= today) {
+            setSelectedNewDate(selectedDate);
+        } else {
+            toast.error("Please select a future date");
+            e.target.value = formattedToday; // Reset to today if invalid
+        }
+    };
+    const handleTimeChange = (e) => {
+        const selectedTime = e.target.value;
+        const [hours, minutes] = selectedTime.split(':');
+        const selectedDateTime = new Date(selectedNewDate);
+        selectedDateTime.setHours(parseInt(hours), parseInt(minutes), 0, 0);
+
+        // If date is today, validate time
+        if (selectedNewDate.toDateString() === today.toDateString() &&
+            selectedDateTime < new Date()) {
+            toast.error("Please select a future time");
+            e.target.value = ''; // Reset time if invalid
+        } else {
+            setSelectedNewTime(selectedTime);
+        }
+    };
     const handleRescheduleSession = (event) => {
         setSelectedEvent(event);
         setShowModal(false);
@@ -117,6 +154,7 @@ const DashboardCalender = () => {
 
         setEvents(updatedEvents);
         setShowRescheduleModal(false);
+        toast.success("Session rescheduled successfully!");
 
         // Trigger a re-render of the calendar
         setCurrentDate(new Date(newDate.getFullYear(), newDate.getMonth(), 1));
@@ -132,6 +170,7 @@ const DashboardCalender = () => {
         if (eventToDelete) {
             const updatedEvents = events.filter(event => event.id !== eventToDelete.id);
             setEvents(updatedEvents);
+            toast.success("Session deleted successfully!");
 
             setShowDeleteConfirmation(false);
             setEventToDelete(null); // Clear the selected event
@@ -140,6 +179,8 @@ const DashboardCalender = () => {
 
     return (
         <div className={styles.calendarContainer}>
+            <ToastContainer />
+            <h3 className='fw-bold'>Upcoming Sessions</h3>
             <div className={styles.dateRangeSelector}>
                 <i
                     className={`${styles.chevronLeft} ${isPreviousMonthDisabled() ? styles.disabled : ''}`}
@@ -229,7 +270,14 @@ const DashboardCalender = () => {
                                                     </div>
                                                 </div>
                                                 <div className={styles.eventDetails}>
-                                                    <h3>{event.coachName}</h3>
+                                                    <div className='d-flex justify-content-between'>
+                                                        <h3 className='fs-4 fw-bold'>{event.coachName}</h3>
+                                                        <div className={styles.dateBox}>
+                                                            <FaCalendarAlt />
+                                                            <span>{formatDate(event.date)}</span>
+                                                        </div>
+                                                    </div>
+
                                                     <div className={styles.eventMeta}>
                                                         <div className={styles.metaItem}>
                                                             <FaClock />
@@ -240,6 +288,9 @@ const DashboardCalender = () => {
                                                             <span>{event.sessionLocation}</span>
                                                         </div>
                                                     </div>
+                                                    <div className={styles.sport}>
+                                                        {event.sessionType} Session
+                                                    </div>
                                                     <p className={styles.eventDescription}>
                                                         {event.description}
                                                     </p>
@@ -248,13 +299,13 @@ const DashboardCalender = () => {
                                                             className={styles.deleteButton}
                                                             onClick={() => handleDeleteSession(event.id)}
                                                         >
-                                                            <FaTrash /> Delete
+                                                            <FaTrash className='mb-1' /> Delete
                                                         </button>
                                                         <button
                                                             className={styles.rescheduleButton}
                                                             onClick={() => handleRescheduleSession(event)}
                                                         >
-                                                            <FaCalendarAlt /> Reschedule
+                                                            <FaCalendarAlt className='mb-1' /> Reschedule
                                                         </button>
                                                     </div>
                                                 </div>
@@ -279,50 +330,55 @@ const DashboardCalender = () => {
             />
             {/* Reschedule Modal */}
             {showRescheduleModal && (
-                <div className={`modal show ${styles.modalBackdrop}`} style={{ display: 'block' }}>
+                <div className={`modal show ${styles.modalOverlay}`} style={{ display: 'block' }}>
                     <div className="modal-dialog modal-dialog-centered">
                         <div className={`modal-content ${styles.modal} ${styles.rescheduleModal}`}>
                             <div className="modal-header border-0 d-flex justify-content-between align-items-center p-4">
                                 <h5 className="modal-title d-flex align-items-center">
-                                    <FaCalendarAlt className="me-2 text-primary" />
+                                    <FaCalendarAlt className="me-2 text-danger" />
                                     Reschedule Session
                                 </h5>
                                 <button
-                                    type="button"
-                                    className="btn-close"
+                                    className={styles.closeButton}
                                     onClick={() => setShowRescheduleModal(false)}
-                                ></button>
+                                >
+                                    &times;
+                                </button>
                             </div>
                             <div className="modal-body p-4">
                                 <div className="mb-4">
                                     <label className="form-label d-flex align-items-center">
-                                        <FaCalendarAlt className="me-2 text-primary" />
+                                        <FaCalendarAlt className="me-2 text-danger" />
                                         Select New Date
                                     </label>
                                     <input
                                         type="date"
-                                        className="form-control form-control-lg"
-                                        onChange={(e) => {
-                                            const newDate = new Date(e.target.value);
-                                            setSelectedNewDate(newDate);
-                                        }}
+                                        className={`form-control form-control-lg ${styles.input}`}
+                                        // onChange={(e) => {
+                                        //     const newDate = new Date(e.target.value);
+                                        //     setSelectedNewDate(newDate);
+                                        // }}
+                                        min={formattedToday}
+                                        onChange={handleDateChange}
                                     />
                                 </div>
                                 <div className="mb-4">
                                     <label className="form-label d-flex align-items-center">
-                                        <FaClock className="me-2 text-primary" />
+                                        <FaClock className="me-2 text-danger" />
                                         Select New Time
                                     </label>
                                     <input
                                         type="time"
-                                        className="form-control form-control-lg"
-                                        onChange={(e) => {
-                                            setSelectedNewTime(e.target.value);
-                                        }}
+                                        className={`form-control form-control-lg ${styles.input}`}
+                                        // onChange={(e) => {
+                                        //     setSelectedNewTime(e.target.value);
+                                        // }}
+                                        onChange={handleTimeChange}
+                                        disabled={!selectedNewDate}
                                     />
                                 </div>
                                 <button
-                                    className="btn btn-primary btn-lg w-100 d-flex align-items-center justify-content-center"
+                                    className="btn btn-danger btn-lg w-100 d-flex align-items-center justify-content-center"
                                     onClick={() => {
                                         if (selectedNewDate && selectedNewTime) {
                                             handleConfirmReschedule(selectedNewDate, selectedNewTime);
