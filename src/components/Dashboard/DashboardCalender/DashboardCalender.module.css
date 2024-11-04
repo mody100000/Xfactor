@@ -1,3 +1,4 @@
+/* DashboardCalender.module.css */
 .calendarContainer {
   width: 100%;
   margin: 0 auto;
@@ -6,6 +7,7 @@
   box-sizing: border-box;
 }
 
+/* Existing styles remain the same */
 .dateRangeSelector {
   display: flex;
   justify-content: center;
@@ -33,15 +35,7 @@
   margin-bottom: 20px;
 }
 
-.timesGrid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 5px;
-  margin-bottom: 20px;
-}
-
-.dayBox,
-.timeBox {
+.dayBox {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -56,91 +50,15 @@
   border-radius: 10px;
 }
 
-.dayBox input,
-.timeBox input {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  cursor: pointer;
+.activeDay {
+  border: 2px solid #bf1e2e;
 }
 
-.unavailable {
-  background-color: var(--border-color);
-  color: #aaa;
-  cursor: not-allowed;
-}
-
-.active,
 .selected {
   background-color: var(--SelectedTime-color);
   border-color: #bf1e2e;
 }
-.activeDay {
-  border: 2px solid #bf1e2e;
-}
-.legend {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 1.4rem;
-  flex-wrap: wrap;
-}
 
-.generalAvailability,
-.confirmedAvailability {
-  width: 20px;
-  height: 20px;
-  margin-right: 10px;
-  display: inline-block;
-  border-radius: 4px;
-}
-
-.generalAvailability {
-  border: 1px solid var(--border-color);
-}
-
-.confirmedAvailability {
-  background-color: #bf1e2e;
-}
-
-.disabled {
-  opacity: 0.5;
-  pointer-events: none;
-  cursor: not-allowed;
-}
-.showDay {
-  background-color: var(--filterSidebar-color);
-  padding: 15px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.selectedDateDisplay {
-  margin: 1px;
-  text-align: center;
-  font-weight: bold;
-}
-.scheduleInf {
-  border-bottom: 1px solid var(--border-color);
-  border-left: 1px solid var(--border-color);
-  border-right: 1px solid var(--border-color);
-  padding: 15px;
-  font-size: 20px;
-}
-.eventDetails {
-  justify-content: center;
-  align-items: center;
-}
-
-.line {
-  display: block;
-  height: 1.4px;
-  background-color: #dbdbdb81;
-  width: 100%;
-  margin: 1rem auto;
-}
 .eventContainer {
   margin-top: 5px;
   display: flex;
@@ -161,41 +79,220 @@
   margin-right: 5px;
 }
 
-.eventTitle {
-  font-size: 12px;
+/* New Modal Styles */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
 }
+
+.modalWrapper {
+  width: 90%;
+  max-width: 1000px;
+}
+
+.modalCard {
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: var(--filterSidebar-color);
+  box-shadow: var(--card-shadow);
+  border: none;
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: var(--primary-color);
+}
+
+.dateInfo h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.eventCount {
+  opacity: 0.8;
+  font-size: 0.9rem;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  color: var(--text-color);
+  font-size: 3rem;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.closeButton:hover {
+  transform: scale(1.2);
+}
+
+.modalBody {
+  padding: 20px;
+}
+
+.eventsGrid {
+  display: grid;
+  gap: 20px;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.eventCard {
+  display: flex;
+  /* background-color: white; */
+  /* flex-direction: column; */
+  justify-content: center;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.eventCard:hover {
+  transform: translateY(-5px);
+}
+
+.eventImageContainer {
+  position: relative;
+  width: 250px;
+  flex-shrink: 0;
+}
+
 .eventImage {
-  max-width: 300px;
-  height: 200px;
-  border-radius: 1rem;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
+
+.eventType {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background-color: var(--primary-color);
+  color: black;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+}
+
+.eventDetails {
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.eventDetails h3 {
+  margin: 0 0 15px 0;
+  color: var(--text-color);
+  font-size: 1.3rem;
+}
+
+.eventMeta {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+  color: #7f8c8d;
+}
+
+.metaItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.metaItem svg {
+  color: var(--primary-color);
+}
+
 .eventDescription {
-  color: var(--supText-color);
-  font-size: large;
-  text-align: start;
+  color: var(--text-color);
+  line-height: 1.6;
+  margin-bottom: 15px;
 }
+
+.eventActions {
+  display: flex;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.deleteButton,
+.rescheduleButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.deleteButton {
+  background-color: #ff6b6b;
+  color: white;
+}
+
+.rescheduleButton {
+  background-color: blue;
+  color: white;
+}
+
+.deleteButton:hover {
+  background-color: #ff4757;
+}
+
+.rescheduleButton:hover {
+  background-color: #3867d6;
+}
+
+.noEvents {
+  text-align: center;
+  padding: 50px;
+  color: var(--text-color);
+  font-size: 1.2rem;
+}
+.modalEventDescription {
+  color: var(--supText-color);
+  font-size: 1rem;
+  margin: 0;
+  line-height: 1.5;
+}
+.rescheduleModal {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+}
+
+.rescheduleModal .modal-header {
+  border-bottom: none;
+}
+
+.rescheduleModal .form-control {
+  border-radius: 8px;
+}
+/* Responsive styles */
 @media (max-width: 600px) {
   .daysGrid {
     grid-template-columns: repeat(7, 1fr);
   }
 
-  .timesGrid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .dayBox,
-  .timeBox {
+  .dayBox {
     padding: 5px;
     font-size: 12px;
-  }
-
-  .legend {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .legend > div {
-    margin-bottom: 10px;
   }
 
   .dateRangeSelector {
@@ -206,17 +303,19 @@
   .chevronRight {
     font-size: 1rem;
   }
-  .eventDescription {
-    text-align: center;
+
+  .modalEventImage {
+    border-radius: 1rem 1rem 0 0;
+  }
+  .eventCard {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }
 
 @media (max-width: 400px) {
   .daysGrid {
     grid-template-columns: repeat(4, 1fr);
-  }
-
-  .timesGrid {
-    grid-template-columns: repeat(1, 1fr);
   }
 }
