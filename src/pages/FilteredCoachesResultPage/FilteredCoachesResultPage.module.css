@@ -43,17 +43,21 @@
 
 .mainContent {
   flex: 1;
+  /* overflow-x: hidden !important; */
 }
 .filterTitle {
   font-size: 20px;
   margin-bottom: 10px;
 }
 .editLink {
-  margin-top: 1.5rem;
+  margin-top: 1rem;
+  margin-bottom: 0;
   font-size: 22px;
-  color: #bf1e2e;
+  /* color: #bf1e2e; */
+  color: white;
   cursor: pointer;
   text-align: center;
+  /* text-decoration: underline; */
 }
 .line {
   display: block;
@@ -365,7 +369,19 @@
   line-height: 40px;
   font-family: "Zen Tokyo Zoo", system-ui;
 }
-
+.filterBtn {
+  position: relative;
+  padding: 1rem 5rem;
+  border: none;
+  background: none;
+  color: var(--text-color);
+  background-color: var(--filterSidebar-color);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 12px;
+  font-size: larger;
+}
 /* Responsive adjustments */
 @media (max-width: 668px) {
   .recommendedBadge {
