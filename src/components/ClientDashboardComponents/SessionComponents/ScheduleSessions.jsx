@@ -130,7 +130,7 @@ const ScheduleSessions = () => {
     return (
         <div className={styles.calendarContainer}>
             <ToastContainer />
-            <h3 className='mb-3 fw-bold text-center text-sm-start'>Schedule Sessions</h3>
+            <h3 className='mb-3 fw-bold text-center text-sm-start'>You have 2 unschedule sessions</h3>
             <p className='mb-0 text-danger'>Select date and time</p>
             <div className={styles.dateRangeSelector}>
                 <i

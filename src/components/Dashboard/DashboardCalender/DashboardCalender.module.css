@@ -145,7 +145,7 @@
 
 .eventsGrid {
   display: grid;
-  gap: 20px;
+  gap: 26px;
   max-height: 70vh;
   overflow-y: auto;
 }
@@ -189,7 +189,7 @@
 }
 
 .eventDetails {
-  padding: 20px;
+  padding: 5px 20px;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
@@ -232,32 +232,35 @@
 
 .deleteButton,
 .rescheduleButton {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 8px;
+  padding: 0.5rem 2rem;
+  border-radius: 6px;
+  border: 2px solid #bf1e2e;
+  background-color: transparent;
+  color: #bf1e2e;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
+  font-size: 0.95rem;
+  font-weight: 500;
 }
 
 .deleteButton {
-  background-color: #ff6b6b;
-  color: white;
+  background-color: transparent;
+  color: var(--text-color);
+  border: 2px solid #bf1e2e;
 }
 
 .rescheduleButton {
-  background-color: blue;
-  color: white;
+  color: var(--text-color);
 }
 
 .deleteButton:hover {
-  background-color: #ff4757;
+  background-color: #bf1e2e;
+  color: white;
 }
 
 .rescheduleButton:hover {
-  background-color: #3867d6;
+  background-color: #bf1e2e;
+  color: white;
 }
 
 .noEvents {
@@ -275,6 +278,7 @@
 .rescheduleModal {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   border-radius: 12px;
+  background-color: var(--filterSidebar-color);
 }
 
 .rescheduleModal .modal-header {
@@ -284,7 +288,55 @@
 .rescheduleModal .form-control {
   border-radius: 8px;
 }
+.dateBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  color: var(--supText-color);
+  font-size: 1rem;
+}
+.confirmationActions {
+  display: flex;
+  gap: 1rem;
+}
+/* .input {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 6px;
+  border: 1px solid var(--text-color);
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  background-color: var(--filterSidebar-color);
+  color: var(--text-color);
+}
+.input::placeholder {
+  color: #bf1e2e;
+} */
 /* Responsive styles */
+.input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg)
+    brightness(104%) contrast(97%);
+
+  cursor: pointer;
+}
+.input[type="time"]::-webkit-calendar-picker-indicator {
+  filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg)
+    brightness(104%) contrast(97%);
+
+  cursor: pointer;
+}
+.sport {
+  background: linear-gradient(45deg, #7d8491, #9d9d9d);
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 5px;
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
 @media (max-width: 600px) {
   .daysGrid {
     grid-template-columns: repeat(7, 1fr);
