@@ -1,6 +1,3 @@
-/* .filterModal {
-  max-width: 500px;
-} */
 .modalBackdrop {
   position: fixed;
   top: 0;
@@ -99,10 +96,6 @@
 }
 /* Responsive styling */
 @media (max-width: 576px) {
-  .filterModal {
-    margin: 1rem;
-  }
-
   .resetButton,
   .applyButton {
     width: 100%;

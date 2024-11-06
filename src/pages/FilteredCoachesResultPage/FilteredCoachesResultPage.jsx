@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import styles from './FilteredCoachesResultPage.module.css';
@@ -6,23 +6,8 @@ import coachImage from '../../assets/s3.jpg';
 import { IoMdAdd } from "react-icons/io";
 import { CiEdit } from "react-icons/ci";
 import { MdOnlinePrediction } from 'react-icons/md';
-import { mapStyles } from '../../utils/mapStyles';
-import { useLoadScript } from '@react-google-maps/api';
-import { FaQuoteLeft } from "react-icons/fa";
-import img7 from "@assets/review2.jpeg";
 import { CiGrid2H, CiGrid2V } from "react-icons/ci";
-import MapDistanceSelector from './MapDistanceSelector/MapDistanceSelector';
-import MapComponent from './MapComponent/MapComponent';
 import FilterCoachModal from './FilterCoachModal/FilterCoachModal';
-
-const center = {
-  lat: 40.782865,
-  lng: -73.965355
-};
-
-
-const libraries = ['places', 'geometry'];
-
 
 const FilteredCoachesResultPage = () => {
   const sport = useSelector((state) => state.coach.sport);
@@ -40,11 +25,6 @@ const FilteredCoachesResultPage = () => {
   const [viewMode, setViewMode] = useState('grid');
   const [showFilterModal, setShowFilterModal] = useState(false);
 
-  // const { isLoaded, loadError } = useLoadScript({
-  //   googleMapsApiKey: import.meta.env.VITE_GOOGLE_MAPS_API_KEY,
-  //   version: 'weekly',
-  //   libraries, // Use the constant array here
-  // });
 
   const getBadgeClass = (badge) => {
     switch (badge.toLowerCase()) {
@@ -84,10 +64,7 @@ const FilteredCoachesResultPage = () => {
         return 0;
       });
   };
-  const handleDistanceChange = (newDistance) => {
-    setDistanceRange(newDistance);
-    setCurrentPage(1);
-  };
+
   const filteredAndSortedCoaches = getFilteredAndSortedCoaches();
   const totalPages = Math.ceil(filteredAndSortedCoaches.length / coachesPerPage);
 
@@ -146,42 +123,8 @@ const FilteredCoachesResultPage = () => {
     setShowFilterModal(false);
   };
 
-
-  // useEffect(() => {
-  //   if (!isLoaded || !google.maps) return;
-
-  //   const map = new google.maps.Map(document.getElementById('map'), {
-  //     center,
-  //     zoom: 14,
-  //     styles: mapStyles,
-  //   });
-
-  //   // Check if the AdvancedMarkerElement is available
-  //   if (google.maps.marker && google.maps.marker.AdvancedMarkerElement) {
-  //     new google.maps.marker.AdvancedMarkerElement({
-  //       map,
-  //       position: center,
-  //     });
-  //   } else {
-  //     // Fallback to the old Marker if AdvancedMarkerElement is not available
-  //     new google.maps.Marker({
-  //       map,
-  //       position: center,
-  //     });
-  //   }
-
-  // }, [isLoaded]);
-
-  // if (loadError) return <div>Error loading maps</div>;
-  // if (!isLoaded) return <div>Loading...</div>;
-
   return (
     <>
-      <link
-        href="https://fonts.googleapis.com/css2?family=Zen+Tokyo+Zoo&display=swap"
-        rel="stylesheet"
-      />
-      <link href="https://fonts.googleapis.com/css2?family=Seaweed+Script&family=Zen+Tokyo+Zoo&display=swap" rel="stylesheet" />
       <div className={styles.intro}>
         <div className={styles.overlay}>
           <div className='d-flex flex-column align-items-center justify-content-center p-5'>
@@ -196,121 +139,6 @@ const FilteredCoachesResultPage = () => {
         </div>
       </div>
       <div className={styles.pageContainer}>
-        {/*
-        <div className={styles.sidebar}>
-          <h3 className='mb-4 fs-4'>Find Your Coach</h3>
-          <p className={styles.filterTitle}>Location: {address}</p>
-          <p className={styles.filterTitle}>Sport: {sport}</p>
-          <Link to="/applyToCoach">
-            <p className={styles.editLink}><CiEdit /> Edit Sport And Location</p>
-          </Link>
-          <span className={styles.line}></span>
-          <h3 className='fs-4'>Distance Location</h3>
-          <p className='text-danger'>(Click On Your Nearest Location)</p>
-          <span className='d-flex justify-content-center mb-2'>{distanceRange} mi</span>
-          <MapDistanceSelector
-            center={center}
-            distanceRange={distanceRange}
-            onDistanceChange={handleDistanceChange}
-            isLoaded={isLoaded}
-          />
-          <div className={`mt-2 ${styles.rangeLabels}`}>
-            <span className='d-flex justify-content-center'>{distanceRange} mi</span>
-            <input
-              type="range"
-              min="1"
-              max="30"
-              value={distanceRange}
-              onChange={handleDistanceRangeChange}
-              className={`${styles.rangeSlider} custom-range-slider`} />
-            <span>30 mi</span>
-          </div>
-          <span className={styles.line}></span>
-
-          <h3 className='mb-4 fs-4'>Travel To Me</h3>
-          <label>
-            <input type="checkbox" /> Show Only Coaches Willing To Travel
-          </label>
-          <span className={styles.line}></span>
-
-          <h3 className='mb-4 fs-4'>Price Range</h3>
-          <span className='d-flex justify-content-center'>${priceRange[1]}+</span>
-          <input
-            type="range"
-            min="0"
-            max="75"
-            value={priceRange[1]}
-            onChange={handlePriceRangeChange}
-            className={styles.rangeSlider}
-          />
-          <div className={styles.rangeLabels}>
-            <span>$0</span>
-            <span>$75+</span>
-          </div>
-          <span className={styles.line}></span>
-          <h3 className='mb-4 fs-4'>Coach's Gender</h3>
-          <div className='d-flex justify-content-between align-items-center'>
-            <div className='d-flex'>
-              <p
-                onClick={() => setGenderFilter('Male')}
-                className={`${genderFilter === 'Male' ? styles.checkedActive : styles.checked}`}
-              ></p>
-              <span>Male</span>
-            </div>
-            <div className='d-flex'>
-              <p
-                onClick={() => setGenderFilter('Female')}
-                className={`${genderFilter === 'Female' ? styles.checkedActive : styles.checked}`}
-              ></p>
-              <span>Female</span>
-            </div>
-            <div className='d-flex'>
-              <p
-                onClick={() => setGenderFilter('Any')}
-                className={`${genderFilter === 'Any' ? styles.checkedActive : styles.checked}`}
-              ></p>
-              <span>Any</span>
-            </div>
-          </div>
-          <span className={styles.line}></span>
-          <h3 className='mb-4'>Position(s)</h3>
-          <div className={styles.positionGrid}>
-            <label><input type="checkbox" /> Defensive Back</label>
-            <label><input type="checkbox" /> Defensive Line</label>
-            <label><input type="checkbox" /> Kicker</label>
-            <label><input type="checkbox" /> Linebacker</label>
-            <label><input type="checkbox" /> Offensive Line</label>
-            <label><input type="checkbox" /> Punter</label>
-            <label><input type="checkbox" /> Quarterback</label>
-            <label><input type="checkbox" /> Running Back</label>
-            <label><input type="checkbox" /> Tight End</label>
-            <label><input type="checkbox" /> Wide Receiver</label>
-          </div>
-          <span className={styles.line}></span>
-          <div className={styles.mapContainer} >
-            <MapComponent isLoaded={isLoaded} />
-          </div>
-          <span className={styles.line}></span>
-          <FaQuoteLeft size={25} />
-          <p className='lh-lg my-4'>New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart</p>
-          <div className='d-flex justify-content-center align-items-center gap-3 mt-5'>
-            <img src={img7} alt="clientImg" className={styles.clientImg} />
-            <div className='d-flex flex-column'>
-              <h5>Ahmed Ragab</h5>
-              <p className={styles.clientTitle}>President of the Boston Bruins,Hockey legend (sports dad)</p>
-            </div>
-          </div>
-          <span className={styles.line}></span>
-          <div>
-            <h3 className='mb-4'>Featured In</h3>
-            <div className={styles.featured}>
-              <p className={styles.firstFeatur}>Dexter</p>
-              <p className={styles.secondFeatur}>Dexter</p>
-              <p className={styles.thirdFeatur}>Dexter</p>
-            </div>
-          </div>
-        </div> */}
-
         <div className={styles.mainContent}>
           <div className='d-flex flex-column flex-sm-row p-4'>
             <div className='d-flex gap-5 flex-grow-1 flex-column flex-sm-row '>
@@ -348,7 +176,7 @@ const FilteredCoachesResultPage = () => {
             </div>
           </div>
           <div className="row mb-4 px-4">
-            <div className="col d-flex flex-lg-row flex-md-column flex-sm-column flex-column justify-content-between align-items-center">
+            <div className="col d-flex flex-lg-row flex-md-column flex-sm-column flex-column justify-content-between align-items-center gap-4">
               <div>
                 <button
                   className={styles.filterBtn}
