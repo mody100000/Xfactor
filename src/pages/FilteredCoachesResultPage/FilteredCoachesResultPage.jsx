@@ -13,6 +13,7 @@ import img7 from "@assets/review2.jpeg";
 import { CiGrid2H, CiGrid2V } from "react-icons/ci";
 import MapDistanceSelector from './MapDistanceSelector/MapDistanceSelector';
 import MapComponent from './MapComponent/MapComponent';
+import FilterCoachModal from './FilterCoachModal/FilterCoachModal';
 
 const center = {
   lat: 40.782865,
@@ -36,13 +37,14 @@ const FilteredCoachesResultPage = () => {
   const [trainingType, setTrainingType] = useState(location.state?.trainingType || 'All');
   const [sortCriteria, setSortCriteria] = useState('');
   const [distanceRange, setDistanceRange] = useState(30);
-  const [viewMode, setViewMode] = useState('list');
+  const [viewMode, setViewMode] = useState('grid');
+  const [showFilterModal, setShowFilterModal] = useState(false);
 
-  const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey: import.meta.env.VITE_GOOGLE_MAPS_API_KEY,
-    version: 'weekly',
-    libraries, // Use the constant array here
-  });
+  // const { isLoaded, loadError } = useLoadScript({
+  //   googleMapsApiKey: import.meta.env.VITE_GOOGLE_MAPS_API_KEY,
+  //   version: 'weekly',
+  //   libraries, // Use the constant array here
+  // });
 
   const getBadgeClass = (badge) => {
     switch (badge.toLowerCase()) {
@@ -74,8 +76,10 @@ const FilteredCoachesResultPage = () => {
       .sort((a, b) => {
         if (sortCriteria === 'Recommended') {
           return b.recommended - a.recommended;
-        } else if (sortCriteria === 'Price') {
+        } else if (sortCriteria === 'Lowest Price') {
           return a.salary - b.salary;
+        } else if (sortCriteria === "Heights Price") {
+          return b.salary - a.salary; // Corrected comparison for descending order
         }
         return 0;
       });
@@ -138,35 +142,38 @@ const FilteredCoachesResultPage = () => {
     else if (rate >= 50 && rate < 80) return "Good";
     return "Bad"
   }
+  const handleFilterModalClose = () => {
+    setShowFilterModal(false);
+  };
 
 
-  useEffect(() => {
-    if (!isLoaded || !google.maps) return;
+  // useEffect(() => {
+  //   if (!isLoaded || !google.maps) return;
 
-    const map = new google.maps.Map(document.getElementById('map'), {
-      center,
-      zoom: 14,
-      styles: mapStyles,
-    });
+  //   const map = new google.maps.Map(document.getElementById('map'), {
+  //     center,
+  //     zoom: 14,
+  //     styles: mapStyles,
+  //   });
 
-    // Check if the AdvancedMarkerElement is available
-    if (google.maps.marker && google.maps.marker.AdvancedMarkerElement) {
-      new google.maps.marker.AdvancedMarkerElement({
-        map,
-        position: center,
-      });
-    } else {
-      // Fallback to the old Marker if AdvancedMarkerElement is not available
-      new google.maps.Marker({
-        map,
-        position: center,
-      });
-    }
+  //   // Check if the AdvancedMarkerElement is available
+  //   if (google.maps.marker && google.maps.marker.AdvancedMarkerElement) {
+  //     new google.maps.marker.AdvancedMarkerElement({
+  //       map,
+  //       position: center,
+  //     });
+  //   } else {
+  //     // Fallback to the old Marker if AdvancedMarkerElement is not available
+  //     new google.maps.Marker({
+  //       map,
+  //       position: center,
+  //     });
+  //   }
 
-  }, [isLoaded]);
+  // }, [isLoaded]);
 
-  if (loadError) return <div>Error loading maps</div>;
-  if (!isLoaded) return <div>Loading...</div>;
+  // if (loadError) return <div>Error loading maps</div>;
+  // if (!isLoaded) return <div>Loading...</div>;
 
   return (
     <>
@@ -180,12 +187,16 @@ const FilteredCoachesResultPage = () => {
           <div className='d-flex flex-column align-items-center justify-content-center p-5'>
             <h1 className="fw-bold">Coaches</h1>
             <h3 className={`text-center ${styles.suptitle}`}>
-              Recommended {sport} coaches near {address}
+              Recommended <span className='text-danger'>{sport}</span> coaches near <span className='text-danger'>{address}</span>
             </h3>
+            <Link to="/applyToCoach">
+              <p className={styles.editLink}><CiEdit className='text-danger' size={25} /> <span className='text-danger'>Edit</span> Sport And Location</p>
+            </Link>
           </div>
         </div>
       </div>
       <div className={styles.pageContainer}>
+        {/*
         <div className={styles.sidebar}>
           <h3 className='mb-4 fs-4'>Find Your Coach</h3>
           <p className={styles.filterTitle}>Location: {address}</p>
@@ -298,23 +309,52 @@ const FilteredCoachesResultPage = () => {
               <p className={styles.thirdFeatur}>Dexter</p>
             </div>
           </div>
-        </div>
+        </div> */}
 
         <div className={styles.mainContent}>
-          <div className="row mb-4 px-5">
-            <div className="col d-flex flex-lg-row flex-md-column flex-sm-column flex-column gap-4 justify-content-between align-items-center">
+          <div className='d-flex flex-column flex-sm-row p-4'>
+            <div className='d-flex gap-5 flex-grow-1 flex-column flex-sm-row '>
+              <div className='w-100'>
+                <h3 className='fs-4 text-center'>Price Range</h3>
+                <span className='d-flex justify-content-center'>${priceRange[1]}+</span>
+                <div className={`mt-2 ${styles.rangeLabels}`}>
+                  <span>$0</span>
+                  <input
+                    type="range"
+                    min="0"
+                    max="75"
+                    value={priceRange[1]}
+                    onChange={handlePriceRangeChange}
+                    className={styles.rangeSlider}
+                  />
+                  <span>$75+</span>
+                </div>
+              </div>
+              <div className='w-100'>
+                <h3 className='fs-4 text-center'>Distance Location</h3>
+                <span className='d-flex justify-content-center'>{distanceRange} mi</span>
+                <div className={`mt-2 ${styles.rangeLabels}`}>
+                  <span className='d-flex justify-content-center'>{distanceRange}mi</span>
+                  <input
+                    type="range"
+                    min="1"
+                    max="30"
+                    value={distanceRange}
+                    onChange={handleDistanceRangeChange}
+                    className={`${styles.rangeSlider} custom-range-slider`} />
+                  <span>30mi</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="row mb-4 px-4">
+            <div className="col d-flex flex-lg-row flex-md-column flex-sm-column flex-column justify-content-between align-items-center">
               <div>
                 <button
-                  className={`btn ${trainingType === 'In-Person' ? 'btn-danger' : 'btn-outline-danger'} me-1 fs-5`}
-                  onClick={() => handleTrainingTypeChange({ target: { value: 'In-Person' } })}
+                  className={styles.filterBtn}
+                  onClick={() => setShowFilterModal(true)}
                 >
-                  In-Person
-                </button>
-                <button
-                  className={`btn fs-5 ${trainingType === 'Online' ? 'btn-danger' : 'btn-outline-danger'}`}
-                  onClick={() => handleTrainingTypeChange({ target: { value: 'Online' } })}
-                >
-                  Online
+                  Filter
                 </button>
               </div>
               <div className={`cursor-pointer ${styles.toggleIcon}`} onClick={() => setViewMode(viewMode === 'grid' ? 'list' : 'grid')}>
@@ -329,12 +369,23 @@ const FilteredCoachesResultPage = () => {
                 <select className={`form-select d-inline-block w-auto fs-5 ${styles.filterInbut}`} onChange={handleSortChange} value={sortCriteria}>
                   <option value="" style={{ display: 'none' }}>Select...</option>
                   <option value="Recommended">Recommended</option>
-                  <option value="Price">Price</option>
+                  <option value="Lowest Price">Lowest Price</option>
+                  <option value="Heights Price">Heights Price</option>
                 </select>
               </div>
             </div>
           </div>
           <div className={styles.coachesContainer}>
+            <FilterCoachModal
+              isOpen={showFilterModal}
+              onClose={handleFilterModalClose}
+              genderFilter={genderFilter}
+              setGenderFilter={setGenderFilter}
+              trainingType={trainingType}
+              setTrainingType={setTrainingType}
+              sortCriteria={sortCriteria}
+              setSortCriteria={setSortCriteria}
+            />
             {filteredAndSortedCoaches.length > 0 ? (
               filteredAndSortedCoaches.slice((currentPage - 1) * coachesPerPage, currentPage * coachesPerPage).map((coach) => (
                 <div key={coach.id} className={`${viewMode === 'grid' ? 'col-md-6' : 'col-md-12'} mb-4`}>
