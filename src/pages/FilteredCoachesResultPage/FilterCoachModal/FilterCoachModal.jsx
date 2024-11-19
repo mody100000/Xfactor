@@ -85,10 +85,10 @@ const FilterCoachModal = ({
                                         Online
                                     </button>
                                     <button
-                                        className={`btn btn-responsive ${tempTrainingType === 'Personal' ? 'btn-danger' : 'btn-outline-danger'}`}
-                                        onClick={() => setTempTrainingType('Personal')}
+                                        className={`btn btn-responsive ${tempTrainingType === 'Campus' ? 'btn-danger' : 'btn-outline-danger'}`}
+                                        onClick={() => setTempTrainingType('Campus')}
                                     >
-                                        Personal
+                                        Campus
                                     </button>
                                 </div>
                             </div>
