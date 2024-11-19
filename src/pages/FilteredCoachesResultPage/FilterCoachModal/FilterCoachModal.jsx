@@ -4,10 +4,6 @@ import styles from './FilterCoachModal.module.css';
 const FilterCoachModal = ({
     isOpen,
     onClose,
-    priceRange,
-    setPriceRange,
-    distanceRange,
-    setDistanceRange,
     genderFilter,
     setGenderFilter,
     trainingType,
@@ -71,28 +67,28 @@ const FilterCoachModal = ({
                                 <label className="form-label">Training Type</label>
                                 <div className='d-flex justify-content-between'>
                                     <button
-                                        className={`btn ${tempTrainingType === 'All' ? 'btn-danger' : 'btn-outline-danger'} fs-5`}
+                                        className={`btn btn-responsive ${tempTrainingType === 'All' ? 'btn-danger' : 'btn-outline-danger'}`}
                                         onClick={() => setTempTrainingType('All')}
                                     >
                                         All
                                     </button>
                                     <button
-                                        className={`btn ${tempTrainingType === 'In-Person' ? 'btn-danger' : 'btn-outline-danger'} fs-5`}
+                                        className={`btn btn-responsive ${tempTrainingType === 'In-Person' ? 'btn-danger' : 'btn-outline-danger'}`}
                                         onClick={() => setTempTrainingType('In-Person')}
                                     >
                                         In-Person
                                     </button>
                                     <button
-                                        className={`btn ${tempTrainingType === 'Online' ? 'btn-danger' : 'btn-outline-danger'} fs-5`}
+                                        className={`btn btn-responsive ${tempTrainingType === 'Online' ? 'btn-danger' : 'btn-outline-danger'}`}
                                         onClick={() => setTempTrainingType('Online')}
                                     >
                                         Online
                                     </button>
                                     <button
-                                        className={`btn ${tempTrainingType === 'Personal' ? 'btn-danger' : 'btn-outline-danger'} fs-5`}
-                                        onClick={() => setTempTrainingType('Personal')}
+                                        className={`btn btn-responsive ${tempTrainingType === 'Campus' ? 'btn-danger' : 'btn-outline-danger'}`}
+                                        onClick={() => setTempTrainingType('Campus')}
                                     >
-                                        Personal
+                                        Campus
                                     </button>
                                 </div>
                             </div>

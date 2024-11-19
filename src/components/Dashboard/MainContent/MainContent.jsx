@@ -39,19 +39,19 @@ const MainContent = () => {
             className={`${styles.tabItem} ${activeView === 'upcoming' ? styles.activeTab : ''}`}
             onClick={() => setActiveView('upcoming')}
           >
-            Upcoming Sessions
+            Upcoming Sessions (4)
           </button>
           <button
             className={`${styles.tabItem} ${activeView === 'schedule' ? styles.activeTab : ''}`}
             onClick={() => setActiveView('schedule')}
           >
-            Schedule Sessions
+            Schedule Sessions (2)
           </button>
           <button
             className={`${styles.tabItem} ${activeView === 'completed' ? styles.activeTab : ''}`}
             onClick={() => setActiveView('completed')}
           >
-            Completed Sessions
+            Completed Sessions (4)
           </button>
         </div>
 

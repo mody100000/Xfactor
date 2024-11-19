@@ -128,3 +128,33 @@ body {
 .text-muted {
   color: var(--supText-color) !important;
 }
+
+.btn-responsive {
+  /* Default size (e.g., small on mobile) */
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+}
+
+@media (min-width: 576px) {
+  /* Small screens and up */
+  .btn-responsive {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  /* Medium screens and up */
+  .btn-responsive {
+    padding: 0.75rem 1.25rem;
+    font-size: 1.25rem;
+  }
+}
+
+@media (min-width: 992px) {
+  /* Large screens and up */
+  .btn-responsive {
+    padding: 0.5rem 1.5rem;
+    font-size: 1.1rem;
+  }
+}

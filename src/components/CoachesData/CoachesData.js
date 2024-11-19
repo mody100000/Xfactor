@@ -28,7 +28,7 @@ export const sampleCoaches = [
     salary: 22,
     image: img1,
     recommended: true,
-    trainingType: "In-Person",
+    trainingType: "Campus",
     gender: "Male",
     responseRate: 100,
     packages: [
