@@ -140,8 +140,8 @@ const FilteredCoachesResultPage = () => {
       </div>
       <div className={styles.pageContainer}>
         <div className={styles.mainContent}>
-          <div className='d-flex flex-column flex-sm-row p-4'>
-            <div className='d-flex gap-5 flex-grow-1 flex-column flex-sm-row '>
+          {/* <div className='d-flex flex-column flex-sm-row p-4'> */}
+          {/* <div className='d-flex gap-5 flex-grow-1 flex-column flex-sm-row '>
               <div className='w-100'>
                 <h3 className='fs-4 text-center'>Price Range</h3>
                 <span className='d-flex justify-content-center'>${priceRange[1]}+</span>
@@ -173,10 +173,10 @@ const FilteredCoachesResultPage = () => {
                   <span>30mi</span>
                 </div>
               </div>
-            </div>
-          </div>
-          <div className="row mb-4 px-4">
-            <div className="col d-flex flex-lg-row flex-md-column flex-sm-column flex-column justify-content-between align-items-center gap-4">
+            </div> */}
+          {/* </div> */}
+          <div className="row mb-4 mt-4 px-4">
+            <div className="col d-flex flex-lg-row flex-md-column flex-sm-column flex-column justify-content-between align-items-center gap-4 gap-sm-5">
               <div>
                 <button
                   className={styles.filterBtn}
@@ -185,6 +185,22 @@ const FilteredCoachesResultPage = () => {
                   Filter
                 </button>
               </div>
+              <div className='w-100'>
+                <h3 className='fs-4 text-center'>Price Range</h3>
+                <span className='d-flex mb-2 justify-content-center'>${priceRange[1]}+</span>
+                <div className={`${styles.rangeLabels}`}>
+                  <span>$0</span>
+                  <input
+                    type="range"
+                    min="0"
+                    max="75"
+                    value={priceRange[1]}
+                    onChange={handlePriceRangeChange}
+                    className={styles.rangeSlider}
+                  />
+                  <span>$75+</span>
+                </div>
+              </div>
               <div className={`cursor-pointer ${styles.toggleIcon}`} onClick={() => setViewMode(viewMode === 'grid' ? 'list' : 'grid')}>
                 {viewMode === 'grid' ? (
                   <CiGrid2H size={40} />
@@ -192,8 +208,22 @@ const FilteredCoachesResultPage = () => {
                   <CiGrid2V size={40} />
                 )}
               </div>
+              <div className='w-100'>
+                <h3 className='fs-4 text-center'>Distance Location</h3>
+                <span className='d-flex mb-2 justify-content-center'>{distanceRange} mi</span>
+                <div className={`${styles.rangeLabels}`}>
+                  <span className='d-flex justify-content-center'>{distanceRange}mi</span>
+                  <input
+                    type="range"
+                    min="1"
+                    max="30"
+                    value={distanceRange}
+                    onChange={handleDistanceRangeChange}
+                    className={`${styles.rangeSlider} custom-range-slider`} />
+                  <span>30mi</span>
+                </div>
+              </div>
               <div className="d-flex align-items-center justify-content-between">
-                <label className="me-2 fs-5">Sort by:</label>
                 <select className={`form-select d-inline-block w-auto fs-5 ${styles.filterInbut}`} onChange={handleSortChange} value={sortCriteria}>
                   <option value="" style={{ display: 'none' }}>Select...</option>
                   <option value="Recommended">Recommended</option>
