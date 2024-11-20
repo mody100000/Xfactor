@@ -371,7 +371,7 @@
 }
 .filterBtn {
   position: relative;
-  padding: 1rem 5rem;
+  padding: 0.5rem 3rem;
   border: none;
   background: none;
   color: var(--text-color);
