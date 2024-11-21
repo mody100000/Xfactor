@@ -51,8 +51,8 @@ const Sidebar = ({ isOpen, toggleSidebar, toggleTheme, theme }) => {
             <MdOutlineSpeakerNotes size={25} className="mx-2" /> Sessions
           </NavLink>
         </li>
-        <li className={getMenuItemClass('/dashboard/career')}>
-          <NavLink to="/filtered-coaches" className='text-decoration-none text-light'>
+        <li className={getMenuItemClass('/dashboard/applyToCoachDashboard')}>
+          <NavLink to="/applyToCoach" className='text-decoration-none text-light'>
             <BsFilePerson size={22} className="mx-2" /> Apply to Coach
           </NavLink>
         </li>

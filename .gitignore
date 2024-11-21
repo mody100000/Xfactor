@@ -10,10 +10,10 @@ lerna-debug.log*
 node_modules
 dist
 dist-ssr
-dist.zip
 *.local
 
 # Editor directories and files
+dist.zip
 .vscode/*
 !.vscode/extensions.json
 .idea

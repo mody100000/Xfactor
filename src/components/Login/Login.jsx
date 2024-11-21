@@ -36,7 +36,7 @@ const Login = () => {
       }
     }
     if (valid) {
-        navigate("/")
+      navigate("/dashboard")
     }
   };
   const validate = (key, value) => {

@@ -80,7 +80,7 @@ const TrainerRegister = () => {
       setErrors((prev) => ({ ...prev, Cpassword: [] }));
     }
     if (valid) {
-      navigate("/")
+      navigate("/dashboard")
     }
   };
   const validate = (key, value) => {

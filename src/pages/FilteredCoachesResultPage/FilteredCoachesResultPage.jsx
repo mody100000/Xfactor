@@ -177,15 +177,8 @@ const FilteredCoachesResultPage = () => {
           {/* </div> */}
           <div className="row mb-4 mt-4 px-4">
             <div className="col d-flex flex-lg-row flex-md-column flex-sm-column flex-column justify-content-between align-items-center gap-4 gap-sm-5">
-              <div>
-                <button
-                  className={styles.filterBtn}
-                  onClick={() => setShowFilterModal(true)}
-                >
-                  Filter
-                </button>
-              </div>
-              <div className='w-100'>
+
+              <div className='w-100 mb-5'>
                 <h3 className='fs-4 text-center'>Price Range</h3>
                 <span className='d-flex mb-2 justify-content-center'>${priceRange[1]}+</span>
                 <div className={`${styles.rangeLabels}`}>
@@ -201,14 +194,7 @@ const FilteredCoachesResultPage = () => {
                   <span>$75+</span>
                 </div>
               </div>
-              <div className={`cursor-pointer ${styles.toggleIcon}`} onClick={() => setViewMode(viewMode === 'grid' ? 'list' : 'grid')}>
-                {viewMode === 'grid' ? (
-                  <CiGrid2H size={40} />
-                ) : (
-                  <CiGrid2V size={40} />
-                )}
-              </div>
-              <div className='w-100'>
+              <div className='w-100 mb-5'>
                 <h3 className='fs-4 text-center'>Distance Location</h3>
                 <span className='d-flex mb-2 justify-content-center'>{distanceRange} mi</span>
                 <div className={`${styles.rangeLabels}`}>
@@ -223,6 +209,22 @@ const FilteredCoachesResultPage = () => {
                   <span>30mi</span>
                 </div>
               </div>
+              <div>
+                <button
+                  className={styles.filterBtn}
+                  onClick={() => setShowFilterModal(true)}
+                >
+                  Filter
+                </button>
+              </div>
+              <div className={`cursor-pointer ${styles.toggleIcon}`} onClick={() => setViewMode(viewMode === 'grid' ? 'list' : 'grid')}>
+                {viewMode === 'grid' ? (
+                  <CiGrid2H size={40} />
+                ) : (
+                  <CiGrid2V size={40} />
+                )}
+              </div>
+
               <div className="d-flex align-items-center justify-content-between">
                 <select className={`form-select d-inline-block w-auto fs-5 ${styles.filterInbut}`} onChange={handleSortChange} value={sortCriteria}>
                   <option value="" style={{ display: 'none' }}>Select...</option>
