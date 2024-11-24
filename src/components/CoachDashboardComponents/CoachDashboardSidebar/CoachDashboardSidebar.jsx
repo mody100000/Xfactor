@@ -47,8 +47,10 @@ const CoachDashboardSidebar = ({ isOpen, toggleSidebar, toggleTheme, theme }) =>
                         <LuPackageSearch size={25} className="mx-2" /> Packages
                     </NavLink>
                 </li>
-                <li className={getMenuItemClass('/dashboard/notes')}>
-                    <MdOutlineSpeakerNotes size={25} className="mx-2" /> Sessions
+                <li className={getMenuItemClass('/coach-dashboard/coach-Sessions')}>
+                    <NavLink to="/coach-dashboard/coach-Sessions" className='text-decoration-none text-light'>
+                        <MdOutlineSpeakerNotes size={25} className="mx-2" /> Sessions
+                    </NavLink>
                 </li>
                 <li className={getMenuItemClass('/dashboard/career')}>
                     <BiBriefcase size={25} className="mx-2" /> Camps

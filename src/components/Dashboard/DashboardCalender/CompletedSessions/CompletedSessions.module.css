@@ -140,6 +140,134 @@
   display: inline-block;
   margin-bottom: 1rem;
 }
+/* Add these new styles for the filter functionality */
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.filterButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 8px;
+  color: var(--supText-color);
+  font-size: 0.9rem;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.filterButton:hover {
+  transform: translateY(-2px);
+}
+
+.filterButton svg {
+  font-size: 1rem;
+}
+
+/* Modal styles */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background-color: var(--filterSidebar-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.modalTitle {
+  color: var(--text-color);
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  color: var(--text-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.filterGroup {
+  margin-bottom: 1.5rem;
+}
+
+.filterLabel {
+  display: block;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.filterSelect {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #7f8c8d;
+  background-color: var(--filterSidebar-color);
+  color: var(--text-color);
+  margin-bottom: 1rem;
+}
+
+.modalFooter {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.modalButton {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: transform 0.2s ease;
+}
+
+.resetButton {
+  background-color: #7f8c8d;
+  color: white;
+}
+
+.applyButton {
+  background-color: var(--primary-color);
+  color: var(--supText-color);
+}
+
+.modalButton:hover {
+  transform: translateY(-2px);
+}
+
 @media (max-width: 600px) {
   .eventCard {
     flex-direction: column;
@@ -160,5 +288,18 @@
   .eventImageContainer {
     width: 100%;
     height: 200px;
+  }
+  .modalContent {
+    width: 95%;
+    margin: 1rem;
+  }
+
+  .modalFooter {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .modalButton {
+    width: 100%;
   }
 }

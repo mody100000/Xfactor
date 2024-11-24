@@ -5,7 +5,7 @@ import { FaRegTimesCircle } from "react-icons/fa";
 import { RiLogoutCircleLine } from "react-icons/ri";
 import logo from "../../../assets/logo.png";
 import { IoPersonCircleOutline } from "react-icons/io5";
-import { BsJournalBookmark } from "react-icons/bs";
+import { BsFilePerson, BsJournalBookmark } from "react-icons/bs";
 import { RiProgress3Line } from "react-icons/ri";
 import { MdOutlineSpeakerNotes } from "react-icons/md";
 import { BiBriefcase } from "react-icons/bi";
@@ -51,8 +51,10 @@ const Sidebar = ({ isOpen, toggleSidebar, toggleTheme, theme }) => {
             <MdOutlineSpeakerNotes size={25} className="mx-2" /> Sessions
           </NavLink>
         </li>
-        <li className={getMenuItemClass('/dashboard/career')}>
-          <BiBriefcase size={25} className="mx-2" /> Career
+        <li className={getMenuItemClass('/dashboard/applyToCoachDashboard')}>
+          <NavLink to="/applyToCoach" className='text-decoration-none text-light'>
+            <BsFilePerson size={22} className="mx-2" /> Apply to Coach
+          </NavLink>
         </li>
         <li className={`${getMenuItemClass('/dashboard/chat')} mt-5`}>
           <NavLink to="/dashboard/chat" className='text-decoration-none text-light'>

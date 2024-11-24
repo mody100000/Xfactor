@@ -257,7 +257,7 @@ const DashboardCalender = () => {
                                 </div>
                                 <div className="d-flex mt-5 justify-content-between">
                                     <button
-                                        className="btn btn-outline-secondary"
+                                        className="btn btn-outline-danger"
                                         onClick={clearFilters}
                                     >
                                         Clear Filters
