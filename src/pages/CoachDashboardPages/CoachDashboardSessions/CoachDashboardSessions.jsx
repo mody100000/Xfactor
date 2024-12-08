@@ -2,8 +2,8 @@ import React from 'react'
 import { useState } from 'react';
 import DashboardCalender from '../../../components/Dashboard/DashboardCalender/DashboardCalender';
 import ScheduleSessions from '../../../components/ClientDashboardComponents/SessionComponents/ScheduleSessions';
-import CompletedSessions from '../../../components/Dashboard/DashboardCalender/CompletedSessions/CompletedSessions';
 import styles from "./CoachDashboardSessions.module.css"
+import CoachCompletedSessions from '../../../components/CoachDashboardComponents/CoachDashboardSessions/CoachCompletedSessions';
 
 function CoachDashboardSessions() {
     const [activeView, setActiveView] = useState('upcoming'); // 'upcoming', 'schedule', or 'completed'
@@ -15,14 +15,14 @@ function CoachDashboardSessions() {
             case 'schedule':
                 return <ScheduleSessions />;
             case 'completed':
-                return <CompletedSessions />;
+                return <CoachCompletedSessions />;
             default:
                 return <DashboardCalender />;
         }
     };
     return (
         <>
-            <div className='p-5'>
+            <div className='p-3'>
                 <div className={styles.tabNavigation}>
                     <button
                         className={`${styles.tabItem} ${activeView === 'upcoming' ? styles.activeTab : ''}`}
