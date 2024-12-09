@@ -104,24 +104,75 @@
   pointer-events: none;
   cursor: not-allowed;
 }
-.showDay {
+.scheduleContainer {
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+.headerSection {
   background-color: var(--filterSidebar-color);
   padding: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.selectedDateDisplay {
-  margin: 1px;
-  text-align: center;
-  font-weight: bold;
+
+.dateIconWrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 1rem;
 }
-.scheduleInf {
-  border-bottom: 1px solid var(--border-color);
-  border-left: 1px solid var(--border-color);
-  border-right: 1px solid var(--border-color);
-  padding: 15px;
-  font-size: 20px;
+
+.calendarIcon {
+  color: var(--primary-color);
+  width: 24px;
+  height: 24px;
+}
+
+.dateTitle {
+  font-weight: 600;
+}
+
+.contentSection {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  color: var(--text-color);
+  background-color: var(--question-color);
+}
+
+.noSessionMessage,
+.actionPrompt {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.alertIcon,
+.clockIcon {
+  width: 20px;
+  height: 20px;
+}
+
+.messageText {
+  margin: 0;
+}
+
+.manageEvents {
+  padding: 2px 11px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.manageEvents:hover {
+  background-color: rgba(220, 53, 69, 0.1);
 }
 .line {
   display: block;
