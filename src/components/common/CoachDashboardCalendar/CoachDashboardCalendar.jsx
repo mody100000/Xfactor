@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import styles from './CoachDashboardCalendar.module.css';
 import { GrFormPrevious, GrFormNext } from "react-icons/gr";
+import Calendar from '../Calendar/Calendar';
+import { FiAlertCircle } from 'react-icons/fi';
+import { CiLock } from 'react-icons/ci';
+import { BiCalendar } from 'react-icons/bi';
 
 const CoachDashboardCalendar = () => {
     const [currentDate, setCurrentDate] = useState(new Date());
@@ -110,21 +114,43 @@ const CoachDashboardCalendar = () => {
                     </div>
                 ))}
             </div>
-            <div className={styles.showDay}>
-                {!selectedDate ? (
-                    <h4 className='my-0'>Today</h4>
-                ) : (
-                    <div className={styles.selectedDateDisplay}>
-                        <h4 className='my-0'>{formatSelectedDate(selectedDate)}</h4>
+            <div className={`${styles.scheduleContainer} shadow-sm`}>
+                <div className={styles.headerSection}>
+                    <div className={styles.dateIconWrapper}>
+                        <BiCalendar className={styles.calendarIcon} />
+                        {!selectedDate ? (
+                            <h4 className={`${styles.dateTitle} my-0`}>Today</h4>
+                        ) : (
+                            <div className={styles.selectedDateDisplay}>
+                                <h4 className={`${styles.dateTitle} my-0`}>
+                                    {formatSelectedDate(selectedDate)}
+                                </h4>
+                            </div>
+                        )}
                     </div>
-                )}
-            </div>
-            <div className={styles.scheduleInf}>
-                <p className='mb-0 fs-6'>You have no upcoming sessions.</p>
-                <span className={styles.line}></span>
-                <p className='mb-0 fs-6'>Click a date to schedule a session.</p>
-                <span className={styles.line}></span>
-                <p className='mb-0 fs-6 text-danger cursor-pointer'>Manage Group Events</p>
+                </div>
+
+                <div className={styles.contentSection}>
+                    <div className={styles.noSessionMessage}>
+                        <FiAlertCircle className={`${styles.alertIcon} text-warning`} />
+                        <p className={`${styles.messageText} my-0`}>
+                            You have no upcoming sessions
+                        </p>
+                    </div>
+
+                    <div className={styles.actionPrompt}>
+                        <CiLock className={`${styles.clockIcon} text-primary`} />
+                        <p className={`${styles.messageText} my-0`}>
+                            Click a date to schedule a session
+                        </p>
+                    </div>
+
+                    <div
+                        className={`${styles.manageEvents} text-danger cursor-pointer hover:bg-light`}
+                    >
+                        Manage Group Events
+                    </div>
+                </div>
             </div>
         </div>
     );
