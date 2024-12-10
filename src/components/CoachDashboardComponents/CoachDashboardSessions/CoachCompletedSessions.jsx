@@ -1,23 +1,10 @@
 import React, { useState } from 'react';
 import styles from "./CoachCompletedSessions.module.css";
 import { FaClock, FaMapMarkerAlt, FaCheckCircle, FaCalendarAlt, FaFilter, FaTimes } from 'react-icons/fa';
-import event1 from "@assets/user.webp";
-import event2 from "@assets/RegisterCoach (1).jpg";
-import event3 from "@assets/review2.jpeg";
-import event4 from "@assets/review1.jpeg";
 import { BsArrowDownRightSquare, BsArrowUpRightSquare } from "react-icons/bs";
 import { FaCalendar, FaComment, FaEnvelope } from 'react-icons/fa6';
 
-function CoachCompletedSessions() {
-    const completedSessions = [
-        {
-            id: 1, coachName: "Leo", sessionType: "Football", sessionLocation: "On-site", img: event1,
-            description: "", time: "11:30AM", date: new Date(2024, 10, 21)
-        },
-        { id: 2, coachName: "Mark", sessionType: "Tennis", sessionLocation: "Online", img: event2, description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis dolore error eveniet voluptates maiores quasi ab quam accusantium expedita, et in eligendi officia vitae aut libero consequuntur accusamus voluptas numquam.", time: "1:30PM", date: new Date(2024, 10, 5) },
-        { id: 3, coachName: "Taric", sessionType: "Swimming", sessionLocation: "Campus", img: event3, description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem in error rem eveniet, quisquam et eaque. Rem ducimus, quo accusantium possimus veritatis, quos dolores reiciendis et dignissimos fugiat cupiditate enim!", time: "5:30PM", date: new Date(2024, 10, 5) },
-        { id: 4, coachName: "Jhin", sessionType: "Football", sessionLocation: "Online", img: event4, description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore ipsam commodi odit molestiae debitis, maiores tempore in! Dolorum, fugit obcaecati! Voluptates provident eius ad laudantium exercitationem, vel corrupti aliquid quo?", time: "8:30PM", date: new Date(2024, 10, 28) }
-    ];
+function CoachCompletedSessions({ completedSessions }) {
     const [showModal, setShowModal] = useState(false);
     const [selectedCoach, setSelectedCoach] = useState('all');
     const [selectedType, setSelectedType] = useState('all');
@@ -27,10 +14,8 @@ function CoachCompletedSessions() {
     const [commentModal, setCommentModal] = useState({ show: false, sessionId: null, comment: '' });
     const [rescheduleModal, setRescheduleModal] = useState({ show: false, sessionId: null, date: null });
 
-
     const uniqueCoaches = [...new Set(completedSessions.map(session => session.coachName))];
     const uniqueTypes = [...new Set(completedSessions.map(session => session.sessionType))];
-
     const formatDate = (date) => {
         return date.toLocaleDateString('en-US', {
             month: 'short',
@@ -38,12 +23,6 @@ function CoachCompletedSessions() {
             year: 'numeric'
         });
     };
-
-    const filteredSessions = completedSessions.filter(session => {
-        const matchesCoach = selectedCoach === 'all' || session.coachName === selectedCoach;
-        const matchesType = selectedType === 'all' || session.sessionType === selectedType;
-        return matchesCoach && matchesType;
-    });
 
     const resetFilters = () => {
         setSelectedCoach('all');
@@ -77,11 +56,6 @@ function CoachCompletedSessions() {
         });
     };
 
-    const handleSendMessage = () => {
-        // Implement message sending logic
-        setMessageModal({ show: false, sessionId: null });
-    };
-
     const handleUpdateComment = () => {
         setSessions(prevSessions =>
             prevSessions.map(session =>
@@ -103,7 +77,6 @@ function CoachCompletedSessions() {
         );
         setRescheduleModal({ show: false, sessionId: null, date: null });
     };
-
     return (
         <div className={styles.eventsGrid}>
             <div className={styles.headerContainer}>
