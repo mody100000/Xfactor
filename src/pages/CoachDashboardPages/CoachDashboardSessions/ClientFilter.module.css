@@ -1,0 +1,44 @@
+.filterContainer {
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.clientCard {
+  transition: all 0.3s ease;
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.clientCard:hover {
+  transform: scale(1.05);
+  box-shadow: var(--coaches-box-shadow);
+}
+
+.clientCardImage {
+  height: 250px;
+  object-fit: cover;
+}
+
+.clientCardBody {
+  background-color: var(--productCard-color);
+  padding: 15px;
+  color: var(--text-color);
+}
+
+.filterInput {
+  border-radius: 20px;
+  padding: 10px 15px;
+}
+
+.noResultsMessage {
+  background-color: #f8d7da;
+  color: #721c24;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+}
