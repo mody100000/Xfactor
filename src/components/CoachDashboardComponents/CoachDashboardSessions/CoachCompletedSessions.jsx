@@ -358,7 +358,7 @@ function CoachCompletedSessions() {
                                 <FaEnvelope /> Message
                             </button>
                             <button
-                                className='btn btn-outline-secondary me-2'
+                                className={session.description ? "btn btn-outline-success me-2" : "btn btn-outline-danger me-2"}
                                 onClick={() => openCommentModal(session.id)}
                             >
                                 <FaComment /> Comment
