@@ -136,7 +136,7 @@ const routes = createBrowserRouter([
       { path: "coach-profile", element: <CoachDashboardProfile /> },
       { path: "coach-Packages", element: <CoachDashboardPackages /> },
       { path: "client-filter", element: <ClientFilter /> },
-      { path: "client-filter/coach-sessions/:id", element: <MainCoachSessions /> },
+      { path: "client-filter/coach-sessions", element: <MainCoachSessions /> },
     ]
   },
 ]);
