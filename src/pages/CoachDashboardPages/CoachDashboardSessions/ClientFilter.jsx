@@ -1,6 +1,5 @@
 import React, { useState, useMemo } from 'react';
 import styles from './ClientFilter.module.css';
-import MainCoachSessions from '../../../components/CoachDashboardComponents/MainCoachSessions';
 import { clientData } from '../../../components/ClientsData/ClientsData';
 import { useNavigate } from 'react-router-dom';
 
@@ -37,7 +36,7 @@ function ClientFilter() {
     const sports = [...new Set(clientData.map(client => client.sessionType))];
     const locations = [...new Set(clientData.map(client => client.sessionLocation))];
     const handleClientSelect = (client) => {
-        navigate('/coach-dashboard/client-filter/coach-sessions', { state: { selectedClient: client } });
+        navigate(`/coach-dashboard/client-filter/coach-sessions/${client.id}`, { state: { client: client } });
     };
 
     return (
