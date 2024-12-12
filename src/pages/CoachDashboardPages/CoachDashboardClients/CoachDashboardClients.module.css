@@ -2,6 +2,7 @@
   border-radius: 12px;
   padding: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow-x: hidden;
 }
 
 .clientCard {
@@ -19,9 +20,7 @@
   transform: scale(1.05);
   box-shadow: var(--coaches-box-shadow);
 }
-.cardWidth {
-  width: 15rem;
-}
+
 .clientCardImage {
   height: 250px;
   object-fit: fill;
@@ -73,8 +72,18 @@
   width: 100%;
   margin: 12px auto;
 }
-@media (max-width: 576px) {
-  .cardWidth {
-    width: 20rem;
-  }
+.input {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  min-height: 120px;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  resize: vertical;
+  color: var(--text-color) !important;
+  background-color: var(--filterSidebar-color) !important;
+}
+.input::placeholder {
+  color: var(--supText-color);
 }
