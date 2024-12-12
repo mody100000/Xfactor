@@ -5,15 +5,14 @@ import { useNavigate } from 'react-router-dom';
 
 function ClientFilter() {
     const navigate = useNavigate();
-    const [filteredClients, setFilteredClients] = useState(clientData);
-    const [selectedClient, setSelectedClient] = useState(null);
+    const [selectedClients, setSelectedClients] = useState([]);
     const [filters, setFilters] = useState({
         sport: '',
         location: '',
         search: ''
     });
 
-    // Memoized filter and search logic
+    // Memoized filtering logic
     const processedClients = useMemo(() => {
         return clientData.filter(client => {
             const matchesSport = !filters.sport || client.sessionType === filters.sport;
@@ -21,7 +20,6 @@ function ClientFilter() {
             const matchesSearch = !filters.search ||
                 client.coachName.toLowerCase().includes(filters.search.toLowerCase()) ||
                 client.sessionType.toLowerCase().includes(filters.search.toLowerCase());
-
             return matchesSport && matchesLocation && matchesSearch;
         });
     }, [filters]);
@@ -29,18 +27,31 @@ function ClientFilter() {
     const handleFilterChange = (e) => {
         const { name, value } = e.target;
         setFilters(prev => ({ ...prev, [name]: value }));
-        setFilteredClients(processedClients);
+    };
+
+    const toggleClientSelection = (client) => {
+        setSelectedClients(prev => {
+            const isAlreadySelected = prev.some(selectedClient => selectedClient.id === client.id);
+            return isAlreadySelected
+                ? prev.filter(selectedClient => selectedClient.id !== client.id)
+                : [...prev, client];
+        });
+    };
+
+    const handleViewSelectedClients = () => {
+        if (selectedClients.length > 0) {
+            navigate('/coach-dashboard/client-filter/coach-sessions', {
+                state: { clients: selectedClients }
+            });
+        }
     };
 
     // Get unique sports and locations for filter dropdowns
     const sports = [...new Set(clientData.map(client => client.sessionType))];
     const locations = [...new Set(clientData.map(client => client.sessionLocation))];
-    const handleClientSelect = (client) => {
-        navigate(`/coach-dashboard/client-filter/coach-sessions/${client.id}`, { state: { client: client } });
-    };
 
     return (
-        <div className="container-fluid">
+        <div>
             <div className={`row ${styles.filterContainer}`}>
                 <div className="col-12 mb-4">
                     <div className="row g-3">
@@ -83,13 +94,30 @@ function ClientFilter() {
                     </div>
                 </div>
 
+                <div className="col-12 mb-3 d-flex justify-content-center">
+                    {selectedClients.length > 0 && (
+                        <button
+                            className="btn btn-success my-3"
+                            onClick={handleViewSelectedClients}
+                        >
+                            View {selectedClients.length} Selected Clients
+                        </button>
+                    )}
+                </div>
+
                 <div className="col-12">
-                    <div className="row">
+                    <div className="row d-flex justify-content-center gap-2">
                         {processedClients.map(client => (
-                            <div key={client.id} className="col-md-4 mb-4" onClick={() => handleClientSelect(client)}>
+                            <div
+                                key={client.id}
+                                className={`col-md-2 mb-4  ${styles.cardWidth}`}
+                                onClick={() => toggleClientSelection(client)}
+                            >
                                 <div
-                                    className={`card ${styles.clientCard}`}
-                                    onClick={() => setSelectedClient(client)}
+                                    className={`card ${styles.clientCard} ${selectedClients.some(c => c.id === client.id)
+                                        ? styles.selectedClient
+                                        : ''
+                                        }`}
                                 >
                                     <img
                                         src={client.img}
@@ -104,6 +132,11 @@ function ClientFilter() {
                                             <span>{client.time}</span>
                                         </div>
                                     </div>
+                                    {selectedClients.some(c => c.id === client.id) && (
+                                        <div className={styles.selectedOverlay}>
+                                            ✓ Selected
+                                        </div>
+                                    )}
                                 </div>
                             </div>
                         ))}

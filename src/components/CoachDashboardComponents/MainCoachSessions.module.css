@@ -86,3 +86,11 @@
     margin-bottom: 2rem;
   }
 }
+@media (max-width: 1068px) {
+  .buttonContainer {
+    display: flex;
+    justify-content: flex-start; /* Align button to the left */
+    align-items: center;
+    margin: 2rem;
+  }
+}

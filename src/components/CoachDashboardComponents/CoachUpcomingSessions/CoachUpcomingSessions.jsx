@@ -1,10 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styles from './CoachUpcomingSessions.module.css';
 import { GrFormPrevious, GrFormNext } from "react-icons/gr";
-import event1 from "@assets/user.webp";
-import event2 from "@assets/RegisterCoach (1).jpg"
-import event3 from "@assets/review2.jpeg"
-import event4 from "@assets/review1.jpeg";
 import { FaClock, FaTrash, FaFilter } from 'react-icons/fa6';
 import { FaCalendarAlt, FaCheckCircle, FaMapMarkerAlt } from 'react-icons/fa';
 import { toast, ToastContainer } from 'react-toastify';
@@ -38,10 +34,11 @@ const CoachUpcomingSessions = ({ upcomingSessions }) => {
     const uniqueSessionTypes = [...new Set(events.map(event => event.sessionType))];
 
     // Filter events based on coach and session type
-    const filteredEvents = events.filter(event =>
-        (!coachFilter || event.coachName === coachFilter) &&
-        (!sessionTypeFilter || event.sessionType === sessionTypeFilter)
-    );
+    const filteredEvents = events.filter(event => {
+        const matchesCoach = !coachFilter || coachFilter.includes(event.coachName);
+        const matchesSessionType = !sessionTypeFilter || sessionTypeFilter.includes(event.sessionType);
+        return matchesCoach && matchesSessionType;
+    });
 
     useEffect(() => {
         try {

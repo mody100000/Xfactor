@@ -15,17 +15,17 @@ export const clientData = [
     time: "10:00AM",
     upcomingSessions: [
       {
-        id: 1,
+        id: 101,
         img: event1,
         description:
           "Experienced yoga instructor specializing in mindfulness and stress reduction techniques. Offers personalized sessions for all skill levels.",
         time: "10:00AM",
-        date: new Date(2024, 11, 15),
+        date: new Date(2024, 11, 20),
       },
     ],
     completedSessions: [
       {
-        id: 2,
+        id: 102,
         coachName: "Mark",
         sessionType: "Tennis",
         sessionLocation: "Online",
@@ -48,7 +48,7 @@ export const clientData = [
     time: "1:30PM",
     upcomingSessions: [
       {
-        id: 1,
+        id: 201,
         img: event1,
         description:
           "Experienced yoga instructor specializing in mindfulness and stress reduction techniques. Offers personalized sessions for all skill levels.",
@@ -58,7 +58,7 @@ export const clientData = [
     ],
     completedSessions: [
       {
-        id: 2,
+        id: 202,
         coachName: "Mark",
         sessionType: "Tennis",
         sessionLocation: "Online",
@@ -82,7 +82,7 @@ export const clientData = [
     date: new Date(2024, 11, 28),
     upcomingSessions: [
       {
-        id: 1,
+        id: 301,
         img: event1,
         description:
           "Experienced yoga instructor specializing in mindfulness and stress reduction techniques. Offers personalized sessions for all skill levels.",
@@ -92,7 +92,7 @@ export const clientData = [
     ],
     completedSessions: [
       {
-        id: 2,
+        id: 302,
         coachName: "Mark",
         sessionType: "Tennis",
         sessionLocation: "Online",
@@ -116,7 +116,7 @@ export const clientData = [
     date: new Date(2024, 11, 5),
     upcomingSessions: [
       {
-        id: 1,
+        id: 401,
         img: event1,
         description:
           "Experienced yoga instructor specializing in mindfulness and stress reduction techniques. Offers personalized sessions for all skill levels.",
@@ -126,7 +126,7 @@ export const clientData = [
     ],
     completedSessions: [
       {
-        id: 2,
+        id: 402,
         coachName: "Mark",
         sessionType: "Tennis",
         sessionLocation: "Online",
@@ -150,7 +150,7 @@ export const clientData = [
     date: new Date(2024, 11, 21),
     upcomingSessions: [
       {
-        id: 1,
+        id: 501,
         img: event1,
         description:
           "Experienced yoga instructor specializing in mindfulness and stress reduction techniques. Offers personalized sessions for all skill levels.",
@@ -160,7 +160,7 @@ export const clientData = [
     ],
     completedSessions: [
       {
-        id: 2,
+        id: 502,
         coachName: "Mark",
         sessionType: "Tennis",
         sessionLocation: "Online",
