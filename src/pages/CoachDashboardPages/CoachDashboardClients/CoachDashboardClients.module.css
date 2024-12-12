@@ -1,0 +1,80 @@
+.filterContainer {
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.clientCard {
+  transition: all 0.3s ease;
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  width: 100%;
+}
+
+.clientCard:hover {
+  transform: scale(1.05);
+  box-shadow: var(--coaches-box-shadow);
+}
+.cardWidth {
+  width: 15rem;
+}
+.clientCardImage {
+  height: 250px;
+  object-fit: fill;
+  transition: all 0.3s ease-in-out;
+}
+.selectedClient .clientCardImage {
+  opacity: 0.9;
+  filter: brightness(0.9);
+}
+.clientCardBody {
+  background-color: var(--productCard-color);
+  padding: 15px;
+  color: var(--text-color);
+}
+
+.filterInput {
+  border-radius: 20px;
+  padding: 10px 15px;
+}
+
+.noResultsMessage {
+  background-color: #f8d7da;
+  color: #721c24;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+}
+.selectedClient {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(103, 243, 33, 0.4);
+  border: 2px solid #42c02fa1;
+  outline: none;
+}
+.selectedOverlay {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #78c02fa1;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+.line {
+  display: block;
+  height: 1px;
+  background-color: #dbdbdbde;
+  width: 100%;
+  margin: 12px auto;
+}
+@media (max-width: 576px) {
+  .cardWidth {
+    width: 20rem;
+  }
+}

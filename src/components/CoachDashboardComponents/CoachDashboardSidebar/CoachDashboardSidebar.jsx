@@ -55,10 +55,10 @@ const CoachDashboardSidebar = ({ isOpen, toggleSidebar, toggleTheme, theme }) =>
                 <li className={getMenuItemClass('/dashboard/career')}>
                     <BiBriefcase size={25} className="mx-2" /> Camps
                 </li>
-                <li className={`${getMenuItemClass('/dashboard/chat')} mt-5`}>
-                    {/* <NavLink to="/dashboard/chat" className='text-decoration-none text-light'> */}
-                    <IoPeopleOutline size={22} className="mx-2" /> Clients
-                    {/* </NavLink> */}
+                <li className={`${getMenuItemClass('/coach-dashboard/coach-clients')} mt-5`}>
+                    <NavLink to="/coach-dashboard/coach-clients" className='text-decoration-none text-light'>
+                        <IoPeopleOutline size={22} className="mx-2" /> Clients
+                    </NavLink>
                 </li>
                 <li className={getMenuItemClass('/dashboard/purchases')}>
                     {/* <NavLink to="/dashboard/purchases" className='text-decoration-none text-light'> */}

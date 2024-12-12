@@ -61,6 +61,8 @@ import CoachPaymentMethodPage from './pages/RegisterPage/CoachPaymentMethodPage/
 import CoachDashboardSessions from './pages/CoachDashboardPages/CoachDashboardSessions/ClientFilter';
 import ClientFilter from './pages/CoachDashboardPages/CoachDashboardSessions/ClientFilter';
 import MainCoachSessions from './components/CoachDashboardComponents/MainCoachSessions';
+import { element } from 'prop-types';
+import CoachDashboardClients from './pages/CoachDashboardPages/CoachDashboardClients/CoachDashboardClients';
 
 const routes = createBrowserRouter([
   {
@@ -137,6 +139,8 @@ const routes = createBrowserRouter([
       { path: "coach-Packages", element: <CoachDashboardPackages /> },
       { path: "client-filter", element: <ClientFilter /> },
       { path: "client-filter/coach-sessions", element: <MainCoachSessions /> },
+      { path: "coach-clients", element: <CoachDashboardClients /> }
+
     ]
   },
 ]);
