@@ -12,6 +12,7 @@ import { IoWalletOutline } from "react-icons/io5";
 import { CiSettings, CiDark } from "react-icons/ci";
 import { LuPackageSearch } from "react-icons/lu";
 import { IoPeopleOutline } from "react-icons/io5";
+import { PiPersonSimpleThrowFill } from "react-icons/pi";
 
 
 const CoachDashboardSidebar = ({ isOpen, toggleSidebar, toggleTheme, theme }) => {
@@ -49,7 +50,7 @@ const CoachDashboardSidebar = ({ isOpen, toggleSidebar, toggleTheme, theme }) =>
                 </li>
                 <li className={getMenuItemClass('/coach-dashboard/client-filter')}>
                     <NavLink to="/coach-dashboard/client-filter" className='text-decoration-none text-light'>
-                        <MdOutlineSpeakerNotes size={25} className="mx-2" /> Sessions
+                        <PiPersonSimpleThrowFill size={25} className="mx-2" /> Sessions
                     </NavLink>
                 </li>
                 <li className={getMenuItemClass('/dashboard/career')}>
@@ -60,10 +61,10 @@ const CoachDashboardSidebar = ({ isOpen, toggleSidebar, toggleTheme, theme }) =>
                         <IoPeopleOutline size={22} className="mx-2" /> Clients
                     </NavLink>
                 </li>
-                <li className={getMenuItemClass('/dashboard/purchases')}>
-                    {/* <NavLink to="/dashboard/purchases" className='text-decoration-none text-light'> */}
-                    <MdOutlineEventAvailable size={25} className="mx-2" /> Availability
-                    {/* </NavLink> */}
+                <li className={getMenuItemClass('/coach-dashboard/coach-availability')}>
+                    <NavLink to="/coach-dashboard/coach-availability" className='text-decoration-none text-light'>
+                        <MdOutlineEventAvailable size={25} className="mx-2" /> Availability
+                    </NavLink>
                 </li>
                 <li className={getMenuItemClass('/dashboard/help')}>
                     < IoWalletOutline size={25} className="mx-2" /> Payments

@@ -51,7 +51,7 @@ function ClientFilter() {
     const locations = [...new Set(clientData.map(client => client.sessionLocation))];
 
     return (
-        <div>
+        <div className='overflow-hidden'>
             <div className={`row ${styles.filterContainer}`}>
                 <div className="col-12 mb-4">
                     <div className="row g-3">

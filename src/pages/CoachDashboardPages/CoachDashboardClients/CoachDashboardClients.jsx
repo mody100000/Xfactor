@@ -2,6 +2,9 @@ import React, { useState, useMemo, useCallback } from 'react';
 import styles from './CoachDashboardClients.module.css';
 import { clientData } from '../../../components/ClientsData/ClientsData';
 import { useNavigate } from 'react-router-dom';
+import { PiPersonSimpleThrowFill } from "react-icons/pi";
+import { ImCancelCircle } from "react-icons/im";
+import { LuMessageCircle } from "react-icons/lu";
 
 function CoachDashboardClients() {
     const navigate = useNavigate();
@@ -68,13 +71,11 @@ function CoachDashboardClients() {
         setSelectedClient(null);
     };
 
-    // Get unique sports and locations for filter dropdowns
     const sports = [...new Set(clientData.map(client => client.sessionType))];
     const locations = [...new Set(clientData.map(client => client.sessionLocation))];
 
     return (
-        <div>
-            {/* Filter Dropdowns */}
+        <div className='overflow-hidden'>
             <div className={`row ${styles.filterContainer}`}>
                 <div className="col-12 mb-4">
                     <div className="row g-3">
@@ -118,12 +119,12 @@ function CoachDashboardClients() {
                 </div>
 
                 {/* Clients Grid */}
-                <div className="col-12">
-                    <div className="row d-flex justify-content-center gap-2">
+                <div className="col-12 p-4 overflow-hidden">
+                    <div className="row d-flex justify-content-between">
                         {processedClients.map(client => (
                             <div
                                 key={client.id}
-                                className={`col-md-2 mb-4 ${styles.cardWidth}`}
+                                className={`col-md-5 col-lg-3 mb-4 ${styles.cardWidth}`}
                             >
                                 <div className={`card ${styles.clientCard}`}>
                                     <img
@@ -139,24 +140,24 @@ function CoachDashboardClients() {
                                             <span>{client.time}</span>
                                         </div>
                                         <span className={styles.line}></span>
-                                        <div className="d-flex flex-column gap-2 justify-content-between">
+                                        <div className="d-flex flex-row gap-2 justify-content-between">
                                             <button
-                                                className="btn btn-sm btn-primary"
+                                                className="btn btn-outline-danger px-4"
                                                 onClick={() => handleSessions(client)}
                                             >
-                                                Sessions
+                                                <PiPersonSimpleThrowFill size={25} />
                                             </button>
                                             <button
-                                                className="btn btn-sm btn-danger"
+                                                className="btn btn-outline-danger px-4"
                                                 onClick={() => handleDeleteClient(client)}
                                             >
-                                                Cancel
+                                                <ImCancelCircle size={25} />
                                             </button>
                                             <button
-                                                className="btn btn-sm btn-success"
+                                                className="btn btn-outline-danger px-4"
                                                 onClick={() => handleSendMessage(client)}
                                             >
-                                                Message
+                                                <LuMessageCircle size={25} />
                                             </button>
                                         </div>
                                     </div>
@@ -173,7 +174,6 @@ function CoachDashboardClients() {
                 </div>
             </div>
 
-            {/* Delete Confirmation Modal */}
             {showDeleteModal && (
                 <div className="modal" style={{ display: 'block', backgroundColor: 'rgba(0,0,0,0.5)' }} tabIndex="-1">
                     <div className="modal-dialog">
@@ -225,7 +225,7 @@ function CoachDashboardClients() {
                             </div>
                             <div className="modal-body">
                                 <textarea
-                                    className="form-control"
+                                    className={`form-control ${styles.input}`}
                                     rows="4"
                                     value={messageText}
                                     onChange={(e) => setMessageText(e.target.value)}
