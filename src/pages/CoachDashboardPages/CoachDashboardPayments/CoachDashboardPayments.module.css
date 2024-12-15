@@ -1,0 +1,95 @@
+.paymentsDashboard {
+  padding: 20px;
+}
+
+.pageTitle {
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 0;
+}
+
+.summaryCard {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  background-color: var(--filterSidebar-color);
+  color: var(--text-color);
+}
+
+.summaryCard:hover {
+  transform: translateY(-5px);
+}
+
+.cardIcon {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardPayment {
+  background-color: var(--filterSidebar-color); /* Light gray background */
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: var(--text-color);
+}
+
+.paymentTableContainer {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.paymentTable {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.paymentTableHeader {
+  background-color: #e9ecef4d;
+}
+
+.paymentTableHeader th {
+  padding: 12px 15px;
+  text-align: left;
+  font-weight: 600;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.paymentTableBody tr {
+  transition: background-color 0.3s ease;
+  background-color: var(--message-bgcolor);
+}
+
+.paymentTableBody tr:hover {
+  background-color: #00000057; /* Light hover effect */
+}
+
+.paymentTableBody td {
+  padding: 12px 15px;
+  color: var(--text-color);
+  border-bottom: 1px solid #dee2e6;
+  vertical-align: middle;
+}
+
+.paymentStatusBadge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8em;
+  font-weight: 600;
+}
+.paymentStatusCompleted {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.paymentStatusPending {
+  background-color: #fff3cd;
+  color: #856404;
+}
+.actionBtn {
+  color: var(--text-color);
+}
