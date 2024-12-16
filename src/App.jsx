@@ -64,6 +64,8 @@ import MainCoachSessions from './components/CoachDashboardComponents/MainCoachSe
 import { element } from 'prop-types';
 import CoachDashboardClients from './pages/CoachDashboardPages/CoachDashboardClients/CoachDashboardClients';
 import CoachDashboardAvailability from './pages/CoachDashboardPages/CoachDashboardAvailability/CoachDashboardAvailability';
+import CoachDashboardPayments from './pages/CoachDashboardPages/CoachDashboardPayments/CoachDashboardPayments';
+import CoachAccountPage from './pages/CoachDashboardPages/CoachAccountPage/CoachAccount';
 
 const routes = createBrowserRouter([
   {
@@ -141,7 +143,9 @@ const routes = createBrowserRouter([
       { path: "client-filter", element: <ClientFilter /> },
       { path: "client-filter/coach-sessions", element: <MainCoachSessions /> },
       { path: "coach-clients", element: <CoachDashboardClients /> },
-      { path: "coach-availability", element: <CoachDashboardAvailability /> }
+      { path: "coach-availability", element: <CoachDashboardAvailability /> },
+      { path: "coach-payments", element: <CoachDashboardPayments /> },
+      { path: "coach-account", element: <CoachAccountPage /> },
     ]
   },
 ]);

@@ -287,7 +287,7 @@
 .modalButton:hover {
   transform: translateY(-2px);
 }
-/* .input {
+.input {
   width: 100%;
   padding: 1rem;
   border-radius: 8px;
@@ -298,7 +298,7 @@
   resize: vertical;
   color: var(--text-color) !important;
   background-color: var(--filterSidebar-color) !important;
-} */
+}
 .input::placeholder {
   color: var(--supText-color);
 }

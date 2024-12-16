@@ -66,8 +66,10 @@ const CoachDashboardSidebar = ({ isOpen, toggleSidebar, toggleTheme, theme }) =>
                         <MdOutlineEventAvailable size={25} className="mx-2" /> Availability
                     </NavLink>
                 </li>
-                <li className={getMenuItemClass('/dashboard/help')}>
-                    < IoWalletOutline size={25} className="mx-2" /> Payments
+                <li className={getMenuItemClass('/coach-dashboard/coach-payments')}>
+                    <NavLink to="/coach-dashboard/coach-payments" className='text-decoration-none text-light'>
+                        < IoWalletOutline size={25} className="mx-2" /> Payments
+                    </NavLink>
                 </li>
                 <li className={getMenuItemClass('/dashboard/settings')}>
                     <CiSettings size={25} className="mx-2" /> Account
