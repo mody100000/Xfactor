@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styles from "./CoachAccount.module.css"
+
 const CoachAccountPage = () => {
+    const navigate = useNavigate();
     const [startDate, setStartDate] = useState('');
     const [endDate, setEndDate] = useState('');
     const [vacationReason, setVacationReason] = useState('');
@@ -8,12 +11,17 @@ const CoachAccountPage = () => {
 
     const handleVacationSubmit = (e) => {
         e.preventDefault();
-        // Vacation submission logic
         console.log('Vacation Details:', {
             startDate,
             endDate,
             reason: vacationReason
         });
+    };
+
+    const handleTraineeModeClick = () => {
+        setTraineeModeEnabled(!traineeModeEnabled);
+
+        navigate('/dashboard');
     };
 
     return (
@@ -31,7 +39,7 @@ const CoachAccountPage = () => {
                                 <label className="form-label">Start Date</label>
                                 <input
                                     type="date"
-                                    className="form-control"
+                                    className={`form-control ${styles.dateInput}`}
                                     value={startDate}
                                     onChange={(e) => setStartDate(e.target.value)}
                                     required
@@ -41,7 +49,7 @@ const CoachAccountPage = () => {
                                 <label className="form-label">End Date</label>
                                 <input
                                     type="date"
-                                    className="form-control"
+                                    className={`form-control ${styles.dateInput}`}
                                     value={endDate}
                                     onChange={(e) => setEndDate(e.target.value)}
                                     required
@@ -52,7 +60,7 @@ const CoachAccountPage = () => {
                         <div className="mb-3">
                             <label className="form-label">Vacation Reason</label>
                             <textarea
-                                className="form-control"
+                                className={`${styles.input} text-black`}
                                 rows="3"
                                 value={vacationReason}
                                 onChange={(e) => setVacationReason(e.target.value)}
@@ -63,8 +71,8 @@ const CoachAccountPage = () => {
 
                         <button
                             type="submit"
-                            className="btn btn-primary"
-                            disabled={!startDate || !endDate || !vacationReason}
+                            className="btn btn-danger"
+                            disabled={!startDate || !endDate}
                         >
                             Submit Vacation Request
                         </button>
@@ -74,24 +82,21 @@ const CoachAccountPage = () => {
                 {/* Trainee Mode Section */}
                 <div className={styles.traineeModeSection}>
                     <h2 className="h4 mb-3">Trainee Mode</h2>
-                    <div className="form-check form-switch">
-                        <input
-                            className="form-check-input"
-                            type="checkbox"
-                            id="traineeModeSwitch"
-                            checked={traineeModeEnabled}
-                            onChange={(e) => setTraineeModeEnabled(e.target.checked)}
-                        />
-                        <label
-                            className="form-check-label"
-                            htmlFor="traineeModeSwitch"
-                        >
-                            {traineeModeEnabled ? "Trainee Mode Enabled" : "Enable Trainee Mode"}
-                        </label>
-                    </div>
+                    <button
+                        className={`${styles.traineeModeButton} ${traineeModeEnabled ? styles.active : ''}`}
+                        onClick={handleTraineeModeClick}
+                    >
+                        <span className={styles.buttonText}>
+                            {traineeModeEnabled ? "Trainee Mode On" : "Enter Trainee Mode"}
+                        </span>
+                        <div className={styles.buttonIcon}>
+                            {traineeModeEnabled ? '🚀' : '👩‍🎓'}
+                        </div>
+                    </button>
+
                     {traineeModeEnabled && (
-                        <p className="text-muted mt-2">
-                            Trainee mode is currently active. Additional features may be limited.
+                        <p className={styles.modeNotice}>
+                            Trainee mode is currently active. Some features may be limited.
                         </p>
                     )}
                 </div>

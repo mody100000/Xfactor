@@ -1,20 +1,87 @@
 .accountPage {
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .vacationSection {
-  background-color: white;
+  background-color: var(--filterSidebar-color);
   padding: 20px;
   border-radius: 8px;
   margin-bottom: 20px;
 }
 
 .traineeModeSection {
-  background-color: white;
+  background-color: var(--filterSidebar-color);
   padding: 20px;
   border-radius: 8px;
 }
 .text {
   color: var(--text-color);
+}
+.input {
+  width: 100%;
+  padding: 0.9rem;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  resize: vertical;
+  background-color: white !important;
+}
+
+.input::placeholder {
+  color: black;
+}
+.dateInput[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg)
+    brightness(104%) contrast(97%);
+
+  cursor: pointer;
+}
+.traineeModeContainer {
+  background-color: var(--filterSidebar-color);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.traineeModeButton {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  background-color: #b7382f;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.traineeModeButton:hover {
+  background-color: #982727;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.buttonText {
+  font-weight: 600;
+  z-index: 2;
+  position: relative;
+}
+
+.buttonIcon {
+  font-size: 1.5rem;
+  margin-left: 10px;
+  z-index: 2;
+  position: relative;
+}
+
+.modeNotice {
+  margin-top: 10px;
+  color: #c71f1f;
+  font-size: 0.9rem;
+  text-align: center;
 }

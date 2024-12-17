@@ -6,8 +6,7 @@ import { RiLogoutCircleLine } from "react-icons/ri";
 import logo from "../../../assets/logo.png";
 import { IoPersonCircleOutline } from "react-icons/io5";
 import { BsJournalBookmark } from "react-icons/bs";
-import { MdOutlineEventAvailable, MdOutlineSpeakerNotes } from "react-icons/md";
-import { BiBriefcase } from "react-icons/bi";
+import { MdOutlineEventAvailable } from "react-icons/md";
 import { IoWalletOutline } from "react-icons/io5";
 import { CiSettings, CiDark } from "react-icons/ci";
 import { LuPackageSearch } from "react-icons/lu";
@@ -24,7 +23,6 @@ const CoachDashboardSidebar = ({ isOpen, toggleSidebar, toggleTheme, theme }) =>
         }
         return location.pathname.startsWith(path) ? `${styles.menuItem} ${styles.active}` : styles.menuItem;
     };
-
 
     return (
         <div className={`${styles.sidebar} ${isOpen ? styles.open : ''}`}>
@@ -53,9 +51,6 @@ const CoachDashboardSidebar = ({ isOpen, toggleSidebar, toggleTheme, theme }) =>
                         <PiPersonSimpleThrowFill size={25} className="mx-2" /> Sessions
                     </NavLink>
                 </li>
-                <li className={getMenuItemClass('/dashboard/career')}>
-                    <BiBriefcase size={25} className="mx-2" /> Camps
-                </li>
                 <li className={`${getMenuItemClass('/coach-dashboard/coach-clients')} mt-5`}>
                     <NavLink to="/coach-dashboard/coach-clients" className='text-decoration-none text-light'>
                         <IoPeopleOutline size={22} className="mx-2" /> Clients
@@ -71,8 +66,10 @@ const CoachDashboardSidebar = ({ isOpen, toggleSidebar, toggleTheme, theme }) =>
                         < IoWalletOutline size={25} className="mx-2" /> Payments
                     </NavLink>
                 </li>
-                <li className={getMenuItemClass('/dashboard/settings')}>
-                    <CiSettings size={25} className="mx-2" /> Account
+                <li className={getMenuItemClass('/coach-dashboard/coach-account')}>
+                    <NavLink to="/coach-dashboard/coach-account" className='text-decoration-none text-light'>
+                        <CiSettings size={25} className="mx-2" /> Account
+                    </NavLink>
                 </li>
                 <li className={styles.menuItem} onClick={toggleTheme}>
                     <CiDark size={25} className="mx-2" /> {theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
