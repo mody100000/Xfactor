@@ -1,4 +1,3 @@
-// PaymentMethodForm.jsx
 import React, { useState } from 'react';
 import { IoChevronBackOutline, IoChevronDownOutline, IoChevronUpOutline } from "react-icons/io5";
 import { FaPaypal, FaPiggyBank, FaExclamationCircle } from "react-icons/fa";
