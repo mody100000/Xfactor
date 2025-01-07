@@ -1,0 +1,87 @@
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+.modalOverlay :global(.modal-dialog) {
+  width: 90%;
+  margin: 1.75rem auto;
+}
+.card {
+  border: none;
+  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+  box-shadow: var(--coaches-box-shadow);
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: var(--background-color);
+}
+
+.cardHeaderNew {
+  background-color: #bf1e2e;
+  color: white;
+  padding: 20px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cardHeaderNew h4 {
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+.cardBodyNew {
+  padding: 25px;
+}
+
+.formLabel {
+  font-weight: 600;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.textarea,
+.input {
+  width: 100%;
+  border-radius: 8px;
+  padding: 12px 15px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  background: var(--filterSidebar-color) !important;
+}
+.textarea::placeholder,
+.input::placeholder {
+  color: var(--supText-color);
+}
+.textarea:focus,
+.input:focus {
+  border-color: #e52d27;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(229, 45, 39, 0.1);
+}
+
+.submitButton {
+  background-color: #bf1e2e;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.submitButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(229, 45, 39, 0.2);
+}
