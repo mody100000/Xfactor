@@ -175,14 +175,14 @@ function CoachDashboardClients() {
             </div>
 
             {showDeleteModal && (
-                <div className="modal" style={{ display: 'block', backgroundColor: 'rgba(0,0,0,0.5)' }} tabIndex="-1">
+                <div className={`modal ${styles.modalOverlay}`}>
                     <div className="modal-dialog">
-                        <div className="modal-content">
+                        <div className={`modal-content ${styles.mainCard}`}>
                             <div className="modal-header">
                                 <h5 className="modal-title">Confirm Deletion</h5>
                                 <button
                                     type="button"
-                                    className="btn-close"
+                                    className={`btn-close`}
                                     onClick={() => setShowDeleteModal(false)}
                                 ></button>
                             </div>
@@ -212,9 +212,9 @@ function CoachDashboardClients() {
 
             {/* Message Modal */}
             {showMessageModal && (
-                <div className="modal" style={{ display: 'block', backgroundColor: 'rgba(0,0,0,0.5)' }} tabIndex="-1">
+                <div className={`modal ${styles.modalOverlay}`}>
                     <div className="modal-dialog">
-                        <div className="modal-content">
+                        <div className={`modal-content ${styles.mainCard}`}>
                             <div className="modal-header">
                                 <h5 className="modal-title">Send Message to {selectedClient?.coachName}</h5>
                                 <button
@@ -242,7 +242,7 @@ function CoachDashboardClients() {
                                 </button>
                                 <button
                                     type="button"
-                                    className="btn btn-primary"
+                                    className="btn btn-danger"
                                     onClick={sendMessage}
                                     disabled={!messageText.trim()}
                                 >
