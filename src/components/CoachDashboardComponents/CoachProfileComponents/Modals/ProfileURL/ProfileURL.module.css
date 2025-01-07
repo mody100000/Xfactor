@@ -1,0 +1,162 @@
+.coachProfileCard {
+  background-color: var(--productCard-color);
+  box-shadow: var(--coaches-box-shadow);
+  border-radius: 10px;
+}
+.detailsCard {
+  border: 1px solid var(--border-color);
+  padding: 0 2rem;
+}
+.badge {
+  padding: 0.1rem;
+  margin: 0.8rem 3rem;
+  background-color: #9d9d9d;
+  color: white;
+}
+/* Test */
+
+.urlContainer {
+  max-width: 700px;
+  margin: 2rem auto;
+}
+
+.mainCard {
+  border: none;
+  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+  box-shadow: var(--coaches-box-shadow);
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: var(--background-color);
+}
+
+.cardHeader {
+  background-color: #bf1e2e;
+  padding: 1.5rem;
+  border: none;
+}
+
+.cardBody {
+  padding: 2rem;
+}
+
+.description {
+  color: var(--supText-color);
+  font-size: 0.95rem;
+}
+
+.urlInputContainer {
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+}
+
+.baseUrl {
+  background-color: var(--filterSidebar-color);
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  color: #6b7280;
+  font-family: monospace;
+  white-space: nowrap;
+}
+
+.urlInput {
+  font-family: monospace;
+  border: 1px solid var(--border-color);
+  padding: 0.5rem 1rem;
+  background-color: var(--filterSidebar-color);
+  color: var(--supText-color) !important;
+}
+.urlInput::placeholder {
+  color: var(--supText-color);
+}
+.urlInput:focus {
+  border-color: #bf1e2e;
+  background-color: var(--filterSidebar-color);
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.1);
+}
+
+.btnSave {
+  background-color: #bf1e2e;
+  color: white;
+  padding: 0.7rem 2.5rem;
+  border-radius: 10px;
+  margin: 1px auto;
+  transition: all 0.2s ease;
+  font-size: large;
+}
+
+.btnSave:hover {
+  background-color: #dd2235;
+  color: white;
+}
+
+.btnSaved {
+  background-color: #10b981;
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  margin: 1px auto;
+}
+
+.btnSaved:hover {
+  background-color: #059669;
+  color: white;
+}
+
+.previewContainer {
+  border: 1px solid #ede9fe;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.previewText {
+  color: var(--text-color);
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.previewUrl {
+  font-family: monospace;
+  font-weight: bold;
+}
+.scheduleCard {
+  background-color: var(--filterSidebar-color);
+}
+.savebtn {
+  padding: 0.5rem 2rem;
+  text-align: center;
+  font-size: larger;
+  border-radius: 10px;
+}
+.input {
+  background-color: var(--filterSidebar-color) !important;
+  color: var(--text-color) !important;
+  border: none;
+  border-radius: 5px;
+  padding: 0.6rem 0.2rem 0.6rem 1rem !important;
+  border: 1px solid var(--border-color);
+  width: 100%;
+}
+
+.input::placeholder {
+  color: var(--placeholder-color) !important;
+}
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+@media (max-width: 576px) {
+  .cardBody {
+    padding: 1rem;
+  }
+}
