@@ -1,8 +1,32 @@
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+.modalOverlay :global(.modal-dialog) {
+  width: 90%;
+  margin: 1.75rem auto;
+}
 .filterContainer {
   border-radius: 12px;
   padding: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   overflow-x: hidden;
+}
+.mainCard {
+  border: none;
+  box-shadow: var(--coaches-box-shadow);
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: var(--filterSidebar-color);
 }
 
 .clientCard {
@@ -82,7 +106,7 @@
   transition: all 0.2s ease;
   resize: vertical;
   color: var(--text-color) !important;
-  background-color: var(--filterSidebar-color) !important;
+  background-color: var(--background-color) !important;
 }
 .input::placeholder {
   color: var(--supText-color);
