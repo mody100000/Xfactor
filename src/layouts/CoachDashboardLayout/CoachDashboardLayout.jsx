@@ -27,7 +27,7 @@ const CoachDashboardLayout = () => {
 
   return (
     <div className={styles.dashboard}>
-      <CoachDashboardSidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} toggleTheme={() => dispatch(toggleTheme())} />
+      <CoachDashboardSidebar isOpen={isSidebarOpen} theme={theme} toggleSidebar={toggleSidebar} toggleTheme={() => dispatch(toggleTheme())} />
       <div className={styles.mainSection}>
         <CoachDashboardTopbar toggleSidebar={toggleSidebar} />
         <Outlet />
