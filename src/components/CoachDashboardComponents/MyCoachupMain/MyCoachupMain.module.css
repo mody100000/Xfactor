@@ -2,12 +2,61 @@
   margin-top: 20px;
   overflow: hidden;
 }
+.img {
+  width: 100%;
+  height: 25rem;
+  object-fit: cover;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+}
 .line {
   display: block;
   height: 1px;
   background-color: #dbdbdb81;
   width: 100%;
   margin: 1rem auto 2rem auto;
+}
+.sectionTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+  color: var(--text-color);
+}
+.rankCard {
+  background: var(--filterSidebar-color);
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 1rem;
+  border: 1px solid var(--border-color);
+}
+.rankNumber {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #bf1e2e;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.rankLocation {
+  font-size: 1.1rem;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+}
+.linkButton {
+  background: none;
+  border: none;
+  color: #bf1e2e;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.linkButton:hover {
+  color: #a51b28;
+  text-decoration: underline;
+  background: var(--shifting-background-color);
+  border-radius: 4px;
 }
 /* ConversationList.module.css */
 .conversationContainer {
@@ -150,47 +199,85 @@
 }
 /* Card.module.css */
 /* Common Card Styles */
+/* Existing styles remain the same until .card */
+
+/* Updated Card Styles */
 .card {
-  overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  transition: all 0.3s ease;
+  border: none;
+  margin-bottom: 2rem;
+  cursor: pointer;
+}
+
+.actionArea {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--supText-color);
+  margin-top: 1rem;
+}
+
+.actionText {
+  color: #bf1e2e;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.arrowIcon {
+  color: #bf1e2e;
+  background: rgba(191, 30, 46, 0.1);
+  padding: 0.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+/* Premium Card Specific Styles */
+.coachCard .cardContent {
+  padding: 2rem;
+  position: relative;
+  background: linear-gradient(
+    145deg,
+    #ffffff6c 0%,
+    var(--filterSidebar-color) 100%
+  );
+  border-radius: 16px;
+  border: 1px solid rgba(191, 30, 46, 0.1);
+}
+
+.coachCard .premiumTag {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: linear-gradient(135deg, #bf1e2e 0%, #e4364a 100%);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px rgba(191, 30, 46, 0.2);
+}
+
+.coachCard .mainContent {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 1.5rem;
   margin-bottom: 2rem;
 }
 
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-}
-
-.cardHeader {
-  background: linear-gradient(135deg, #bf1e2e 0%, #e4364a 100%);
-  padding: 1.25rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.badge {
-  background-color: rgba(255, 255, 255, 0.2);
-  padding: 0.25rem 0.75rem;
-  border-radius: 20px;
-  font-size: 0.875rem;
-  color: white;
-  font-weight: bold;
-}
-
-.cardBody {
-  border: 1px solid #eaeaea;
-  border-top: none;
-  border-bottom-right-radius: 12px;
-  border-bottom-left-radius: 12px;
-}
-
-/* Icon Styles */
-.iconWrapper {
-  background-color: rgba(191, 30, 46, 0.1);
+.coachCard .iconContainer {
+  background: linear-gradient(
+    135deg,
+    rgba(191, 30, 46, 0.1) 0%,
+    rgba(228, 54, 74, 0.1) 100%
+  );
   color: #bf1e2e;
-  padding: 0.75rem;
+  padding: 1rem;
   border-radius: 12px;
   display: flex;
   align-items: center;
@@ -198,107 +285,161 @@
   flex-shrink: 0;
 }
 
-/* Arrow Styles */
-.arrowWrapper {
-  color: #bf1e2e;
-  opacity: 0.7;
-  transition: transform 0.2s ease;
-  padding: 0.5rem;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-.card:hover .arrowWrapper {
-  transform: translateX(5px);
-  opacity: 1;
-  background-color: rgba(191, 30, 46, 0.1);
-}
-
-/* CoachUp Card Specific Styles */
-.coachCard .cardBody {
+/* Todo Card Specific Styles */
+.todoCard .cardContent {
   padding: 1.5rem;
+  background: linear-gradient(
+    145deg,
+    #ffffff6c 0%,
+    var(--filterSidebar-color) 100%
+  );
+  border-radius: 16px;
+  border: 1px solid rgba(191, 30, 46, 0.1);
 }
 
-.coachCard .title {
-  color: #bf1e2e;
-  font-size: 1rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
+.todoCard .cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
 }
 
-.coachCard .subtitle {
-  color: #666;
-  font-size: 1rem;
+.todoCard .cardTitle {
+  color: var(--text-color);
+  font-size: 1.25rem;
+  font-weight: 700;
   margin: 0;
 }
 
-/* Todo Card Specific Styles */
-.todoCard .taskItem {
-  padding: 1.25rem;
-  border-bottom: 1px solid #eaeaea;
-  transition: background-color 0.2s ease;
+.todoCard .taskCounter {
+  background: linear-gradient(135deg, #bf1e2e 0%, #e4364a 100%);
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(191, 30, 46, 0.2);
 }
 
-.todoCard .taskItem:last-child {
-  border-bottom: none;
+.todoCard .tasksList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.todoCard .taskItem {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  /* background: var(--filterSidebar-color); */
+  border-radius: 12px;
+  transition: all 0.2s ease;
+  border: 1px solid var(--border-color);
 }
 
 .todoCard .taskItem:hover {
-  background-color: var(--filterSidebar-color);
-  border-bottom-right-radius: 12px;
-  border-bottom-left-radius: 12px;
+  transform: translateX(4px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  border-color: rgba(191, 30, 46, 0.2);
+  background-color: var(--background-color);
 }
 
-.todoCard .scheduleTask:hover {
-  background-color: var(--filterSidebar-color);
-}
-
-.todoCard .taskTitle {
+.todoCard .taskIconWrapper {
+  position: relative;
+  background: rgba(191, 30, 46, 0.1);
   color: #bf1e2e;
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin: 0 0 0.5rem 0;
-  line-height: 1.3;
+  padding: 0.75rem;
+  border-radius: 10px;
+  height: fit-content;
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.35rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.todoCard .iconLine {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 2px;
+  height: calc(100% - 20px);
+  background: rgba(191, 30, 46, 0.1);
+  transform: translateX(-50%);
+}
+
+.todoCard .messageContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: var(--filterSidebar-color);
+  padding: 0.75rem;
+  border-radius: 8px;
+}
+
+.todoCard .senderAvatar {
+  background: rgba(191, 30, 46, 0.1);
+  color: #bf1e2e;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.todoCard .taskContent {
+  flex-grow: 1;
+}
+
+.todoCard .taskHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
 }
 
 .todoCard .highlight {
-  color: #666;
-  font-weight: normal;
+  color: #bf1e2e;
+  margin-left: 0.5rem;
+  font-weight: 500;
 }
-
-.todoCard .messagePreview {
-  color: #666;
-  font-size: 0.95rem;
-  display: flex;
-  gap: 0.35rem;
-  align-items: center;
-  flex-wrap: wrap;
+.messagePreview {
+  color: var(--supText-color);
 }
-
-.todoCard .sender {
-  font-weight: 600;
-  color: #444;
-}
-
-.todoCard .messageText {
-  color: #666;
-}
-
-/* Responsive Styles */
+/* Responsive styles */
 @media (max-width: 576px) {
-  .todoCard .taskTitle {
-    font-size: 1rem;
+  .coachCard .cardContent,
+  .todoCard .cardContent {
+    padding: 1rem;
   }
 
-  .todoCard .messagePreview {
-    font-size: 0.875rem;
+  .todoCard .taskItem {
+    padding: 0.75rem;
   }
 
-  .iconWrapper {
-    padding: 0.5rem;
+  .todoCard .messageContainer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .todoCard .senderAvatar {
+    margin-bottom: 0.5rem;
+  }
+
+  .coachCard .mainContent {
+    gap: 1rem;
+    flex-direction: column;
+  }
+
+  .coachCard .textContent {
+    padding-right: 1rem;
+  }
+
+  .coachCard .premiumTag {
+    top: 1rem;
+    right: 1rem;
   }
 }
 

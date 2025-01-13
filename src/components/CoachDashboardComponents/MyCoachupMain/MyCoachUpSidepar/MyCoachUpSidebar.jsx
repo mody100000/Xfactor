@@ -29,16 +29,16 @@ function MyCoachUpSidebar() {
                 </button>
             </div>
 
-            <div className={styles.divider}></div>
+            {/* <div className={styles.divider}></div> */}
 
             {/* Ranking Section */}
             <div className={styles.section}>
-                <h4 className={styles.sectionTitle}>Coach Ranking and Stats</h4>
+                {/* <h4 className={styles.sectionTitle}>Coach Ranking and Stats</h4>
                 <div className={styles.rankCard}>
                     <div className={styles.rankNumber}>21st</div>
                     <p className={styles.rankLocation}>in Virginia Soccer</p>
                     <button className={styles.linkButton}>View Coach Leaderboard</button>
-                </div>
+                </div> */}
 
                 <div className={styles.statsContainer}>
                     <div className={styles.statItem}>
