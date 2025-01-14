@@ -20,7 +20,7 @@ export const clientData = [
         description:
           "Experienced yoga instructor specializing in mindfulness and stress reduction techniques. Offers personalized sessions for all skill levels.",
         time: "10:00AM",
-        date: new Date(2024, 11, 20),
+        date: new Date(2025, 1, 20),
       },
     ],
     completedSessions: [
@@ -33,7 +33,7 @@ export const clientData = [
         description:
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis dolore error eveniet voluptates maiores quasi ab quam accusantium expedita, et in eligendi officia vitae aut libero consequuntur accusamus voluptas numquam.",
         time: "1:30PM",
-        date: new Date(2024, 10, 5),
+        date: new Date(2025, 0, 5),
       },
     ],
   },
@@ -53,7 +53,7 @@ export const clientData = [
         description:
           "Experienced yoga instructor specializing in mindfulness and stress reduction techniques. Offers personalized sessions for all skill levels.",
         time: "10:00AM",
-        date: new Date(2024, 11, 15),
+        date: new Date(2025, 1, 15),
       },
     ],
     completedSessions: [
@@ -66,7 +66,7 @@ export const clientData = [
         description:
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis dolore error eveniet voluptates maiores quasi ab quam accusantium expedita, et in eligendi officia vitae aut libero consequuntur accusamus voluptas numquam.",
         time: "1:30PM",
-        date: new Date(2024, 10, 5),
+        date: new Date(2025, 0, 5),
       },
     ],
   },
@@ -79,7 +79,7 @@ export const clientData = [
     description:
       "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore ipsam commodi odit molestiae debitis, maiores tempore in! Dolorum, fugit obcaecati! Voluptates provident eius ad laudantium exercitationem, vel corrupti aliquid quo?",
     time: "8:30PM",
-    date: new Date(2024, 11, 28),
+    date: new Date(2025, 1, 28),
     upcomingSessions: [
       {
         id: 301,
@@ -87,7 +87,7 @@ export const clientData = [
         description:
           "Experienced yoga instructor specializing in mindfulness and stress reduction techniques. Offers personalized sessions for all skill levels.",
         time: "10:00AM",
-        date: new Date(2024, 11, 15),
+        date: new Date(2025, 1, 15),
       },
     ],
     completedSessions: [
@@ -100,7 +100,7 @@ export const clientData = [
         description:
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis dolore error eveniet voluptates maiores quasi ab quam accusantium expedita, et in eligendi officia vitae aut libero consequuntur accusamus voluptas numquam.",
         time: "1:30PM",
-        date: new Date(2024, 10, 5),
+        date: new Date(2025, 0, 5),
       },
     ],
   },
@@ -113,7 +113,7 @@ export const clientData = [
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem in error rem eveniet, quisquam et eaque. Rem ducimus, quo accusantium possimus veritatis, quos dolores reiciendis et dignissimos fugiat cupiditate enim!",
     time: "5:30PM",
-    date: new Date(2024, 11, 5),
+    date: new Date(2025, 1, 5),
     upcomingSessions: [
       {
         id: 401,
@@ -121,7 +121,7 @@ export const clientData = [
         description:
           "Experienced yoga instructor specializing in mindfulness and stress reduction techniques. Offers personalized sessions for all skill levels.",
         time: "10:00AM",
-        date: new Date(2024, 11, 15),
+        date: new Date(2025, 1, 15),
       },
     ],
     completedSessions: [
@@ -134,7 +134,7 @@ export const clientData = [
         description:
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis dolore error eveniet voluptates maiores quasi ab quam accusantium expedita, et in eligendi officia vitae aut libero consequuntur accusamus voluptas numquam.",
         time: "1:30PM",
-        date: new Date(2024, 10, 5),
+        date: new Date(2025, 0, 5),
       },
     ],
   },
@@ -147,7 +147,7 @@ export const clientData = [
     description:
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates blanditiis velit distinctio iusto nulla eos quidem quos cupiditate dolorum vel reprehenderit praesentium architecto libero excepturi esse molestiae quas, temporibus nam?",
     time: "11:30AM",
-    date: new Date(2024, 11, 21),
+    date: new Date(2025, 1, 21),
     upcomingSessions: [
       {
         id: 501,
@@ -155,7 +155,7 @@ export const clientData = [
         description:
           "Experienced yoga instructor specializing in mindfulness and stress reduction techniques. Offers personalized sessions for all skill levels.",
         time: "10:00AM",
-        date: new Date(2024, 11, 15),
+        date: new Date(2025, 1, 15),
       },
     ],
     completedSessions: [
@@ -168,7 +168,7 @@ export const clientData = [
         description:
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis dolore error eveniet voluptates maiores quasi ab quam accusantium expedita, et in eligendi officia vitae aut libero consequuntur accusamus voluptas numquam.",
         time: "1:30PM",
-        date: new Date(2024, 10, 5),
+        date: new Date(2025, 0, 5),
       },
     ],
   },

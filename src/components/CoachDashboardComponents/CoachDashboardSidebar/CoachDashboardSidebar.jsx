@@ -24,6 +24,7 @@ const CoachDashboardSidebar = ({ isOpen, toggleSidebar, toggleTheme, theme }) =>
         return location.pathname.startsWith(path) ? `${styles.menuItem} ${styles.active}` : styles.menuItem;
     };
 
+    console.log(theme)
     return (
         <div className={`${styles.sidebar} ${isOpen ? styles.open : ''}`}>
             <button className={styles.closeBtn} onClick={toggleSidebar}><FaRegTimesCircle /></button>

@@ -26,7 +26,7 @@ const DashboardLayout = () => {
 
   return (
     <div className={styles.dashboard}>
-      <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} toggleTheme={() => dispatch(toggleTheme())} />
+      <Sidebar isOpen={isSidebarOpen} theme={theme} toggleSidebar={toggleSidebar} toggleTheme={() => dispatch(toggleTheme())} />
       <div className={styles.mainSection}>
         <TopBar toggleSidebar={toggleSidebar} />
         <Outlet />

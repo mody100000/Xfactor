@@ -73,17 +73,6 @@ const LogoutNav = ({ theme, toggleTheme }) => {
             <NavLink to="/contactUs" onClick={closeNav} className="d-xl-none">
               Contact Us <MdOutlineContactPhone size={23} />
             </NavLink>
-
-            {/* <NavDropdown title="About & Contact Us" id='about-contact-dropdown' className={`d-none d-xl-block ${styles.item_links}`}>
-              <NavDropdown.Item as={Link} to="/AboutUs" onClick={closeNav} className={styles.item_links}>
-                About Us <MdRealEstateAgent size={20} />
-              </NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/contactUs" onClick={closeNav} className={styles.item_links}>
-                Contact Us <MdOutlineContactPhone size={23} />
-              </NavDropdown.Item>
-            </NavDropdown> */}
-
-            {/* Dropdown for Shop and Cart on large screens */}
             <NavDropdown
               title="Shop & Cart"
               id="shop-cart-dropdown"
@@ -112,7 +101,7 @@ const LogoutNav = ({ theme, toggleTheme }) => {
               Login <IoLogIn size={25} />
             </NavLink>
             <div className={styles.item_links} onClick={() => { toggleTheme(); closeNav(); }}>
-              Dark Mode <CiDark className={styles.darkModeIcon} size={30} />
+              {theme === "dark" ? "Light Mode" : "Dark Mode"} <CiDark className={styles.darkModeIcon} size={30} />
             </div>
           </Nav>
         </Navbar.Collapse>
