@@ -1,3 +1,4 @@
+/* CoachDashboardTopbar.module.css */
 .topbar {
   background-color: var(--filterSidebar-color);
   padding: 10px 20px;
@@ -8,10 +9,108 @@
 }
 
 .userImg {
-  width: 60px;
+  width: 50px;
   height: 50px;
-  object-fit: contain;
-  border-radius: 20px;
+  object-fit: cover;
+  border-radius: 50%;
+  padding: 2px;
+  margin: 0 10px;
+  border: 2px solid var(--main-color);
+}
+
+.number {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: var(--main-color);
+  color: white;
+  border-radius: 50%;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.dropdownMenu {
+  position: absolute;
+  left: 50%;
+  top: 45px;
+  transform: translateX(-50%);
+  width: 300px;
+  background: var(--filterSidebar-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+}
+
+.dropdownHeader {
+  padding: 12px 15px;
+  border-bottom: 1px solid var(--main-color);
+  font-weight: 600;
+}
+
+.dropdownContent {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.dropdownItem {
+  padding: 12px 15px;
+  border-bottom: 1px solid #959595;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.dropdownItem:hover {
+  background-color: #f8f9fa84;
+  color: black;
+}
+
+.itemTitle {
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.itemText {
+  font-size: 14px;
+  color: #717171;
+}
+
+.itemTime {
+  font-size: 12px;
+  color: var(--supText-color);
+  margin-top: 4px;
+}
+
+.status {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.viewAll {
+  padding: 10px;
+  text-align: center;
+  color: var(--main-color);
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.viewAll:hover {
+  background-color: #f8f9fa;
+}
+
+.iconContainer {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
 }
 .userInfo {
   display: flex;
@@ -25,9 +124,28 @@
   font-size: 24px;
   cursor: pointer;
   visibility: hidden;
+  color: var(--text-color);
 }
 
 @media (max-width: 968px) {
+  .dropdownMenu {
+    width: 220px; /* Slightly smaller width on mobile */
+    left: auto; /* Reset the left positioning */
+    right: -100px; /* Adjust this value based on your layout */
+    transform: none; /* Remove the transform */
+  }
+
+  /* For dropdowns that would overflow on the right */
+  .iconContainer:last-child .dropdownMenu {
+    right: 0;
+    left: auto;
+  }
+
+  /* For dropdowns that would overflow on the left */
+  .iconContainer:first-child .dropdownMenu {
+    left: 0;
+    right: auto;
+  }
   .menuBtn {
     display: block;
     visibility: visible;
