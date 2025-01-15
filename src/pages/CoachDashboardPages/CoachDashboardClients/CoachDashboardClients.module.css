@@ -21,43 +21,119 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   overflow-x: hidden;
 }
-.mainCard {
-  border: none;
-  box-shadow: var(--coaches-box-shadow);
-  border-radius: 12px;
-  overflow: hidden;
-  background-color: var(--filterSidebar-color);
-}
-
 .clientCard {
   transition: all 0.3s ease;
   border: none;
-  border-radius: 15px;
+  border-radius: 12px;
   overflow: hidden;
   margin-bottom: 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   width: 100%;
+  background-color: var(--filterSidebar-color);
+  color: var(--text-color);
+}
+
+.cardWidth {
+  width: 300px;
 }
 
 .clientCard:hover {
-  transform: scale(1.05);
-  box-shadow: var(--coaches-box-shadow);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
 }
 
-.clientCardImage {
-  height: 250px;
-  object-fit: fill;
-  transition: all 0.3s ease-in-out;
+.circleImageWrapper {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #f0f0f0;
 }
-.selectedClient .clientCardImage {
-  opacity: 0.9;
-  filter: brightness(0.9);
+
+.clientCircleImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
+
 .clientCardBody {
-  background-color: var(--productCard-color);
-  padding: 15px;
-  color: var(--text-color);
+  padding: 20px;
+}
+
+.sessionInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 4px;
+  background-color: var(--modalBg-color);
+  border-radius: 8px;
+  width: 70px;
+}
+
+.sessionLabel {
+  font-size: 0.75rem;
+  color: var(--supText-color);
+  margin-bottom: 4px;
+}
+
+.sessionCount {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.infoSection {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: var(--modalBg-color);
+  border-radius: 8px;
+}
+
+.infoRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.infoRow:last-child {
+  border-bottom: none;
+}
+
+.infoLabel {
+  min-width: 80px;
+  color: var(--supText-color);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.infoValue {
+  font-size: 0.9rem;
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+.selectedClient {
+  transform: scale(1.02);
+  box-shadow: 0 5px 15px rgba(103, 243, 33, 0.4);
+  border: 2px solid #42c02fa1;
+}
+
+.selectedOverlay {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #42c02fa1;
+  color: white;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 0.875rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.coachSport {
+  color: var(--supText-color);
 }
 
 .filterInput {
@@ -77,17 +153,6 @@
   box-shadow: 0 5px 15px rgba(103, 243, 33, 0.4);
   border: 2px solid #42c02fa1;
   outline: none;
-}
-.selectedOverlay {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background-color: #78c02fa1;
-  color: white;
-  padding: 5px 10px;
-  border-radius: 20px;
-  font-weight: bold;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 .line {
   display: block;

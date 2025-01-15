@@ -120,24 +120,55 @@ function CoachDashboardClients() {
 
                 {/* Clients Grid */}
                 <div className="col-12 p-4 overflow-hidden">
-                    <div className="row d-flex justify-content-between">
+                    <div className="row d-flex justify-content-center gap-2">
                         {processedClients.map(client => (
                             <div
                                 key={client.id}
-                                className={`col-md-5 col-lg-3 mb-4 ${styles.cardWidth}`}
+                                className={`col-md-3 mb-4 ${styles.cardWidth}`}
                             >
                                 <div className={`card ${styles.clientCard}`}>
-                                    <img
-                                        src={client.img}
-                                        alt={client.coachName}
-                                        className={`card-img-top ${styles.clientCardImage}`}
-                                    />
                                     <div className={`card-body ${styles.clientCardBody}`}>
-                                        <h5 className="card-title">{client.coachName}</h5>
-                                        <p className="card-text text-muted">{client.sessionType}</p>
-                                        <div className="d-flex justify-content-between">
-                                            <span>{client.sessionLocation}</span>
-                                            <span>{client.time}</span>
+                                        <div className="d-flex align-items-center mb-3">
+                                            <div className={styles.circleImageWrapper}>
+                                                <img
+                                                    src={client.img}
+                                                    alt={client.coachName}
+                                                    className={styles.clientCircleImage}
+                                                />
+                                            </div>
+                                            <div className='d-flex flex-column align-items-center'>
+                                                <h5 className="card-title ms-3 mb-0">{client.coachName}{" "}{client.coachLastName}</h5>
+                                                <p className={styles.coachSport}>{client.sessionType}</p>
+                                            </div>
+                                            {/* <div className="ms-auto">
+                                                {client.sessionLogo && <client.sessionLogo size={24} />}
+                                            </div> */}
+                                        </div>
+
+                                        <div className="d-flex justify-content-between mb-3">
+                                            <div className={styles.sessionInfo}>
+                                                <span className={styles.sessionLabel}>Completed</span>
+                                                <span className={styles.sessionCount}>{client.completedSessions.length}</span>
+                                            </div>
+                                            <div className={styles.sessionInfo}>
+                                                <span className={styles.sessionLabel}>Upcoming</span>
+                                                <span className={styles.sessionCount}>{client.upcomingSessions.length}</span>
+                                            </div>
+                                            <div className={styles.sessionInfo}>
+                                                <span className={styles.sessionLabel}>Pending</span>
+                                                <span className={styles.sessionCount}>{client.pendingSessions}</span>
+                                            </div>
+                                        </div>
+
+                                        <div className={styles.infoSection}>
+                                            <div className={styles.infoRow}>
+                                                <span className={styles.infoLabel}>Sport:</span>
+                                                <span className={styles.infoValue}>{client.sessionType}</span>
+                                            </div>
+                                            <div className={styles.infoRow}>
+                                                <span className={styles.infoLabel}>Type:</span>
+                                                <span className={styles.infoValue}>{client.sessionLocation}</span>
+                                            </div>
                                         </div>
                                         <span className={styles.line}></span>
                                         <div className="d-flex flex-row gap-2 justify-content-between">
@@ -165,7 +196,6 @@ function CoachDashboardClients() {
                             </div>
                         ))}
                     </div>
-
                     {processedClients.length === 0 && (
                         <div className={`col-12 ${styles.noResultsMessage}`}>
                             No clients found matching your filters.
