@@ -38,6 +38,40 @@
   width: 100%;
 }
 
+.methodsContainer {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.methodButton {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #383537;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.methodButton:hover {
+  background-color: #454247;
+}
+
+.methodButton.active {
+  background-color: #bf1e2e;
+  transform: scale(1.1);
+}
+
+.methodIcon {
+  font-size: 35px;
+  color: white;
+}
+
 /* Dropdown Styles */
 .dropdownContainer {
   position: relative;
@@ -95,11 +129,6 @@
   display: flex;
   align-items: center;
   gap: 12px;
-}
-
-.methodIcon {
-  font-size: 20px;
-  color: #bf1e2e;
 }
 
 /* Alert Box */

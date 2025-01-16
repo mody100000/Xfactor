@@ -3,6 +3,7 @@ import styles from "./MyCoachupMain.module.css"
 import CoachDashboardCalendar from '../../common/CoachDashboardCalendar/CoachDashboardCalendar'
 import { IoIosArrowForward } from 'react-icons/io';
 import { BsBell, BsCircleFill, BsPersonCheck } from 'react-icons/bs';
+import { IoNotifications, IoCalendar, IoMail } from 'react-icons/io5';
 import MyCoachUpSidebar from './MyCoachUpSidepar/MyCoachUpSidebar';
 import { GrSchedulePlay } from 'react-icons/gr';
 import { FaRegComment } from 'react-icons/fa6';
@@ -46,6 +47,67 @@ function MyCoachupMain() {
                                     <div className={styles.rankNumber}>21st</div>
                                     <p className={styles.rankLocation}>in Virginia Soccer</p>
                                     <button className={styles.linkButton}>View Coach Leaderboard</button>
+                                </div>
+                            </div>
+                            {/*statistics card*/}
+                            <div className={styles.statsCard}>
+                                <div className={styles.cardContent}>
+                                    <h2 className={styles.cardTitle}>Activity Overview</h2>
+
+                                    {/* Notifications Section */}
+                                    <div className={styles.statSection}>
+                                        <div className={styles.statIconWrapper}>
+                                            <IoNotifications size={20} />
+                                        </div>
+                                        <div className={styles.statInfo}>
+                                            <h3 className={styles.statTitle}>Notifications</h3>
+                                            <div className={styles.statNumber}>12</div>
+                                        </div>
+                                    </div>
+
+                                    {/* Sessions Section */}
+                                    <div className={styles.statSection}>
+                                        <div className={styles.statIconWrapper}>
+                                            <IoCalendar size={20} />
+                                        </div>
+                                        <div className={styles.statInfo}>
+                                            <h3 className={styles.statTitle}>Sessions</h3>
+                                            <div className={styles.statsGrid}>
+                                                <div className={styles.statItem}>
+                                                    <span className={styles.statLabel}>Upcoming</span>
+                                                    <span className={styles.statValue}>5</span>
+                                                </div>
+                                                <div className={styles.statItem}>
+                                                    <span className={styles.statLabel}>Complete</span>
+                                                    <span className={styles.statValue}>8</span>
+                                                </div>
+                                                <div className={styles.statItem}>
+                                                    <span className={styles.statLabel}>Pending</span>
+                                                    <span className={styles.statValue}>3</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* Messages Section */}
+                                    <div className={styles.statSection}>
+                                        <div className={styles.statIconWrapper}>
+                                            <IoMail size={20} />
+                                        </div>
+                                        <div className={styles.statInfo}>
+                                            <h3 className={styles.statTitle}>Messages</h3>
+                                            <div className={styles.statsGrid}>
+                                                <div className={styles.statItem}>
+                                                    <span className={styles.statLabel}>Read</span>
+                                                    <span className={styles.statValue}>15</span>
+                                                </div>
+                                                <div className={styles.statItem}>
+                                                    <span className={styles.statLabel}>Unread</span>
+                                                    <span className={styles.statValue}>4</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             {/* CoachUp Pro Card */}
