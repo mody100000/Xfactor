@@ -9,6 +9,8 @@ body {
   --text-color: black;
   --navbar-background-color: white;
   --navbar-text-color: black;
+  --main-color: #c03b2f;
+  --main-color-1: #971926;
 }
 
 body.light {

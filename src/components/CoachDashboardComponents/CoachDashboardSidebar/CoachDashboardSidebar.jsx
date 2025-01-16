@@ -39,7 +39,7 @@ const CoachDashboardSidebar = ({ isOpen, toggleSidebar, toggleTheme, theme }) =>
                 </li>
                 <li className={getMenuItemClass('/coach-dashboard', true)}>
                     <NavLink to="/coach-dashboard" className='text-decoration-none text-light'>
-                        <BsJournalBookmark size={20} className="mx-2" /> My Coachup
+                        <BsJournalBookmark size={20} className="mx-2" /> Dashboard
                     </NavLink>
                 </li>
                 <li className={getMenuItemClass('/coach-dashboard/coach-Packages')}>

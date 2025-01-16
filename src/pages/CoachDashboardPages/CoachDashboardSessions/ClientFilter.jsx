@@ -50,6 +50,7 @@ function ClientFilter() {
     const sports = [...new Set(clientData.map(client => client.sessionType))];
     const locations = [...new Set(clientData.map(client => client.sessionLocation))];
 
+    // const IconComponent = clientData.sessionLogo;
     return (
         <div className='overflow-hidden'>
             <div className={`row ${styles.filterContainer}`}>
@@ -110,31 +111,62 @@ function ClientFilter() {
                         {processedClients.map(client => (
                             <div
                                 key={client.id}
-                                className={`col-md-2 mb-4  ${styles.cardWidth}`}
+                                className={`col-md-3 mb-4 ${styles.cardWidth}`}
                                 onClick={() => toggleClientSelection(client)}
                             >
-                                <div
-                                    className={`card ${styles.clientCard} ${selectedClients.some(c => c.id === client.id)
-                                        ? styles.selectedClient
-                                        : ''
-                                        }`}
-                                >
-                                    <img
-                                        src={client.img}
-                                        alt={client.coachName}
-                                        className={`card-img-top ${styles.clientCardImage}`}
-                                    />
+                                <div className={`card ${styles.clientCard} ${selectedClients.some(c => c.id === client.id) ? styles.selectedClient : ''
+                                    }`}>
                                     <div className={`card-body ${styles.clientCardBody}`}>
-                                        <h5 className="card-title">{client.coachName}</h5>
-                                        <p className="card-text text-muted">{client.sessionType}</p>
-                                        <div className="d-flex justify-content-between">
-                                            <span>{client.sessionLocation}</span>
-                                            <span>{client.time}</span>
+                                        <div className="d-flex align-items-center mb-3">
+                                            <div className={styles.circleImageWrapper}>
+                                                <img
+                                                    src={client.img}
+                                                    alt={client.coachName}
+                                                    className={styles.clientCircleImage}
+                                                />
+                                            </div>
+                                            <div className='d-flex flex-column align-items-center'>
+                                                <h5 className="card-title ms-3 mb-0">{client.coachName}{" "}{client.coachLastName}</h5>
+                                                <p className={styles.coachSport}>{client.sessionType}</p>
+                                            </div>
+                                            {/* <div className="ms-auto">
+                                                {client.sessionLogo && <client.sessionLogo size={24} />}
+                                            </div> */}
+                                        </div>
+
+                                        <div className="d-flex justify-content-between mb-3">
+                                            <div className={styles.sessionInfo}>
+                                                <span className={styles.sessionLabel}>Completed</span>
+                                                <span className={styles.sessionCount}>{client.completedSessions.length}</span>
+                                            </div>
+                                            <div className={styles.sessionInfo}>
+                                                <span className={styles.sessionLabel}>Upcoming</span>
+                                                <span className={styles.sessionCount}>{client.upcomingSessions.length}</span>
+                                            </div>
+                                            <div className={styles.sessionInfo}>
+                                                <span className={styles.sessionLabel}>Pending</span>
+                                                <span className={styles.sessionCount}>{client.pendingSessions}</span>
+                                            </div>
+                                        </div>
+
+                                        <div className={styles.infoSection}>
+                                            <div className={styles.infoRow}>
+                                                <span className={styles.infoLabel}>Sport:</span>
+                                                <span className={styles.infoValue}>{client.sessionType}</span>
+                                            </div>
+                                            <div className={styles.infoRow}>
+                                                <span className={styles.infoLabel}>Type:</span>
+                                                <span className={styles.infoValue}>{client.sessionLocation}</span>
+                                            </div>
                                         </div>
                                     </div>
-                                    {selectedClients.some(c => c.id === client.id) && (
+                                    {selectedClients.some(c => c.id === client.id) ? (
                                         <div className={styles.selectedOverlay}>
                                             ✓ Selected
+                                        </div>
+                                    ) : (
+                                        <div className={styles.viewClientLabel}>
+                                            Select to view client
                                         </div>
                                     )}
                                 </div>
@@ -142,11 +174,13 @@ function ClientFilter() {
                         ))}
                     </div>
 
-                    {processedClients.length === 0 && (
-                        <div className={`col-12 ${styles.noResultsMessage}`}>
-                            No clients found matching your filters.
-                        </div>
-                    )}
+                    {
+                        processedClients.length === 0 && (
+                            <div className={`col-12 ${styles.noResultsMessage}`}>
+                                No clients found matching your filters.
+                            </div>
+                        )
+                    }
                 </div>
             </div>
         </div>
