@@ -13,6 +13,11 @@ const PaymentMethodForm = () => {
 
     const paymentMethods = [
         {
+            id: 'bank',
+            name: 'Bank',
+            icon: <CiBank className={styles.methodIcon} />,
+        },
+        {
             id: 'paypal',
             name: 'PayPal',
             icon: <FaPaypal className={styles.methodIcon} />,
@@ -22,11 +27,7 @@ const PaymentMethodForm = () => {
             name: 'MoneyGram',
             icon: <SiMoneygram className={styles.methodIcon} />,
         },
-        {
-            id: 'bank',
-            name: 'Bank',
-            icon: <CiBank className={styles.methodIcon} />,
-        },
+
         {
             id: 'others',
             name: 'Others',
@@ -37,7 +38,13 @@ const PaymentMethodForm = () => {
     const handleNavigate = () => {
         navigate("/CoachAvailability");
     };
-
+    const placeHolderEmailName = () => {
+        if (selectedMethod === "paypal") return "Paypal Email"
+        else if (selectedMethod === "moneygram") return "Moneygram Email"
+        else {
+            return "Email"
+        }
+    }
     return (
         <div className={`container text-white ${styles.loginHolder}`}>
             <div className={styles.custom_form_holder}>
@@ -49,7 +56,6 @@ const PaymentMethodForm = () => {
                         <p className='mb-0'>Please ensure all banking details are accurate. Incorrect information may delay payments.</p>
                     </div>
 
-                    {/* New Payment Method Icons */}
                     <div className={styles.methodsContainer}>
                         {paymentMethods.map((method) => (
                             <button
@@ -63,14 +69,14 @@ const PaymentMethodForm = () => {
                     </div>
 
                     <form className="mt-4">
-                        {/* PayPal or MoneyGram Form */}
+
                         {(selectedMethod === 'paypal' || selectedMethod === 'moneygram' || selectedMethod === 'others') && (
                             <>
                                 <div className="mb-4">
                                     <input
                                         type="email"
                                         className={`form-control ${styles.input}`}
-                                        placeholder="Email"
+                                        placeholder={placeHolderEmailName()}
                                     />
                                 </div>
                                 <div className="row">
@@ -99,7 +105,6 @@ const PaymentMethodForm = () => {
                             </>
                         )}
 
-                        {/* Bank or Money Grow Form */}
                         {(selectedMethod === 'bank') && (
                             <>
                                 <div className="mb-4">

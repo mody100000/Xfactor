@@ -43,6 +43,7 @@ const QuestionsPage2 = ({ currentStep, handleNextStep, handlePrevStep, totalStep
           <option value="" style={{ display: 'none' }}>Your gender</option>
           <option value="Male">Male</option>
           <option value="Female">Female</option>
+          <option value="Female">Other</option>
         </select>
       </div>
       <div className={styles.questionContainer}>

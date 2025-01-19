@@ -14,7 +14,7 @@ const QuestionsPage3 = ({ currentStep, handleNextStep, handlePrevStep, totalStep
   const navigate = useNavigate();
 
   const handleViewCoaches = () => {
-    navigate('/coaches'); // assuming you have a page to display coaches
+    navigate('/filtered-coaches'); // assuming you have a page to display coaches
   };
   const handlePrevious = () => {
     handlePrevStep();

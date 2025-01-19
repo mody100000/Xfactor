@@ -100,14 +100,6 @@ const FilteredCoachesResultPage = () => {
     setCurrentPage(1);
   };
 
-  const handleTrainingTypeChange = (event) => {
-    setTrainingType(event.target.value);
-    setCurrentPage(1);
-  };
-  const handleGridChange = (event) => {
-    setTrainingType(event.target.value);
-    setViewMode(viewMode === 'grid' ? 'list' : 'grid');
-  };
   const handleSortChange = (event) => {
     const newSortCriteria = event.target.value;
     setSortCriteria(newSortCriteria);
@@ -140,73 +132,50 @@ const FilteredCoachesResultPage = () => {
       </div>
       <div className={styles.pageContainer}>
         <div className={styles.mainContent}>
-          {/* <div className='d-flex flex-column flex-sm-row p-4'> */}
-          {/* <div className='d-flex gap-5 flex-grow-1 flex-column flex-sm-row '>
-              <div className='w-100'>
-                <h3 className='fs-4 text-center'>Price Range</h3>
-                <span className='d-flex justify-content-center'>${priceRange[1]}+</span>
-                <div className={`mt-2 ${styles.rangeLabels}`}>
-                  <span>$0</span>
-                  <input
-                    type="range"
-                    min="0"
-                    max="75"
-                    value={priceRange[1]}
-                    onChange={handlePriceRangeChange}
-                    className={styles.rangeSlider}
-                  />
-                  <span>$75+</span>
-                </div>
-              </div>
-              <div className='w-100'>
-                <h3 className='fs-4 text-center'>Distance Location</h3>
-                <span className='d-flex justify-content-center'>{distanceRange} mi</span>
-                <div className={`mt-2 ${styles.rangeLabels}`}>
-                  <span className='d-flex justify-content-center'>{distanceRange}mi</span>
-                  <input
-                    type="range"
-                    min="1"
-                    max="30"
-                    value={distanceRange}
-                    onChange={handleDistanceRangeChange}
-                    className={`${styles.rangeSlider} custom-range-slider`} />
-                  <span>30mi</span>
-                </div>
-              </div>
-            </div> */}
-          {/* </div> */}
           <div className="row mb-4 mt-4 px-4">
             <div className="col d-flex flex-lg-row flex-md-column flex-sm-column flex-column justify-content-between align-items-center gap-4 gap-sm-5">
-
-              <div className='w-100 mb-5'>
-                <h3 className='fs-4 text-center'>Price Range</h3>
-                <span className='d-flex mb-2 justify-content-center'>${priceRange[1]}+</span>
-                <div className={`${styles.rangeLabels}`}>
-                  <span>$0</span>
+              <div className="w-100 mb-5">
+                <div className="h-20 d-flex flex-column">
+                  <h3 className="fs-4 text-center mb-3">Price Range</h3>
+                  <div className="h-8 d-flex justify-content-center align-items-center">
+                    <span>${priceRange[1]}+</span>
+                  </div>
+                </div>
+                <div className="rangeLabels mt-2">
+                  <div className="d-flex justify-content-between align-items-center">
+                    <span className="text-sm">$0</span>
+                    <span className="text-sm">$75+</span>
+                  </div>
                   <input
                     type="range"
                     min="0"
                     max="75"
                     value={priceRange[1]}
                     onChange={handlePriceRangeChange}
-                    className={styles.rangeSlider}
+                    className={`w-100 ${styles.rangeSlider}`}
                   />
-                  <span>$75+</span>
                 </div>
               </div>
-              <div className='w-100 mb-5'>
-                <h3 className='fs-4 text-center'>Distance Location</h3>
-                <span className='d-flex mb-2 justify-content-center'>{distanceRange} mi</span>
-                <div className={`${styles.rangeLabels}`}>
-                  <span className='d-flex justify-content-center'>{distanceRange}mi</span>
+              <div className="w-100 mb-5">
+                <div className="h-20 d-flex flex-column">
+                  <h3 className="fs-4 text-center mb-3">Distance Location</h3>
+                  <div className="h-8 d-flex justify-content-center align-items-center">
+                    <span>{distanceRange} mi</span>
+                  </div>
+                </div>
+                <div className="rangeLabels mt-2">
+                  <div className="d-flex justify-content-between align-items-center">
+                    <span className="text-sm">1mi</span>
+                    <span className="text-sm">30mi</span>
+                  </div>
                   <input
                     type="range"
                     min="1"
                     max="30"
                     value={distanceRange}
                     onChange={handleDistanceRangeChange}
-                    className={`${styles.rangeSlider} custom-range-slider`} />
-                  <span>30mi</span>
+                    className={`w-100 ${styles.rangeSlider}`}
+                  />
                 </div>
               </div>
               <div>

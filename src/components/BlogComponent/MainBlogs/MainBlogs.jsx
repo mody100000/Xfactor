@@ -76,7 +76,7 @@ const MainBlogs = () => {
     },
   ];
 
-  const cardsPerPage = 6; // Adjust this number as needed
+  const cardsPerPage = 6;
   const [currentPage, setCurrentPage] = useState(1);
   const totalPages = Math.ceil(classes.length / cardsPerPage);
 
@@ -84,7 +84,6 @@ const MainBlogs = () => {
     setCurrentPage(page);
   };
 
-  // Calculate the cards to display on the current page
   const startIndex = (currentPage - 1) * cardsPerPage;
   const selectedCards = classes.slice(startIndex, startIndex + cardsPerPage);
   return (

@@ -136,7 +136,13 @@ body {
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
 }
+.h-20 {
+  height: 5rem;
+}
 
+.h-8 {
+  height: 2rem;
+}
 @media (min-width: 576px) {
   /* Small screens and up */
   .btn-responsive {
