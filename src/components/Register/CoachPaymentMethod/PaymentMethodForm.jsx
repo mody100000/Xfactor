@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
-import { IoChevronBackOutline, IoChevronDownOutline, IoChevronUpOutline } from "react-icons/io5";
+import { IoChevronBackOutline } from "react-icons/io5";
 import { FaPaypal, FaPiggyBank, FaExclamationCircle } from "react-icons/fa";
+import { SiMoneygram } from "react-icons/si";
+import { CiBank } from "react-icons/ci";
 import styles from './PaymentMethodForm.module.css';
 import { Link, useNavigate } from "react-router-dom";
+import { FaPlus } from "react-icons/fa6";
 
 const PaymentMethodForm = () => {
     const [selectedMethod, setSelectedMethod] = useState('paypal');
-    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const navigate = useNavigate();
 
     const paymentMethods = [
@@ -16,9 +18,19 @@ const PaymentMethodForm = () => {
             icon: <FaPaypal className={styles.methodIcon} />,
         },
         {
-            id: 'moneygrow',
-            name: 'Money Grow',
-            icon: <FaPiggyBank className={styles.methodIcon} />,
+            id: 'moneygram',
+            name: 'MoneyGram',
+            icon: <SiMoneygram className={styles.methodIcon} />,
+        },
+        {
+            id: 'bank',
+            name: 'Bank',
+            icon: <CiBank className={styles.methodIcon} />,
+        },
+        {
+            id: 'others',
+            name: 'Others',
+            icon: <FaPlus className={styles.methodIcon} />,
         }
     ];
 
@@ -37,129 +49,105 @@ const PaymentMethodForm = () => {
                         <p className='mb-0'>Please ensure all banking details are accurate. Incorrect information may delay payments.</p>
                     </div>
 
-                    {/* Payment Method Selector */}
-                    <div className="mb-4">
-                        <label className="form-label">Select Payment Method</label>
-                        <div className={styles.dropdownContainer}>
+                    {/* New Payment Method Icons */}
+                    <div className={styles.methodsContainer}>
+                        {paymentMethods.map((method) => (
                             <button
-                                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                                className={styles.dropdownToggle}
+                                key={method.id}
+                                className={`${styles.methodButton} ${selectedMethod === method.id ? styles.active : ''}`}
+                                onClick={() => setSelectedMethod(method.id)}
                             >
-                                <div className={styles.selectedMethod}>
-                                    {paymentMethods.find(m => m.id === selectedMethod).icon}
-                                    <span>{paymentMethods.find(m => m.id === selectedMethod).name}</span>
-                                </div>
-                                {isDropdownOpen ?
-                                    <IoChevronUpOutline size={20} /> :
-                                    <IoChevronDownOutline size={20} />
-                                }
+                                {method.icon}
                             </button>
-
-                            {isDropdownOpen && (
-                                <div className={styles.dropdownMenu}>
-                                    {paymentMethods.map((method) => (
-                                        <button
-                                            key={method.id}
-                                            className={styles.dropdownItem}
-                                            onClick={() => {
-                                                setSelectedMethod(method.id);
-                                                setIsDropdownOpen(false);
-                                            }}
-                                        >
-                                            {method.icon}
-                                            <span>{method.name}</span>
-                                        </button>
-                                    ))}
-                                </div>
-                            )}
-                        </div>
+                        ))}
                     </div>
 
                     <form className="mt-4">
-                        {/* Payment Method Specific Fields */}
-                        <div className="">
-                            {selectedMethod === 'paypal' ? (
-                                <>
-                                    <div className="mb-4">
-                                        <input
-                                            type="email"
-                                            className={`form-control ${styles.input}`}
-                                            placeholder="PayPal email"
-                                        />
-                                    </div>
-                                    <div className="row">
-                                        <div className="col-md-6 mb-4">
-                                            <input
-                                                type="text"
-                                                className={`form-control ${styles.input}`}
-                                                placeholder="Account Holder Name"
-                                            />
-                                        </div>
-                                        <div className="col-md-6 mb-4">
-                                            <input
-                                                type="text"
-                                                className={`form-control ${styles.input}`}
-                                                placeholder="Account Name"
-                                            />
-                                        </div>
-                                    </div>
-                                    <div className="mb-4">
-                                        <input
-                                            type="url"
-                                            className={`form-control ${styles.input}`}
-                                            placeholder="Account link"
-                                        />
-                                    </div>
-                                </>
-                            ) : (
-                                <>
-                                    <div className="mb-4">
+                        {/* PayPal or MoneyGram Form */}
+                        {(selectedMethod === 'paypal' || selectedMethod === 'moneygram' || selectedMethod === 'others') && (
+                            <>
+                                <div className="mb-4">
+                                    <input
+                                        type="email"
+                                        className={`form-control ${styles.input}`}
+                                        placeholder="Email"
+                                    />
+                                </div>
+                                <div className="row">
+                                    <div className="col-md-6 mb-4">
                                         <input
                                             type="text"
                                             className={`form-control ${styles.input}`}
-                                            placeholder="Bank name"
+                                            placeholder="Account Holder Name"
                                         />
                                     </div>
-                                    <div className="mb-4">
+                                    <div className="col-md-6 mb-4">
                                         <input
                                             type="text"
                                             className={`form-control ${styles.input}`}
-                                            placeholder="Account holder name"
+                                            placeholder="Account Name"
                                         />
                                     </div>
-                                    <div className="row">
-                                        <div className="col-md-6 mb-4">
-                                            <input
-                                                type="text"
-                                                className={`form-control ${styles.input}`}
-                                                placeholder="IBAN"
-                                            />
-                                        </div>
-                                        <div className="col-md-6 mb-4">
-                                            <input
-                                                type="text"
-                                                className={`form-control ${styles.input}`}
-                                                placeholder="Swift code"
-                                            />
-                                        </div>
-                                    </div>
-                                    <div className="mb-4">
+                                </div>
+                                <div className="mb-4">
+                                    <input
+                                        type="url"
+                                        className={`form-control ${styles.input}`}
+                                        placeholder="Account link"
+                                    />
+                                </div>
+                            </>
+                        )}
+
+                        {/* Bank or Money Grow Form */}
+                        {(selectedMethod === 'bank') && (
+                            <>
+                                <div className="mb-4">
+                                    <input
+                                        type="text"
+                                        className={`form-control ${styles.input}`}
+                                        placeholder="Bank name"
+                                    />
+                                </div>
+                                <div className="mb-4">
+                                    <input
+                                        type="text"
+                                        className={`form-control ${styles.input}`}
+                                        placeholder="Account holder name"
+                                    />
+                                </div>
+                                <div className="row">
+                                    <div className="col-md-6 mb-4">
                                         <input
                                             type="text"
                                             className={`form-control ${styles.input}`}
-                                            placeholder="Branch name"
+                                            placeholder="IBAN"
                                         />
                                     </div>
-                                    <div className="mb-4">
+                                    <div className="col-md-6 mb-4">
                                         <input
-                                            type="url"
+                                            type="text"
                                             className={`form-control ${styles.input}`}
-                                            placeholder="Account link"
+                                            placeholder="Swift code"
                                         />
                                     </div>
-                                </>
-                            )}
-                        </div>
+                                </div>
+                                <div className="mb-4">
+                                    <input
+                                        type="text"
+                                        className={`form-control ${styles.input}`}
+                                        placeholder="Branch name"
+                                    />
+                                </div>
+                                <div className="mb-4">
+                                    <input
+                                        type="url"
+                                        className={`form-control ${styles.input}`}
+                                        placeholder="Account link"
+                                    />
+                                </div>
+                            </>
+                        )}
 
                         <div className="d-flex gap-3 mt-5 justify-content-center">
                             <button

@@ -176,3 +176,6 @@
 .input::placeholder {
   color: var(--supText-color);
 }
+.mainCard {
+  background-color: var(--filterSidebar-color);
+}

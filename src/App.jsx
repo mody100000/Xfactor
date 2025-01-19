@@ -58,10 +58,8 @@ import CoachDashboardProfile from './pages/CoachDashboardPages/CoachDashboardPro
 import CoachDashboardPackages from './pages/CoachDashboardPages/CoachDashboardPackages/CoachDashboardPackages';
 import Sessions from './pages/ClientDashboard/Sessions/Sessions';
 import CoachPaymentMethodPage from './pages/RegisterPage/CoachPaymentMethodPage/CoachPaymentMethodPage';
-import CoachDashboardSessions from './pages/CoachDashboardPages/CoachDashboardSessions/ClientFilter';
 import ClientFilter from './pages/CoachDashboardPages/CoachDashboardSessions/ClientFilter';
 import MainCoachSessions from './components/CoachDashboardComponents/MainCoachSessions';
-import { element } from 'prop-types';
 import CoachDashboardClients from './pages/CoachDashboardPages/CoachDashboardClients/CoachDashboardClients';
 import CoachDashboardAvailability from './pages/CoachDashboardPages/CoachDashboardAvailability/CoachDashboardAvailability';
 import CoachDashboardPayments from './pages/CoachDashboardPages/CoachDashboardPayments/CoachDashboardPayments';

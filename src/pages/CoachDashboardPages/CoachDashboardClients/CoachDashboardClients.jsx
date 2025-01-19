@@ -63,9 +63,6 @@ function CoachDashboardClients() {
     };
 
     const sendMessage = () => {
-        // Placeholder for message sending logic
-        console.log('Sending message to', selectedClient.coachName);
-        console.log('Message:', messageText);
         setShowMessageModal(false);
         setMessageText('');
         setSelectedClient(null);
@@ -140,9 +137,6 @@ function CoachDashboardClients() {
                                                 <h5 className="card-title ms-3 mb-0">{client.coachName}{" "}{client.coachLastName}</h5>
                                                 <p className={styles.coachSport}>{client.sessionType}</p>
                                             </div>
-                                            {/* <div className="ms-auto">
-                                                {client.sessionLogo && <client.sessionLogo size={24} />}
-                                            </div> */}
                                         </div>
 
                                         <div className="d-flex justify-content-between mb-3">
