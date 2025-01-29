@@ -1,11 +1,19 @@
 .customNavs {
-    padding: 0.7rem 3rem;
-    width: 100%;
-  }
-  .toggle{
-    color: var(--text-color);
-    text-align: center;
-  }
-  .nav-link, .nav-dropdown .dropdown-item {
-    color: var(--text-color) !important;
-  }
+  padding: 0.7rem 8rem;
+  width: 100%;
+}
+.toggle {
+  color: var(--text-color);
+  text-align: center;
+}
+.nav-link,
+.nav-dropdown .dropdown-item {
+  color: var(--text-color) !important;
+}
+.nav-link,
+.nav-dropdown .dropdown-item:hover {
+  color: var(--main-color) !important;
+}
+.link:hover {
+  color: var(--main-color) !important;
+}

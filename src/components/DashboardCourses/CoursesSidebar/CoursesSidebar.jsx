@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from './CoursesSidebar.module.css';
-import NewCalendar from './NewCalendar/NewCalendar';
 import { FaRegTimesCircle, FaStar } from "react-icons/fa";
 import Rating from 'react-rating';
 

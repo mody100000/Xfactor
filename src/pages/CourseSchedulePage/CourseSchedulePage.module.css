@@ -1,80 +1,90 @@
 .dashboardCoursesPage {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+}
+
+.mainContent {
+  padding: 20px;
+}
+
+.rightSidebar {
+  background-color: var(--dashbordRightSidebarContainer-color);
+  z-index: 1000;
+  transition: transform 0.3s ease;
+}
+
+.toggleBtn {
+  border: none;
+  text-align: end;
+  margin-top: 1rem;
+  background-color: var(--navbar-background-color);
+  color: var(--text-color);
+}
+.topBtn {
+  border-radius: 25px;
+  margin: 0 0.2rem;
+  padding: 5px 10px;
+}
+.saveIcon {
+  border: 1px solid #bf1e2ec9;
+  border-radius: 50%;
+  padding: 1px;
+  margin: 0 0.2rem;
+}
+@media (min-width: 1068px) {
+  .dashboardCoursesPage {
+    flex-direction: row;
   }
-  
+
   .mainContent {
     padding: 20px;
   }
-  
-  .rightSidebar {
-    background-color: var(--dashbordRightSidebarContainer-color);
-    z-index: 1000;
-    transition: transform 0.3s ease;
-  }
-  
-  .toggleBtn {
-    border: none;
-    text-align: end;
-    margin-top: 1rem;
-    background-color: var(--navbar-background-color);
-    color: var(--text-color);
-  }
-  
-  @media (min-width: 1068px) {
-    .dashboardCoursesPage {
-      flex-direction: row;
-    }
-  
-    .mainContent {
-      padding: 20px;
-    }
-  
-    .rightSidebar {
-      transform: translateX(0);
-      position: static;
-    }
-  
-    .toggleBtn {
-      display: none;
-    }
-  }
-  
-  @media (max-width: 1067px) {
-    .rightSidebar {
-      position: fixed;
-      top: 0;
-      right: 0;
-      width: 300px;
-      height: 100%;
-      transform: translateX(100%);
-      overflow-y: auto; 
-    }
-  
-    .rightSidebar.open {
-      transform: translateX(0);
-    }
-  }
-/* Adjustments for iPad Pro, iPad Air, and iPad Mini screens */
-@media (max-width: 1366px) and (min-width: 1024px) {
-  .mainContent {
-      width: 100%;
-  }
 
   .rightSidebar {
-      position: fixed;
-      top: 0;
-      right: 0;
-      width: 300px;
-      height: 100%;
-      transform: translateX(100%);
+    transform: translateX(0);
+    position: static;
+  }
+
+  .toggleBtn {
+    display: none;
+  }
+}
+
+@media (max-width: 1067px) {
+  .rightSidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100%;
+    transform: translateX(100%);
+    overflow-y: auto;
   }
 
   .rightSidebar.open {
-      transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+/* Adjustments for iPad Pro, iPad Air, and iPad Mini screens */
+@media (max-width: 1366px) and (min-width: 1024px) {
+  .mainContent {
+    width: 100%;
+  }
+
+  .rightSidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100%;
+    transform: translateX(100%);
+  }
+
+  .rightSidebar.open {
+    transform: translateX(0);
   }
 
   .toggleBtn {
-      display: block;
+    display: block;
   }
 }

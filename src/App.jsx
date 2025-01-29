@@ -85,7 +85,6 @@ const routes = createBrowserRouter([
       { path: "Shop/product/:id", element: <ProductDetails /> },
       { path: '/filtered-coaches', element: <FilteredCoachesResultPage /> },
       { path: "/coachingJobs", element: <CoachingJobs /> },
-      // { path: '/coach/:id', element: <CoachProfilePage /> },
       { path: '/coach/:id', element: <CoachDetails /> },
       { path: '/coaches/:id', element: <CoachProfile /> },
       { path: 'CoachDetails', element: <CoachDetails /> },

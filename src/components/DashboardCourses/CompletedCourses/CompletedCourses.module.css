@@ -1,0 +1,115 @@
+.courses {
+  padding: 20px;
+}
+.topBtn {
+  border-radius: 25px;
+  margin: 0 0.2rem;
+  padding: 5px 10px;
+  border-radius: 25px;
+}
+.saveIcon {
+  border: 1px solid #bf1e2ec9;
+  border-radius: 50%;
+  padding: 1px;
+  margin: 0 0.2rem;
+}
+.headerTitle {
+  font-weight: bold;
+}
+.courseCard {
+  background-color: var(--productCard-color);
+  color: (--text-color);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 15px;
+  height: auto; /* Adjust height to fit content */
+  border-radius: 20px;
+}
+
+.courseImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Space between title and tags */
+  padding: 10px;
+  height: 100%;
+}
+
+.titles {
+  margin-bottom: 4rem;
+  color: var(--text-color);
+}
+
+.courseTitle {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.courseSubtitle {
+  color: rgb(152, 152, 152);
+  margin: 0;
+}
+
+.courseTags {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: auto; /* Push tags to the bottom */
+}
+
+.lastSeen {
+  color: gray;
+  font-size: 0.875rem;
+  margin-left: auto;
+  align-self: flex-end;
+}
+.courseBtn {
+  padding: 5px 10px;
+  border-radius: 18px;
+}
+
+@media (max-width: 768px) {
+  .courses {
+    padding: 10px;
+  }
+
+  .courseCard {
+    flex-direction: column;
+    align-items: start;
+    height: auto;
+  }
+
+  .courseImage {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .card-body {
+    flex-direction: column;
+  }
+
+  .tagsAndLastSeen {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .lastSeen {
+    margin-left: 0;
+    margin-top: 10px;
+    align-self: flex-start;
+  }
+
+  .tagsAndLastSeen {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
