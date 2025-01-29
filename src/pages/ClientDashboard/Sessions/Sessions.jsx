@@ -3,6 +3,7 @@ import styles from "./Sessions.module.css";
 import { SlCalender } from "react-icons/sl";
 import CoursesSidebar from '../../../components/DashboardCourses/CoursesSidebar/CoursesSidebar';
 import ScheduleSessions from '../../../components/ClientDashboardComponents/SessionComponents/ScheduleSessions';
+import CompletedSessions from '../../../components/Dashboard/DashboardCalender/CompletedSessions/CompletedSessions';
 const Sessions = () => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
@@ -18,8 +19,10 @@ const Sessions = () => {
             <div className="row">
                 {/* Main Content */}
                 <div className={`col-12 col-lg-8 ${styles.mainContent}`}>
-                    <ScheduleSessions />
-                    {/* <Courses /> */}
+                    <div className="mb-5">
+                        <ScheduleSessions />
+                    </div>
+                    <CompletedSessions />
                 </div>
 
                 {/* Right Sidebar */}

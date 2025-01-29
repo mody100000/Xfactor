@@ -46,8 +46,8 @@ const Sidebar = ({ isOpen, toggleSidebar, toggleTheme, theme }) => {
             <RiProgress3Line size={25} className="mx-2" /> Progress
           </NavLink>
         </li>
-        <li className={getMenuItemClass('/dashboard/sessions')}>
-          <NavLink to="/dashboard/sessions" className='text-decoration-none text-light'>
+        <li className={getMenuItemClass('/dashboard/select-choach')}>
+          <NavLink to="/dashboard/select-choach" className='text-decoration-none text-light'>
             <MdOutlineSpeakerNotes size={25} className="mx-2" /> Sessions
           </NavLink>
         </li>

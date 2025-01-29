@@ -64,6 +64,7 @@ import CoachDashboardClients from './pages/CoachDashboardPages/CoachDashboardCli
 import CoachDashboardAvailability from './pages/CoachDashboardPages/CoachDashboardAvailability/CoachDashboardAvailability';
 import CoachDashboardPayments from './pages/CoachDashboardPages/CoachDashboardPayments/CoachDashboardPayments';
 import CoachAccountPage from './pages/CoachDashboardPages/CoachAccountPage/CoachAccount';
+import SelectChoach from './pages/CoachDashboardPages/SelectChoach/SelectChoach';
 
 const routes = createBrowserRouter([
   {
@@ -126,7 +127,8 @@ const routes = createBrowserRouter([
       { path: "purchases", element: <PurchasesPage /> },
       { path: "assignClient", element: <AssignClientPage /> },
       { path: "chat", element: <ChatPage /> },
-      { path: "sessions", element: <Sessions /> },
+      { path: "select-choach", element: <SelectChoach /> },
+      { path: "select-choach/sessions", element: <Sessions /> },
       { path: "applyToCoachDashboard", element: <ApplyToCoachPage /> },
       { path: "applyTocoachOptions", element: <TrainingOptions /> }
 

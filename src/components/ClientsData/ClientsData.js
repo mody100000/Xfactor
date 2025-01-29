@@ -13,8 +13,7 @@ export const clientData = [
     coachName: "Emily",
     coachLastName: "Harper",
     sessionType: "Yoga",
-    sessionLocation: "Studio",
-    // sessionLogo: GrYoga,
+    sessionLocation: "Online",
     img: event1,
     description:
       "Experienced yoga instructor specializing in mindfulness and stress reduction techniques. Offers personalized sessions for all skill levels.",

@@ -5,6 +5,7 @@ import CoursesSidebar from "../../components/DashboardCourses/CoursesSidebar/Cou
 import { SlCalender } from "react-icons/sl";
 import { CiBookmark } from "react-icons/ci";
 import ProgressCards from "../../components/CourseSchedule/ProgressCards/ProgressCards";
+import CompletedCourseSchedule from "../../components/CourseSchedule/CompletedCoursesSchedule/CompletedCoursesSchedule";
 const CourseSchedulePage = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [active, setActive] = useState(true)
@@ -50,9 +51,8 @@ const CourseSchedulePage = () => {
               </button>
             </div>
           </div>
-          <CourseSchedule />
+          {active ? <CourseSchedule /> : <CompletedCourseSchedule />}
           <ProgressCards />
-          {/* <Courses /> */}
         </div>
 
         {/* Right Sidebar */}
