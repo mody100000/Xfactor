@@ -15,7 +15,7 @@ const DashboardLayout = () => {
 
   useEffect(() => {
     document.body.className = theme;
-    dispatch(setTheme(localStorage.getItem('theme') || 'dark'));
+    dispatch(setTheme(localStorage.getItem('theme') || 'light'));
   }, [theme, dispatch]);
 
   const toggleSidebar = () => {

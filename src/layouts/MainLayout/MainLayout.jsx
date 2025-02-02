@@ -10,7 +10,7 @@ const MainLayout = () => {
   const theme = useSelector((state) => state.theme.theme);
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem('theme') || 'dark';
+    const savedTheme = localStorage.getItem('theme') || 'light';
     dispatch(setTheme(savedTheme));
     document.body.className = savedTheme;
   }, [dispatch]);

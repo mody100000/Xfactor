@@ -64,24 +64,6 @@ function CoachDashboardPackages() {
                         </p>
                     </div>
                 </div>
-                {/* 
-                <div className={`${styles.trainingTypes} mb-5`}>
-                    <div className={styles.trainingCard}>
-                        <div className={styles.iconContainer}>
-                            <i className="bi bi-person-fill"></i>
-                        </div>
-                        <h4>In-Person Training</h4>
-                        <p>Direct, hands-on coaching for maximum impact</p>
-                    </div>
-                    <div className={styles.trainingCard}>
-                        <div className={styles.iconContainer}>
-                            <i className="bi bi-camera-video-fill"></i>
-                        </div>
-                        <h4>Online Training</h4>
-                        <p>Reach athletes anywhere with virtual sessions</p>
-                    </div>
-                </div> */}
-
                 <ManagePackages />
             </div>
         </div>

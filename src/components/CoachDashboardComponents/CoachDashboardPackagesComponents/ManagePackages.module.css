@@ -127,7 +127,38 @@
 .viewProfileButton:hover {
   background-color: rgb(158, 33, 46);
 }
-
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+.modalOverlay :global(.modal-dialog) {
+  width: 90%;
+}
+.mainCard {
+  background-color: var(--filterSidebar-color);
+}
+.input {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid var(--supText-color);
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  resize: vertical;
+  color: var(--text-color) !important;
+  background-color: var(--background-color) !important;
+}
+.input::placeholder {
+  color: var(--supText-color);
+}
 @media (max-width: 768px) {
   .packageRow {
     flex-direction: column;

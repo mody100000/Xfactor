@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { setCoaches } from "./store/reducers/coachesSlice";
 import { setAddress, setSport } from "./store/features/coachSlice";
@@ -145,6 +145,7 @@ const routes = createBrowserRouter([
       { path: "coach-availability", element: <CoachDashboardAvailability /> },
       { path: "coach-payments", element: <CoachDashboardPayments /> },
       { path: "coach-account", element: <CoachAccountPage /> },
+      { path: "coach-chat", element: <ChatPage /> },
     ]
   },
 ]);
