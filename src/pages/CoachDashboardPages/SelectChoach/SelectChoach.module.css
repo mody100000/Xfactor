@@ -1,0 +1,181 @@
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+.modalOverlay :global(.modal-dialog) {
+  width: 90%;
+  margin: 1.75rem auto;
+}
+.filterContainer {
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow-x: hidden;
+}
+.clientCard {
+  transition: all 0.3s ease;
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  width: 100%;
+  background-color: var(--filterSidebar-color);
+  color: var(--text-color);
+}
+
+.cardWidth {
+  width: 300px;
+}
+
+.clientCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.circleImageWrapper {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #f0f0f0;
+}
+
+.clientCircleImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.clientCardBody {
+  padding: 20px;
+}
+
+.sessionInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 4px;
+  background-color: var(--modalBg-color);
+  border-radius: 8px;
+  width: 70px;
+}
+
+.sessionLabel {
+  font-size: 0.75rem;
+  color: var(--supText-color);
+  margin-bottom: 4px;
+}
+
+.sessionCount {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.infoSection {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: var(--modalBg-color);
+  border-radius: 8px;
+}
+
+.infoRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.infoRow:last-child {
+  border-bottom: none;
+}
+
+.infoLabel {
+  min-width: 80px;
+  color: var(--supText-color);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.infoValue {
+  font-size: 0.9rem;
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+.selectedClient {
+  transform: scale(1.02);
+  box-shadow: 0 5px 15px rgba(103, 243, 33, 0.4);
+  border: 2px solid #42c02fa1;
+}
+
+.selectedOverlay {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #42c02fa1;
+  color: white;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 0.875rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.coachSport {
+  color: var(--supText-color);
+}
+
+.filterInput {
+  border-radius: 20px;
+  padding: 10px 15px;
+}
+
+.noResultsMessage {
+  background-color: #f8d7da;
+  color: #721c24;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+}
+.selectedClient {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(103, 243, 33, 0.4);
+  border: 2px solid #42c02fa1;
+  outline: none;
+}
+.line {
+  display: block;
+  height: 1px;
+  background-color: #dbdbdbde;
+  width: 100%;
+  margin: 12px auto;
+}
+.input {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  min-height: 120px;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  resize: vertical;
+  color: var(--text-color) !important;
+  background-color: var(--background-color) !important;
+}
+.input::placeholder {
+  color: var(--supText-color);
+}
+.mainCard {
+  background-color: var(--filterSidebar-color);
+}

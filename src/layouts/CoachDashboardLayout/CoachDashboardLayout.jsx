@@ -16,7 +16,7 @@ const CoachDashboardLayout = () => {
 
   useEffect(() => {
     document.body.className = theme;
-    dispatch(setTheme(localStorage.getItem('theme') || 'dark'));
+    dispatch(setTheme(localStorage.getItem('theme') || 'light'));
   }, [theme, dispatch]);
 
   const toggleSidebar = () => {
@@ -31,7 +31,7 @@ const CoachDashboardLayout = () => {
       <div className={styles.mainSection}>
         <CoachDashboardTopbar toggleSidebar={toggleSidebar} />
         <Outlet />
-        <Footer theme={theme} />
+        {/* <Footer theme={theme} /> */}
       </div>
     </div>
   );

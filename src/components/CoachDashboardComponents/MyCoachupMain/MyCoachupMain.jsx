@@ -7,8 +7,12 @@ import { IoNotifications, IoCalendar, IoMail } from 'react-icons/io5';
 import MyCoachUpSidebar from './MyCoachUpSidepar/MyCoachUpSidebar';
 import { GrSchedulePlay } from 'react-icons/gr';
 import { FaRegComment } from 'react-icons/fa6';
-import intro from "@assets/f2.jpg"
+import { useNavigate } from 'react-router-dom';
 function MyCoachupMain() {
+    const navigate = useNavigate()
+    const handelNavigate = () => {
+        navigate("/coach-dashboard/coach-chat")
+    }
     const conversations = [
         {
             initials: 'BF',
@@ -38,9 +42,6 @@ function MyCoachupMain() {
                 <div className="row mt-3">
                     <div className="col-md-8 col-12 order-md-1">
                         <div className="row">
-                            <div className={styles.imgContainer}>
-                                <img src={intro} alt="intro" className={styles.img} />
-                            </div>
                             <div>
                                 <div className={styles.rankCard}>
                                     <h4 className={styles.sectionTitle}>Coach Ranking and Stats</h4>
@@ -172,12 +173,11 @@ function MyCoachupMain() {
                                         </div>
 
                                         {/* Schedule Task */}
-                                        <div className={styles.taskItem}>
+                                        <div className={styles.taskItem} onClick={handelNavigate}>
                                             <div className={styles.taskIconWrapper}>
                                                 <GrSchedulePlay size={20} />
                                             </div>
-
-                                            <div className={styles.taskContent}>
+                                            <div className={styles.taskContent} >
                                                 <div className={styles.taskHeader}>
                                                     <h3 className={styles.taskTitle}>
                                                         Schedule next session

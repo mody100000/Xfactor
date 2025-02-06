@@ -5,7 +5,7 @@ import { FaRegTimesCircle } from "react-icons/fa";
 import { RiLogoutCircleLine } from "react-icons/ri";
 import logo from "../../../assets/logo.png";
 import { IoPersonCircleOutline } from "react-icons/io5";
-import { BsJournalBookmark } from "react-icons/bs";
+import { BsChat, BsJournalBookmark } from "react-icons/bs";
 import { MdOutlineEventAvailable } from "react-icons/md";
 import { IoWalletOutline } from "react-icons/io5";
 import { CiSettings, CiDark } from "react-icons/ci";
@@ -52,14 +52,19 @@ const CoachDashboardSidebar = ({ isOpen, toggleSidebar, toggleTheme, theme }) =>
                         <PiPersonSimpleThrowFill size={25} className="mx-2" /> Sessions
                     </NavLink>
                 </li>
-                <li className={`${getMenuItemClass('/coach-dashboard/coach-clients')} mt-5`}>
+                <li className={`${getMenuItemClass('/coach-dashboard/coach-clients')} `}>
                     <NavLink to="/coach-dashboard/coach-clients" className='text-decoration-none text-light'>
                         <IoPeopleOutline size={22} className="mx-2" /> Clients
                     </NavLink>
                 </li>
-                <li className={getMenuItemClass('/coach-dashboard/coach-availability')}>
+                <li className={`${getMenuItemClass('/coach-dashboard/coach-availability')} mt-5`}>
                     <NavLink to="/coach-dashboard/coach-availability" className='text-decoration-none text-light'>
                         <MdOutlineEventAvailable size={25} className="mx-2" /> Availability
+                    </NavLink>
+                </li>
+                <li className={getMenuItemClass('/coach-dashboard/coach-chat')}>
+                    <NavLink to="/coach-dashboard/coach-chat" className='text-decoration-none text-light'>
+                        < BsChat size={25} className="mx-2" /> Chat
                     </NavLink>
                 </li>
                 <li className={getMenuItemClass('/coach-dashboard/coach-payments')}>
