@@ -137,6 +137,3 @@ const CoachSidebar = ({ coach }) => {
 }
 
 export default CoachSidebar;
-{/* <Link to={`/coach/${coach.id}/message`}>
-<button className={styles.messageBtn}>Message Coach</button>
-</Link> */}
