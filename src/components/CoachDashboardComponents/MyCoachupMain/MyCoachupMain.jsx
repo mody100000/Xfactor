@@ -145,7 +145,7 @@ function MyCoachupMain() {
 
                                     <div className={styles.tasksList}>
                                         {/* Message Task */}
-                                        <div className={styles.taskItem}>
+                                        <div className={styles.taskItem} onClick={handelNavigate}>
                                             <div className={styles.taskIconWrapper}>
                                                 <FaRegComment size={20} />
                                                 <div className={styles.iconLine}></div>
@@ -173,7 +173,7 @@ function MyCoachupMain() {
                                         </div>
 
                                         {/* Schedule Task */}
-                                        <div className={styles.taskItem} onClick={handelNavigate}>
+                                        <div className={styles.taskItem}>
                                             <div className={styles.taskIconWrapper}>
                                                 <GrSchedulePlay size={20} />
                                             </div>
