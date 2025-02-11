@@ -178,7 +178,7 @@ const FilteredCoachesResultPage = () => {
                   />
                 </div>
               </div>
-              <div>
+              <div className='mt-sm-5'>
                 <button
                   className={styles.filterBtn}
                   onClick={() => setShowFilterModal(true)}
@@ -186,7 +186,7 @@ const FilteredCoachesResultPage = () => {
                   Filter
                 </button>
               </div>
-              <div className={`cursor-pointer ${styles.toggleIcon}`} onClick={() => setViewMode(viewMode === 'grid' ? 'list' : 'grid')}>
+              <div className={`cursor-pointer mt-sm-5 ${styles.toggleIcon}`} onClick={() => setViewMode(viewMode === 'grid' ? 'list' : 'grid')}>
                 {viewMode === 'grid' ? (
                   <CiGrid2H size={40} />
                 ) : (
@@ -194,8 +194,8 @@ const FilteredCoachesResultPage = () => {
                 )}
               </div>
 
-              <div className="d-flex align-items-center justify-content-between">
-                <select className={`form-select d-inline-block w-auto fs-5 ${styles.filterInbut}`} onChange={handleSortChange} value={sortCriteria}>
+              <div className="d-flex mt-sm-5 align-items-center justify-content-between">
+                <select className={`form-select d-inline-block w-auto fs-5 cursor-pointer ${styles.filterInbut}`} onChange={handleSortChange} value={sortCriteria}>
                   <option value="" style={{ display: 'none' }}>Select...</option>
                   <option value="Recommended">Recommended</option>
                   <option value="Lowest Price">Lowest Price</option>
