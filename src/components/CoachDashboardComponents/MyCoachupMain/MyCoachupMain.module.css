@@ -235,6 +235,14 @@
   justify-content: center;
   transition: transform 0.3s ease;
 }
+.coachHeader {
+  border: none;
+  box-shadow: var(--coaches-box-shadow);
+  border-radius: 12px;
+  background-color: var(--filterSidebar-color);
+  padding: 1.5rem;
+  margin: 3rem auto;
+}
 /* Premium Card Specific Styles */
 .coachCard .cardContent {
   padding: 2rem;

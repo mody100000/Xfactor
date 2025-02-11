@@ -8,6 +8,7 @@ import MyCoachUpSidebar from './MyCoachUpSidepar/MyCoachUpSidebar';
 import { GrSchedulePlay } from 'react-icons/gr';
 import { FaRegComment } from 'react-icons/fa6';
 import { useNavigate } from 'react-router-dom';
+import CoachCardHeader from './CoachCardHeader/CoachCardHeader';
 function MyCoachupMain() {
     const navigate = useNavigate()
     const handelNavigate = () => {
@@ -42,13 +43,8 @@ function MyCoachupMain() {
                 <div className="row mt-3">
                     <div className="col-md-8 col-12 order-md-1">
                         <div className="row">
-                            <div>
-                                <div className={styles.rankCard}>
-                                    <h4 className={styles.sectionTitle}>Coach Ranking and Stats</h4>
-                                    <div className={styles.rankNumber}>21st</div>
-                                    <p className={styles.rankLocation}>in Virginia Soccer</p>
-                                    <button className={styles.linkButton}>View Coach Leaderboard</button>
-                                </div>
+                            <div className='p-2 mb-4'>
+                                <CoachCardHeader />
                             </div>
                             {/*statistics card*/}
                             <div className={styles.statsCard}>

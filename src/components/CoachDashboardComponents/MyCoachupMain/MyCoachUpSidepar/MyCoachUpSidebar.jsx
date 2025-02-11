@@ -7,6 +7,14 @@ import { Link } from 'react-router-dom';
 function MyCoachUpSidebar() {
     return (
         <div className={styles.sidebarContainer}>
+            <div>
+                <div className={styles.rankCard}>
+                    <h4 className={styles.sectionTitle}>Coach Ranking and Stats</h4>
+                    <div className={styles.rankNumber}>21st</div>
+                    <p className={styles.rankLocation}>in Virginia Soccer</p>
+                    <button className={styles.linkButton}>View Coach Leaderboard</button>
+                </div>
+            </div>
             {/* Profile Completion Section */}
             <div className={styles.section}>
                 <div className={styles.completionHeader}>
