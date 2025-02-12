@@ -25,6 +25,18 @@ const ManagePackages = () => {
         totalPrice: "",
     });
 
+    // Generate session breakdown
+    const generateSessionBreakdown = () => {
+        if (newPackage.ofSessions && newPackage.totalPrice) {
+            const pricePerSession = newPackage.totalPrice / newPackage.ofSessions;
+            return Array.from({ length: parseInt(newPackage.ofSessions) }, (_, index) => ({
+                session: index + 1,
+                price: pricePerSession
+            }));
+        }
+        return [];
+    };
+
     // Handle input change
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -158,6 +170,18 @@ const ManagePackages = () => {
                                     <div className="mb-2">
                                         <label className="form-label mb-0 mt-2">Total Price</label>
                                         <input type="number" className={`form-control ${styles.input}`} name="totalPrice" value={newPackage.totalPrice} onChange={handleInputChange} required />
+                                        {newPackage.ofSessions && newPackage.totalPrice && (
+                                            //TODO:change this bg for dark and light mood
+                                            <div className={`mt-2 p-2  ${styles.breakdown} rounded`}>
+                                                <h6 className="mb-2">Price Breakdown:</h6>
+                                                {generateSessionBreakdown().map((session) => (
+                                                    <div key={session.session} className="d-flex align-items-center justify-content-between gap-2">
+                                                        <p className="text-muted">Session {session.session}</p>
+                                                        <p> ${session.price.toFixed(2)}</p>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        )}
                                     </div>
                                 </form>
                             </div>
@@ -167,9 +191,9 @@ const ManagePackages = () => {
                             </div>
                         </div>
                     </div>
-                </div >
+                </div>
             )}
-        </div >
+        </div>
     );
 };
 
