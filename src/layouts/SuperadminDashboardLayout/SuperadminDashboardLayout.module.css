@@ -1,0 +1,16 @@
+.dashboard {
+  min-height: 100vh;
+}
+
+.mainSection {
+  flex: 1;
+  margin-left: 250px;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 968px) {
+  .mainSection {
+    margin-left: 0;
+  }
+}

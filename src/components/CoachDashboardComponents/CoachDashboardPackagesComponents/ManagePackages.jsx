@@ -171,8 +171,7 @@ const ManagePackages = () => {
                                         <label className="form-label mb-0 mt-2">Total Price</label>
                                         <input type="number" className={`form-control ${styles.input}`} name="totalPrice" value={newPackage.totalPrice} onChange={handleInputChange} required />
                                         {newPackage.ofSessions && newPackage.totalPrice && (
-                                            //TODO:change this bg for dark and light mood
-                                            <div className={`mt-2 p-2  ${styles.breakdown} rounded`}>
+                                            <div className={`mt-2 p-2 ${styles.breakdown} rounded`}>
                                                 <h6 className="mb-2">Price Breakdown:</h6>
                                                 {generateSessionBreakdown().map((session) => (
                                                     <div key={session.session} className="d-flex align-items-center justify-content-between gap-2">
