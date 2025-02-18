@@ -1,0 +1,284 @@
+.avatar {
+  object-fit: cover;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card {
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  width: 100%;
+  background-color: var(--filterSidebar-color);
+}
+
+.tableContainer {
+  width: 100%;
+  position: relative;
+}
+
+.tableResponsive {
+  border-radius: 0.5rem;
+  overflow: hidden;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.avatarImg {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.avatarPlaceholder {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: #007bff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatarText {
+  color: white;
+  font-size: 0.875rem;
+  text-align: center;
+}
+/* pagination */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.button {
+  padding: 5px;
+  border: 1px solid var(--supText-color);
+  border-radius: 8px;
+  background: transparent;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.button:hover {
+  background: #f5f5f5;
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.icon {
+  color: var(--text-color) !important;
+  width: 16px;
+  height: 16px;
+}
+
+.pageButton {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.pageButton:hover {
+  background: #f5f5f5;
+}
+
+.activePage {
+  background: #f9fafc;
+  color: #1a1a1a;
+  border: 2px solid #e4e4e4;
+}
+
+.ellipsis {
+  padding: 0 8px;
+}
+/* deleteAction */
+.deleteButton {
+  padding: 7px;
+  border-radius: 100%;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid var(--supText-color);
+}
+
+.deleteButton:hover {
+  background: #f5f5f5;
+}
+
+.trashIcon {
+  color: var(--supText-color);
+  transition: color 0.2s ease;
+}
+
+.deleteButton:hover .trashIcon {
+  color: #e53e3e;
+}
+
+/* Modal Overlay */
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  padding: 16px;
+  animation: fadeIn 0.2s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Modal Container */
+.modalContainer {
+  background: white;
+  border-radius: 12px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+  transform: scale(1);
+  opacity: 1;
+  animation: slideIn 0.2s ease-in;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Modal Header */
+.modalHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  border-bottom: 1px solid #e4e4e4;
+}
+
+.alertIconWrapper {
+  padding: 8px;
+  background: #fee2e2;
+  border-radius: 50%;
+}
+
+.alertIcon {
+  width: 24px;
+  height: 24px;
+  color: #e53e3e;
+}
+
+.modalTitle {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #1a1a1a;
+}
+
+/* Modal Body */
+.modalBody {
+  padding: 24px;
+  color: #4a4a4a;
+}
+
+/* Modal Actions */
+.modalActions {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 8px;
+  padding: 16px;
+  padding-top: 8px;
+}
+
+@media (min-width: 640px) {
+  .modalActions {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+}
+
+/* Buttons */
+.deleteButtonModal {
+  background: #e53e3e;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.deleteButtonModal:hover {
+  background: #c53030;
+}
+
+.cancelButton {
+  background: transparent;
+  border: 1px solid #e4e4e4;
+  color: #1a1a1a;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.cancelButton:hover {
+  background: #f5f5f5;
+}
+
+/* sort  */
+.iconContainer {
+  display: flex;
+  flex-direction: column;
+  margin-top: -8px;
+  margin-bottom: -8px;
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+}
+
+.sorted {
+  color: #007bff; /* Bootstrap primary color */
+}
+
+.unsorted {
+  color: #6c757d; /* Bootstrap gray color */
+}
+/* Ensure table is responsive at all screen sizes */
+@media screen and (max-width: 100%) {
+  .tableContainer {
+    margin: 0 -1rem;
+    width: calc(100% + 2rem);
+  }
+
+  .tableResponsive {
+    border-radius: 0;
+  }
+}

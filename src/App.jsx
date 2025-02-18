@@ -65,6 +65,15 @@ import CoachDashboardAvailability from './pages/CoachDashboardPages/CoachDashboa
 import CoachDashboardPayments from './pages/CoachDashboardPages/CoachDashboardPayments/CoachDashboardPayments';
 import CoachAccountPage from './pages/CoachDashboardPages/CoachAccountPage/CoachAccount';
 import SelectChoach from './pages/CoachDashboardPages/SelectChoach/SelectChoach';
+import { element } from 'prop-types';
+import SuperadminDashboardLayout from './layouts/SuperadminDashboardLayout/SuperadminDashboardLayout';
+import SuperadminDashboardClients from './pages/SuperadminDashboard/SuperadminDashboardClients/SuperadminDashboardClients';
+import ViewClient from './pages/SuperadminDashboard/SuperadminDashboardClients/ViewClient/ViewClient';
+import SuperadminDashboardCoaches from './pages/SuperadminDashboard/SuperadminDashboardCoaches/SuperadminDashboardCoaches';
+import ViewCoach from './pages/SuperadminDashboard/SuperadminDashboardCoaches/ViewCoach/ViewCoach';
+import ViewPackages from './pages/SuperadminDashboard/SuperadminDashboardCoaches/ViewPackages/ViewPackages';
+import ViewSessions from './pages/SuperadminDashboard/SuperadminDashboardCoaches/ViewSessions/ViewSessions';
+import Chat from './components/SuperadminDashboardComponents/Chat/Chat';
 
 const routes = createBrowserRouter([
   {
@@ -146,8 +155,21 @@ const routes = createBrowserRouter([
       { path: "coach-payments", element: <CoachDashboardPayments /> },
       { path: "coach-account", element: <CoachAccountPage /> },
       { path: "coach-chat", element: <ChatPage /> },
+
     ]
-  },
+  }, {
+    path: "superadmin-dashboard", element: <SuperadminDashboardLayout />,
+    children: [
+      { index: true, path: "/superadmin-dashboard", element: <SuperadminDashboardClients /> },
+      { path: "/superadmin-dashboard/view-client/:id", element: <ViewClient /> },
+      { path: "coaches", element: <SuperadminDashboardCoaches /> },
+      { path: "/superadmin-dashboard/coaches/view-coach/:id", element: <ViewCoach /> },
+      { path: "/superadmin-dashboard/coaches/view-packages/:id", element: <ViewPackages /> },
+      { path: "/superadmin-dashboard/coaches/view-sessions/:id", element: <ViewSessions /> },
+      { path: "chat", element: <Chat /> },
+    ]
+  }
+
 ]);
 
 function App() {

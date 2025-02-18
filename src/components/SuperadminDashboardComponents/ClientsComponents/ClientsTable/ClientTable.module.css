@@ -1,0 +1,43 @@
+.searchBox {
+  position: relative;
+  width: 300px;
+}
+.userName {
+  color: var(--supText-color);
+  font-size: small;
+}
+
+.searchBox input {
+  padding-left: 40px;
+  border-radius: 20px;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6c757d;
+}
+
+.status-badge {
+  padding: 6px 12px;
+  border-radius: 15px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.status-badge.complete {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.status-badge.incomplete {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+.status-badge.upcoming {
+  background-color: #fef3c7;
+  color: #92400e;
+}

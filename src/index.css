@@ -45,6 +45,7 @@ body.light {
   --modalBg-color: white;
   --modalInput-color: #898989;
   --dropdownList-color: #61616197;
+  --tableTh-color: #495057;
 }
 
 body.dark {
@@ -79,6 +80,7 @@ body.dark {
   --modalBg-color: #212121;
   --modalInput-color: #333;
   --dropdownList-color: #0302044a;
+  --tableTh-color: #d5d5d5;
 }
 
 body {
@@ -165,4 +167,28 @@ body {
     padding: 0.5rem 1.5rem;
     font-size: 1.1rem;
   }
+}
+.table tr {
+  transition: background-color 0.3s ease;
+  background-color: var(--modalBg-color) !important;
+  --bs-table-bg: none;
+  padding: 12px 15px;
+}
+.table tr:hover {
+  --bs-table-hover-bg: var(--hoverContacts) !important; /* Light hover effect */
+  --bs-table-bg: none;
+}
+
+.table td {
+  padding: 12px 15px;
+  color: var(--text-color);
+  border-bottom: 1px solid #dee2e6;
+  --bs-table-bg: none;
+}
+
+.table th {
+  padding: 12px 15px;
+  font-weight: 600;
+  --bs-table-bg: none;
+  color: var(--tableTh-color);
 }
