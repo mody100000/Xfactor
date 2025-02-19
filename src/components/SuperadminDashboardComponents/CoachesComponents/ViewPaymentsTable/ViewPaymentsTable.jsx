@@ -133,7 +133,7 @@ function ViewPaymentsTable() {
                     <input
                         type="text"
                         className="form-control"
-                        placeholder="Search coache..."
+                        placeholder="Search payment..."
                         value={searchTerm}
                         onChange={(e) => {
                             setSearchTerm(e.target.value);
