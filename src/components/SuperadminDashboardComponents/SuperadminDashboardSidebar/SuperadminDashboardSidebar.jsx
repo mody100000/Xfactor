@@ -10,8 +10,6 @@ import { MdOutlineSportsKabaddi } from "react-icons/md";
 import { MdGroups } from "react-icons/md";
 import { CiDark } from 'react-icons/ci';
 
-
-
 const SuperadminDashboardSidebar = ({ isOpen, toggleSidebar, toggleTheme, theme }) => {
     const location = useLocation();
 
@@ -44,6 +42,8 @@ const SuperadminDashboardSidebar = ({ isOpen, toggleSidebar, toggleTheme, theme 
                         < BsChat size={25} className="mx-2 my-2" /> Chat
                     </NavLink>
                 </li>
+            </ul>
+            <ul className={`${styles.menu} mt-auto`}>
                 <li className={styles.menuItem} onClick={toggleTheme}>
                     <CiDark size={25} className="mx-2 my-2" /> {theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
                 </li>

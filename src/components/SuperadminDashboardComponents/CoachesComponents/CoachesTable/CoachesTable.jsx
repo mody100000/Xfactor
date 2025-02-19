@@ -12,7 +12,8 @@ function CoachesTable() {
             sportType: 'Swimming',
             sessions: 'Sessions',
             profile: 'Mody Davis',
-            packages: "Packages"
+            packages: "Packages",
+            payments: "Payments"
         },
         {
             id: 1,
@@ -22,8 +23,8 @@ function CoachesTable() {
             sportType: 'Basketball',
             sessions: 'Sessions',
             profile: 'John Smith',
-            packages: "Packages"
-
+            packages: "Packages",
+            payments: "Payments"
         },
         {
             id: 2,
@@ -33,8 +34,8 @@ function CoachesTable() {
             sportType: 'Tennis',
             sessions: 'Sessions',
             profile: 'Sarah Johnson',
-            packages: "Packages"
-
+            packages: "Packages",
+            payments: "Payments"
         },
         {
             id: 3,
@@ -44,8 +45,8 @@ function CoachesTable() {
             sportType: 'Football',
             sessions: 'Sessions',
             profile: 'Mike Wilson',
-            packages: "Packages"
-
+            packages: "Packages",
+            payments: "Payments"
         },
         {
             id: 4,
@@ -55,8 +56,8 @@ function CoachesTable() {
             sportType: 'Swimming',
             sessions: 'Sessions',
             profile: 'Emma Davis',
-            packages: "Packages"
-
+            packages: "Packages",
+            payments: "Payments"
         },
 
     ];
@@ -122,7 +123,17 @@ function CoachesTable() {
             type: 'status',
             sortable: false
         },
-
+        {
+            id: 'payments',
+            header: 'Payments',
+            accessorKey: 'payments',
+            type: 'linkTitle',
+            sortable: false,
+            linkConfig: {
+                baseUrl: './view-payments',
+                idKey: 'id'
+            }
+        },
         {
             id: 'actions',
             header: 'Actions',
