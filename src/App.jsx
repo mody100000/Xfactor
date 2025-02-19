@@ -74,6 +74,7 @@ import ViewCoach from './pages/SuperadminDashboard/SuperadminDashboardCoaches/Vi
 import ViewPackages from './pages/SuperadminDashboard/SuperadminDashboardCoaches/ViewPackages/ViewPackages';
 import ViewSessions from './pages/SuperadminDashboard/SuperadminDashboardCoaches/ViewSessions/ViewSessions';
 import Chat from './components/SuperadminDashboardComponents/Chat/Chat';
+import ViewPayments from './pages/SuperadminDashboard/SuperadminDashboardCoaches/ViewPayments/ViewPayments';
 
 const routes = createBrowserRouter([
   {
@@ -167,6 +168,7 @@ const routes = createBrowserRouter([
       { path: "/superadmin-dashboard/coaches/view-packages/:id", element: <ViewPackages /> },
       { path: "/superadmin-dashboard/coaches/view-sessions/:id", element: <ViewSessions /> },
       { path: "chat", element: <Chat /> },
+      { path: "/superadmin-dashboard/coaches/view-payments/:id", element: <ViewPayments /> },
     ]
   }
 
