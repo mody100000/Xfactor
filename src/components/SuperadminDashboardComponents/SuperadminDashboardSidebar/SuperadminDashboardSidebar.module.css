@@ -57,9 +57,6 @@ a {
   cursor: pointer;
   border-radius: 20px;
 }
-/* .logout:hover,.logoutLink:hover{
-      background-color: #ff4d50c9;
-    } */
 .logoutLink {
   text-decoration: none;
   color: white;
