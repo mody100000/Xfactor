@@ -167,8 +167,8 @@ function CoachesTable() {
 
     // Custom header with search
     const renderHeader = ({ onSearch }) => (
-        <div className="d-flex justify-content-between align-items-center mb-4">
-            <h2 className="mb-0">Coaches</h2>
+        <div className="d-flex flex-column flex-sm-row justify-content-between align-items-center mb-4">
+            <h2 className="mb-sm-0 mb-2">Coaches</h2>
             <div className="d-flex gap-3">
                 <div className={styles.searchBox}>
                     <input
