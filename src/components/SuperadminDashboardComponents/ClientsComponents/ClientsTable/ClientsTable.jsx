@@ -92,7 +92,6 @@ function ClientTable() {
         }
     ];
 
-    // Handle search
     const handleSearch = (searchValue) => {
         setSearchTerm(searchValue);
         if (!searchValue.trim()) {
@@ -100,16 +99,17 @@ function ClientTable() {
             return;
         }
 
-        const filtered = initialData.filter((client) => {
-            const searchStr = searchValue.toLowerCase();
-            return (
-                client.name.toLowerCase().includes(searchStr) ||
-                client.sportType.toLowerCase().includes(searchStr) ||
-                client.sessions.toLowerCase().includes(searchStr)
-            );
-        });
+        const searchStr = searchValue.toLowerCase();
+        const filtered = initialData.filter((client) =>
+            client.name.toLowerCase().includes(searchStr) ||
+            client.userName.toLowerCase().includes(searchStr) ||
+            client.sportType.toLowerCase().includes(searchStr) ||
+            client.profile.toLowerCase().includes(searchStr)
+        );
+
         setData(filtered);
     };
+
 
     // Handle delete
     const handleDelete = useCallback((id) => {

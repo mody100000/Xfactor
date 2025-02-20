@@ -3,8 +3,9 @@ import { MdOnlinePrediction } from "react-icons/md";
 import { IoPerson } from "react-icons/io5";
 import { FaStar } from "react-icons/fa";
 import { AiOutlinePlus } from "react-icons/ai";
-import styles from "./ManagePackages.module.css";
 import { MdGroups } from "react-icons/md";
+import { FaEdit } from "react-icons/fa";
+import styles from "./ManagePackages.module.css";
 
 const ManagePackages = () => {
     const [packages, setPackages] = useState([
@@ -15,7 +16,8 @@ const ManagePackages = () => {
     ]);
 
     const [showModal, setShowModal] = useState(false);
-    const [newPackage, setNewPackage] = useState({
+    const [isEditing, setIsEditing] = useState(false);
+    const emptyPackage = {
         title: "",
         type: "In-Person Training",
         description: "",
@@ -23,13 +25,14 @@ const ManagePackages = () => {
         ofSessions: "",
         MaxAthletes: "",
         totalPrice: "",
-    });
+        recommended: false
+    };
+    const [currentPackage, setCurrentPackage] = useState(emptyPackage);
 
-    // Generate session breakdown
     const generateSessionBreakdown = () => {
-        if (newPackage.ofSessions && newPackage.totalPrice) {
-            const pricePerSession = newPackage.totalPrice / newPackage.ofSessions;
-            return Array.from({ length: parseInt(newPackage.ofSessions) }, (_, index) => ({
+        if (currentPackage.ofSessions && currentPackage.totalPrice) {
+            const pricePerSession = currentPackage.totalPrice / currentPackage.ofSessions;
+            return Array.from({ length: parseInt(currentPackage.ofSessions) }, (_, index) => ({
                 session: index + 1,
                 price: pricePerSession
             }));
@@ -37,27 +40,48 @@ const ManagePackages = () => {
         return [];
     };
 
-    // Handle input change
     const handleInputChange = (e) => {
         const { name, value } = e.target;
-        setNewPackage({ ...newPackage, [name]: value });
+        setCurrentPackage({ ...currentPackage, [name]: value });
     };
 
-    // Handle package submission
-    const handleAddPackage = () => {
-        if (!newPackage.title || !newPackage.description || !newPackage.totalPrice) {
+    const handleEditPackage = (pkg) => {
+        setCurrentPackage(pkg);
+        setIsEditing(true);
+        setShowModal(true);
+    };
+
+    const handleSubmit = () => {
+        if (!currentPackage.title || !currentPackage.description || !currentPackage.totalPrice) {
             alert("Please fill in all required fields!");
             return;
         }
 
-        const newPkg = {
-            id: packages.length + 1,
-            ...newPackage,
-        };
+        if (isEditing) {
+            setPackages(packages.map(pkg =>
+                pkg.id === currentPackage.id ? currentPackage : pkg
+            ));
+        } else {
+            const newPkg = {
+                id: packages.length + 1,
+                ...currentPackage,
+            };
+            setPackages([...packages, newPkg]);
+        }
 
-        setPackages([...packages, newPkg]);
+        handleCloseModal();
+    };
+
+    const handleCloseModal = () => {
         setShowModal(false);
-        setNewPackage({ title: "", type: "In-Person Training", description: "", SessionLength: "", ofSessions: "", MaxAthletes: "", totalPrice: "" });
+        setIsEditing(false);
+        setCurrentPackage(emptyPackage);
+    };
+
+    const handleAddNew = () => {
+        setIsEditing(false);
+        setCurrentPackage(emptyPackage);
+        setShowModal(true);
     };
 
     return (
@@ -67,7 +91,15 @@ const ManagePackages = () => {
                     {packages.map((pkg) => (
                         <div className={styles.packageCard} key={pkg.id}>
                             <div className={styles.cardHeader}>
-                                <h3 className={styles.cardTitle}>{pkg.title}</h3>
+                                <div className="d-flex justify-content-between align-items-center w-100">
+                                    <h3 className={styles.cardTitle}>{pkg.title}</h3>
+                                    <button
+                                        className="btn btn-outline-danger btn-sm"
+                                        onClick={() => handleEditPackage(pkg)}
+                                    >
+                                        <FaEdit /> Update
+                                    </button>
+                                </div>
                                 {pkg.recommended && (
                                     <div className="d-flex justify-content-center align-items-center gap-1">
                                         <FaStar size={19} color="#bf1e2e" />
@@ -114,7 +146,7 @@ const ManagePackages = () => {
                     ))}
 
                     {/* Add New Package Card */}
-                    <div className={styles.packageCard} onClick={() => setShowModal(true)} style={{ cursor: "pointer" }}>
+                    <div className={styles.packageCard} onClick={handleAddNew} style={{ cursor: "pointer" }}>
                         <div className={styles.cardHeader}>
                             <AiOutlinePlus size={40} className="text-danger" />
                         </div>
@@ -128,24 +160,26 @@ const ManagePackages = () => {
                 </div>
             </div>
 
-            {/* Bootstrap Modal */}
+            {/* Modal for Add/Edit */}
             {showModal && (
                 <div className={`modal ${styles.modalOverlay}`}>
                     <div className="modal-dialog">
                         <div className={`modal-content ${styles.mainCard}`}>
                             <div className="modal-header">
-                                <h5 className="modal-title">Add New Package</h5>
-                                <button type="button" className="btn-close" onClick={() => setShowModal(false)}></button>
+                                <h5 className="modal-title">
+                                    {isEditing ? 'Update Package' : 'Add New Package'}
+                                </h5>
+                                <button type="button" className="btn-close" onClick={handleCloseModal}></button>
                             </div>
                             <div className="modal-body">
                                 <form>
                                     <div className="mb-2">
                                         <label className="form-label mb-0 mt-2">Title</label>
-                                        <input type="text" className={`form-control ${styles.input}`} name="title" value={newPackage.title} onChange={handleInputChange} required />
+                                        <input type="text" className={`form-control ${styles.input}`} name="title" value={currentPackage.title} onChange={handleInputChange} required />
                                     </div>
                                     <div className="mb-2">
                                         <label className={`form-label mb-0 mt-2`}>Type</label>
-                                        <select className={`form-select ${styles.input}`} name="type" value={newPackage.type} onChange={handleInputChange}>
+                                        <select className={`form-select ${styles.input}`} name="type" value={currentPackage.type} onChange={handleInputChange}>
                                             <option value="In-Person Training">In-Person Training</option>
                                             <option value="Online Training">Online Training</option>
                                             <option value="Campus">Campus</option>
@@ -153,40 +187,66 @@ const ManagePackages = () => {
                                     </div>
                                     <div className="mb-2">
                                         <label className="form-label mb-0 mt-2">Description</label>
-                                        <input type="text" className={`form-control ${styles.input}`} name="description" value={newPackage.description} onChange={handleInputChange} required />
+                                        <input type="text" className={`form-control ${styles.input}`} name="description" value={currentPackage.description} onChange={handleInputChange} required />
                                     </div>
                                     <div className="mb-2">
                                         <label className="form-label mb-0 mt-2">Session Length</label>
-                                        <input type="text" className={`form-control ${styles.input}`} name="SessionLength" value={newPackage.SessionLength} onChange={handleInputChange} />
+                                        <input type="text" className={`form-control ${styles.input}`} name="SessionLength" value={currentPackage.SessionLength} onChange={handleInputChange} />
                                     </div>
                                     <div className="mb-2">
                                         <label className="form-label mb-0 mt-2">Number of Sessions</label>
-                                        <input type="number" className={`form-control ${styles.input}`} name="ofSessions" value={newPackage.ofSessions} onChange={handleInputChange} />
+                                        <input type="number" className={`form-control ${styles.input}`} name="ofSessions" value={currentPackage.ofSessions} onChange={handleInputChange} />
                                     </div>
                                     <div className="mb-2">
                                         <label className="form-label mb-0 mt-2">Max Athletes</label>
-                                        <input type="number" className={`form-control ${styles.input}`} name="MaxAthletes" value={newPackage.MaxAthletes} onChange={handleInputChange} />
+                                        <input type="number" className={`form-control ${styles.input}`} name="MaxAthletes" value={currentPackage.MaxAthletes} onChange={handleInputChange} />
                                     </div>
                                     <div className="mb-2">
                                         <label className="form-label mb-0 mt-2">Total Price</label>
-                                        <input type="number" className={`form-control ${styles.input}`} name="totalPrice" value={newPackage.totalPrice} onChange={handleInputChange} required />
-                                        {newPackage.ofSessions && newPackage.totalPrice && (
+                                        <input type="number" className={`form-control ${styles.input}`} name="totalPrice" value={currentPackage.totalPrice} onChange={handleInputChange} required />
+                                        {currentPackage.ofSessions && currentPackage.totalPrice && (
                                             <div className={`mt-2 p-2 ${styles.breakdown} rounded`}>
                                                 <h6 className="mb-2">Price Breakdown:</h6>
                                                 {generateSessionBreakdown().map((session) => (
                                                     <div key={session.session} className="d-flex align-items-center justify-content-between gap-2">
                                                         <p className="text-muted">Session {session.session}</p>
-                                                        <p> ${session.price.toFixed(2)}</p>
+                                                        <p>${session.price.toFixed(2)}</p>
                                                     </div>
                                                 ))}
                                             </div>
                                         )}
                                     </div>
+                                    <div className="mb-2">
+                                        <div className="form-check">
+                                            <input
+                                                type="checkbox"
+                                                className="form-check-input"
+                                                id="recommended"
+                                                name="recommended"
+                                                checked={currentPackage.recommended}
+                                                onChange={(e) => handleInputChange({
+                                                    target: {
+                                                        name: 'recommended',
+                                                        value: e.target.checked
+                                                    }
+                                                })}
+                                            />
+                                            <label className="form-check-label" htmlFor="recommended">
+                                                Recommended Package
+                                            </label>
+                                        </div>
+                                    </div>
                                 </form>
                             </div>
                             <div className="modal-footer">
-                                <button type="button" className="btn btn-secondary" onClick={() => setShowModal(false)}>Cancel</button>
-                                <button type="button" className="btn btn-danger" onClick={handleAddPackage}>Add Package</button>
+                                <button type="button" className="btn btn-secondary" onClick={handleCloseModal}>Cancel</button>
+                                <button
+                                    type="button"
+                                    className={`btn ${isEditing ? 'btn-danger' : 'btn-danger'}`}
+                                    onClick={handleSubmit}
+                                >
+                                    {isEditing ? 'Update Package' : 'Add Package'}
+                                </button>
                             </div>
                         </div>
                     </div>

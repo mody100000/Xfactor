@@ -57,7 +57,7 @@ function StatusBadge({ status, config }) {
             pending: 'warning',
             error: 'danger'
         };
-        return `badge bg-${statusMap[status.toLowerCase()] || 'primary'}`;
+        return `badge bg-${statusMap[status.toLowerCase()] || 'danger'}`;
     };
 
     return <span className={getStatusClass()}>{status}</span>;
